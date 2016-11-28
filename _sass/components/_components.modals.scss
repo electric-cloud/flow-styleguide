@@ -1,0 +1,388 @@
+//================================================
+//  Modal
+//================================================
+
+.sds-modal {
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  margin: 0 0 0 -200px;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: $base-letter-spacing;
+  min-width: 400px;
+  width: 400px;
+  z-index: 1050;
+  background-color: $default-white;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 0 30px;
+  min-height: 286px - $btn-height;
+  padding: 0 0 $btn-height 0;
+
+  .vbar {
+    background-color: $modal-close-bar-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    cursor: pointer;
+
+    .sds-icon.remove {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      cursor: pointer;
+      color: $modal-close-bar-icon-color;
+      &:before {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .modal-navigation-header {
+    .arrow-back {
+      cursor: pointer;
+      display: inline-block;
+      margin: 10px 5px 0 10px;
+    }
+    .modal-back-text {
+      cursor: pointer;
+      display: inline-block;
+      line-height: 38px;
+    }
+  }
+
+  .modal-container {
+    margin-left: 30px;
+  }
+
+  .sds-modal-header {
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    line-height: 24px;
+    padding: 24px 0 28px;
+
+    .ec-modal-remove-item-btn {
+      position: absolute;
+      top: 25px;
+      right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .remove {
+      color: red;
+    }
+
+  }
+
+  .sds-modal-body {
+    position: relative;
+    .simple-text {
+      font-size: 19px;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 24px;
+      padding: 0 20px 28px;
+    }
+  }
+
+  .sds-modal-footer {
+    text-align: right;
+    position: relative;
+    max-height: $btn-height;
+  }
+
+  .warning,
+  .message,
+  .confirmation {
+    color: $default-black;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    letter-spacing: $base-letter-spacing;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 28px;
+  }
+
+  .warning {
+    font-weight: bold;
+    line-height: 19px;
+    text-transform: uppercase;
+
+    .alert-icon {
+      background-image: url('../img/attention.png');
+      display: inline-block;
+      margin-right: 1px;
+      margin-bottom: -3px;
+      width: 24px;
+      height: 19px;
+    }
+  }
+
+  .sds-modal-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .sds-btn.cancel {
+    background: $btn-bg-normal;
+    color: $default-white;
+
+    &:hover {
+      background: $btn-bg-hover;
+    }
+    &:active {
+      background: $btn-bg-active;
+    }
+  }
+  .sds-btn.ok,
+  .sds-btn.next {
+
+    &.disabled {
+      background: $btn-primary-bg-disabled;
+      color: $btn-color-disabled;
+    }
+
+    &.sds-btn-active {
+      background: $btn-primary-bg-hover;
+      color: $default-white;
+    }
+
+    &:hover {
+      background: $btn-primary-bg-hover;
+      color: $default-white;
+    }
+    &:active {
+      background: $btn-primary-bg-active;
+      color: $default-white;
+    }
+  }
+
+  .ec-title-right-btn.lookup-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    line-height: 43px;
+    margin-right: 10px;
+
+    .lookup {
+      font-size: 18px;
+    }
+  }
+}
+.sds-modal-alert {
+  background: $modal-alert-overlay;
+  @include stretch;
+  display: none;
+
+  .alert-msg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: $modal-alert-text;
+    background-color: $modal-alert-background;
+  }
+  .remove {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: $appCoControlsIconColor;
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .alert-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+    text-align: center;
+    &:before {
+      content: '';
+      height: 19px;
+      width: 24px;
+      background-image: url('../../img/attention.png');
+      display: inline-block;
+      margin: 0 5px -3px 0;
+    }
+  }
+  .alert-text {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+  }
+}
+
+.ec-modal-alert {
+  @include stretch(9999);
+  background-color: $modal-alert-overlay;
+
+  .ec-modal-alert-message {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: $modal-alert-text;
+    background-color: $modal-alert-background;
+  }
+
+  .ec-modal-alert-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+    text-align: center;
+    &:before {
+      content: '';
+      height: 19px;
+      width: 24px;
+      background-image: url('../../img/attention.png');
+      display: inline-block;
+      margin: 0 5px -3px 0;
+    }
+  }
+
+  .ec-modal-alert-text {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .ec-modal-alert-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.app-step-wizard-backdrop {
+  @include fixed-stretch(102);
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .default-modal {
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: top;
+  }
+}
+
+//  Confirmation Dialog
+.ec-modal-confirmation {
+  display: none;
+  @include stretch;
+  background-color: $wConfirmationMainBgColor;
+
+  .ec-modal-confirmation-body {
+    height: auto;
+    min-height: 50px;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    left: 0;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    line-height: 25px;
+    background-color: $wConfirmationMessageBgColor;
+
+    .title {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 10px;
+      text-align: center;
+      &:before {
+        content: '';
+        height: 19px;
+        width: 24px;
+        background-image: url('../../img/attention.png');
+        display: inline-block;
+        margin: 0 5px -3px 0;
+      }
+    }
+  }
+
+  .ec-modal-confirmation-footer {
+    height: 60px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #B2B2B2;
+
+    .ec-modal-button {
+      width: 50%;
+      height: 60px;
+      float: right;
+      font-size: 18px;
+      line-height: 60px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      &.full-size {
+        width: 100%;
+        cursor: pointer;
+      }
+      &.fixed-right {
+        width: 250px;
+        float: right;
+        &:last-child {
+          border-left: 2px solid $default-white;
+        }
+      }
+    }
+  }
+}
+.ec-modal-confirmation {
+  z-index: 99999;
+}
+.ec-modal-success {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .ec-modal-success-body {
+    height: 40px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    line-height: 35px;
+    background-color: $wConfirmationMessageBgColor;
+    .sds-icon {
+      font-size: 30px;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+}
+
+.backdrop-overlay {
+  text-align: center;
+  overflow: auto;
+
+  .sds-modal {
+    text-align: left;
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin: 115px 0 0;
+    &--centered {
+      @include stretch;
+      margin: auto;
+    }
+  }
+}

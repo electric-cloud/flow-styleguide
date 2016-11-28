@@ -1,0 +1,63 @@
+//================================================
+//  Loader
+//================================================
+
+.loader-icon {
+  position: absolute;
+  z-index: 11000;
+  left: 50%;
+  top: 50%;
+  margin-left: -24px;
+  margin-top: -24px;
+  display: block;
+  &.fixed {
+    position: fixed;
+  }
+}
+
+.loader-bg {
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+  z-index: 11000;
+  &.fixed {
+    position: fixed;
+  }
+}
+
+.loader-list-icon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 10000;
+  margin-left: -50px;
+}
+
+.loader {
+  display: none;
+
+  &.modal-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.ec-loading-indicator {
+  display: none;
+  margin: 0 10px;
+
+  &__loader {
+    height: 20px;
+  }
+
+  &--visible {
+    display: inline-block;
+  }
+}

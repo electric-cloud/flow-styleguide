@@ -1,0 +1,30 @@
+//================================================
+//  Wizard conditions
+//================================================
+
+.wizard-conditions {
+  .field {
+    margin: 50px 0;
+    text-align: left;
+  }
+
+  .field-label,
+  .react-form__textarea-wrapper {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .field-label {
+    font-size: 18px;
+    width: 110px;
+    margin: 5px 10px 0 0;
+  }
+
+  .react-form__textarea-wrapper {
+    margin-bottom: 0;
+  }
+
+  .ec-react-help__icon {
+    vertical-align: middle;
+  }
+}

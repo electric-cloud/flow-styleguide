@@ -1,0 +1,168 @@
+//================================================
+//  Schedule details-wizard
+//================================================
+
+.modals-box .schedule-details-wizard .ec-react-wizard__content {
+  padding: 0 20px;
+}
+
+.schedule-details-wizard {
+  $block: '.schedule-details-wizard';
+
+  .ec-row--header {
+    font-weight: 400;
+  }
+
+  .ec-select.disabled {
+    color: $forty-percent-gray;
+  }
+
+  #{$block}__input-time {
+    padding: 0 5px;
+    width: 75px;
+    &--disabled {
+      color: $placeholder-color;
+    }
+  }
+
+  #{$block}__back-drop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+
+
+  #{$block}__content-item {
+    position: relative;
+    border-bottom: 2px solid $forty-percent-gray;
+
+    .recurrence-ends {
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 18px;
+
+      &.disabled {
+        color: $fifty-percent-gray;
+        fill: $fifty-percent-gray;
+      }
+    }
+
+    .ec-select {
+      margin: 15px auto;
+      font-size: 16px;
+      width: 380px;
+    }
+
+    .country-select {
+      float: left;
+      width: 255px;
+      margin-bottom: 0;
+    }
+
+    .city-select {
+      margin-left: 30px;
+      float: right;
+      width: 255px;
+      margin-bottom: 0;
+    }
+
+    .react-form__txt-input-wrapper {
+      margin: 0 auto;
+    }
+
+    .react-form__txt-input-holder--no-fixed-width {
+      width: 100%;
+    }
+
+    .ec-row {
+      margin-bottom: 15px;
+
+      &--time {
+        display: flex;
+        flex-direction: row;
+      }
+
+      &--select {
+        height: 40px;
+        width: 330px;
+        margin: 0 auto 10px;
+        position: relative;
+      }
+
+      &--last {
+        margin-bottom: 15px;
+      }
+
+      &--first {
+        margin-top: 15px;
+      }
+    }
+    .ec-col {
+      &__time {
+        position: relative;
+        width: 87px;
+        line-height: 40px;
+      }
+
+      &__date {
+        text-align: left;
+        line-height: 40px;
+        flex: 1;
+      }
+
+      &__date-label {
+        cursor: pointer;
+
+        &:hover {
+          color: $deep-blue;
+        }
+
+        &--week {
+          position: absolute;
+          left: 42px;
+          top: 24px;
+        }
+      }
+
+      &__date-icon {
+        margin: 0 10px;
+
+        &--week {
+          font-size: 16px;
+          margin: 0 16px 0 10px;
+        }
+      }
+
+      &__date-text {
+        margin-left: 10px;
+      }
+    }
+
+    &--no-bottom-border {
+      border-bottom: none;
+    }
+
+    &--with-sub-item {
+      height: 75px;
+      padding-bottom: 15px;
+    }
+
+    &--disable {
+      color: $forty-percent-gray;
+
+      .ec-col {
+        &__date-label {
+          cursor: default;
+
+          &:hover {
+            color: $forty-percent-gray;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+//================================================
+//  Wizard delete
+//================================================
+
+.modals-box {
+
+  //Standard styles for delete wizard
+  .wizard-delete {
+    .ec-react-wizard__inner {
+    }
+    .ec-react-wizard__head {
+      position: relative;
+      font-size: 24px;
+      text-align: center;
+      line-height: 24px;
+      padding: 24px 0 6px;
+      border-bottom: none;
+    }
+    .ec-react-wizard__content {
+      padding: 0;
+    }
+
+    .ec-react-wizard__header-center-block {
+      width: 90%;
+      margin: 0 5%;
+    }
+
+    .warning,
+    .message,
+    .confirmation {
+      @include wizard-message;
+    }
+
+    .message {
+      max-height: 90px;
+      overflow: auto;
+    }
+
+    .warning {
+      font-weight: bold;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      .alert-icon {
+        background-image: url('../img/attention.png');
+        display: inline-block;
+        margin-right: 4px;
+        margin-bottom: -3px;
+        width: 24px;
+        height: 19px;
+      }
+    }
+  }
+}

@@ -1,0 +1,334 @@
+//================================================
+//  App run menu
+//================================================
+
+.ec-icon-run-menu {
+  border: none;
+  background-color: $runMenuBackground;
+  box-shadow: $runMenuBoxShadow;
+
+  &__square {
+    @include ec-icon-menu-square;
+    top: 92px;
+    color: $default-white;
+    fill: $default-white;
+    background: $default-green;
+
+    &:hover {
+      background-color: $light-green;
+    }
+
+    &.in-progress {
+      background: $runMenuBackground;
+
+      &:hover {
+        background-color: $runMenuBorderColor;
+      }
+    }
+
+    &--disabled {
+      cursor: default;
+      background: $soft-gray;
+      &:hover {
+        background: $soft-gray;
+      }
+
+      .sds-icon {
+        cursor: default;
+      }
+    }
+
+    .sds-svg-icon--button-run-from-editor {
+      margin-left: 6px;
+      margin-top: -2px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:after {
+    display: none;
+  }
+
+  &.left:before,
+  &.left-bottom:before,
+  &.left-top:before {
+    border-color: transparent transparent transparent $runMenuBackground;
+  }
+
+  .ec-icon-run-menu__content {
+    width: 550px;
+    display: inline-flex;
+  }
+
+  .ec-icon-run-menu__row {
+    height: 48px;
+    padding-left: 20px;
+    border-bottom: 2px solid $runMenuBorderColor;
+    cursor: pointer;
+    background-color: $runMenuBackground;
+
+    &:hover {
+      background-color: $runMenuBorderColor;
+    }
+  }
+
+  .ec-icon-run-menu__row--disabled {
+    @include disabled();
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  .ec-icon-run-menu__row--schedules {
+    border-bottom-width: 0;
+  }
+
+  .ec-icon-run-menu__col {
+    display: flex;
+    height: 48px;
+    float: left;
+    line-height: 48px;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    align-items: center;
+    @include sds-ellipsis;
+
+    .sds-svg-icon {
+      fill: $white;
+    }
+  }
+
+  .ec-icon-run-menu__col--text {
+    line-height: 18px;
+    max-height: 48px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    word-wrap: break-word;
+    word-break: break-all;
+    transform: translateY(-50%);
+    white-space: normal;
+    align-self: flex-start;
+    display: block;
+    flex: 0 1 auto;
+    text-align: left;
+
+    //for chrome
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .ec-icon-run-menu__col--label {
+    float: right;
+    text-align: right;
+  }
+
+  .ec-icon-run-menu__col-icon {
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    .sds-svg-icon {
+      fill: $white;
+    }
+  }
+
+  .ec-icon-run-menu__process-list {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ec-icon-run-menu__row--process-item {
+    width: 670px;
+    float: right;
+  }
+  .ec-icon-run-menu__row--application-row {
+    width: 920px;
+    .ec-icon-run-menu__content {
+      width: 770px;
+    }
+  }
+
+  .ec-icon-run-menu__col--process-item-label {
+    float: right;
+    text-align: right;
+  }
+
+  .ec-icon-run-menu__col--process-item-control {
+    width: 35px;
+  }
+
+  .run-menu-icon {
+    min-width: 40px;
+    text-align: center;
+    .sds-svg-icon {
+      margin: 0 auto;
+    }
+  }
+
+  .run-menu-env-label {
+    max-width: 40px;
+    text-align: right;
+    display: block;
+  }
+
+  .ec-icon-run-menu__col--process-item-status-indicator {
+    min-width: 40px;
+    text-align: center;
+
+    .sds-svg-icon {
+      margin: 0 auto;
+    }
+    .sds-svg-icon--icon-runtime-status-success {
+      fill: $default-green;
+    }
+    .sds-svg-icon--icon-runtime-status-failed {
+      fill: $errorRed;
+    }
+    .sds-svg-icon--icon-runtime-status-aborted {
+      fill: $seventy-percent-gray;
+    }
+    .sds-svg-icon--icon-runtime-status-running {
+      fill: $soft-light-blue;
+    }
+    .sds-svg-icon--icon-runtime-status-flagged {
+      fill: $warningYellow;
+    }
+  }
+
+  .ec-icon-run-menu__col--process-item-status-label {
+    text-align: right;
+  }
+
+  .ec-icon-run-menu__col--process-item-process-name {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .ec-icon-run-menu__col--process-item-environment-name {
+    flex: 1;
+    min-width: 260px;
+    margin-right: 20px;
+  }
+
+  .ec-icon-run-menu__col--process-item-time {
+    min-width: 175px;
+  }
+
+  .ec-icon-run-menu__col--process-item-time--hidden {
+    visibility: hidden;
+  }
+
+  .ec-icon-run-menu__col--start-from {
+    width: 230px;
+  }
+
+  .ec-icon-run-menu__col--stages {
+    width: 100px;
+  }
+
+
+  .ec-icon-run-menu__title {
+    margin-right: 10px;
+    color: $runMenuTitleColor;
+    text-align: right;
+    line-height: 48px;
+  }
+
+  .ec-icon-run-menu__control {
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .sds-svg-icon {
+      fill: $runMenuIconColor;
+    }
+  }
+}
+
+.credential-picker,
+.env-picker {
+  margin: 0 auto;
+}
+.tab-container {
+  width: 100%;
+  height: 34px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 15px;
+  margin-bottom: 10px;
+  &__parameter,
+  &__credential,
+  &__environment,
+  &__environment-template {
+    display: inline-block;
+    width: 152px;
+    height: 34px;
+    border: 2px solid $select-toggle-active-border-color;
+    line-height: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+    &.active {
+      background-color: $select-toggle-active-bg-color;
+      color: $select-toggle-active-color;
+    }
+  }
+}
+.item-container {
+  // Fix for IE
+  &:before {
+    content: ' ';
+  }
+  margin: 10px auto;
+  max-height: 150px;
+  overflow-y: auto;
+  .credential-item,
+  .env-item {
+    overflow: hidden;
+    width: 100%;
+    height: 22px;
+    padding: 2px 0;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      background-color: $search-header-bg;
+    }
+    &__name {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 160px);
+      @include sds-ellipsis;
+    }
+    &__date {
+      display: inline-block;
+      width: 160px;
+      text-align: right;
+      vertical-align: top;
+      color: $envResCheckSelectedDefaultColor;
+    }
+    .sds-icon {
+      margin-left: 2px;
+      vertical-align: top;
+      margin-right: 10px;
+      color: $sds-select-icon-color-inactive;
+      &:before {
+        color: $sds-select-icon-color-inactive;
+      }
+    }
+  }
+
+}

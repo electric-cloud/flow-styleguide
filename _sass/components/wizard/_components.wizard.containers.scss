@@ -1,0 +1,190 @@
+//================================================
+//  Wizard containers
+//================================================
+
+.wizard-container-configuration {
+  font-size: 16px;
+
+  .react-form__label {
+    font-size: 16px;
+  }
+
+  .ec-react-wizard__content {
+    height: 490px;
+  }
+
+  .container-header {
+    position: relative;
+    @include modal-header-text();
+  }
+
+  .separator {
+    @include separator();
+
+    margin-bottom: 10px;
+  }
+
+  .environment-variable-separator,
+  .environment-port-separator {
+    border-bottom: 2px solid $default-black;
+    margin-bottom: 10px;
+  }
+
+  .container-section-expand-collapse,
+  .global-expand-collapse {
+    position: absolute;
+    right: 0;
+  }
+
+  .entry-category-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .global-expand-collapse {
+    right: 5px;
+  }
+
+  .container-form {
+    height: calc(100% - 90px);
+    overflow-y: scroll;
+    position: relative;
+    margin-right: -10px;
+
+    .error-tile {
+      left: 35px;
+    }
+
+    .container-form-row {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 70px;
+    }
+
+    .container-config-command-textarea {
+      .react-form__textarea {
+        width: 318px;
+        box-sizing: initial;
+      }
+    }
+
+    .has-error {
+      .react-form__txt-input {
+        border-color: $errorRed;
+      }
+
+      .react-form__validation {
+        width: 100%;
+        max-width: 330px;
+        margin: 0;
+        text-align: left;
+        font-size: 13px;
+      }
+    }
+
+    .environment-variables,
+    .environment-ports {
+      position: relative;
+
+      .environment-variables-list,
+      .environment-ports-list {
+        margin: 10px 20px;
+      }
+
+      .environment-variable-add,
+      .environment-port-add {
+        position: absolute;
+        top: 0;
+        right: 40px;
+        display: flex;
+        align-items: flex-end;
+
+        &.disabled {
+          @include disabled();
+        }
+      }
+
+      .environment-variables-items,
+      .environment-ports-items {
+        .environment-variable-item,
+        .environment-port-item {
+          display: flex;
+
+          .react-form__txt-input-holder {
+            width: calc(100% - 10px);
+          }
+
+          .react-form__txt-input {
+            width: inherit;
+          }
+
+          .item-col-number {
+            width: 80px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-top: 8px;
+          }
+
+          .item-col-variable {
+            flex-grow: 10;
+            flex-basis: 100px;
+          }
+
+          .item-col-value {
+            flex-grow: 7;
+            flex-basis: 100px;
+          }
+
+          .item-col-port {
+            flex-grow: 7;
+            flex-basis: 100px;
+          }
+
+          .item-col-name {
+            flex-grow: 10;
+            flex-basis: 100px;
+          }
+
+          .item-col-delete {
+            width: 100px;
+            text-align: right;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            .sds-svg-icon--button-line-item-remove {
+              margin-top: 8px;
+              margin-right: 46px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.create-container-from-existing {
+  font-weight: 200;
+
+  .ec-col--existing-apps-list {
+    width: 800px;
+    padding: 20px 30px;
+    height: 514px;
+  }
+
+  .ec-col--components-list {
+    width: 420px;
+    background: $ten-percent-black;
+    padding: 20px 30px;
+    height: 514px;
+  }
+  .sds-svg-icon--icon-application {
+    min-width: 23px;
+  }
+}
+
+.modals-box .create-container-from-existing .ec-react-wizard__content {
+  padding: 0;
+}

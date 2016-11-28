@@ -1,0 +1,324 @@
+//================================================
+//  Wizard batch-size
+//================================================
+
+.batch-size-container {
+  font-size: 18px;
+  height: 426px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include flex-column;
+
+  &--runtime {
+    overflow: visible;
+    height: auto;
+  }
+}
+
+.batch-size-header {
+  @include modal-header-text();
+
+  &__text {
+    display: inline-block;
+    max-width: 1000px;
+    vertical-align: top;
+    @include sds-ellipsis();
+  }
+  &__icon {
+    fill: $orange;
+    margin: 0 10px;
+  }
+}
+
+.batch-size-item {
+  width: 860px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  flex: 0 0 120px;
+  @include flex-column;
+  box-sizing: border-box;
+  background-color: $ten-percent-black;
+  &--runtime {
+    flex: 0 0 80px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 530px;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  .react-form__radio-container {
+    &--count {
+      display: inline-block;
+    }
+    &--percentage {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    &__label__text {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    &__label__icon {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.batch-size-item-header,
+.batch-size-item-body {
+  flex: 0 0 40px;
+  display: flex;
+  line-height: 40px;
+}
+
+.batch-size-item-header {
+  border-bottom: 2px solid $simple-light-gray;
+  box-sizing: border-box;
+  &__index {
+    display: inline-block;
+    flex: 0 0 30px;
+    text-align: center;
+    vertical-align: top;
+  }
+  &__title {
+    flex: 0 0 790px;
+    text-align: left;
+    @include sds-ellipsis();
+    &--runtime {
+      flex: 0 1 460px;
+    }
+  }
+  .sds-svg-icon--icon-application-tier {
+    margin-top: -2px;
+  }
+}
+
+.batch-size-item-body {
+  margin-top: 10px;
+  &--runtime {
+    margin-top: 0;
+    text-align: right;
+    .sds-svg-icon--icon-resource {
+      fill: $orange;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+
+
+.batch-size-item-type,
+.batch-size-item-text {
+  vertical-align: top;
+  flex: 0 0 140px;
+  &--runtime {
+    flex: 0 1 460px;
+    @include sds-ellipsis();
+  }
+  .sds-svg-icon--icon-resource {
+    fill: $orange;
+  }
+}
+
+.batch-size-item-type {
+  text-align: left;
+}
+
+.batch-size-item-text {
+  text-align: right;
+}
+
+.batch-size-item-value {
+  flex: 0 0 540px;
+  position: relative;
+  &__example {
+    position: absolute;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: 0 auto;
+    text-align: center;
+    &.hide {
+      display: none;
+    }
+  }
+}
+
+.smart-input {
+  @include smart-input;
+
+  &--with-menu {
+    padding-left: 50px;
+  }
+
+  &--number {
+    width: 140px;
+    margin: 0 auto;
+    padding-left: 45px;
+  }
+
+  &__menu {
+    height: 100%;
+    position: absolute;
+    width: 50px;
+    left: 0;
+    top: 0;
+    &--number {
+      width: 45px;
+    }
+  }
+
+  &__rightIcon {
+    position: absolute;
+    right: 5px;
+    line-height: 36px;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .sds-svg-icon {
+    &--icon-menu-dropdown {
+      margin: 0;
+    }
+    &__wrapper {
+      &--icon-menu-dropdown {
+        width: 24px;
+        margin: 0;
+        cursor: pointer;
+        position: relative;
+        top: 2px;
+        vertical-align: top;
+        color: $default-black;
+      }
+    }
+  }
+
+  .smart-input__menu-list {
+    position: absolute;
+    top: 100%;
+    margin-top: 4px;
+    width: 40px;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .smart-input__menu-active {
+    height: 36px;
+    line-height: 36px;
+    font-weight: bold;
+    color: $default-black;
+
+    .sds-svg-icon {
+      &--icon-variable,
+      &--icon-type-entry {
+        position: relative;
+      }
+    }
+  }
+
+  &__menu-active-icon {
+    text-align: center;
+    display: inline-block;
+    width: 25px;
+    &--number {
+      width: 21px;
+    }
+  }
+
+  &__clear-all {
+    position: absolute;
+    right: 5px;
+    height: 36px;
+    line-height: 36px;
+    z-index: 1;
+    .sds-svg-icon {
+      fill: $fifty-percent-gray;
+      cursor: pointer;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__menu-item {
+    cursor: pointer;
+    background: $default-black;
+    color: $default-white;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    &:hover {
+      background: $soft-dark-gray;
+    }
+
+    .sds-svg-icon {
+      &--icon-variable,
+      &--icon-type-entry {
+        position: relative;
+        fill: $default-white;
+      }
+    }
+  }
+
+  .smart-input__variable-input-container {
+    margin: 7px 0 8px;
+    line-height: 20px;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .smart-input__variable-input {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px 0 10px;
+    &--number {
+      padding: 0 50px 0 0;
+      text-align: center;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &__control-btn-container {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 20px;
+    height: 36px;
+    line-height: 18px;
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__control-btn {
+    fill: $fifty-percent-gray;
+    cursor: pointer;
+    &:hover {
+      fill: $forty-percent-gray;
+    }
+    .sds-svg-icon--button-one-increment-up {
+      vertical-align: top;
+      background-color: $default-white;
+    }
+    .sds-svg-icon--button-one-increment-down {
+      vertical-align: bottom;
+      background-color: $default-white;
+    }
+  }
+}

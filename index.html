@@ -1,0 +1,15 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for component in site.components %}
+    <div class="post">
+      <h1 class="post-title">
+        <a href="{{ component.url | prepend: site.github.url }}">{{ component.title }}</a>
+      </h1>
+      {{ component.content }}
+    </div>
+  {% endfor %}
+</div>

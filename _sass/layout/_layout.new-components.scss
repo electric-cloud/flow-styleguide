@@ -1,0 +1,133 @@
+//================================================
+//  New components
+//================================================
+
+.create-component {
+
+  .parameter-container {
+    border-top: 2px solid $forty-percent-gray;
+    height: 422px;
+  }
+
+  .ec-react-wizard {
+    position: relative;
+  }
+
+  .ec-react-wizard__attention {
+    z-index: 11002;
+    width: auto;
+  }
+
+  .ec-row {
+    font-weight: 200;
+    font-size: 18px;
+  }
+
+  .ec-row--header {
+    @include modal-header-text();
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    .add-component {
+      font-size: 14px;
+    }
+  }
+  .parameter-container--empty {
+    font-size: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+.create-component-start {
+  font-size: 18px;
+
+  .create-btn {
+    font-weight: 200;
+    position: relative;
+    margin: 0 30px 8px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 80px;
+    background-color: $very-soft-gray;
+
+    &:hover {
+      background-color: $soft-gray;
+    }
+
+    .sds-icon {
+      font-size: 26px;
+      display: block;
+      position: absolute;
+      line-height: 80px;
+      left: 30px;
+
+      &.add-component {
+        color: $dark-blue;
+      }
+      &.component2,
+      &.application {
+        color: $very-soft-blue;
+      }
+    }
+  }
+}
+
+.create-component-content {
+  .lookup-btn {
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .sds-icon.lookup {
+    font-size: 18px;
+    width: 38px;
+    display: inline-block;
+  }
+
+
+  .form__select-container {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 auto 20px;
+    width: 300px;
+    height: 40px;
+    position: relative;
+  }
+  .ecam-link {
+    position: absolute;
+    left: 100%;
+    margin-left: 20px;
+    top: 10px;
+    font-size: 14px;
+  }
+}
+
+.component-plugin-container {
+  padding-top: 20px;
+  margin: 0 30px;
+  border-top: 2px solid $forty-percent-gray;
+}
+
+.create-component-from-existing {
+
+  .ec-col--existing-apps-list {
+    width: 800px;
+    padding: 20px 30px;
+    height: 514px;
+  }
+
+  .ec-col--components-list {
+    width: 420px;
+    background: $ten-percent-black;
+    padding: 20px 30px;
+    height: 514px;
+  }
+}
+
+
+.modals-box .ec-react-wizard--from-app-comp .ec-react-wizard__content {
+  padding: 0;
+}

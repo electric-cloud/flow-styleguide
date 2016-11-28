@@ -1,0 +1,198 @@
+//================================================
+//  Project-select
+//================================================
+
+.ec-project-select-picker {
+  $block: '.ec-project-select-picker';
+  letter-spacing: normal;
+  color: $default-black;
+  line-height: 20px;
+
+  font-size: 18px;
+  font-weight: 200;
+  padding: 10px;
+
+  .sds-icon.toolbox:before {
+    color: $default-black;
+  }
+  .sds-svg-icon--icon-project {
+    fill: $default-black;
+  }
+
+  .sds-icon.check-mark {
+    color: $soft-dark-gray;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #{$block}__project {
+    display: flex;
+    padding: 4px 0;
+    cursor: default;
+    margin: 2px 0;
+  }
+
+  #{$block}__project-options {
+    overflow-y: auto;
+    max-height: 300px;
+
+    #{$block}__project:hover {
+      background-color: $simple-light-gray;
+    }
+
+    #{$block}__project {
+      cursor: pointer;
+    }
+
+    #{$block}__not-found {
+      line-height: 40px;
+      margin-top: 5px;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+
+  #{$block}__project--selected:not(#{$block}__project--header) {
+    background-color: $fifty-percent-gray;
+    &#{$block}__project:hover {
+      background-color: $soft-dark-gray;
+    }
+    #{$block}__option {
+      &--number,
+      &--project-name {
+        color: $white;
+      }
+      &--multiselect,
+      &--icon {
+        .sds-icon {
+          color: $white;
+          &:before {
+            color: $white;
+          }
+        }
+        .sds-svg-icon--icon-project {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  #{$block}__separator {
+    background-color: $default-black;
+    width: 100%;
+    height: 2px;
+  }
+
+  #{$block}__option {
+    margin-right: 10px;
+  }
+
+  #{$block}__option--number {
+    text-align: right;
+    width: 40px;
+    overflow: hidden;
+  }
+
+  #{$block}__option--project-name {
+    width: 220px;
+    text-align: left;
+    @include sds-ellipsis();
+  }
+
+  #{$block}__option--multiselect {
+    text-align: center;
+    width: 30px;
+    height: 20px;
+  }
+
+  #{$block}__project--header {
+    font-weight: 400;
+
+    &#{$block}__project--multiselect {
+      cursor: pointer;
+      #{$block}__option--number {
+        margin-left: 30px;
+      }
+    }
+
+    &#{$block}__project--selected {
+      background-color: $white;
+    }
+
+    #{$block}__option--number,
+    #{$block}__option--project-name {
+      font-weight: bold;
+    }
+  }
+
+  .search-collapsable__search-input {
+    padding-left: 23px;
+  }
+
+  #{$block}-buttons {
+    margin: 6px 0 0;
+    @include clearfix();
+  }
+
+  #{$block}-button {
+    height: 30px;
+    line-height: 30px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+  }
+
+  #{$block}-submit {
+    background: $simple-middle-blue;
+    &:hover {
+      background: $medium-dark-blue;
+    }
+    &.disabled {
+      background: $forty-percent-gray;
+    }
+  }
+
+  #{$block}-cancel {
+    background: $very-light-gray;
+    &:hover {
+      background: $gray;
+    }
+  }
+
+  #{$block}-selected-count {
+    position: absolute;
+    right: 13px;
+  }
+}
+
+.control-bar-container {
+  .project-select-popover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include sds-ellipsis();
+    .sds-icon.dropdown {
+      cursor: pointer;
+      font-size: 8px;
+      margin-right: 4px;
+    }
+
+    &__label {
+      flex: 0 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.ec-row--project-select {
+  position: relative;
+  height: 40px;
+  margin: 0 auto 20px;
+  width: 330px;
+  font-size: 18px;
+}

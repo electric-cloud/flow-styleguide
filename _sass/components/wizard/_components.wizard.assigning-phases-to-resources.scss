@@ -1,0 +1,363 @@
+//================================================
+//  Wizard assigning-phases-to-resources
+//================================================
+
+.modals-box .ec-react-wizard--assigning-phases-to-resources {
+  .ec-react-wizard {
+    position: relative;
+
+    &__window--second {
+      display: none;
+    }
+
+    &__body {
+      width: 1266px;
+    }
+
+    &__loader {
+      @include flex-column;
+    }
+
+    &__content {
+      @include flex-column;
+    }
+
+    .list-selector {
+      .label {
+        font-size: 14px;
+        color: $soft-dark-gray;
+      }
+
+      .selector {
+        margin: 0 20px;
+
+        .selector-icon {
+          margin-right: 5px;
+          user-select: none;
+        }
+
+        .text {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &__header-left-block {
+      .search-collapsable {
+        margin-left: 14px;
+        display: inline-block;
+
+        &__search-input {
+          padding: 4px 24px;
+        }
+      }
+    }
+
+    &__header-center-block {
+      width: 50%;
+      margin: 0 25%;
+    }
+
+    &__header-right-block-phases {
+      margin-right: 10px;
+      font-size: 14px;
+      vertical-align: middle;
+
+      .sds-svg-icon--icon-phases {
+        fill: $medium-dark-blue;
+      }
+    }
+
+    &__header-right-block-phases.disabled {
+      color: $very-light-gray;
+
+      .sds-svg-icon--icon-phases {
+        fill: $very-light-gray;
+      }
+    }
+
+    &__list-header {
+      height: 40px;
+      padding-right: 15px;
+      line-height: 40px;
+      text-align: left;
+      display: flex;
+      border-bottom: 2px solid $gray;
+    }
+
+    &__list-filters {
+      display: flex;
+      border-bottom: 2px solid $gray;
+
+      &-title {
+        width: 137px;
+        text-align: right;
+        line-height: 38px;
+      }
+    }
+
+    .filters-field {
+      flex: 1;
+      padding: 2px;
+      position: relative;
+      min-height: 34px;
+      padding-right: 24px;
+
+      &__close {
+        right: 0;
+        bottom: 4px;
+        position: absolute;
+        height: 26px;
+        border: 2px solid $fifty-percent-gray;
+
+        .sds-svg-icon {
+          fill: $fifty-percent-gray;
+        }
+      }
+
+      &__tile {
+        color: $default-white;
+        float: left;
+        padding-right: 7px;
+        margin: 2px;
+        line-height: 30px;
+        font-size: 14px;
+        background-color: $fifty-percent-gray;
+        max-width: 200px;
+        @include sds-ellipsis();
+
+        .sds-svg-icon {
+          fill: $default-white;
+          margin-top: 11px;
+          vertical-align: top;
+        }
+
+        &-title {
+          font-size: 13px;
+          font-weight: 200;
+          vertical-align: top;
+        }
+      }
+    }
+
+    &__list {
+      flex: 1;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    &__list-item {
+      height: 38px;
+      line-height: 38px;
+      text-align: left;
+      display: flex;
+      border-bottom: 1px solid $very-light-gray;
+
+      &:hover {
+        background-color: $simple-light-gray;
+      }
+    }
+
+    &__list-item.selected {
+      color: $default-white;
+      background-color: $gray;
+
+      .sds-svg-icon {
+        fill: $default-white;
+      }
+
+      &:hover {
+        background-color: $soft-dark-gray;
+      }
+    }
+
+    &__list-item-mark {
+      width: 40px;
+      text-align: center;
+    }
+
+    &__list-item-name {
+      flex: 3;
+      padding: 0 5px;
+      @include sds-ellipsis();
+
+      .sds-svg-icon {
+        margin-right: 8px;
+      }
+
+      .text {
+        vertical-align: middle;
+      }
+    }
+
+    &__list-item-platform {
+      width: 140px;
+    }
+
+    &__list-item-state {
+      width: 140px;
+
+      .sds-svg-icon {
+        &--icon-resources-up {
+          fill: $default-green;
+        }
+
+        &--icon-resources-down {
+          fill: $default-red;
+        }
+      }
+    }
+
+    &__list-item-tiers {
+      flex: 2;
+      padding: 0 5px;
+      @include sds-ellipsis();
+    }
+
+    &__list-item-phases {
+      flex: 2;
+      padding: 0 5px;
+      @include sds-ellipsis();
+    }
+
+    &__list-item-details {
+      width: 30px;
+      text-align: center;
+    }
+
+    &__attention-container {
+      left: 0;
+      border-bottom: 2px solid $default-white;
+    }
+
+    &__phases {
+        @include flex-column;
+        width: 375px;
+        padding: 0 0 60px 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: $ten-percent-gray;
+
+      &__header {
+        height: 44px;
+        flex-shrink: 0;
+        line-height: 44px;
+        display: flex;
+        border-bottom: 2px solid $default-black;
+      }
+
+      &__header-title {
+        flex: 1;
+      }
+
+      &__list {
+        flex: 1;
+        padding-right: 20px;
+        overflow-x: auto;
+      }
+
+      &__list-item {
+        line-height: 37px;
+        border-bottom: 1px solid $very-light-gray;
+        @include sds-ellipsis();
+
+        .icon-toggle-enabled {
+          margin: 0 8px;
+        }
+
+        &:hover {
+          background-color: $simple-light-gray;
+        }
+      }
+
+      &__list-item-name {
+        margin-left: 5px;
+      }
+    }
+
+    &__footer {
+      background-color: $very-soft-gray;
+
+      .ec-wizard-btn {
+        width: 200px;
+        float: right;
+      }
+    }
+  }
+}
+
+.resource-filtering {
+  padding: 10px;
+  line-height: 28px;
+
+  .header {
+    border-bottom: 2px solid $default-black;
+
+    .item {
+      font-weight: bold;
+    }
+  }
+
+  .list {
+    overflow-y: auto;
+    max-height: 380px;
+
+    .item {
+      .sds-svg-icon {
+        &--icon-checkmarked {
+          fill: $soft-dark-gray;
+        }
+      }
+
+      &:hover {
+        background-color: $soft-gray;
+      }
+    }
+
+    .item.selected {
+      cursor: pointer;
+      background-color: $fifty-percent-gray;
+      color: $default-white;
+
+      .sds-svg-icon {
+        fill: $default-white;
+      }
+
+      &:hover {
+        background-color: $soft-dark-gray;
+      }
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    display: flex;
+    margin: 2px 0;
+  }
+
+  .mark,
+  .number,
+  .icon {
+    text-align: center;
+  }
+
+  .mark {
+    width: 20px;
+  }
+
+  .number {
+    width: 30px;
+  }
+
+  .icon {
+    width: 40px;
+  }
+
+  .label {
+    flex: 1;
+    @include sds-ellipsis();
+  }
+}

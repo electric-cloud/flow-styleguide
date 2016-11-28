@@ -1,0 +1,476 @@
+//================================================
+//  Grid releases
+//================================================
+
+.ec-grid-primary--releases {
+  .ec-grid-primary__row {
+    height: auto;
+    flex-direction: column;
+    &:first-child {
+      margin-top: 0;
+    }
+    &.selected {
+      .releases-list-time {
+        color: $default-white;
+        &-wrapper {
+          color: $default-white;
+        }
+        &-title {
+          color: $default-white;
+        }
+      }
+    }
+    &.transparent {
+      opacity: 0.3;
+    }
+
+    &--head {
+      flex-direction: row;
+      height: 48px;
+      border-bottom: 2px solid $seventy-percent-gray;
+      margin-bottom: 0;
+      display: flex;
+      &:last-child {
+        border: none;
+      }
+      .ec-react-help__wrapper {
+        margin-left: 0;
+      }
+      &-inner {
+        flex: 28;
+        min-width: 1px;
+        display: flex;
+        border-right: 2px solid $light-gray;
+        &:last-child {
+          border: none;
+        }
+      }
+      &-inner-chart {
+        flex: 44;
+      }
+    }
+
+    &--details {
+      height: 120px;
+      margin-bottom: 0;
+      display: flex;
+      &-inner {
+        border-right: 2px solid $light-gray;
+        flex: 28;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        min-width: 1px;
+        &:last-child {
+          border: none;
+        }
+        .ec-react-help__wrapper {
+          position: absolute;
+          right: 1px;
+        }
+
+        .ec-grid-primary__col {
+          align-content: center;
+          @include sds-ellipsis();
+          margin: 0;
+          box-sizing: border-box;
+          padding: 8px 22px 8px 0;
+          line-height: 22px;
+          border-bottom: 2px solid $light-gray;
+          &:last-child {
+            border: none;
+          }
+
+          &--text {
+            max-height: none;
+            display: block;
+            position: relative;
+            @include sds-ellipsis();
+            white-space: pre;
+            top: 0;
+            transform: translateY(0);
+            width: 100%;
+            align-self: center;
+          }
+        }
+
+        .ec-grid-primary__col--flex-100 {
+          line-height: 12px;
+          margin: 0 16px;
+        }
+
+        .release-list-item-details {
+          display: flex;
+          position: relative;
+          flex-direction: row;
+          width: 100%;
+        }
+
+        .releases-list-abort-rerun {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &.disabled {
+            @include disabled();
+          }
+
+          .sds-svg-icon--icon-runtime-abort {
+            fill: $default-red;
+          }
+
+          .sds-svg-icon--icon-runtime-rerun {
+            fill: $saturated-green;
+          }
+        }
+
+        .releases-list-pipeline-start-time {
+          flex-grow: 1;
+          margin-right: -20px;
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .releases-list-time-pulldown {
+          width: 100%;
+          height: 80px;
+          display: flex;
+          box-sizing: border-box;
+          position: absolute;
+          left: 0;
+          border-right: 2px solid $light-gray;
+          border-bottom: 2px solid $light-gray;
+          background-color: $ten-percent-gray;
+          z-index: 1;
+
+          .ec-grid-primary__col {
+            padding: 8px;
+            height: 80px;
+
+            &--flex {
+              flex: 1;
+              flex-direction: column;
+              align-items: flex-start;
+              line-height: 32px;
+            }
+            &--time-toggler {
+              width: 18px;
+              padding: 0;
+            }
+            &--time-fake-controls {
+              width: 80px;
+            }
+          }
+        }
+
+        .release-list-chart {
+          position: relative;
+          float: left;
+          display: inline-block;
+          width: 110px;
+          height: 120px;
+
+          &__diagram {
+            height: 120px;
+          }
+
+          &__progress {
+            position: absolute;
+            top: 42px;
+            left: 33px;
+            width: 56px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+          }
+
+          &__percentage {
+            font-size: 14px;
+          }
+
+          &__d3-item {
+            stroke: $ten-percent-gray;
+            stroke-width: 3;
+          }
+
+          &__link {
+            display: block;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+          }
+        }
+
+        .release-list-chart-details {
+          min-width: 1px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .sds-svg-icon--icon-gate-entry,
+          .sds-svg-icon--icon-gate-exit {
+            fill: $default-red;
+          }
+        }
+      }
+
+      &-inner-chart {
+        flex-direction: row;
+        position: relative;
+        flex: 44;
+
+        .details-inner-chart__navigator {
+          width: 30px;
+          justify-content: center;
+          display: flex;
+          padding-top: 28px;
+
+          &--left {
+            border-right: 2px;
+            border-right-style: solid;
+            border-color: $light-gray;
+          }
+
+          &--right {
+            border-left: 2px;
+            border-left-style: solid;
+            border-color: $light-gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .details-inner-chart__navigator-pulldown {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-top: 2px;
+              border-top-style: solid;
+              border-color: $light-gray;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ec-grid-primary__col {
+    .releases-list-time {
+      &-wrapper {
+        @include sds-ellipsis();
+
+        &--planning {
+          color: $true-green;
+        }
+
+        &--running {
+          color: $middle-blue;
+        }
+
+        &--completed {
+          color: $dark-blue;
+        }
+
+        &--too-late {
+          color: $default-red;
+        }
+      }
+
+      &-title {
+        color: $default-black;
+      }
+    }
+
+    &--toggler {
+      width: 18px;
+      margin: 0;
+    }
+  }
+
+  .ec-grid-primary__col--approver {
+    .sds-icon {
+      margin: 0;
+    }
+  }
+
+  .sds-icon {
+    vertical-align: middle;
+    display: inline-block;
+    &.clock {
+      font-size: 18px;
+      margin-top: -4px;
+    }
+
+    &.dots {
+      font-size: 7px;
+    }
+
+    &.release-summary {
+      position: relative;
+      top: -1px;
+      cursor: pointer;
+      color: $gray;
+    }
+
+    &.pipeline {
+      margin-right: 7px;
+      font-size: 12px;
+      color: $violet;
+      margin-top: -1px;
+    }
+
+    &.toolbox {
+      margin-right: 7px;
+      font-size: 16px;
+      margin-top: -1px;
+    }
+
+    &.stages {
+      font-size: 10px;
+      color: $light-blue;
+      margin-top: -4px;
+    }
+
+    &.note {
+      margin: 0 12px;
+      top: -2px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    &.planning {
+      margin: 0 7px;
+      font-size: 25px;
+      color: $true-green;
+    }
+
+    &.reload {
+      margin: 0 7px;
+      font-size: 25px;
+      color: $soft-light-blue;
+    }
+
+    &.completed {
+      margin: 0 7px;
+      font-size: 25px;
+      color: $dark-blue;
+    }
+
+    &.inventory {
+      &.disabled {
+        color: $simple-light-gray;
+        cursor: default;
+      }
+    }
+  }
+
+  .note-list {
+    cursor: pointer;
+  }
+
+
+  .release-list-pipeline-runs {
+    position: absolute;
+    top: 120px;
+    left: -2px;
+    width: 100%;
+    height: 250px;
+    border-top: 2px solid $light-gray;
+    z-index: 2;
+    box-sizing: border-box;
+    background-color: $ten-percent-gray;
+
+    .ec-grid-primary__row {
+      flex-direction: row;
+
+      &:hover .ec-grid-primary__col--text {
+        background-color: $soft-gray;
+      }
+    }
+
+    .ec-grid-primary__col {
+      border-bottom: 0;
+
+      &--text {
+        max-height: 36px;
+        background-color: $ten-percent-gray;
+        text-align: justify;
+        white-space: normal;
+
+        &:before,
+        &:after {
+          position: absolute;
+          right: 0;
+          width: 1.2em;
+          height: 18px;
+          background-color: inherit;
+        }
+
+        &:before {
+          content: '...';
+          bottom: 0;
+          padding-left: 2px;
+        }
+
+        &:after {
+          content: '';
+          margin-top: 0.2em;
+        }
+      }
+    }
+
+    .pipeline-runs-count {
+      font-size: 16px;
+    }
+
+    .pipeline-runs-filters {
+      width: 250px;
+      padding-right: 0;
+      fill: $thirty-percent-black;
+
+      .sds-svg-icon {
+        margin: 0 10px;
+      }
+
+      .sds-svg-icon__wrapper:last-child .sds-svg-icon {
+        margin-right: 0;
+      }
+
+      .sds-svg-icon--icon-runtime-status-failed {
+        margin: 0 7px;
+      }
+
+      .active {
+        fill: $black;
+      }
+    }
+
+    .release-pieline-runs-items {
+      height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .sds-svg-icon--icon-runtime-status-aborted {
+        fill: $fifty-percent-gray;
+      }
+      .sds-svg-icon--icon-runtime-status-failed {
+        fill: $default-red;
+      }
+      .sds-svg-icon--icon-runtime-status-running {
+        fill: $soft-light-blue;
+      }
+      .sds-svg-icon--icon-runtime-status-running {
+        fill: $soft-light-blue;
+      }
+      .sds-svg-icon--icon-runtime-status-flagged {
+        fill: $dark-orange;
+      }
+      .sds-svg-icon--icon-runtime-status-success {
+        fill: $saturated-green;
+      }
+    }
+  }
+
+}

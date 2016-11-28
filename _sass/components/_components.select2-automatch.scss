@@ -1,0 +1,246 @@
+//================================================
+//  Select Autocomplete
+//================================================
+
+.sds-select-automatch {
+  @include smart-input;
+
+  &--with-menu {
+    padding-left: 60px;
+  }
+
+  .sds-select-automatch__menu {
+    height: 100%;
+    position: absolute;
+    width: 60px;
+    left: -2px;
+    top: 0;
+  }
+
+  .sds-svg-icon {
+    &--icon-menu-dropdown {
+      margin: 0;
+    }
+    &__wrapper {
+      &--icon-menu-dropdown {
+        margin: 0 0 0 10px;
+        cursor: pointer;
+        position: relative;
+        top: 2px;
+        vertical-align: top;
+        color: $default-black;
+      }
+    }
+  }
+
+  .sds-select-automatch__menu-list {
+    position: absolute;
+    top: 100%;
+    margin-top: 4px;
+    width: 100%;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .sds-select-automatch__menu-active {
+    height: 36px;
+    line-height: 36px;
+    font-weight: bold;
+    color: $default-black;
+    .sds-icon {
+      &.access {
+        display: inline-block;
+        font-size: 22px;
+        position: relative;
+        margin: 0;
+      }
+    }
+
+    .sds-svg-icon {
+      &--icon-variable {
+        position: relative;
+      }
+    }
+  }
+
+  .sds-select-automatch__menu-active-icon {
+    text-align: center;
+    display: inline-block;
+    width: 24px;
+  }
+
+  .sds-select-automatch__remove-all.sds-icon.remove {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    font-size: 11px;
+    line-height: 11px;
+    cursor: pointer;
+    z-index: 1;
+    color: $fifty-percent-gray;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .sds-select-automatch__menu-item {
+    cursor: pointer;
+    background: $default-black;
+    color: $default-white;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 20px;
+    text-align: center;
+    &:hover {
+      background: $soft-dark-gray;
+    }
+    .sds-icon {
+      &.access {
+        display: inline-block;
+        font-size: 20px;
+        position: relative;
+        margin: 0;
+      }
+    }
+
+    .sds-svg-icon {
+      &--icon-variable {
+        position: relative;
+        fill: $default-white;
+      }
+    }
+  }
+
+  .sds-select-automatch__variable-input-container {
+    margin: 7px 0;
+    &.hide {
+      display: none;
+    }
+  }
+
+  .sds-select-automatch__variable-input {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px 0 0;
+    height: 21px;
+    line-height: 21px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .sds-select-automatch-select2-container {
+    width: 100%;
+    &.hide {
+      display: none;
+    }
+  }
+
+  &--focused {
+    border-color: $middle-blue;
+    .sds-select-automatch__menu-active {
+      color: $middle-blue;
+      .sds-svg-icon {
+        &--variable {
+          fill: $middle-blue;
+        }
+      }
+    }
+  }
+
+  .select2-choices {
+    // !important because select2 also use .select2-drop-above styles
+    background: $select2-automatch-choices-bg !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-image: 0 !important;
+
+    .select2-search-choice {
+      font-size: 12px;
+      line-height: 12px;
+      background: $select2-automatch-search-choice-bg;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 5px 0 5px 5px;
+      padding: 5px 8px;
+
+      .select2-search-choice-close {
+        display: none;
+      }
+    }
+
+    .select2-search-field input {
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    .select2-search-choice-focus {
+      background: $select2-automatch-search-choice-focus;
+    }
+  }
+
+  .sds-select-automatch-loader {
+    display: none;
+    background: url('../img/loader.gif') center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    width: 20px;
+    height: 50%;
+    max-height: 20px;
+  }
+
+  &.searching-users {
+    .sds-select-automatch-loader {
+      display: block;
+    }
+  }
+}
+
+.sds-select-automatch-dropdown {
+  // !important beacuse select2 also use .select2-drop-above styles
+  background: $select2-automatch-drop-bg;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-top: 2px;
+
+  &.select2-drop-above {
+    margin-top: -2px;
+  }
+
+  &.searching-users {
+    // !important because select2 set inline display:block, but we need to hide it while searching
+    display: none !important;
+  }
+
+  .select2-results {
+    margin: 0;
+    padding: 0;
+
+    .select2-result-label {
+      font-size: 12px;
+      line-height: 12px;
+      padding: 4px 15px;
+    }
+
+    .select2-highlighted {
+      background: $select2-automatch-highlighted-bg;
+      color: $select2-automatch-highlighted-color;
+    }
+
+    .without-email {
+      color: $select2-automatch-without-email-color;
+    }
+
+    .select2-no-results {
+      display: none;
+    }
+  }
+}

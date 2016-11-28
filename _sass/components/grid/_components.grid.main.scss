@@ -1,0 +1,71 @@
+//================================================
+//  Grid
+//================================================
+
+.ec-grid-primary {
+  width: auto;
+  height: 100%;
+  z-index: 10;
+  cursor: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 20px;
+  position: relative;
+  &__list {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__sortable-container {
+    position: relative;
+  }
+}
+
+.ec-grid-primary--no-side-offsets {
+  margin: 0;
+}
+
+.ec-grid-primary__empty {
+  font-size: 18px;
+  line-height: 70px;
+  text-align: center;
+  cursor: pointer;
+  background-color: $ten-percent-gray;
+  color: $middle-blue;
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    color: $middle-blue;
+    text-decoration: none;
+  }
+
+  .sds-icon.plus-sign {
+    margin-left: 8px;
+  }
+
+  .sds-svg-icon {
+    &--button-add {
+      margin-left: 8px;
+      fill: $middle-blue;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.ec-grid-primary__empty-simple,
+.ec-grid-primary__loading {
+  cursor: default;
+  position: relative;
+  height: 50px;
+  padding: 0;
+  line-height: 50px;
+  margin-bottom: 8px;
+}
+
+.ec-grid-primary__empty-simple {
+  font-size: 18px;
+  text-align: center;
+  display: none;
+}

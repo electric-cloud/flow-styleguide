@@ -1,0 +1,141 @@
+//================================================
+//  Grid progress-bar
+//================================================
+
+.ec-grid-primary {
+  .execution {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .progress-bar {
+      position: relative;
+      background: $sky-blue;
+      height: 50px;
+
+      &.completed {
+        background: $completeGreen;
+      }
+      &.warning {
+        background: $warningLighterYellow;
+      }
+      &.error {
+        background: $errorLighterRed;
+      }
+      &.aborted {
+        background: $simple-light-gray;
+      }
+      &.skipped {
+        background: $simple-light-gray;
+      }
+    }
+
+    .exception {
+      float: right;
+      position: relative;
+    }
+  }
+
+  .pending {
+    .sds-svg-icon.manual-action {
+      fill: $middle-blue;
+      @include animate-pulsation();
+    }
+  }
+
+    //Runtime statuses
+  .not-running {
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        line-height: 32px;
+        font-size: 3px;
+        text-align: center;
+        background: $dark-gray;
+        color: $ten-percent-gray;
+        &:before {
+          content: $sds-icon-dots;
+        }
+      }
+    }
+  }
+
+
+  .error {
+    .ec-grid-primary__col--percentage {
+      color: $errorRed;
+    }
+
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        color: $default-red;
+        &:before {
+          content: $sds-icon-warning;
+        }
+      }
+    }
+  }
+
+  .warning {
+    .ec-grid-primary__col--percentage {
+      color: $warningYellow;
+    }
+
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        color: $dark-orange;
+        &:before {
+          content: $sds-icon-stage-warning;
+        }
+      }
+    }
+  }
+
+  .completed {
+    .ec-grid-primary__col--percentage {
+      color: $default-green;
+    }
+
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        color: $default-green;
+        &:before {
+          content: $sds-icon-success-round;
+        }
+      }
+    }
+  }
+
+  .aborted, .skipped {
+    .ec-grid-primary__col--percentage {
+      color: $seventy-percent-gray;
+    }
+
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        color: $fifty-percent-gray;
+        &:before {
+          content: $sds-icon-abort;
+        }
+      }
+    }
+  }
+
+  .skipped {
+    .ec-grid-primary__col--progress-icon {
+      .sds-icon {
+        color: $fifty-percent-gray;
+        &:before {
+          content: $sds-icon-skipped;
+        }
+      }
+    }
+  }
+}

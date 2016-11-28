@@ -1,0 +1,15 @@
+//================================================
+//  Wizard discover
+//================================================
+
+.discovery-wizard {
+  .plugin-select,
+  .configuration-select {
+    margin: 100px auto 0;
+    width: 350px;
+    font-size: 16px;
+  }
+  .sds-icon.plugin {
+    color: $black;
+  }
+}

@@ -1,0 +1,103 @@
+//================================================
+//  Popover
+//================================================
+
+.popover-box {
+  position: relative;
+  z-index: 999;
+}
+.popover-processes,
+.popover-maps {
+  li > a {
+    max-width: 250px;
+  }
+}
+
+.comp-popover {
+  z-index: 10;
+  li {
+    > a {
+      z-index: 10;
+    }
+  }
+}
+
+.app-component {
+  .comp-processes-counter .value,
+  .comp-maps-counter .value {
+    margin: 0;
+  }
+  .comp-processes-counter.processes-popover .dropdown,
+  .comp-maps-counter.maps-popover .dropdown {
+    float: left;
+    margin-top: 3px;
+    margin-right: 2px;
+  }
+
+  .popover-processes,
+  .popover-maps {
+    li {
+      a {
+        min-width: 105px;
+      }
+    }
+  }
+}
+
+.at-description-popover {
+  padding: 10px;
+
+  .plain-text {
+    overflow: auto;
+    width: 490px;
+    max-height: 220px;
+  }
+
+  em {
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+
+.multi-description {
+  cursor: pointer;
+  color: $fifty-percent-gray;
+  .sds-icon.info-description {
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+  }
+  &--disabled {
+    color: $thirty-percent-black;
+    cursor: default;
+  }
+  &__item {
+    padding: 8px 0;
+    margin: 0 5px;
+    border-bottom: 2px solid $default-black;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__item-title {
+    font-weight: bold;
+  }
+}
+
+.env-tier-rolling-deploy-popover {
+  width: 260px;
+  white-space: nowrap;
+  padding: 10px 20px;
+
+  .popover-list-item {
+    line-height: 25px;
+    @include sds-ellipsis;
+  }
+
+  .phase-name {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 50%;
+    @include sds-ellipsis;
+  }
+}

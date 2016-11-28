@@ -1,0 +1,145 @@
+//================================================
+//  Grid track-changes
+//================================================
+
+.ec-grid-primary--track-changes {
+  .ec-grid-primary__row {
+    height: 40px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 40px;
+  }
+
+  .ec-grid-primary__col {
+    height: 40px;
+    line-height: 40px;
+    .sds-icon.check-mark {
+      font-size: 12px;
+    }
+  }
+
+  .username {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ec-grid-primary--track-changes-details {
+  margin-bottom: 4px;
+  .ec-grid-primary__row {
+    height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 0 30px;
+  }
+
+  .ec-grid-primary__col {
+    height: auto;
+    line-height: 18px;
+    margin: 0;
+    padding: 10px 18px;
+    max-height: 205px;
+    border-right: 2px solid $default-white;
+    &--text {
+      white-space: pre-wrap;
+      display: block;
+      border-top: 2px solid $default-white;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      top: 0;
+      max-height: none;
+      transform: translateY(0);
+      line-height: 32px;
+      width: 100%;
+    }
+
+    .sds-icon.expand-details {
+      position: absolute;
+      right: 5px;
+      top: 15px;
+    }
+  }
+
+  .ec-grid-primary__head {
+    .ec-grid-primary__row {
+      .ec-grid-primary__col {
+        padding: 15px 18px 7px;
+      }
+    }
+  }
+}
+
+
+.ec-grid-primary--track-changes-modal-details {
+  height: auto;
+  margin-bottom: 4px;
+  .ec-grid-primary__row {
+    height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  .ec-grid-primary__col {
+    display: block;
+    height: auto;
+    line-height: 18px;
+    margin: 0;
+    padding: 10px 18px;
+    border-right: 2px solid $default-white;
+    &--text {
+      max-height: none;
+      display: block;
+      border-top: 2px solid $default-white;
+      position: relative;
+      @include sds-ellipsis();
+      white-space: pre-wrap;
+      top: 0;
+      transform: translateY(0);
+      line-height: 32px;
+      width: 100%;
+    }
+
+    &--select {
+      display: none;
+      cursor: pointer;
+      text-align: center;
+      border-top: 2px solid $default-white;
+      padding: 3px 0 5px;
+      font-size: 20px;
+      line-height: 23px;
+
+    }
+
+    .sds-icon.expand-details {
+      position: absolute;
+      right: 5px;
+      top: 15px;
+    }
+
+    ins {
+      background: $soft-green;
+    }
+
+    del {
+      background: $very-light-red;
+    }
+
+    &--flex-100 {
+      .ec-grid-primary__col--select {
+        display: block;
+      }
+    }
+  }
+
+  .ec-grid-primary__head {
+    .ec-grid-primary__row {
+      .ec-grid-primary__col {
+        padding: 15px 18px 7px;
+      }
+    }
+  }
+}

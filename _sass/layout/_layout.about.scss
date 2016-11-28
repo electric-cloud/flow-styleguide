@@ -1,0 +1,28 @@
+//================================================
+//  About
+//================================================
+
+.ec-react-wizard--about {
+
+  .ec-row {
+    &--about {
+      height: 40px;
+      margin-bottom: 20px;
+      padding-left: 18px;
+      text-align: left;
+      letter-spacing: 1px;
+
+      .ec-col {
+        height: 20px;
+      }
+    }
+
+    &--about-copyright {
+      height: 20px;
+      font-size: 12px;
+      letter-spacing: 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+}

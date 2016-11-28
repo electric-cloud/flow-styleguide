@@ -1,0 +1,284 @@
+//================================================
+//  Wizard create
+//================================================
+
+.ec-react-wizard--wizard-create {
+  .react-form__txt-input--create {
+    width: 356px;
+    padding: 0 5px;
+    line-height: 40px;
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .react-form__txt-input-holder {
+    width: 356px;
+  }
+
+  .ec-react-wizard__header-right-block {
+    margin-right: 20px;
+  }
+
+  .react-form__textarea-holder {
+    width: 356px;
+  }
+
+  .react-form__textarea {
+    width: 356px;
+    margin: 0 auto;
+    height: 120px;
+    box-sizing: border-box;
+  }
+
+  .create-title {
+    height: 50px;
+    line-height: 30px;
+    font-size: 22px;
+    @include sds-ellipsis();
+  }
+
+  .ec-row {
+    font-weight: 200;
+    font-size: 18px;
+  }
+
+  .ec-row--header {
+    @include modal-header-text();
+  }
+
+  .ec-row--no-objects {
+    text-align: center;
+  }
+
+  .ec-row--select-create-type {
+    font-weight: 200;
+    position: relative;
+    margin: 0 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 80px;
+    background-color: $very-soft-gray;
+
+    &:hover {
+      background-color: $soft-gray;
+    }
+
+    .sds-icon {
+      font-size: 26px;
+      display: block;
+      position: absolute;
+      line-height: 80px;
+      width: 40px;
+      left: 20px;
+      text-align: center;
+    }
+    .add-component {
+      color: $dark-blue;
+    }
+    .ref-component,
+    .component2,
+    .application {
+      color: $very-soft-blue;
+    }
+    .row-icon,
+    .template {
+      color: $envIconColor;
+    }
+
+    .res-template {
+      color: $resTplIconColor;
+    }
+
+    .add-component,
+    .planning {
+      color: $env-col-tier-icon-color;
+    }
+
+    .application {
+      color: $appCoEditButtonColor;
+    }
+    .pipeline {
+      font-size: 14px;
+      color: $violet;
+    }
+    .releases {
+      font-size: 14px;
+      color: $bright-blue;
+    }
+    .panel-open {
+      color: $saturated-green;
+    }
+  }
+
+  .ec-row--select-create-type-with-menu {
+    font-weight: 200;
+    position: relative;
+    margin: 0 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    .object-create {
+      &__type {
+        height: 80px;
+        line-height: 80px;
+        position: relative;
+        background-color: $very-soft-gray;
+        &:hover {
+          background-color: $soft-gray;
+        }
+
+        .sds-svg-icon__container {
+          position: absolute;
+          width: 40px;
+          top: 0;
+          left: 20px;
+          .sds-svg-icon {
+            margin: 0 auto;
+          }
+        }
+
+        .sds-svg-icon {
+          &--icon-environment-reservation {
+            fill: $dark-blue;
+          }
+
+          &--icon-container {
+            fill: $light-violet;
+          }
+
+          &--icon-new-object {
+            fill: $dark-blue;
+          }
+        }
+
+        .sds-icon {
+          font-size: 26px;
+          display: block;
+          position: absolute;
+          line-height: 80px;
+          left: 20px;
+          width: 40px;
+          text-align: center;
+          &.ref-component,
+          &.application {
+            color: $very-soft-blue;
+          }
+
+          &.row-icon,
+          &.template {
+            color: $envIconColor;
+          }
+
+          &.res-template {
+            color: $resTplIconColor;
+          }
+          &.add-component {
+            color: $dark-blue;
+          }
+        }
+      }
+
+      &__type-menu {
+        background-color: $very-soft-gray;
+        padding-bottom: 20px;
+        display: none;
+        &--expanded {
+          display: block;
+        }
+      }
+      &__type-menu-item {
+        height: 36px;
+        border-top: 2px solid $default-white;
+        border-bottom: 2px solid $default-white;
+        margin: -2px 20px 0;
+        line-height: 36px;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        &:hover {
+          background: $simple-light-gray;
+          margin: -2px 0 0;
+          padding: 0 20px;
+          .sds-icon {
+            left: 20px;
+          }
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+        .sds-icon {
+          position: absolute;
+          height: 36px;
+          line-height: 36px;
+          width: 40px;
+          left: 0;
+
+        }
+      }
+    }
+  }
+
+  .ec-row--disabled-select-create-type {
+    cursor: default;
+    color: $medium-soft-gray;
+    &:hover {
+      background-color: $very-soft-gray;
+    }
+    .sds-icon {
+      color: $medium-soft-gray;
+    }
+  }
+
+  .ec-row--first {
+    margin-top: 70px;
+  }
+
+  .ec-row--select {
+    position: relative;
+    height: 40px;
+    margin: 0 auto 20px;
+    width: 356px;
+  }
+
+  .ec-row--checkbox {
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sds-svg-icon--icon-require-reservation {
+      margin-right: 10px;
+    }
+  }
+
+  .ec-row--from-existing-split-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ec-col--projects-select,
+  .ec-col--search {
+    position: relative;
+    width: 355px;
+    height: 60px;
+  }
+
+  .ec-col--search {
+    position: static;
+    text-align: right;
+
+    .search-collapsable__search-input {
+      &.sds-input {
+        height: 40px;
+        font-size: 18px;
+        padding-left: 23px;
+      }
+
+    }
+    .search-collapsable {
+      .sds-icon {
+        line-height: 40px;
+      }
+    }
+  }
+}

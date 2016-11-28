@@ -1,0 +1,80 @@
+//================================================
+//  Schedule manager-wizard
+//================================================
+
+.modals-box .schedule-manager-wizard .ec-react-wizard__content {
+  padding: 0 20px;
+}
+
+.schedule-manager-wizard {
+  $block: '.schedule-manager-wizard';
+
+  .ec-grid-primary__col--run-enabled-edit-actions {
+    text-align: right;
+
+    .sds-svg-icon__wrapper {
+      text-align: center;
+      width: 40px;
+    }
+    //display: flex;
+    //justify-content: space-around;
+  }
+
+  .ec-grid-primary--with-underline .ec-grid-primary__row.disabled {
+    color: $very-light-gray !important;
+
+    .sds-svg-icon {
+      &:not(.sds-svg-icon--icon-checkmarked, .sds-svg-icon--button-edit, .sds-svg-icon--button-checkbox-unchecked, .sds-svg-icon--button-checkbox-checked) {
+        fill: $very-light-gray !important;
+      }
+
+      &.sds-svg-icon--icon-checkmarked {
+        fill: $very-light-gray;
+      }
+
+      &.sds-svg-icon--button-edit,
+      &.sds-svg-icon--button-checkbox-unchecked,
+      &.sds-svg-icon--button-checkbox-checked {
+        fill: $black;
+      }
+    }
+  }
+
+  #{$block}__header-title {
+    display: inline-block;
+    width: 600px;
+    @include sds-ellipsis;
+  }
+
+  #{$block}__header-title-icon {
+    margin-right: 5px;
+    color: $very-soft-blue;
+  }
+
+  #{$block}__header-control {
+    cursor: pointer;
+    margin-right: 20px;
+
+    &--disabled {
+      color: $soft-gray;
+      cursor: default;
+
+      #{$block}__header-control-icon {
+        fill: $soft-gray;
+      }
+    }
+  }
+
+  #{$block}__header-control-icon {
+    fill: $default-red;
+  }
+
+  #{$block}__header-control-title {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+}
+
+.schedule-manager-content {
+  $block: '.schedule-manager-content';
+}

@@ -1,0 +1,933 @@
+//================================================
+//  Pipelines
+//================================================
+
+.page-content {
+  &.pipeline {
+    overflow: hidden;
+
+    .pipeline-content {
+      position: relative;
+      overflow-y: hidden;
+      overflow-x: auto;
+    }
+  }
+
+  &.pipelines-run {
+    .pipelines-run-content {
+      overflow-y: auto;
+      &__list-grid {
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      &--prev-runs {
+        .pipeline-run-grid {
+          margin: 0;
+        }
+        .empty {
+          cursor: auto;
+        }
+        &__heading {
+          color: $gray;
+          border-top: 2px solid $gray;
+          text-align: center;
+          line-height: 30px;
+          font-size: 16px;
+          margin: 0 0 30px;
+          cursor: pointer;
+        }
+        &__list-grid {
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}
+
+//Grid for Pipeline Runs List
+.pipeline-run-grid {
+  .execution .progress-bar {
+    background: $sky-blue;
+  }
+
+  .pipeline-row {
+    &.hidden + .load-row {
+      display: none;
+    }
+    .ec-col {
+      position: relative;
+      z-index: 1;
+    }
+    .col-row-icon {
+      width: 50px;
+      text-align: center;
+      min-width: 50px;
+      .sds-icon {
+        font-size: 30px;
+        margin: 0 3px;
+        color: $soft-light-blue;
+        &:before {
+          content: $sds-icon-reload;
+        }
+      }
+    }
+    .col-stages {
+      width: 120px;
+      text-align: right;
+      line-height: 34px;
+      .col-stages-count {
+        display: inline-block;
+        margin-right: 3px;
+      }
+    }
+    .col-name {
+      padding-left: 0;
+      flex: 550;
+      min-width: 110px;
+      @include sds-ellipsis();
+      .at-pipeline-name-container {
+        float: none;
+      }
+
+      &+.col-name {
+        padding: 8px;
+      }
+    }
+    .col-current-stage {
+      line-height: 34px;
+      flex: 350;
+      min-width: 110px;
+      .sds-icon {
+        position: relative;
+        top: -3px;
+        font-size: 10px;
+        margin-right: 6px;
+      }
+    }
+    .col-author {
+      line-height: 34px;
+      flex: 250;
+      min-width: 70px;
+    }
+    .col-approval {
+      margin-top: -2px;
+      width: 55px;
+      text-align: right;
+
+      .sds-icon {
+        margin-right: 6px;
+      }
+      .sds-icon.sort-down {
+        cursor: pointer;
+        font-size: 8px;
+        margin-right: 0;
+      }
+      .sds-icon.access {
+        font-size: 14px;
+        margin: 0 2px;
+      }
+      .workflow-approve {
+        cursor: pointer;
+      }
+    }
+    .col-date {
+      line-height: 34px;
+      width: 220px;
+    }
+    .col-duration {
+      line-height: 34px;
+      color: $soft-light-blue;
+      width: 180px;
+      text-align: right;
+    }
+    .col-toggler {
+      padding-left: 0;
+      width: 30px;
+      min-width: 30px;
+      .sds-icon {
+        &:before {
+          content: $sds-icon-expand;
+        }
+
+        &.collapse {
+          &:before {
+            content: $sds-icon-collapse;
+          }
+        }
+      }
+    }
+    &.run-status-success {
+      .col-row-icon {
+        .sds-icon {
+          color: $default-green;
+          &:before {
+            content: $sds-icon-success-round;
+          }
+        }
+      }
+      .col-duration {
+        color: $default-green;
+      }
+      & + .load-row {
+        background: $soft-green;
+      }
+    }
+    &.run-status-skipped,
+    &.run-status-aborted {
+      .col-row-icon {
+        .sds-icon {
+          color: $fifty-percent-gray;
+          &:before {
+            content: $sds-icon-abort;
+          }
+        }
+      }
+      .col-duration {
+        color: $fifty-percent-gray;
+      }
+      & + .load-row {
+        background: $fifty-percent-gray;
+      }
+    }
+    &.run-status-skipped {
+      .col-row-icon {
+        .sds-icon:before {
+          content: $sds-icon-skipped;
+        }
+      }
+    }
+    &.run-status-error {
+      .col-row-icon {
+        .sds-icon{
+          color: $default-red;
+          &:before {
+            content: $sds-icon-warning;
+          }
+        }
+      }
+      .col-duration {
+        color: $default-red;
+      }
+      & + .load-row {
+        background: $very-light-red;
+      }
+    }
+    &.selected {
+      .col-row-icon .sds-icon,
+      .col-duration {
+        color: $default-white;
+      }
+      .execution .progress-bar {
+        background: $fifty-percent-gray;
+      }
+    }
+  }
+  .list-grid-item {
+    position: relative;
+  }
+
+  .load-row {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: $sky-blue;
+    left: 0;
+    top: 0;
+  }
+
+  &__show-prev-runs {
+    font-size: 17px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    background-color: $ec-grid-empty-blue-bg;
+    color: $ec-grid-empty-blue-color;
+  }
+}
+//End Grid for Pipeline Runs List
+
+//Pipeline Creating
+.create-pipeline {
+  .ec-wizard-body {
+    .heading {
+      width: 536px;
+      @include modal-header-text();
+    }
+  }
+  .ec-wizard-foot {
+    min-height: 60px;
+    height: 60px;
+
+    .ec-wizard-button {
+      width: 50%;
+      height: 60px;
+      font-size: 18px;
+      line-height: 60px;
+    }
+  }
+}
+
+//Filters widget in header
+.gh-context-header__center {
+  margin: 0 auto;
+  width: 270px;
+  line-height: 54px;
+  position: relative;
+  text-align: center;
+
+  .sds-icon {
+    cursor: pointer;
+    font-size: 26px;
+    padding: 0 5px;
+    &.disabled {
+      color: $soft-gray;
+    }
+    &.warning {
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  &--filters-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
+  .list-filters {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    &--disabled {
+      visibility: hidden;
+      .blocker {
+        visibility: visible;
+      }
+    }
+    &__show-more {
+      margin-left: 5px;
+      cursor: pointer;
+      display: inline-block;
+      line-height: 12px;
+      vertical-align: text-bottom;
+      font-size: 16px;
+    }
+    .sds-icon.stage-warning {
+      display: none;
+    }
+    .sds-icon.abort {
+      display: none;
+    }
+    &--show-more {
+      .sds-icon.stage-warning {
+        display: inline-block;
+      }
+      .sds-icon.abort {
+        display: inline-block;
+      }
+    }
+  }
+  .blocker {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+    z-index: 1;
+    visibility: hidden;
+  }
+}
+//End Filters widget in header
+
+//Expanding Pipeline Runs list for one pipeline
+.pipeline-runs-list {
+  .col-current-stage {
+    flex: 30;
+  }
+  .ec-grid-primary__empty-simple {
+    display: block;
+  }
+  .ec-grid-primary .at-ec-grid-show-more-container {
+    display: block;
+  }
+}
+.pipeline-runs-grid {
+  margin: 0;
+
+  .empty,
+  .loading,
+  .pages-loader {
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: default;
+  }
+  .pages-loader {
+    display: none;
+  }
+  .track-changes {
+    cursor: pointer;
+  }
+  .execution .progress-bar {
+    background: $sky-blue;
+  }
+}
+
+.pipeline-run-row,
+.pipeline-run-task-row {
+  .col-icon {
+    font-size: 10px;
+    vertical-align: middle;
+    line-height: 50px;
+    padding: 0;
+  }
+
+  .sds-icon.manual {
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .col-description {
+    flex: 30;
+    .sds-icon {
+      cursor: pointer;
+      margin: 0 5px;
+      color: $default-black;
+    }
+  }
+  .col-abort {
+    width: 46px;
+    font-size: 27px;
+    color: $dark-red;
+    .sds-icon {
+      cursor: pointer;
+    }
+  }
+  .col-task-type {
+    flex: 60;
+    position: relative;
+    text-transform: capitalize;
+    &--rejected {
+      color: $default-red;
+    }
+    .sds-icon {
+      position: absolute;
+      &.process {
+        top: 10px;
+      }
+    }
+    &__text {
+      padding-left: 35px;
+    }
+    &--deployer {
+      flex: 120;
+      line-height: 34px;
+      text-transform: none;
+      .sds-icon {
+        font-size: 24px;
+        position: static;
+        &.deployer {
+          vertical-align: middle;
+        }
+        &.application {
+          vertical-align: middle;
+          margin: 0 0 0 10px;
+          color: $dark-gray;
+        }
+      }
+      .col-task-type__text {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .ec-col {
+    &--task-plugin-key,
+    &--task-procedure {
+      flex: 60;
+    }
+  }
+
+  .col-approve {
+    flex: 30;
+    .sds-icon {
+      cursor: pointer;
+    }
+  }
+
+  .col-row-icon {
+    width: 44px;
+    font-size: 30px;
+    padding: 8px 0;
+    .sds-icon {
+      color: $soft-light-blue;
+      &:before {
+        content: $sds-icon-reload;
+      }
+    }
+  }
+
+  .col-date {
+    width: 230px;
+  }
+
+  .col-run-progress {
+    line-height: 34px;
+    color: $soft-light-blue;
+    padding-right: 0;
+    flex: 13;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .col-run-show-history {
+    width: 54px;
+    text-align: center;
+  }
+
+  &.run-status-success,
+  &.run-status-completed {
+    .col-row-icon {
+      .sds-icon {
+        color: $default-green;
+        &:before {
+          content: $sds-icon-success-round;
+        }
+      }
+    }
+    .col-run-progress {
+      color: $default-green;
+    }
+    & + .load-row {
+      background: $soft-green;
+    }
+  }
+  &.run-status-skipped,
+  &.run-status-aborted {
+    .col-row-icon {
+      .sds-icon {
+        color: $fifty-percent-gray;
+        &:before {
+          content: $sds-icon-abort;
+        }
+      }
+    }
+    .col-run-progress {
+      color: $fifty-percent-gray;
+    }
+    & + .load-row {
+      background: $fifty-percent-gray;
+    }
+  }
+  &.run-status-skipped {
+    .col-row-icon {
+      .sds-icon:before {
+        content: $sds-icon-skipped;
+      }
+    }
+  }
+  &.run-status-error {
+    .col-row-icon {
+      .sds-icon{
+        color: $default-red;
+        &:before {
+          content: $sds-icon-warning;
+        }
+      }
+    }
+    .col-run-progress {
+      color: $default-red;
+    }
+    & + .load-row {
+      background: $very-light-red;
+    }
+  }
+  &.run-status-warning {
+    .col-row-icon {
+      .sds-icon{
+        color: $dark-orange;
+        &:before {
+          content: $sds-icon-stage-warning;
+        }
+      }
+    }
+    .col-run-progress {
+      color: $orange-yellow;
+    }
+    & + .load-row {
+      background: $orange-yellow;
+    }
+  }
+}
+//End Expanding Pipeline Runs list for one pipeline
+
+.pipeline-run-task-grid {
+  margin: 0 20px;
+  padding-bottom: 8px;
+  position: relative;
+  .ec-grid-link {
+    cursor: pointer;
+    &--not-clickable {
+      cursor: auto;
+      text-decoration: none;
+    }
+  }
+  &__list-head {
+    height: 50px;
+    line-height: 49px;
+    font-size: 18px;
+    .sds-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      font-size: 17px;
+      padding: 0 8px;
+      &.drill-down-content {
+        position: relative;
+        cursor: default;
+        margin: 0 17px 0 5px;
+        padding: 0;
+        font-size: 28px;
+      }
+      &.disabled {
+        cursor: default;
+      }
+    }
+    &--count {
+      font-weight: bold;
+    }
+    &--title {
+      padding-left: 8px;
+      position: absolute;
+      top: 0;
+      line-height: 46px;
+    }
+  }
+  &__show-error-btn {
+    right: 37px;
+  }
+  &__squeeze-details-btn {
+    right: 0;
+  }
+  &__search {
+    text-align: center;
+    .search-collapsable {
+      display: inline-block;
+      .sds-icon {
+        line-height: 25px;
+        cursor: pointer;
+      }
+      &__inner {
+        position: static;
+      }
+      &__remove-icon {
+        font-size: 13px;
+      }
+      &__search-icon {
+        display: none;
+      }
+      &__search-input {
+        text-align: left;
+      }
+    }
+  }
+  &__secondary_text {
+    margin: 0 10px;
+
+    .capitalize-first-letter {
+      display: inline-block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    .sds-svg-icon {
+      margin: 0 10px 0 5px;
+    }
+  }
+}
+
+.modals-box {
+  .ec-release-pipelines {
+    .ec-react-wizard__content {
+      padding: 0;
+    }
+    &__list-empty {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.ec-release-pipelines__head {
+  padding: 20px 0 0 30px;
+  width: 730px;
+}
+.ec-grid-primary.ec-release-pipelines__list {
+  height: 390px;
+}
+//TODO: merge this style and make shared
+.ec-grid-release-pipelines,
+.ec-grid-release-environments-select {
+  clear: both;
+  height: 390px;
+  margin: 0;
+  .ec-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px;
+    background-color: transparent;
+    height: 38px;
+    line-height: 22px;
+    cursor: pointer;
+    border-bottom: 2px solid $very-light-gray;
+    &:first-child {
+      border-top: 2px solid $very-light-gray;
+    }
+  }
+  .ec-col {
+    height: 38px;
+    font-size: 14px;
+    .ec-react-help__wrapper {
+      display: inline;
+    }
+    &__radio {
+      color: $very-light-gray;
+      width: 44px;
+      font-size: 18px;
+      .sds-icon.selected {
+        color: $default-white;
+      }
+    }
+    &__index {
+      width: 30px;
+    }
+    &__name,
+    &__project,
+    &--existing-list-item {
+      flex: 1;
+      text-align: left;
+
+      .sds-icon {
+        margin: 0 5px 0 0;
+      }
+
+      .pipeline {
+        color: $violet;
+      }
+
+      .toolbox {
+        font-size: 20px;
+      }
+    }
+    &__description {
+      width: 120px;
+      font-size: 20px;
+      color: $gray;
+    }
+    &__stages {
+      text-align: left;
+      width: 146px;
+      .sds-icon {
+        color: $light-blue;
+        margin: 0 5px;
+        font-size: 12px;
+      }
+    }
+    &__parameters {
+      text-align: right;
+      width: 70px;
+      &--required {
+        color: $default-red;
+      }
+      .sds-icon {
+        margin-left: 5px;
+        font-size: 18px;
+      }
+    }
+    &__copy {
+      width: 120px;
+      padding-right: 0;
+      .sds-icon {
+        margin-right: 5px;
+      }
+    }
+    &__copy-checkbox {
+      padding-left: 0;
+    }
+  }
+}
+.modals-box {
+  .ec-release-pipeline-create {
+    .ec-react-wizard__content {
+      padding-top: 0;
+    }
+  }
+}
+
+.page-content.pipeline {
+  .p-stages {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: em(100);
+    text-align: center;
+
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+  .p-stage,
+  .p-stages-arrow {
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .p-stage-gate {
+    float: left;
+    margin-top: em(40);
+    margin-right: em(10);
+    padding-top: em(15);
+    width: em(40);
+    height: em(120);
+    background-color: $sixty-percent-blue;
+    background-image: linear-gradient(to bottom, $sixty-percent-blue, $eighty-percent-blue);
+    box-shadow: 0 em(2) em(9) em(1) $gray;
+    color: $white;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: em(10);
+    }
+  }
+
+  .p-stage-gate-edit {
+    padding: 0.3em;
+    color: $white;
+
+    &:hover {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+  .p-stage-gate-count {
+    margin-top: em(22, 18);
+    margin-bottom: em(20, 18);
+    font-weight: 700;
+    font-size: em(18);
+  }
+
+  .p-stage-box {
+    position: relative;
+    width: em(200);
+    height: em(200);
+    border: em(2) solid $black;
+    background-color: $ten-percent-blue;
+    background-image: linear-gradient(to bottom, $ten-percent-blue, $fifty-percent-blue);
+    float: left;
+    box-shadow: 0 em(5) em(15) em(-2) $black;
+
+    &.p-stage-box-outline {
+      cursor: pointer;
+      box-shadow: 0 0 em(2) em(4) $lime;
+    }
+  }
+
+  .p-stage-header {
+    padding-top: em(6);
+    margin-bottom: em(21);
+    color: $black;
+  }
+
+  .p-stage-menu {
+    position: absolute;
+    top: em(3, 11);
+    left: em(1, 11);
+    padding: 0.5em;
+    font-size: em(11);
+    cursor: pointer;
+  }
+
+  .p-stage-title {
+    @include sds-ellipsis();
+    white-space: pre;
+    max-width: 55%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+
+  .p-stage-body {
+    color: $black;
+  }
+
+  .p-stage-count {
+    margin-bottom: em(1, 24);
+    font-size: em(24);
+  }
+
+  .p-stage-icon {
+    width: em(40);
+    height: em(40);
+    margin-top: em(6);
+    fill: $white;
+  }
+
+  .p-stage-footer {
+    position: absolute;
+    bottom: em(11);
+    right: em(10);
+    left: em(10);
+    color: $white;
+  }
+
+  .p-stage-env {
+    float: left;
+    margin-top: em(2);
+    cursor: pointer;
+  }
+
+  .p-stage-dropdown {
+    position: relative;
+    bottom: em(2, 10);
+    font-size: em(10);
+  }
+
+  .p-stage-env-count {
+    margin: 0 em(5, 18);
+    font-size: em(18);
+    font-weight: 700;
+  }
+
+  .p-stage-env-icon {
+    font-size: em(20);
+  }
+
+  .p-stage-info {
+    float: right;
+    font-size: em(24);
+    color: $white;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .p-stages-arrow {
+    height: em(200);
+    padding-top: em(73);
+  }
+
+  .p-stages-arrow-icon {
+    margin: 0 em(10, 55);
+    font-size: em(55);
+  }
+}

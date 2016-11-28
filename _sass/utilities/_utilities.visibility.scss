@@ -1,0 +1,16 @@
+//================================================
+//  Visibility
+//================================================
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.locked {
+  position: relative;
+  overflow: hidden;
+}

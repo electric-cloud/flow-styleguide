@@ -1,0 +1,115 @@
+//================================================
+//  Wizard response-dialog
+//================================================
+
+.modals-box .response-dialog .ec-react-wizard__content {
+  padding: 0;
+}
+
+.response-dialog {
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left {
+    width: 540px;
+    padding: 0 30px;
+  }
+
+  &__right {
+    margin-top: 20px;
+    border-left: 2px solid $very-light-gray;
+    width: 538px;
+    padding: 0 30px;
+    overflow-y: auto;
+    height: 477px;
+  }
+
+  &__row {
+    height: 40px;
+    line-height: 40px;
+    font-weight: 200;
+    font-size: 17px;
+
+    &--header {
+      @include modal-header-text();
+    }
+
+    &--separator {
+      height: 0;
+      border: 1px solid $default-black;
+    }
+
+    &--instruction {
+      padding: 5px 0;
+      font-size: 14px;
+      line-height: 18px;
+      height: 130px;
+      text-align: left;
+      overflow-y: auto;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__textarea {
+    margin-top: 40px;
+    height: 120px;
+
+    .react-form__textarea {
+      height: 108px;
+      width: 344px;
+    }
+  }
+
+  &__outcome {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+
+    &--label {
+      flex: none;
+      width: 80px;
+    }
+
+    &--item {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    &--item-icon {
+      cursor: pointer;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    &--disabled {
+      color: $soft-gray;
+      cursor: default;
+    }
+  }
+
+  &__assignees-text {
+    cursor: pointer;
+  }
+
+  .ec-react-wizard__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .ec-react-wizard__confirmation-attention {
+    font-size: 16px;
+    padding: 0 20px;
+
+    .sds-icon.warning {
+      font-size: 20px;
+    }
+  }
+  .parameters-row {
+    height: 40px;
+  }
+}

@@ -1,0 +1,59 @@
+//================================================
+//  Buttons
+//================================================
+
+.sds-btn {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  letter-spacing: $base-letter-spacing;
+  line-height: $btn-height;
+  margin: 0;
+  padding: 0;
+  height: $btn-height;
+  width: $btn-width;
+  background-color: $btn-bg-normal;
+  color: $default-white;
+  outline: none;
+
+  &:hover {
+    background-color: $btn-bg-hover;
+  }
+
+  &:active,
+  &.active {
+    background-color: $btn-bg-active;
+  }
+
+  &.primary,
+  &.next,
+  &.ec-ok {
+    background-color: $btn-primary-bg-normal;
+
+    &:hover {
+      background-color: $btn-primary-bg-hover;
+    }
+
+    &:active,
+    &.active {
+      background-color: $btn-primary-bg-active;
+    }
+
+    &.disabled,
+    &[disabled] {
+      background-color: $btn-primary-bg-disabled;
+      color: $btn-color-disabled;
+      cursor: auto;
+    }
+  }
+  &--small {
+    height: 25px;
+    width: 100px;
+    line-height: 1;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}

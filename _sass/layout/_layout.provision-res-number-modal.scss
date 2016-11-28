@@ -1,0 +1,40 @@
+//================================================
+//  Provision-res-number-modal
+//================================================
+
+.provision-res-number-modal {
+
+  .resource-number-label {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .react-form {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 340px;
+
+    &__txt-input-label {
+      float: left;
+      width: 290px;
+      text-align: right;
+      font-size: 16px;
+      padding-right: 30px;
+      display: inline-block;
+      line-height: 40px;
+    }
+    &__txt-input-holder {
+      float: left;
+      width: 100px;
+    }
+    &__txt-input {
+      padding: 0 6px;
+      width: 92px;
+    }
+    .sds-number-input {
+      padding: 0;
+    }
+  }
+
+}

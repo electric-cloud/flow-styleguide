@@ -1,0 +1,171 @@
+//================================================
+//  Wizard services
+//================================================
+
+.wizard-service-configuration {
+  .react-form__label {
+    font-size: 14px;
+  }
+  .service-form-row .react-form__txt-input {
+    width: 374px;
+  }
+  .service-header {
+    position: relative;
+    width: calc(100% - 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-text {
+    @include modal-header-text();
+    position: relative;
+    box-sizing: border-box;
+    flex: none;
+    max-width: 660px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .separator {
+    @include separator();
+  }
+
+  .service-section-expand-collapse,
+  .global-expand-collapse {
+    position: absolute;
+    right: 0;
+  }
+
+  .subheader {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .service-form {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 424px;
+  }
+
+  .entry-category-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .container-block {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background-color: $very-soft-gray;
+  }
+  .container-header {
+    height: 60px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 2px solid $simple-light-gray;
+  }
+  .container-index {
+    flex: 0 0 30px;
+    text-align: right;
+  }
+  .container-icon {
+    flex: 0 0 27px;
+  }
+  .container-name {
+    flex: auto;
+    max-width: 594px;
+    text-align: left;
+    @include sds-ellipsis();
+    &.empty {
+      text-align: center;
+    }
+  }
+
+  .empty-ports {
+    display: flex;
+    height: 60px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .port-header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 2px solid $simple-light-gray;
+  }
+
+  .port-title {
+    text-align: left;
+    font-size: 14px;
+    &.name {
+      flex: 55;
+      max-width: 300px;
+      @include sds-ellipsis();
+    }
+    &.port {
+      flex: 15;
+    }
+    &.ext-port {
+      flex: 15;
+      text-align: center;
+    }
+  }
+
+  .port-block {
+    height: 80px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 2px solid $simple-light-gray;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .port-index {
+    flex: 0 0 30px;
+    text-align: right;
+  }
+  .port-name {
+    flex: 55;
+    max-width: 270px;
+    text-align: left;
+    padding-left: 5px;
+    box-sizing: border-box;
+    @include sds-ellipsis();
+  }
+  .port-target {
+    flex: 15;
+    text-align: left;
+  }
+  .port-external {
+    flex: 15;
+    .react-form__txt-input-wrapper {
+      margin-bottom: 0;
+      .react-form__txt-input-holder {
+        width: 80px;
+        margin: 0 auto;
+      }
+      .react-form__txt-input {
+        margin: 0;
+        width: 80px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .port-protocol {
+    flex: 15;
+  }
+}

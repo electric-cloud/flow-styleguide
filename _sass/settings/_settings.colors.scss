@@ -1,0 +1,713 @@
+//================================================
+//  Default color Variables
+//================================================
+
+$white:                #ffffff;
+$light-black:          #414042;
+$soft-black:           #333;
+$light-lilac:          #d7b2de;
+$french-lilac:         #EDD7F2;
+$light-violet:         #bc3cc2;
+$soft-violet:          #9d45b3;
+$violet:               #7F3F97;
+$bright-purple:        #ebdeff;
+$light-purple:         #9669db;
+$middle-purple:        #904fd4;
+$light-blue:           #4D9B9E;
+$very-light-gray:      #b2b2b2;
+$soft-light-gray:      #dfdfdf;
+$soft-dark-gray:       #666666;
+$dark-gray:            #4d4d4d;
+$most-light-gray:      #E6E6E6;
+$brown:                #744c27;
+$soft-light-blue:      #769DBC;
+$deep-dark-blue:       #244873;
+$simple-dark-blue:     #506d8f;
+$simple-light-blue:    #99B5C3;
+$sky-blue:             #C1DCED;
+$some-light-gray:      #D9D9D9;
+$simple-light-gray:    #CCCCCC;
+$medium-dark-gray:     #7F7F7F;
+$soft-red:             #D16966;
+$very-light-red:       #EFB5A3;
+$very-light-green:     #A1CEAA;
+$soft-green:           #C2DE8A;
+$dark-green:           #7DB087;
+$light-green:          #8BC53F;
+$saturated-green:      #5c9d4b;
+$limegreen:            #32CD32;
+$lime:                 #ace388;
+$orange-yellow:        #fcd6a9;
+$light-sunny:          #f7E3B2;
+$sunny:                #d77f39;
+$hovered-base-blue:    #1864a1;
+$hovered-pale-blue:    #5e8bc7;
+
+/****************************************
+ * Colors Variables
+ ****************************************/
+
+// Defaults
+$default-white: #ffffff;
+$default-black: #000000;
+
+$default-red: #eb1c24;
+$dark-red: #be1e2d;
+$very-dark-red: #a31e29;
+$light-red: #f0b6a3;
+$default-green: #70b723;
+$true-green: #4A9819;
+$default-border-dark: #000000;
+$default-bg-white: #ffffff;
+$default-wizard-notification-content-color: #fff;
+$default-wizard-notification-bg: #1a6bb6;
+$default-text-color: #333333;
+$list-delete-btn-color: #eb1c24;
+$disabled-btn-color: #ccc;
+$input-text-color: #2e2e2e;
+$input-focus-border: #3e99df;
+$input-border: #c5c5c5;
+$input-disabled-bg-color: #d9d9d9;
+$input-text-disabled-color: #5c5c5c;
+$black-icon: #000;
+$search-header-bg: #D9D9D9;
+$ok-btn-bg: #a7a8ac;
+$ec-radio-bg: #F1F1F1;
+$ec-radio-checked-bg: #000;
+$ec-radio-border: #a1a3a6;
+
+// links
+$color-link-primary: #0088cc;
+$color-link-hover-primary: #005580;
+
+// form controls
+$color-input-primary: #555;
+
+// black
+$black: #000000;
+
+// blue
+$very-light-blue: #cce9ff;
+$very-soft-blue: #85b0e3;
+$medium-soft-blue: #779bb8;
+$gray-blue: #6B87A1;
+$soft-blue: #5E9CCB;
+$dark-blue: #2f378a;
+$very-dark-blue: #101d5f;
+$medium-dark-blue: #297ab8;
+$dim-blue: #c3d9d7;
+
+
+// orange
+$orange: #ff8912;
+$dark-orange: #DA833E;
+$very-dark-orange: #de9f64;
+$light-orange: #fba400;
+$very-light-orange: #fe6d00;
+$romneya-orange: #f6921e;
+$gold-orange: #eb7f02;
+
+// gray
+$gray: #959595;
+$soft-gray: #cccccc;
+$very-soft-gray: #e5e5e5;
+$medium-soft-gray: #aaaaaa;
+$emperor-gray: #535353;
+
+// green
+$light-green: #8AC33E;
+$dim-green: #c8e8cf;
+$sushi-green: #739936;
+$dark-sushi-green: #5B921D;
+$light-sushi-green: #71B723;
+
+// Main
+$checkboxCheckedColor: #FFF;
+$checkboxUncheckedColor: #7f7f7f;
+$completeGreen: #c2de8b;
+$errorRed: #d10009;
+$warningYellow: #f0ad4e;
+$errorLighterRed: #f0b6a3;
+$warningLighterYellow: #fcd6a9;
+
+
+// Application variables
+$globalHeaderBackground:      #333333;
+$mainMenuBorder:              #84a7c3;
+$mainMenuBackground:          #cccccc;
+$subMenuBackground:           #e5e5e5;
+$newEnvBorder:                #000000;
+$controlBarBreadCrumbsText:   #000000;
+$controlBarInputBorder:       #8a8a8a;
+$controlBarText:              #8a8a8a;
+$controlBarNumber:            #00adee;
+$activeFolder:                #00adee;
+$envIconColor:                #ff8912;
+$resTplIconColor:             #5E9CCB;
+
+
+// WIZARD
+// Wizard Breadcrumbs
+$wBreadcrumbColorFirst:    #888888;
+$wBreadcrumbColorSecond:   #4d4d4d;
+$wBreadcrumbColorThird:    #294867;
+$wBreadcrumbColorFourth:   #19619a;
+$wBreadcrumbColorFifth:    #1f7cbd;
+$wBreadcrumbColorSixth:    #4b9ad2;
+$wBreadcrumbColorSeventh:  #71b7e5;
+$wBreadcrumbColorEigth:    #9adbfe;
+
+// Wizard Confirmation
+$wConfirmationMainBgColor:        rgba(255, 255, 255, 0.8);
+$wConfirmationMessageBgColor:     #297ab8;
+$wConfirmationButtonBgColor:      #b2b2b2;
+$wConfirmationButtonHoverBgColor: #959595;
+
+
+// old Modal window variables
+$btnTextColor:                #ffffff;
+$btnSuccessBackground:        #1a75bb;
+$btnCancelBackground:         #999999;
+
+
+// Main menu
+$mainMenuBackground:       #E1EAF1;
+$borderBottomMenuColor:    #ffffff;
+$mainMenuHover:            #d3dfe9;
+$colorTextMainSubMenu:     #212121;
+$colorTextMainMenu:        #000000;
+$mainMenuColor:            #000000;
+$selectedMenuColor:        #5e8fb5;
+
+
+// Sub Menu
+$subMenuBackgroundColor:   #afcbe3;
+$menuSelectedArrowColor:   #c3d4e3;
+
+
+// Toolbox and Settings menus
+$toolsMenuBackground:      #6c757c;
+$toolsMenuHoverBackground: #8a9197;
+$toolsMenuColor:           #ffffff;
+$toolsMenuActive: #ffffff;
+
+
+// Context menu
+$contextMenuTextColor:      #ffffff;
+$contextMenuBackground:     #4d4d4d;
+$contextMenuBorderColor:    #808080;
+$contextMenuBackgroundHover: $contextMenuBorderColor;
+
+
+// Control Bar
+$controlBarColor: #666666;
+$controlBarHoverColor: #000000;
+$controlBarSelectAllBg: $controlBarColor;
+$controlBarSelectAllColor: #ffffff;
+$controlBarCounterColor: #8a8a8a;
+
+
+// Context header icon color styles
+$chSelectedIconFont:        #1862ad;
+$chDisabledIconFont:        #999999;
+$chHoverIconFont:           $controlBarHoverColor;
+$tierBorderInput:           #3d97dd;
+
+
+// Create Application Form
+$cappHoverBackground:    #cccccc;
+$cappSelectedColor:      #ffffff;
+$cappSelectedBackground: #75726c;
+$cappPlaceholderColor:   #999999;
+$cappIconWidth:             70px;
+
+
+// Application Tier
+$apTMainBG:                 #ffffff;
+$apTMainBorder:             #959595;
+$apTButtonColor:            #ffffff;
+$apTButtonColorHover:       #848484;
+$apTCButtonColor:           #fff;
+$apTButtonColorActive:      #686868;
+
+
+// Application Ghost Component
+$appCoBackground:           #A4D5F0;
+$appCoNameColor:            #000000;
+$appCoButtonColor:          #3569b1;
+$appCoButtonHoverColor:     #3569b1;
+$appCoButtonActiveColor:    #19334a;
+$appCoControlsIconColor:    #ffffff;
+$appCoEditButtonColor:      #85b0e3;
+$appCoEditButtonColorHover: #848484;
+$appCoEditButtonColorActive:#686868;
+$appCmpIconColor:           #ffffff;
+
+
+// Application Ghost Process
+$appPrGhostBgColor:         #ffffff;
+$appPrGhostBorderColor:     #3569b1;
+$appPrGhostCtrIconColor:    #3569b1;
+$appPrGhostCtrIconHover:    #3569b1;
+$appPrGhostCtrIconActive:   #19334a;
+
+
+// Ghost Components
+$ghostMenuIconColor:            #333333;
+$ghostMenuIconColorHover:       #848484;
+$ghostMenuIconColorActive:      #686868;
+$ghostComponentBgGradientStart: #528dc1;
+$ghostComponentBgGradientEnd:   #4383b1;
+$ghostComponentHover:           #3569b1;
+$ghostComponentActive:          #19334a;
+$ghostComponentColor:           #ffffff;
+$ghostComponentBorderColor:     #3569b1;
+
+
+// Process step
+$prGhostStepDroppedBorder:  #3569b1;
+$prGhostStepDroppedIcon:    #3569b1;
+$prGhostStepDroppedBg:      #ffffff;
+$prGhostStepDroppedTitle:   #000000;
+$prGhostStepDroppedMenu:    #ffffff;
+$prGhostStepDroppedControl: #b3b3b3;
+$prGhostStepDroppedControlHover:  #848484;
+$prGhostStepDroppedControlActive: #686868;
+$step-highlight-color:      #eb1c24;
+
+
+// Application Process
+$prStepMainColor:           #B5D873;
+$prStepTitleColor:          #000000;
+$prStepIconColor:           #ffffff;
+$prStepTierColor:           #ffffff;
+$prStepTierBgColor:         #656565;
+$prStepTierBgGradient:      #e5e5e5;
+
+
+// Component Process
+$compPrStepMain: #fee083;
+
+
+// SDS table widget
+$table-bg:                  #FFF;
+$table-empty-bg:            #FFF;
+$table-empty-color:         #8A8A8A;
+$table-row-bg:              #F1F1F1;
+$table-row-color:           #000;
+$table-row-hover-bg:        #CCC;
+$table-row-hover-color:     $table-row-color;
+$table-row-selected-bg:     #7F7F7F;
+$table-row-selected-color:  #FFF;
+$table-row-selected-hover-bg:     lighten($default-black, 40%);
+$table-row-selected-hover-color:  #FFF;
+$table-row-disabled-bg:     #E5E5E5;
+$table-index-column-bg:     #656565;
+$table-color-radio-border-color:    #919191;
+$table-color-radio-red:     #EB1C24;
+$table-color-radio-green:   #8BC43F;
+$table-edit-field-bg:       transparent;
+$table-empty-border-color:    #dddddd;
+$table-cell-link-color:       #000000;
+
+
+// Modal Window variables
+$modal-close-bar-color:         #7f7f7f;
+$modal-close-bar-icon-color:    #FFFFFF;
+
+
+// SDS popover widget
+$popover-btn-color: #000;
+$popover-btn-size: 10px;
+$popover-btn-disabled-color: #CCC;
+$popover-bg: #fff;
+$popover-color: #000;
+$popover-border-color: #000;
+$popover-link-bg: transparent;
+$popover-link-color: #000;
+$popover-link-hover-bg: #939598;
+$popover-link-hover-color: #ffffff;
+$popover-color-comp: #fff;
+$popover-disabled-color: #aaa;
+$popover-arrow-color: #fff;
+$popover-arrow-border-color: #000;
+
+
+
+// artifacts versioning popover
+$art-version-popover-input-border-color: #b2b2b2;
+$art-version-hover-color: #ededed;
+$art-version-font-hover-color: #000;
+
+
+// header popover trigger
+$h-popover-trigger-btn-txt-color: #ffffff;
+$h-popover-trigger-btn-color: #ffffff;
+
+
+// Main applications table
+$app-delete-icon-color: #EB1C24;
+$app-table-app-icon-color: #85B0E3;
+$app-table-component-icon-color: $app-table-app-icon-color;
+$app-table-process-icon-color: #8AC33E;
+$app-table-run-btn-size: 28px;
+$app-table-run-btn-padding-left: 4px;
+$app-table-run-btn-color: #ffffff;
+$app-table-run-btn-enabled-color: #5c9d4b;
+$app-table-run-btn-disabled-color: #b2b2b2;
+$app-table-snapshot-btn-color: #2f378a;
+
+
+// Content header, modal header
+$header-text-color: #8A8A8A;
+$header-text-disabled-color: #CCC;
+$remove-icon-color: #EB1C24;
+$remove-icon-disabled-color: #CCC;
+$cbar-running-app-info-view-col-2-color: #ff8912;
+
+
+// Styles for custom select (Select2)
+$sds-select-bg-collor:         #d9d9d9;
+$sds-select-bg-collor-opened:  #297ab8;
+$sds-select-bg-collor-hovered: #b2b2b2;
+$sds-select-list-collor:       #ffffff;
+$sds-select-text-collor:       #ffffff;
+$sds-select-text-collor-dark:  #000000;
+$sds-select-icon-color-active: #7d7d7d;
+$sds-select-icon-color-inactive: #7d7d7d;
+$sds-select-disabled-bg: #eeeeee;
+$sds-select-disabled-color: #aaaaaa;
+
+
+// select all/none
+$select-toggle-bg-color: #666666;
+$select-toggle-border-color: #666666;
+$select-toggle-hover-bg-color: #616161;
+$select-toggle-hover-border-color: #616161;
+$select-toggle-hover-color: #ffffff;
+$select-toggle-active-bg-color: #333333;
+$select-toggle-active-border-color: #333333;
+$select-toggle-active-color: #ffffff;
+$select-toggle-none-bg-color: #ffffff;
+$select-toggle-none-border-color: #000000;
+$select-toggle-none-color: #000000;
+$select-toggle-none-hover-bg-color: #dddddd;
+$select-toggle-none-active-bg-color: #bababa;
+
+
+// map app to env
+$mapped-row-background: #ffffff;
+$env-app-border: #ffffff;
+$row-selected: #1a75bb;
+$modal-alert-overlay: rgba(255,255,255,.8);
+$modal-alert-text: #ffffff;
+$modal-alert-background: #297ab8;
+$map-modal-background-color: #ffffff;
+$map-modal-border-color: #000000;
+$map-modal-btn-del-background: #b2b2b2;
+$map-modal-btn-del-hover-background: #959595;
+
+
+// Popover for context action
+$pctx-text-color:        #ffffff;
+$pctx-text-color-disbl:  #808080;
+$pctx-main-background:   #4d4d4d;
+$pctx-hover-background:  #808080;
+$pctx-icon-color-remove: #EB1C24;
+
+
+// Tier
+$tr-icon-plus-color:  #4383b1;
+
+
+// Step Wizard
+$separatorBG:         #999999;
+$submit-btn-color:    #3e99df;
+$submit-btn-hover-color: #297ab8;
+$submit-btn-disabled-color: #999999;
+$submit-btn-disabled-text-color: #d9d9d9;
+$sub-view-bg:         #1b75bb;
+$sub-view-lvl2-bg:    #61a8df;
+$prop-view-bg:        #ffffff;
+$custom-cond-view-bg: #244873;
+$wizard-background: #FFFFFF;
+$title-icon-color: #ffffff;
+
+
+// inventory list
+$inv-icon-artifact-color: #4383b1;
+
+
+// environment
+$add-resource-icon:       #ffffff;
+$failedResourcesIcon:     #bd1f2d;
+$env-tier-shadow-color:   #808080;
+$env-tier-bg-color:       #ffffff;
+$env-tier-bg-not-empty-color: #F6931E;
+$env-tier-gradient-start: #ffffff;
+$env-tier-gradient-end:   #e5e5e5;
+$app-installed-icon:      #85b0e3;
+$env-col-tier-icon-color: #3A55A2;
+$env-col-used-color:      #3382C1;
+
+
+// _ec-grid
+$rowOffset:   30px;
+$progressOffset: 60px;
+$ec-grid-empty-blue-bg: #ededed;
+$ec-grid-empty-blue-color: #286bb2;
+
+
+// _popover-for-context-action
+$main-width:  180px;
+$item-height: 48px;
+$icon-width:  40px;
+$arrow-size:  28px;
+$item-border: 2px solid $pctx-hover-background;
+$box-shadow:  rgba(0, 0, 0, 0.7) 0 0 15px 0;
+
+
+// condition
+$customInputColor:         #ffffff;
+$customInputCancelColor:   #90B8F5;
+$customInputEmptyBackground: #999999;
+$customInputErrorBorder:   #EB1A21;
+$customInputErrorClear:    #EB1A21;
+$customInputSubmitBackground: #1A75BB;
+$wizardStepFlap:           rgba(255, 255, 255, 0.5);
+$wizardStepBorder:         #000000;
+
+
+$tierMappingEditIcon:      #cccccc;
+$tierMappingEditIconHover: #000000;
+
+
+// env resources modal
+$envResDefaultColor:      #000000;
+$envResRowHoverColor:     #cccccc;
+$envResModalFooterBg:     #e5e5e5;
+$envResBorderColor:       #999999;
+$envResCheckSelectedDefaultColor: #999999;
+$envResDownStatus:        #ed1b24;
+$envResDisabledRowText:   #b2b2b2;
+$envResSelectedRowBg:     #666666;
+$envResSelectedRowText:   #ffffff;
+$envResSelectedCheckColor:#89c53f;
+$envResResourceIcon: #779AC2;
+$envResKillSwitchIcon: #bd202e;
+$envResViewTiersIcon: #22409A;
+$envResViewInfoIcon: #A1A3A6;
+$envResViewSelectedInfoIcon: #fff;
+
+
+// run menu
+$runMenuBackground:   #4d4d4d;
+$runMenuBoxShadow:    #000 0 0 30px 0;
+$runMenuBorderColor:  #808080;
+$runMenuSuccessColor: #8BC43F;
+$runMenuErrorColor:   #d10009;
+$runMenuTitleColor:   #eeeeee;
+$runMenuIconColor:    #f0f0f0;
+$runBgBlockerColor:   #FFF;
+
+
+// notifications
+$appNotificationsModalBG: #ffffff;
+$appNotificationsBorderColor: #e8e8e8;
+$appNotificationsBorderColorDark: #000;
+$appNotificationsAppIconColor: #85b0e3;
+$appNotificationsProcessIconColor: #8ac33e;
+$appNotificationsRecipientsIconColor: #ae6a99;
+$appNotificationsOffColor: #d10009;
+$appNotificationsTogglePromptBgOff: #cc8157;
+$appNotificationsTogglePromptColor: #ffffff;
+
+
+// Select2 customization
+$select2-automatch-choices-bg: #dcddde;
+$select2-automatch-search-choice-bg: #de9f64;
+$select2-automatch-drop-bg: #dcddde;
+$select2-automatch-highlighted-bg: #bcbec0;
+$select2-automatch-highlighted-color: #000;
+$select2-automatch-search-choice-focus: #d5853a;
+$select2-automatch-without-email-color: #bb344a;
+
+
+// schedule
+$sch-type-item-bgcolor:       #e5e5e5;
+$sch-type-item-hover-bgcolor: #cccccc;
+$sch-prev-row-border:         #d1d3d4;
+$sch-prev-row-header-border:  #999999;
+$sch-manager-header-border-color: #000000;
+$sch-manager-message-bgcolor:     rgba(140, 197, 65, 0.15);
+$sch-manager-message-color:       rgba(100, 147, 47, 1);
+$sch-manager-time-icon-color:     #808080;
+$sch-manager-delete-icon-color:   #eb1c24;
+$sch-manager-delete-disabled-icon-color: #d1d3d4;
+$sch-manager-delete-text-color:   #9C9A9B;
+$sch-notification-link-color:     #1C75BC;
+$sch-notification-check-disabled: #D4D6D7;
+
+
+// Properties Modal window
+$prop-title-border:          #000000;
+$prop-header-border:         #999999;
+$prop-row-border:            #d1d3d4;
+
+
+// notification templates
+$code-mirror-border: #dcdcdc;
+$notifications-template-popover-apply-btn: #010101;
+$notifications-template-modal-header-locked: #777777;
+$notifications-template-modal-border: #3a3a3a;
+$notifications-template-modal-outline: #101010;
+$notifications-template-modal-footer: #F3F3F3;
+$notifications-template-modal-header-bg: #3A3A3A;
+$notifications-template-modal-header-color: #ffffff;
+$notifications-template-edit-template-header-border: #dedede;
+$notifications-template-edit-template-header-btn: #5A5A5C;
+$notifications-template-lock-overlay: rgba(255,255,255,.8);
+
+
+// notification edit modal
+$notification-title-color: rgba(0, 0, 0, 1);
+$notification-tooltip-background: #F5F9EF;
+$notification-tooltip-border: #D2E0C1;
+$notification-item-border-bottom: rgb(230, 231, 232);
+$notification-remove-btn-disabled: rgb(188, 190, 192);
+$notification-template-btn: rgb(147, 149, 152);
+$notification-template-msg: #52892e;
+$notification-select-background: #DCDDDE;
+$notification-select-dropdown-border-top: #ffffff;
+$notification-tooltip-text-color: rgba(58, 58, 60, 1);
+
+
+// app menu
+$app-menu-background: #4d4d4d;
+$app-menu-box-shadow: #000 0 0 30px 0;
+$app-menu-border-color: #808080;
+$app-menu-title-color: #eee;
+
+
+// snapshots list
+$snapshots-list-compare-btn-color: #01a7a3;
+$snapshots-list-empty-bg: #1b75bb;
+$snapshots-list-empty-bg-hover: #4f94c9;
+$snapshots-list-empty-color: #ffffff;
+
+
+// snapshots create
+$snapshots-create-wizard-background: #fff;
+$snapshots-create-form-input-background: #e5e5e5;
+$snapshots-create-form-input-placeholder-color: #999;
+$snapshots-create-app-icon-color: #729dd6;
+$snapshots-create-switch-component-color: #6f9fd5;
+$snapshots-create-switch-processes-color: #79ba1c;
+$snapshots-create-switch-color: #000;
+$snapshots-create-switch-background: #fff;
+$snapshots-create-switch-active-color: #fff;
+$snapshots-create-switch-hover-background: #eee;
+$snapshots-create-switch-active-background: #535353;
+$snapshots-create-table-content-background: #fff;
+$snapshots-create-loading-popover-background: #4d4d4d;
+$snapshots-create-notification-color: #fff;
+$snapshots-create-notification-background: #1a6bb6;
+$snapshot-create-notification-layout-background: rgba(255, 255, 255, .7);
+
+
+$history-timeline-picker-bg: #fff;
+$history-timeline-corner-bg: #fff;
+$history-timeline-corner-border: #000;
+$history-timeline-pin-bg: #01a14b;
+
+
+$snapshots-compare-list-header: #000;
+$snapshots-compare-list-row-highlihted: #c3d9d7;
+
+
+// Timeline var
+$timeline-del-bg: #eebaba;
+$timeline-ins-bg: #baeeba;
+
+
+// Resource templates
+$resource-templates-col-template-icon-color: #5E9CCB;
+$resource-templates-resource-pool-icon-color: #1c2c88;
+$resource-templates-provider-icons-color: #4a4a4a;
+$resource-templates-provider-openstack-color: #ab001b;
+$resource-templates-resource-icon-color: #668bb3;
+$resource-templates-col-duration-color: #3382c1;
+$resource-templates-provision-icon-color: #4a9203;
+
+
+// Controlbar toggler button
+$cb-toggler-btn-on-color: #5ca344;
+$cb-toggler-btn-off-color: #bd202e;
+
+
+// Env tmpl
+$env-tmpl-tier-bg-color: #414042;
+$env-tmpl-tier-border-color: #999999;
+$env-tmpl-tier-content-bg-color: white;
+
+// ec-table
+$ec-table-default-background: white;
+$ec-table-header-underline: #999999;
+$ec-table-row-underline: #d1d3d4;
+
+// number-input
+$ec-ni-input-border-color: #1975be;
+$ec-ni-btn-bg: #9d9d9d;
+$ec-ni-btn-disabled-bg: #cbcbcb;
+$ec-ni-btn-color: #ffffff;
+
+//  ec-tabs
+$ec-tabs-hover-color: #eeeeee;
+$ec-tabs-active-color: #535353;
+$ec-tabs-active-text-color: #ffffff;
+$ec-tabs-disabled-color: #aaaaaa;
+$ec-tabs-disabled-text-color: #f9f9f9;
+
+// environment-map
+$ec-environment-maps-cell-selection: rgba(162, 224, 251, 0.4);
+
+$light-gray: #d3d3d3;
+$ten-percent-gray: #f1f1f1;
+$fifteen-percent-gray: #b7b7b7;
+$twenty-percent-gray: #9d9d9d;
+$forty-percent-gray: #999999;
+$fifty-percent-gray: #808080;
+$seventy-percent-gray: #656565;
+$very-dark-grey: #3e3e3e;
+$grey: grey;
+$darkgreen: darkgreen;
+$teal: teal;
+
+$deep-blue: #185eae;
+$blue: #78a0db;
+$middle-blue: #1A74BA;
+$bright-blue: #07AEF0;
+$simple-middle-blue: #3e99df;
+$active-blue: #1a75bb;
+$light-sky-blue: #88cef8;
+$dark-sky-blue: #4383b1;
+$steel-blue: #528dc1;
+$cornflower-blue: #82b2e0;
+
+$ten-percent-blue: #cae7fd;
+$fifty-percent-blue: #567b99;
+$sixty-percent-blue: #769ab6;
+$eighty-percent-blue: #32507a;
+$ninety-percent-blue: #22409A;
+
+
+$ten-percent-black: lighten($default-black, 90%);
+$twenty-percent-black: lighten($default-black, 80%);
+$thirty-percent-black: lighten($default-black, 70%);
+$forty-percent-black: lighten($default-black, 60%);
+$fifty-percent-black: lighten($default-black, 50%);
+$sixty-percent-black: lighten($default-black, 40%);
+$seventh-percent-black: lighten($default-black, 30%);
+$eighty-percent-black: lighten($default-black, 20%);
+$ninety-percent-black: lighten($default-black, 10%);
+

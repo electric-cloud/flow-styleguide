@@ -1,0 +1,179 @@
+// Variables
+// ------------------------------
+
+$select-dark-control-bg: #dcddde;
+$select-dark-value-bg: #de9f64;
+
+$select-dark-item-color: #000;
+$select-dark-item-without-email: #bb344a;
+$select-item-focused-bg: #bcbec0;
+$select-icon-hover-bg: darken($select-dark-value-bg, 5%);
+$select-icon-active-bg: darken($select-dark-value-bg, 10%);
+
+.Select {
+  &--dark {
+    position: static;
+
+    &.is-multi {
+      .Select-control {
+        padding: 1px 32px 1px 0;
+      }
+    }
+
+    .Select-item-label {
+      padding: 4px 10px 4px 5px;
+    }
+
+    .Select-placeholder {
+      font-weight: 400;
+      padding: 8px 40px 8px 0;
+      box-sizing: border-box;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    .Select-control {
+      border-radius: 0;
+      border: 0;
+      overflow: auto;
+      max-height: 120px;
+      padding: 1px 0;
+      margin-right: 32px;
+    }
+
+    .Select-item {
+      white-space: nowrap;
+      border: 0;
+      border-radius: 0;
+      background-color: $fifty-percent-gray;
+      color: $default-white;
+      &:first-child {
+        padding-left: 0;
+      }
+      .sds-icon {
+        &.users {
+          font-size: 17px;
+          margin: 0 9px 0 3px;
+          color: $default-white;
+        }
+        &.access {
+          font-size: 17px;
+          margin: 0 12px 0 6px;
+        }
+      }
+    }
+
+    .Select-item-icon {
+      border: 0;
+      border-radius: 0;
+      font-size: 9px;
+      padding: 6px 2px 4px 6px;
+      &.sds-icon.remove {
+        font-size: 9px;
+        color: $default-white;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: $default-white;
+      }
+      &:active {
+        background-color: transparent;
+      }
+    }
+
+    &.is-multi .Select-input {
+      margin: 0;
+      border: 0;
+      height: 28px;
+      input {
+        font-size: 14px;
+        letter-spacing: 0;
+        outline: none;
+      }
+    }
+
+    .Select-menu-outer {
+      max-height: none;
+      box-shadow: none;
+      border-radius: 0;
+      background-color: $default-white;
+      border: 2px solid $middle-blue;
+      border-top: none;
+      width: 100%;
+      box-sizing: border-box;
+      left: -2px;
+      margin-top: 0;
+    }
+
+    .Select-menu {
+      max-height: 330px;
+      margin: 0 8px;
+      position: relative;
+      color: $select-dark-item-color;
+    }
+
+    .Select-options {
+      padding: 10px 0;
+      border-top: 2px solid $default-black;
+    }
+
+    .select-option-icon-container {
+      width: 36px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+
+      .sds-icon {
+        font-size: 20px;
+        &.users {
+          margin: 0;
+          color: $default-black;
+        }
+        &.access {
+          color: $default-black;
+          margin: 0;
+          position: relative;
+          top: -2px;
+        }
+      }
+    }
+
+    .Select-option {
+      font-size: 14px;
+      line-height: 30px;
+      height: 30px;
+      border-radius: 0;
+      padding: 0;
+      @include sds-ellipsis();
+
+      &.without-email {
+        color: $select-dark-item-without-email;
+      }
+
+      &.is-focused {
+        background-color: $fifty-percent-gray;
+        color: $default-white;
+        .sds-icon {
+          &.users,
+          &.access {
+            color: $default-white;
+          }
+        }
+      }
+    }
+
+    .select-option-env {
+      padding: 0 10px;
+    }
+
+    .Select-loading {
+      right: $select-padding-horizontal;
+    }
+
+    &.has-value > .Select-control > .Select-loading {
+      right: $select-padding-horizontal;
+    }
+  }
+
+}

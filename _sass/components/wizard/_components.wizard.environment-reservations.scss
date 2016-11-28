@@ -1,0 +1,467 @@
+//================================================
+//  Wizard environment-reservations
+//================================================
+
+.environment-reservations {
+  font-size: 16px;
+
+  //Calendar filters
+  .reservation-calendar-filters {
+    position: absolute;
+    top: 74px;
+    left: 50%;
+    right: 50%;
+    margin-left: -50px;
+    display: flex;
+  }
+
+  //Calendar header
+  .fc-day-header.fc-widget-header {
+    font-weight: normal;
+  }
+
+  .fc-day-number {
+    font-weight: bold;
+  }
+
+  .fc-toolbar {
+    margin: 10px 0;
+
+    .fc-button {
+      color:$medium-dark-gray;
+      height: 30px;
+      background: $white;
+      border: 2px solid $medium-dark-gray;
+      box-sizing: border-box;
+      border-radius: 0;
+      text-transform: capitalize;
+      box-shadow: none;
+      text-shadow: none;
+      outline: none;
+    }
+
+    .fc-next-button,
+    .fc-next-button {
+      width: 50px;
+    }
+
+    .fc-state-hover,
+    .fc-state-down,
+    .fc-state-active {
+      box-shadow: none;
+      text-shadow: none;
+      color: $white;
+      background: $medium-dark-gray;
+      outline: none;
+    }
+
+    .fc-state-disabled {
+      cursor: default;
+    }
+
+    .fc-today-button {
+      margin: 0;
+      width: 100px;
+      border-left-width: 1px;
+    }
+
+    .fc-month-button,
+    .fc-agendaWeek-button,
+    .fc-agendaDay-button {
+      width: 100px;
+    }
+
+    .fc-left h2 {
+      font-weight: normal;
+      line-height: 30px;
+    }
+  }
+
+  //Calendar content
+  .fc-axis.fc-time {
+    font-weight: bold;
+  }
+
+  .fc-event {
+    border-radius: 0;
+    background-color: $some-light-gray;
+    border-color: $some-light-gray;
+    color: $black;
+
+    .fc-time {
+      font-weight: normal;
+    }
+
+    .fc-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      .sds-svg-icon {
+        width: 14px;
+        height: 14px;
+      }
+
+      .sds-svg-icon__wrapper {
+        font-size: 14px;
+        line-height: 14px;
+        width: 24px;
+        display: inline-block;
+      }
+    }
+
+    &.blackout {
+      background-color: $black;
+      color: $white;
+
+      .fc-title {
+        margin-left: 5px;
+      }
+
+      .sds-svg-icon {
+        fill: $white;
+      }
+    }
+
+    &.pipeline .sds-svg-icon__wrapper--icon-pipeline {
+      fill: $violet;
+    }
+
+    &.release .sds-svg-icon__wrapper--icon-release {
+      fill: $bright-blue;
+    }
+
+    &.application .sds-svg-icon--icon-runtime-run {
+      fill: $black;
+    }
+  }
+
+  .fc-popover .fc-body {
+    max-height: 130px;
+    overflow: auto;
+  }
+}
+
+.timezone-wizard {
+  .ec-react-wizard__footer,
+  .ec-react-wizard__content {
+    position: relative;
+    z-index: 11003;
+  }
+  .content-title {
+    font-size: 22px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 40px;
+  }
+
+  .content-row {
+    @include clearfix();
+    font-weight: 200;
+    font-size: 18px;
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .attention-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 auto 10px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;
+    .alert-icon {
+      background-image: url('../img/attention.png');
+      display: inline-block;
+      margin-right: 4px;
+      margin-bottom: -3px;
+      width: 24px;
+      height: 19px;
+    }
+  }
+
+  .attention-text {
+    margin-bottom: 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .country-select {
+    margin: 0 0 0 15px;
+    float: left;
+    width: 265px;
+  }
+
+  .city-select {
+    margin: 0 15px 0 0;
+    margin-left: 30px;
+    float: right;
+    width: 265px;
+    margin-bottom: 0;
+  }
+}
+
+.modals-box .environment-reservations-create {
+
+  .ec-react-wizard__content {
+    padding: 0 30px;
+  }
+
+  .content-header {
+    @include modal-header-text();
+  }
+
+  .reserver-type {
+    margin-bottom: 20px;
+    @include separator();
+    .react-form__radio-container__label {
+      margin: 0 0 10px 234px;
+    }
+
+    .react-form__radio-container__label__text {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .react-form__radio-container__label__icon {
+      font-size: 18px;
+      margin-right: 12px;
+    }
+  }
+
+  .only-tier {
+    margin-bottom: 15px;
+    @include separator();
+    border-top: 2px solid $forty-percent-gray;
+  }
+
+  .recurrence-ends {
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 18px;
+    .sds-icon.schedule {
+      margin: 0 10px;
+    }
+    &.disabled {
+      color: $fifty-percent-gray;
+    }
+  }
+
+  .content-row {
+    @include clearfix();
+    margin-bottom: 15px;
+    font-weight: 200;
+    font-size: 18px;
+    &.select {
+      height: 40px;
+      width: 330px;
+      margin: 0 auto 10px;
+      position: relative;
+    }
+
+    .react-form__txt-input-wrapper {
+      margin-bottom: 0;
+    }
+  }
+
+  .frequency-row {
+    height: 75px;
+  }
+
+  .content-item {
+    position: relative;
+    @include separator();
+    &.content-item-country {
+      margin-top: 15px;
+      border-bottom: none;
+      .content-row {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .ec-select {
+    font-size: 16px;
+    width: 380px;
+    &.disabled {
+      .sds-svg-icon {
+        fill: $fifty-percent-gray;
+      }
+    }
+
+    .sds-svg-icon {
+      &--icon-pipeline {
+        width: 30px;
+        fill: $violet;
+      }
+
+      &--icon-release {
+        fill: $bright-blue;
+        width: 30px;
+      }
+    }
+  }
+
+  .tier-select {
+    margin-bottom: 20px;
+  }
+
+  .country-select {
+    float: left;
+    width: 255px;
+    margin-bottom: 0;
+  }
+
+  .city-select {
+    margin-left: 30px;
+    float: right;
+    width: 255px;
+    margin-bottom: 0;
+  }
+
+  .reserver-select {
+    margin-top: 10px;
+  }
+
+  .overlap {
+    margin-top: 9px;
+    .disabled {
+      .react-form__checkbox-container__label {
+        color: $forty-percent-gray;
+      }
+    }
+  }
+
+  .reservation-start-end-rows {
+    margin-bottom: 15px;
+    .react-form__txt-input-wrapper {
+      margin: 0 auto;
+    }
+
+    .react-form__txt-input-holder--no-fixed-width {
+      width: 100%;
+    }
+
+    .back-drop {
+      @include stretch(1);
+    }
+
+    .content-item {
+      position: relative;
+      border-top: 2px solid $fifty-percent-gray;
+      padding: 15px 0;
+      border-bottom: none;
+      &.disabled {
+        color: $forty-percent-gray;
+
+        .date-label {
+          cursor: default;
+
+          &:hover {
+            color: $forty-percent-gray;
+          }
+        }
+
+        .input-time {
+          color: $forty-percent-gray;
+        }
+
+        .duration {
+          color: $forty-percent-gray;
+        }
+      }
+      &:last-child {
+        border-bottom: 2px solid $fifty-percent-gray;
+      }
+    }
+
+    .time-row {
+      display: flex;
+      flex-direction: row;
+      font-weight: 200;
+      font-size: 18px;
+
+    }
+
+    .input-time {
+      padding: 0 5px;
+      width: 75px;
+    }
+
+    .time {
+      position: relative;
+      width: 87px;
+      line-height: 40px;
+    }
+
+    .date {
+      text-align: left;
+      line-height: 40px;
+      flex: 1;
+      position: relative;
+
+      &.weekly,
+      &.monthly {
+        .date-icon.schedule {
+          position: relative;
+          top: -10px;
+        }
+        .start-date {
+          position: absolute;
+          top: -10px;
+        }
+      }
+    }
+
+    .end-date {
+      white-space: nowrap;
+      top: -10px;
+      position: absolute;
+    }
+
+    .duration {
+      white-space: nowrap;
+      top: 13px;
+      color: $fifty-percent-gray;
+      position: absolute;
+    }
+
+    .date-label {
+      cursor: pointer;
+
+      &:hover {
+        color: $deep-blue;
+      }
+
+      &.week-label,
+      &.month-label {
+        position: absolute;
+        top: 13px;
+        margin-left: -42px;
+      }
+
+      .sds-svg-icon {
+        &--icon-schedule-runtime-monthly {
+          margin: 0 13px;
+        }
+
+        &--icon-schedule-runtime-weekly {
+          margin: 0 13px;
+        }
+      }
+    }
+
+    .date-icon {
+      margin: 0 10px;
+    }
+
+    .date-text {
+      margin-left: 10px;
+    }
+  }
+}
+
+.ec-react-popover__before-text.reservation-details-tooltip {
+  display: inline;
+  text-transform: capitalize;
+}

@@ -1,0 +1,23 @@
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Flow UI Styleguide
+tagline:          'Awesome Flow UI theme'
+description:      'Styleguide for Electric Cloud Flow UI'
+url:              https://github.com/electric-cloud/flow-styleguide
+baseurl:          ''
+
+github:
+  url:            ''
+
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+collections:
+  components:
+    output: true
+
+sass:
+  sass_dir: _sass

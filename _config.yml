@@ -9,7 +9,7 @@ url:              https://github.com/electric-cloud/flow-styleguide
 baseurl:          ''
 
 github:
-  url:            'https://electric-cloud.github.io/flow-styleguide/'
+  url:            'https://electric-cloud.github.io/flow-styleguide'
 
 gems:
   - jekyll-paginate

@@ -1,0 +1,21 @@
+//================================================
+//  Error-tile
+//================================================
+
+.error-tile {
+  font-size: 14px;
+  font-weight: 400;
+  color: $errorRed;
+
+  position: absolute;
+
+  .error-tile-icon {
+    fill: $errorRed;
+    vertical-align: text-bottom;
+  }
+
+  .error-tile-count {
+    margin-right: 5px;
+  }
+
+}

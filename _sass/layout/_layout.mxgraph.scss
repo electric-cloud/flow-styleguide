@@ -1,0 +1,345 @@
+//================================================
+//  Mxgraph
+//================================================
+
+.step-connector {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  .connector-image {
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  &.always .connector-image {
+    background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0klEQVQ4T42TyxWDIBBFn1tXKQBrSEpIWoI6sKVYQqxBCsiKdc7jOB7EGQ0bFnAv86ODvW4A3uvxC8BXu9oZvMCP9fwDQJVogg12zhU+pcRNlbSCHRxCKIIYoympBQe47/siyDmbEhGYsNTIklBwCZ9JKGBx7iwYc5awre62kWyCYRjgvf9LMI4jlmXhG7OkMDGKKwlfr2EAz7qIpxIN5nS2bVQlFswctEHaSXipDbv+F9YobxIKpGDMuf1UZ5+pSNZ2zhqspVC3nwNGCdfhZbn4A4rgg9B4ct1TAAAAAElFTkSuQmCC') 0 0 no-repeat;
+  }
+
+  &.success .connector-image {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVQ4T2NkYGD4z0ABYKSaAYwLvUlyx//4rWD1cBeMGsDAMBoGwyIMSMoISIopzo0A8bc0Aetbe28AAAAASUVORK5CYII=') 0 0 no-repeat;
+  }
+
+  &.error .connector-image {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQUlEQVQ4T62TwS4DURSGvxlBVDqTCBGsxNbC3kLfoOzahT6BBU9An0AlnoBFu9Q30IU1C1uxohGNdEZaQZT8TW87xi2T1F3de+49/zn/uf/v8HOtAVkgA2ivdQWcA9Xevp/lxPJ3gUMLqAkFwD5wZAJRgLNeZXKpNPlpj9Xxie676/c3yq2QSvvZ5Ontlg4GoFvZc1xOZxdYn5yyNnHx+sJ2o0742dH9HlASgHheKlKdWxqabBAFkn2801F0MgI4EC+1fTwz/wv9wdXO04OhUxSApruRpLqli5oAmoB/s7iM744l6iDofLByf6u3zVEBgn+hMPIQ9Y01wEsyyMg3hhr+NyH5jsvJH0IqNOoEMSFF5SkTkU+lycWkXGmFlAdSlqk2o1I2IJJ0UXSG/KfalplKNjOZmGYidJudZSJZu7++ANmXeNAdrbAZAAAAAElFTkSuQmCC') 0 0 no-repeat;
+  }
+
+  &.step-connector-with-label {
+    height: 33px;
+    margin-top: 12px;
+    width: 90px;
+
+    .connector-label {
+      width: 88px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+.step-highlight {
+  box-shadow: inset 0 0 0 2px $step-highlight-color;
+  box-sizing: border-box;
+  .process-start-title,
+  .process-finish-title {
+    box-shadow: inset 0 0 0 2px $step-highlight-color;
+  }
+}
+
+.start-step-cell {
+  width: 100px;
+  height: 25px;
+  font-size: 11px;
+  line-height: 25px;
+  color: $default-white;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 1px;
+  background-color: $default-text-color;
+}
+
+.step-cell {
+  width: 100px;
+  height: 100px;
+
+  .step {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+  }
+
+  .ec-component,
+  .ec-procedure,
+  .ec-process,
+  .ec-plugin,
+  .ec-command {
+    color: $white;
+    font-size: 30px;
+    line-height: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+    cursor: default;
+  }
+
+  &.appProcess .step-highlight {
+    .step-inner {
+      box-shadow: inset -2px 0 0 0 $step-highlight-color,
+                  inset 2px 0 0 0 $step-highlight-color,
+                  inset 0 2px 0 0 $step-highlight-color;
+    }
+    .step-footer {
+      box-shadow: inset -2px 0 0 0 $step-highlight-color,
+                  inset 2px 0 0 0 $step-highlight-color,
+                  inset 0 -2px 0 0 $step-highlight-color;
+    }
+  }
+  &.appProcess {
+    background: linear-gradient(#a6e764, #5ca046);
+    .step-footer {
+      background: #437542;
+    }
+  }
+
+  &--rollback.appProcess {
+    background: linear-gradient(#f25a29, #b32318);
+    .step-footer {
+      background: #94000e;
+    }
+  }
+
+  &.manualAppProcess {
+    background: linear-gradient(#78a9ec, #304876);
+    .step-footer {
+      background: #2f4487;
+    }
+  }
+
+  &.compProcess {
+    .step {
+      background: linear-gradient(#fcaa00, #dc5d0e);
+    }
+  }
+
+  &.manualCompProcess {
+    background: linear-gradient(#78a9ec, #304876);
+  }
+
+  .step-ghost {
+    &--dragabble {
+      box-sizing: border-box;
+      border: 2px dashed $active-blue;
+      background: $white;
+    }
+    .step-inner {
+      box-sizing: border-box;
+      border: 2px dashed $active-blue;
+      background: $white;
+    }
+
+    .drag-step-title {
+      height: 48px;
+      width: 100%;
+      font-family: $base-font-family;
+      line-height: 18px;
+      padding: 0;
+      text-align: center;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      margin: 0;
+      overflow: hidden;
+      white-space: normal;
+    }
+    .remove-ghost-step {
+      height: 25px;
+    }
+    .step-icon {
+      display: block;
+      height: 48px;
+
+      .sds-icon.steps {
+        width: 100%;
+        float: left;
+        font-size: 29px;
+        line-height: 29px;
+        color: $active-blue;
+      }
+    }
+    .step-footer {
+      background: $active-blue;
+      color: $white;
+      margin: 0 -2px;
+      cursor: pointer;
+
+      &:hover {
+        background: $ghostComponentHover;
+      }
+      &:active{
+        background:$ghostComponentActive;
+      }
+    }
+    .sds-icon.remove {
+      font-size: 10px;
+      line-height: 25px;
+      width: 25px;
+      height: 25px;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .step-inner {
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+
+  .step-outer {
+    margin-left: 100%;
+    height: 100px;
+    &__top {
+      height: 75px;
+    }
+  }
+
+  .step-outer-title {
+    &__inner {
+      font-family: $base-font-family;
+      text-align: left;
+      width: 190px;
+      overflow: hidden;
+      white-space: normal;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+    &__text {
+      background: $default-white;
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 16px;
+      vertical-align: middle;
+      display: -webkit-box;
+      max-height: 48px;
+      white-space: pre-wrap;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .step-outer-title--tier-name {
+    .step-outer-title__text {
+      max-height: 32px;
+      white-space: pre-wrap;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  .step-menu {
+    height: 25px;
+  }
+
+  .step-icon {
+    height: 50px;
+    .sds-svg-icon__container {
+      height: 38px;
+    }
+    .sds-svg-icon.manual-process-step,
+    .sds-svg-icon.sds-svg-icon--icon-process-step-rollback,
+    .sds-svg-icon.sds-svg-icon--icon-step-utilities,
+    .sds-svg-icon.sds-svg-icon--icon-step-service {
+      margin: 0 auto;
+      width: 38px;
+      height: 38px;
+      fill: $white;
+    }
+
+    .sds-svg-icon.sds-svg-icon--icon-step-service {
+      width: 32px;
+    }
+  }
+
+  .step-description {
+    .sds-icon {
+      display: inline-block;
+      cursor: pointer;
+      height: 14px;
+      font-size: 14px;
+      line-height: 14px;
+      width: 14px;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+    &.disabled {
+      .sds-icon {
+        cursor: default;
+        color: $prGhostStepDroppedControl;
+      }
+    }
+  }
+
+  .step-footer {
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+}
+
+.ec-none {
+  margin-bottom: 7px;
+}
+
+.add-step-btn {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
+.step-tale {
+  height: 18px;
+  width: 36px;
+  display: inline-block;
+}
+
+// Start Finish
+.app-process-start-finish-point {
+  width: 100px;
+
+  .process-start-title,
+  .process-finish-title {
+    background-color: $default-text-color;
+    width: 100px;
+    height: 25px;
+    font-size: 13px;
+    line-height: 25px;
+    color: $default-white;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}
+
+.border-light .step-cell .step-ghost {
+  border: 2px solid #f00;
+}
+
+.ghost-step-arr {
+  position: absolute;
+  display: none;
+  width: 34px;
+  height: 26px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  &.ghost-step-arr-up {
+    margin-top: -2px;
+    top: 100%;
+  }
+  &.ghost-step-arr-down {
+    margin-bottom: -2px;
+    bottom: 100%;
+  }
+}

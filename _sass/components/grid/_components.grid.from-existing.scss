@@ -1,0 +1,20 @@
+//================================================
+//  Grid from-existing
+//================================================
+
+.ec-grid-primary--from-existing {
+  .ec-grid-primary__row {
+    height: 40px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 40px;
+    &.disabled {
+      color: $simple-light-gray;
+    }
+  }
+
+  .ec-grid-primary__col {
+    height: 40px;
+    line-height: 40px;
+  }
+}

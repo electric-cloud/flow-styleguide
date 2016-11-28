@@ -1,0 +1,163 @@
+//================================================
+//  Wizard approve gate
+//================================================
+
+.modals-box .wizard-gate-approve .ec-react-wizard__content {
+  padding: 0 40px;
+}
+
+.wizard-gate-approve {
+
+  .wizard-row--separator-top {
+    border-top: 2px solid $default-black;
+  }
+
+  .wizard-row__header {
+    display: flex;
+    @include modal-header-text();
+
+    .sds-icon {
+      vertical-align: middle;
+    }
+
+    .wizard-row__header-label {
+      vertical-align: middle;
+
+      &--to {
+        display: inline-block;
+      }
+
+      &--stage-icon {
+        margin-top: 16px;
+        fill: $light-blue;
+      }
+
+      &--stage-name {
+        max-width: 282px;
+        @include sds-ellipsis;
+      }
+
+      &--slash {
+        width: 14px;
+      }
+
+      &--gate-icon {
+        margin-top: 26px;
+        fill: $medium-soft-blue;
+      }
+
+      &--type {
+        max-width: 120px;
+      }
+    }
+  }
+
+  .wizard-row__radio-box {
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+
+    .wizard-row__radio-box-title {
+      width: 115px;
+      display: inline-block;
+    }
+
+    .react-form__radio-block--action-type {
+      display: inline-block;
+    }
+
+    .react-form__radio-container--action-type {
+      width: 145px;
+      display: inline-block;
+    }
+
+    .radio-btn {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .wizard-row__text-field {
+    padding: 20px 0;
+
+    .react-form__textarea-wrapper {
+      margin: 0;
+    }
+
+    .react-form__textarea-holder {
+      width: auto;
+    }
+
+    .react-form__textarea {
+      width: 356px;
+      height: 120px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  .wizard-gate-rule-list {
+    height: 210px;
+    overflow-x: auto;
+  }
+
+  .wizard-gate-rule-item {
+    display: flex;
+    line-height: 40px;
+    border-bottom: 2px solid $default-black;
+    text-align: left;
+
+    .sds-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .sds-icon.approval {
+      width: 30px;
+      font-size: 16px;
+    }
+
+    .sds-icon.check-mark {
+      width: 30px;
+      font-size: 14px;
+      color: $soft-gray;
+
+      &.enabled {
+        color: $light-green;
+      }
+    }
+
+    .sds-icon.comment {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      color: $white;
+
+      &.enabled {
+        cursor: pointer;
+        color: $default-black;
+      }
+    }
+  }
+
+  .wizard-gate-rule-item__index {
+    width: 30px;
+    vertical-align: middle;
+  }
+
+  .wizard-gate-rule-item__name {
+    flex: 1;
+    vertical-align: middle;
+    @include sds-ellipsis;
+  }
+
+  .wizard-gate-rule-item__approvers {
+    flex: 1;
+    vertical-align: middle;
+    @include sds-ellipsis;
+
+    &.enabled {
+      font-weight: bold;
+    }
+  }
+}

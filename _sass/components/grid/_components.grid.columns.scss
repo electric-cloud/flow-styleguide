@@ -1,0 +1,308 @@
+//================================================
+//  Grid columns
+//================================================
+
+.ec-grid-primary {
+
+  //Grid col
+  .ec-grid-primary__col {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    align-items: center;
+    margin: 0 10px;
+
+    a {
+      color: $black;
+    }
+  }
+
+  //Flexible grid columns classes from ec-grid-primary__col--flex-10 to ec-grid-primary__col--flex-100, step by 10
+  @for $i from 1 through 10 {
+    $flexNumber: $i * 10;
+    .ec-grid-primary__col--flex-#{$flexNumber} {
+      vertical-align: middle;
+      flex: $flexNumber;
+      display: flex;
+
+      .sds-icon {
+        margin-right: 7px;
+      }
+    }
+  }
+
+
+  //Fixed grid column classes
+  .ec-grid-primary__col--fixed-20 {
+    @include ec-grid-fixed-column(20px);
+  }
+  .ec-grid-primary__col--fixed-30 {
+    @include ec-grid-fixed-column(30px);
+  }
+
+  .ec-grid-primary__col--fixed-35 {
+    @include ec-grid-fixed-column(35px);
+  }
+
+  .ec-grid-primary__col--fixed-40 {
+    @include ec-grid-fixed-column(40px);
+  }
+
+  .ec-grid-primary__col--fixed-50 {
+    @include ec-grid-fixed-column(50px);
+  }
+
+  .ec-grid-primary__col--fixed-60 {
+    @include ec-grid-fixed-column(60px);
+  }
+
+  .ec-grid-primary__col--fixed-70 {
+    @include ec-grid-fixed-column(70px);
+  }
+
+  .ec-grid-primary__col--fixed-75 {
+    @include ec-grid-fixed-column(75px);
+  }
+
+  .ec-grid-primary__col--fixed-80 {
+    @include ec-grid-fixed-column(80px);
+  }
+
+  .ec-grid-primary__col--fixed-100 {
+    @include ec-grid-fixed-column(100px);
+  }
+
+  .ec-grid-primary__col--fixed-110 {
+    @include ec-grid-fixed-column(110px);
+  }
+
+  .ec-grid-primary__col--fixed-120 {
+    @include ec-grid-fixed-column(120px);
+  }
+
+  .ec-grid-primary__col--fixed-125 {
+    @include ec-grid-fixed-column(125px);
+  }
+
+  .ec-grid-primary__col--fixed-160 {
+    @include ec-grid-fixed-column(160px);
+  }
+
+  .ec-grid-primary__col--fixed-280 {
+    @include ec-grid-fixed-column(280px);
+  }
+
+
+  //Texts for flexible columns
+  .ec-grid-primary__col--text {
+    padding: 3px 0;
+    line-height: 20px;
+    max-height: 38px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    word-wrap: break-word;
+    word-break: break-all;
+    transform: translateY(-50%);
+    white-space: pre-wrap;
+    align-self: flex-start;
+    display: block;
+    flex: 0 1 auto;
+    text-align: left;
+
+    //for chrome
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+
+  //Actions column (expand, run etc)
+  .ec-grid-primary__col--action {
+    @include ec-grid-action-column(30px);
+    justify-content: center;
+  }
+
+  .ec-grid-primary__col--action-40 {
+    @include ec-grid-action-column(40px);
+    margin: 0;
+  }
+
+  //Actions column (expand, run etc)
+  .ec-grid-primary__col--action {
+    @include ec-grid-action-column(30px);
+    justify-content: center;
+    &.disabled {
+      cursor: default;
+    }
+  }
+
+
+  //---------- NAMED CUSTOM COLUMNS ----------
+
+
+  //Index column
+  .ec-grid-primary__col--index {
+    background: $seventy-percent-gray;
+    color: $white;
+    font-size: 24px;
+    text-align: right;
+    padding-right: 5px;
+    width: 60px;
+    line-height: 50px;
+    margin-left: 0;
+  }
+
+
+  //Icon index column
+  .ec-grid-primary__col--index-icon {
+    text-align: center;
+    padding-right: 0;
+    .sds-icon {
+      color: $white !important;
+      margin: 0;
+    }
+    .sds-svg-icon {
+      fill: $white;
+    }
+  }
+
+  .ec-grid-primary__col--simple-index {
+    @include ec-grid-fixed-column(34px);
+    text-align: right;
+    margin-left: 0;
+  }
+
+  //Information icon with tooltip column
+  .ec-grid-primary__col--info {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+
+    .ec-react-help__wrapper {
+      width: 16px;
+      margin: 0;
+    }
+  }
+
+
+  //Datetime column
+  .ec-grid-primary__col--datetime {
+    @include ec-grid-fixed-column(255px);
+  }
+
+  //Job re run column
+  .ec-grid-primary__col--rerun {
+    .sds-icon {
+      color: $saturated-green;
+      font-size: 25px;
+      vertical-align: -3px;
+    }
+  }
+
+  //Percentage progress column
+  .ec-grid-primary__col--percentage {
+    @include ec-grid-fixed-column(80px);
+    margin: 0 10px;
+    font-size: 28px;
+    color: $middle-blue;
+  }
+
+
+  //Run progress icon
+  .ec-grid-primary__col--progress-icon {
+    @include ec-grid-fixed-column(50px);
+    margin: 0 0 0 -10px;
+    text-align: center;
+    .sds-icon {
+      font-size: 30px;
+      color: $soft-light-blue;
+      &:before {
+        content: $sds-icon-reload;
+      }
+    }
+  }
+
+
+  //Pipeline run stage task
+  .ec-grid-primary__col--task-info {
+    display: block;
+  }
+
+  //Provision action col
+  .ec-grid-primary__col--action-provision {
+    @include ec-grid-action-column(34px);
+  }
+
+  .ec-grid-primary__col--approvers {
+    @include ec-grid-action-column(75px);
+    cursor: default;
+  }
+
+
+  //Load more column
+  .ec-grid-primary__col--load-more {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .ec-grid-primary__col--no-left-offset {
+    margin-left: 0;
+  }
+
+  .ec-grid-primary__col--no-right-offset {
+    margin-right: 0;
+  }
+
+  .ec-grid-primary__col--without-offset {
+    margin: 0;
+  }
+
+  .ec-grid-primary__col--flex {
+    display: flex;
+  }
+
+  .ec-grid-primary__col--left-align {
+    text-align: left;
+  }
+
+  .ec-grid-primary__col--right-align {
+    text-align: right;
+  }
+
+  .ec-grid-primary__col--center-align {
+    text-align: center;
+  }
+
+  .ec-grid-primary__col--ellipsis {
+    display: block;
+    @include sds-ellipsis();
+  }
+
+  .ec-grid-primary__col--resource-inventory-error {
+    @include ec-grid-action-column(75px);
+  }
+
+  .ec-grid-primary__col--capitalize {
+    text-transform: capitalize;
+  }
+
+  .ec-grid-primary__col--error-background {
+    background: $dark-red;
+  }
+
+  .ec-grid-primary__col--link {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}

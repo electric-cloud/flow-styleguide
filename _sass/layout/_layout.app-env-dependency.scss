@@ -1,0 +1,465 @@
+//================================================
+//  Application-environment-dependency
+//================================================
+
+.application-environment-dependency-container {
+  overflow: auto;
+}
+
+.dependencies {
+  text-align: left;
+  min-width: 1260px;
+  min-height: 100%;
+
+  &__list {
+    display: inline-block;
+    text-align: center;
+    padding-top: 29px;
+    width: 1260px;
+  }
+
+  &__list-item {
+    vertical-align: top;
+    margin: 0 0 58px;
+    text-align: center;
+    line-height: 1px;
+    &:last-child {
+      margin-bottom: 62px;
+    }
+    &-connector {
+      display: inline-block;
+      width: 298px;
+      height: 118px;
+      position: relative;
+      vertical-align: top;
+      &--short {
+        width: 238px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid $black;
+        left: 0;
+        top: 59px;
+        width: 100%;
+      }
+    }
+  }
+
+  .dependencies-item {
+    line-height: 16px;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+    width: 88px;
+    height: 88px;
+    background: linear-gradient($white, $very-soft-gray);
+    box-shadow: 0 5px 15px -2px $black;
+    border: 2px solid $black;
+    &__inner {
+      text-align: center;
+      height: 88px;
+    }
+
+    &__error {
+      position: absolute;
+      bottom: -3px;
+      left: 100%;
+      color: $dark-red;
+      line-height: 15px;
+      margin-left: 6px;
+      white-space: nowrap;
+      .sds-svg-icon {
+        width: 22px;
+        height: 22px;
+        fill: $dark-red;
+        vertical-align: bottom;
+      }
+    }
+
+    &__title {
+      font-size: 12px;
+      line-height: 15px;
+      position: absolute;
+      left: 15px;
+      top: 0;
+      width: 88px;
+      text-align: center;
+      @include sds-ellipsis();
+    }
+
+    &__subtitle {
+      font-size: 11px;
+      text-align: center;
+      color: $white;
+      line-height: 13px;
+      height: 30px;
+      padding: 3px 0 0;
+      @include sds-ellipsis();
+    }
+
+    &__component-icon {
+      text-align: center;
+      color: $white;
+      font-size: 20px;
+      line-height: 20px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    &__component-count {
+      font-size: 12px;
+      color: $white;
+      line-height: 12px;
+    }
+
+    &__component-count-name {
+      line-height: 12px;
+      font-size: 11px;
+      color: $white;
+    }
+
+    &--application {
+      cursor: pointer;
+      &:hover {
+        background: $most-light-gray;
+      }
+
+      .dependencies-item {
+        &__inner {
+          background: linear-gradient($light-sky-blue, $dark-sky-blue);
+        }
+
+        &__component-icon {
+          margin-bottom: 18px;
+        }
+      }
+    }
+
+    &--environment {
+      &:hover {
+        background: $orange-yellow;
+      }
+      .dependencies-item {
+        &__inner {
+          background: linear-gradient($light-orange, $very-light-orange);
+        }
+      }
+    }
+
+    &--resource-template {
+      &:hover {
+        background: $some-light-gray;
+      }
+      .dependencies-item {
+        &__inner {
+          background: $light-black;
+        }
+      }
+    }
+
+    &--environment-template {
+      &:hover {
+        background: $some-light-gray;
+      }
+      .dependencies-item {
+        &__inner {
+          background: $light-black;
+        }
+      }
+    }
+
+    &--provisioning {
+      &:hover {
+        background: $some-light-gray;
+      }
+      .dependencies-item {
+        &__inner {
+          background: $light-black;
+        }
+
+        &__provision-title {
+          font-size: 11px;
+          text-align: center;
+          color: $white;
+          line-height: 13px;
+          padding: 3px 0;
+        }
+
+        &__provision-separate {
+          margin: 3px auto;
+          width: 60px;
+          height: 2px;
+          background: $gray;
+        }
+
+        &__provision-icon {
+          font-size: 20px;
+          color: $white;
+        }
+      }
+    }
+
+    &--error {
+      border-color: $dark-red;
+    }
+
+    &--pointer {
+      cursor: pointer;
+    }
+  }
+
+  .dependency-info {
+    margin: 29px 0 -30px;
+    background: $most-light-gray;
+    text-align: left;
+    @include clearfix();
+    position: relative;
+    display: inline-block;
+    width: 840px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: 186px;
+      border-style: solid;
+      border-width: 20px 24px;
+      border-color: transparent transparent $most-light-gray transparent;
+    }
+    &--resource-template {
+      width: 1260px;
+      &:before {
+        right: 246px;
+      }
+    }
+    &--hide {
+      display: none;
+    }
+    &__inner {
+      display: flex;
+    }
+    &__empty {
+      line-height: 30px;
+      margin: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+    }
+    &__buttons {
+      cursor: pointer;
+      .sds-svg-icon {
+        &--button-close-modal {
+          fill: $gray;
+          margin: 0 0 0 18px;
+        }
+      }
+      .sds-icon {
+        cursor: pointer;
+        font-size: 20px;
+        vertical-align: middle;
+        &.expand-details {
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+    &__col {
+      flex: 1;
+      box-sizing: border-box;
+      float: left;
+      width: 420px;
+      border-right: 1px solid $gray;
+      border-left: 1px solid $gray;
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &-title {
+        margin: 0 20px;
+        align-items: center;
+        display: flex;
+        height: 41px;
+        font-size: 16px;
+        &-name {
+          flex: 1;
+        }
+        .sds-svg-icon {
+          &--icon-application {
+            fill: $black;
+            margin: 0 10px 0 0;
+          }
+        }
+        .sds-icon {
+          &.environment {
+            font-size: 20px;
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+      &-item {
+        margin: 0 20px;
+        display: flex;
+        min-height: 40px;
+        border-top: 2px solid $gray;
+        font-size: 16px;
+        @include clearfix();
+        box-sizing: border-box;
+
+        &:last-child {
+          margin-bottom: 2px;
+        }
+
+        &-name {
+          line-height: 18px;
+          width: 100px;
+          margin-top: 10px;
+          word-wrap: break-word;
+          margin-right: 5px;
+        }
+        &-text {
+          @include sds-ellipsis();
+          line-height: 38px;
+          display: flex;
+          align-items: center;
+          flex: 1;
+          &--error {
+            color: $dark-red;
+          }
+        }
+        &-value {
+          @include sds-ellipsis();
+        }
+        .sds-svg-icon {
+          &--icon-runtime-status-failed {
+            margin-top: 10px;
+            width: 20px;
+            height: 20px;
+            fill: $dark-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.create-edit-requirements {
+  &__list {
+    padding: 0 30px;
+    overflow: auto;
+    height: 420px;
+    &--with-attention {
+      height: 395px;
+    }
+  }
+  &__empty {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  &__item {
+    border-bottom: 2px solid $soft-gray;
+   &--first {
+     border-top: 2px solid $soft-gray;
+   }
+  }
+  &__group-title {
+    @include sds-ellipsis();
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+  }
+  &__group-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+  }
+  &__group-label {
+    margin: 0 40px;
+  }
+  &__expand-btn {
+    position: absolute;
+    right: 0;
+    height: 14px;
+    top: 13px;
+    .sds-svg-icon {
+      margin: 0;
+      vertical-align: top;
+    }
+  }
+  &__group-item {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    &-label {
+      text-align: right;
+      display: inline-block;
+      width: 216px;
+      margin-right: 24px;
+      vertical-align: top;
+    }
+    .react-form__select-wrapper {
+      display: inline-block;
+      width: 380px;
+    }
+
+    .create-edit-requirements__group-item-input {
+      border-radius: 0;
+      display: inline-block;
+      width: 380px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      box-sizing: border-box;
+      border: 2px solid $soft-gray;
+      padding: 0 10px;
+      box-shadow: none;
+      &:focus {
+        box-shadow: none;
+      }
+      &:disabled {
+        color: $fifty-percent-gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.modals-box {
+  .ec-react-wizard--create-requirements-wizard {
+    .ec-react-wizard__content {
+      padding: 20px 20px 0;
+    }
+    .create-title {
+      position: relative;
+      margin: 0 30px;
+      padding-right: 40px;
+      .sds-svg-icon {
+        &--icon-application-tier {
+          margin-right: 10px;
+        }
+      }
+      .sds-icon.template {
+        font-size: 18px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+    .expand-all-btn {
+      position: absolute;
+      right: 0;
+      .sds-svg-icon {
+        margin: 0;
+      }
+    }
+    .ec-react-wizard__confirmation-attention-content {
+      width: 600px;
+      line-height: 30px;
+    }
+  }
+}

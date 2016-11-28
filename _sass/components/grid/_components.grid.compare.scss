@@ -1,0 +1,59 @@
+//================================================
+//  Grid compare
+//================================================
+
+.ec-grid-primary--compare {
+  margin-right: 20px;
+  margin-left: 10px;
+
+  .ec-grid-primary__col {
+    &--change-alert {
+      margin: 0;
+      width: 30px;
+      .show {
+        display: block;
+      }
+
+      &.is-empty {
+        width: 30px;
+        margin-right: 6px;
+        .change-alert {
+          display: block;
+        }
+      }
+  }
+  }
+
+  .ec-grid-primary__list {
+    .ec-grid-primary__row {
+      font-size: 14px;
+    }
+
+    .highlighted {
+      background: $dim-blue;
+    }
+  }
+
+  .sds-icon {
+    &.view-processes {
+      color: $default-black;
+      font-size: 18px;
+    }
+
+    &.version {
+      color: $default-black;
+      font-size: 14px;
+    }
+
+    &.artifact {
+      color: $default-black;
+      font-size: 14px;
+    }
+
+    &.component2 {
+      color: $default-black;
+      font-size: 14px;
+    }
+
+  }
+}

@@ -1,0 +1,228 @@
+//================================================
+//  Wizard properties manager
+//================================================
+
+.modals-box .ec-react-wizard--properties {
+
+  .ec-react-wizard {
+    position: relative;
+  }
+
+  .properties-type-icon {
+    &:before {
+      font-size: 24px;
+      color: $app-table-app-icon-color;
+    }
+    &.pipeline:before,
+    &.stages:before,
+    &.releases:before {
+      font-size: 12px;
+      position: relative;
+      top: -2px;
+      vertical-align: 0;
+    }
+    &.stages:before {
+      color: $light-blue;
+    }
+    &.resource.template:before {
+      color: $soft-blue;
+    }
+    &.environment:before,
+    &.template:before {
+      color: $orange;
+    }
+    &.view-processes:before {
+      color: $light-green;
+    }
+    &.snapshot:before {
+      color: $dark-blue;
+    }
+    &.pipeline:before {
+      color: $violet;
+    }
+    &.view-processes {
+      vertical-align: -4px;
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__row {
+    background: $white;
+    border-bottom: 1px solid $prop-row-border;
+    margin-bottom: 0;
+    height: 38px;
+    font-size: 16px;
+    &:not(.select-off):hover {
+      background: $ten-percent-gray;
+    }
+    &.selected {
+      background: gray;
+      &:hover {
+        background: $soft-dark-gray;
+      }
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__col {
+    line-height: 38px;
+    height: 38px;
+
+    &--text {
+      flex-grow: 1;
+    }
+
+    .sds-icon.folder,
+    .sds-icon.acl {
+      color: $activeFolder;
+    }
+    .sds-svg-icon--icon-go-to-details {
+      height: 100%;
+      vertical-align: top;
+    }
+  }
+
+  .ec-react-wizard__head {
+    .button {
+      font-size: 14px;
+      margin-right: 10px;
+      cursor: pointer;
+
+      &.disabled {
+        cursor: default;
+        color: $simple-light-gray;
+        .sds-svg-icon.sds-svg-icon--button-delete {
+          fill: $simple-light-gray;
+        }
+      }
+
+      &.at-delete-props-btn:not(.disabled) {
+        .sds-svg-icon.sds-svg-icon--button-delete {
+          fill: $default-red;
+        }
+        &:hover {
+          .sds-svg-icon.sds-svg-icon--button-delete {
+            fill: $default-black;
+          }
+        }
+      }
+
+      .sds-icon.folder-plus {
+        font-size: 14px;
+        width: 44px;
+        display: inline-block;
+        color: $activeFolder;
+      }
+
+      .sds-icon.plus-sign {
+        font-size: 16px;
+        width: 26px;
+        display: inline-block;
+      }
+    }
+  }
+
+
+
+  .ec-react-wizard__content {
+    padding: 0;
+  }
+
+  .properties-sub-header {
+    display: flex;
+    margin: 0 20px;
+    font-size: 14px;
+    border-bottom: 2px solid $forty-percent-gray;
+
+    &__col {
+      position: relative;
+      height: 34px;
+      line-height: 34px;
+      box-sizing: border-box;
+      @include sds-ellipsis();
+      vertical-align: middle;
+      align-items: center;
+    }
+    &__col--text {
+      margin: 0 10px;
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      text-align: left;
+    }
+  }
+
+  .select {
+    &.disabled {
+      &:hover {
+        color: $disabled-btn-color;
+      }
+    }
+
+    &:hover {
+      color: $default-black;
+      .select-toggle:not(.disabled) {
+        background: $default-black;
+        cursor: pointer;
+        color: $default-white;
+      }
+    }
+    &.select-toggle {
+      &.disabled {
+        cursor: default;
+        color: $controlBarSelectAllColor;
+        background: $disabled-btn-color;
+      }
+    }
+  }
+  .select-toggle {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid $controlBarSelectAllBg;
+    text-align: center;
+    margin: 0 0 0 5px;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 14px;
+    min-width: 35px;
+    &.active {
+      background: $controlBarSelectAllBg;
+      color: $default-white;
+    }
+  }
+
+  .properties-details__header {
+    @include modal-header-text();
+  }
+
+  .properties-details__select {
+    margin: 20px 0;
+    .ec-select {
+      width: 330px;
+      font-weight: 200;
+      font-size: 18px;
+      &.active .ec-select-header .sds-icon:not(.dropdown) {
+        color: $medium-dark-blue;
+      }
+    }
+  }
+  .react-form__textarea {
+    height: 90px;
+  }
+}
+
+.properties-manager-select {
+  &.disabled .ec-select-header {
+    cursor: default;
+  }
+  .ec-select-body {
+    .ec-select-option {
+      text-align: left;
+      padding: 0 5px;
+
+      @for $i from 1 through 10 {
+        &.level-#{$i} {
+          padding-left: #{$i * 20 + 5}px;
+        }
+      }
+    }
+  }
+}

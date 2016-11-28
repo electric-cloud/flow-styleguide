@@ -1,0 +1,35 @@
+//================================================
+//  Grid last-changes
+//================================================
+
+.ec-grid-primary--last-changes {
+  .ec-grid-primary__row {
+    height: 40px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 40px;
+    border-bottom: 2px solid $soft-gray;
+    background: none;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .ec-grid-primary__col {
+    height: 40px;
+    line-height: 40px;
+    &--gray {
+      color: $gray;
+    }
+  }
+
+  .ec-grid-primary__head {
+    .ec-grid-primary__row {
+      border-bottom: 2px solid $default-black;
+      .ec-grid-primary__col {
+        padding: 14px 0 0;
+      }
+    }
+  }
+
+}

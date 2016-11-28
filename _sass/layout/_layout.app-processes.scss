@@ -1,0 +1,605 @@
+//================================================
+//  App processes
+//================================================
+
+.process-ghost, .process-step {
+  display:        inline-block;
+  vertical-align: top;
+  position:       relative;
+  z-index:        50;
+  margin:         50px auto 0;
+  font:           $base-font-family;
+  text-align:     center;
+  cursor:         default;
+    .process-step-substrate {
+          border:       2px solid transparent;
+          position:     absolute;
+          top:          0;
+          right:        0;
+          bottom:       0;
+          left:         0;
+          background-color: $default-white;
+    }
+    .process-step-arrow {
+          position:     absolute;
+          left:         0;
+          right:        0;
+          display:      none;
+          background-image:   url('../img/arrow-2px.png');
+          background-repeat:  no-repeat;
+    }
+    .process-step-container {
+      width:        100px;
+      height: 100px;
+      position: relative;
+      .app-process-step-tier {
+          bottom:       0;
+          position:     absolute;
+          text-align:   center;
+          left:         0;
+          right: 0;
+          color: $prStepTierColor;
+          background-color: $prStepTierBgColor;
+          border-color: $prStepTierBgColor;
+          border-width: 0 2px 2px;
+          border-style: solid;
+          overflow: hidden;
+        .sds-icon.edit {
+          display: inline-block;
+          cursor: pointer;
+          vertical-align: top;
+          color: $prStepTierColor;
+          opacity: .75;
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .process-title {
+          @include sds-ellipsis;
+          display: inline-block;
+          max-width: 80px;
+        }
+
+        &.adjustment-border {
+          border-width: 0 1px 1px;
+        }
+      }
+
+      .process-step-controls {
+        width: 100%;
+        height: 25px;
+        .process-step-delete {
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 9px;
+          line-height: 25px;
+          cursor: pointer;
+        }
+
+        .process-step-move {
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 14px;
+          line-height: 25px;
+          cursor: pointer;
+        }
+      }
+
+      .process-step-title {
+        height: 24px;
+        position: absolute;
+        top: 17px;
+        left: 7%;
+        right: 7%;
+        overflow: hidden;
+        font-size: 11px;
+        line-height: 12px;
+        letter-spacing: 1px;
+        word-wrap: break-word;
+      }
+
+      .process-step-brick {
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: 45px;
+        left: 37px;
+        font-size: 25px;
+        line-height: 26px;
+        .edit {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          cursor: pointer;
+        }
+      }
+
+      .process-step-edit {
+        width: 9px;
+        height: 9px;
+        position: absolute;
+        top: 51px;
+        left: 70px;
+        font-size: 9px;
+        line-height: 9px;
+        cursor: pointer;
+      }
+
+      .process-step-additional-up-arrow,
+      .process-step-additional-down-arrow {
+        height: 14px;
+        display: none;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        font-size: 14px;
+        line-height: 14px;
+        color: #ec1c24;
+      }
+
+      .process-step-footer {
+        width: 100%;
+        height: 25px;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        background-color: #7f7f7f;
+        .process-step-menu {
+          color: $prGhostStepDroppedMenu;
+          @include sds-icon-size(13px, 25px, 25px);
+          opacity: .75;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+}
+
+.process-ghost {
+  z-index: 99;
+  margin: 0;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  cursor: move;
+  left: 0;
+  top: 0;
+}
+
+//Coloring default
+.process-step {
+  .process-step-substrate {
+    border: 2px solid $compPrStepMain;
+    background-color: $compPrStepMain;
+    &.app-process {
+      background-color: $prStepMainColor;
+      border: 2px solid $prStepMainColor;
+    }
+  }
+
+  .process-step-container {
+    .process-step-controls {
+      .sds-icon {
+        color: $prStepIconColor;
+        display: none;
+        cursor: pointer;
+        opacity: .75;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .process-step-title {
+      color: $prStepTitleColor;
+      .process-step-title-input {
+        width: auto;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0 12px 0 0;
+        color: $default-black;
+        font-size: 9px;
+        line-height: 12px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-align: center;
+        background-color: $default-white;
+      }
+
+      .process-step-title-clear {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $default-black;
+        font-size: 7px;
+        line-height: 12px;
+        cursor: pointer;
+        &.btn-disabled {
+          display: none;
+        }
+      }
+    }
+
+    .process-step-brick {
+      color: $prStepIconColor;
+    }
+
+    .process-step-edit {
+      color: $default-white;
+      opacity: .75;
+      &:hover {
+        opacity: 1;
+      }
+
+      &.btn-disabled {
+        display: none;
+      }
+    }
+  }
+}
+.process-step.adjustment-border {
+  .process-step-substrate {
+    border: 1px solid $compPrStepMain;
+    background-color: $compPrStepMain;
+    &.app-process {
+      background-color: $prStepMainColor;
+      border: 1px solid $prStepMainColor;
+    }
+  }
+
+  .process-step-arrow {
+    background-image: url('../img/arrow-1px.png');
+    background-repeat: no-repeat;
+  }
+
+  .process-step-container {
+    .app-process-step-tier {
+      border-width: 0 1px 1px;
+    }
+  }
+}
+.process-ghost {
+  .process-step-substrate {
+    border: 2px dashed $appPrGhostBorderColor;
+    background-color: $appPrGhostBgColor;
+  }
+
+  .process-step-container {
+    .process-step-controls {
+      .sds-icon {
+        color: $appPrGhostCtrIconColor;
+        &:hover {
+          color: $appPrGhostCtrIconHover;
+        }
+        &:active {
+          color: $appPrGhostCtrIconActive;
+        }
+      }
+    }
+
+    .process-step-brick {
+      color: $appPrGhostCtrIconColor;
+    }
+  }
+}
+.process-ghost.adjustment-border {
+  .process-step-substrate {
+    border: 1px dashed $appPrGhostBorderColor;
+  }
+
+  .process-step-arrow {
+    background-image: url('../img/arrow-1px.png');
+    background-repeat: no-repeat;
+  }
+}
+
+//Controls Visible
+.process-step.controls-visible {
+  .process-step-container .process-step-controls {
+
+    .process-step-delete {
+      display: block;
+    }
+
+    .process-step-move {
+      display: block;
+    }
+
+    .menu-slide-collapsed {
+      display: block;
+    }
+  }
+}
+.process-ghost.dropped.controls-visible {
+  .process-step-container .process-step-controls {
+
+    .process-step-delete {
+      display: block;
+    }
+
+    .process-step-move {
+      display: block;
+    }
+
+    .menu-slide-collapsed {
+      display: block;
+    }
+  }
+}
+
+//Coloring from drag
+.process-step.ui-draggable-dragging {
+  .process-step-container {
+
+    .process-step-controls {
+
+      .process-step-delete {
+        display: none;
+      }
+    }
+
+    .process-step-edit {
+      display: none;
+    }
+  }
+}
+.process-ghost.ui-draggable-dragging {
+  .process-step-substrate {
+    border: 2px dashed $default-black;
+    background-color: $default-white;
+  }
+
+  .process-step-container {
+    .process-step-controls {
+
+      .process-step-delete {
+        display: none;
+      }
+
+      .process-step-move {
+        color: $default-black;
+      }
+    }
+
+    .process-step-title {
+      color: $default-black;
+    }
+
+    .process-step-brick {
+      color: $default-black;
+    }
+  }
+}
+.process-ghost.ui-draggable-dragging.adjustment-border {
+  .process-step-substrate {
+    border: 1px dashed $default-black;
+    background-color: $default-white;
+  }
+}
+
+
+
+
+//Dropped ghost element
+.process-ghost.dropped {
+  z-index: 50;
+  position: relative;
+  margin-top: 50px;
+  .process-step-substrate {
+    border: 2px dashed $prGhostStepDroppedBorder;
+    background-color: $prGhostStepDroppedBg;
+  }
+
+  .process-step-container {
+    .process-step-controls {
+      width: 100%;
+      height: 25px;
+      .sds-icon {
+        width: 25px;
+        height: 25px;
+        display: none;
+        position: absolute;
+        font-size: 14px;
+        line-height: 25px;
+        cursor: pointer;
+        color: $prGhostStepDroppedControl;
+        &:hover {
+          color: $prGhostStepDroppedControlHover;
+        }
+        &:active {
+          color: $prGhostStepDroppedControlActive;
+        }
+      }
+
+      .process-step-delete {
+        top: 0;
+        left: 0;
+      }
+
+      .process-step-move {
+        top: 0;
+        right: 0;
+      }
+
+    }
+
+    .process-step-title {
+      color: $prGhostStepDroppedTitle;
+    }
+
+    .process-step-brick {
+      color: $prGhostStepDroppedIcon;
+    }
+
+    .process-step-footer {
+      background: $prGhostStepDroppedBorder;
+    }
+  }
+}
+.process-ghost.dropped.adjustment-border {
+  .process-step-substrate {
+    border: 1px dashed $prGhostStepDroppedBorder;
+    background-color: $prGhostStepDroppedBg;
+  }
+}
+
+//Border Light
+.process-ghost.border-light, .process-step.border-light {
+  .process-step-substrate {
+    border: 2px solid #ec1c24;
+  }
+
+  .process-step-container .app-process-step-tier {
+    border-color: #ec1c24;
+  }
+}
+.process-ghost.border-light.adjustment-border,
+.process-step.border-light.adjustment-border {
+  .process-step-substrate {
+    border: 1px solid #ec1c24;
+  }
+
+  .process-step-container .app-process-step-tier {
+    border-color: #ec1c24;
+    border-width: 0 1px 1px;
+    border-style: solid;
+  }
+}
+
+//Arrow
+.process-ghost.up-arrow, .process-step.up-arrow {
+  .process-step-substrate {
+    border: 2px solid #ec1c24;
+    background-color: $default-white;
+  }
+
+  .process-step-arrow {
+    margin-bottom: -2px;
+    bottom: 100%;
+    display: block;
+    background-position: top center;
+  }
+
+  .process-step-container {
+    .process-step-controls {
+
+      .process-step-move {
+        color: $default-black;
+      }
+    }
+
+    .process-step-title {
+      color: $default-black;
+    }
+
+    .process-step-brick {
+      color: $default-black;
+    }
+
+    .process-step-additional-down-arrow {
+      display: block;
+    }
+  }
+}
+.process-ghost.up-arrow.adjustment-border,
+.process-step.up-arrow.adjustment-border {
+  .process-step-substrate {
+    border: 1px solid #ec1c24;
+    background-color: $default-white;
+  }
+
+  .process-step-arrow {
+    margin-bottom: -1px;
+  }
+}
+.process-ghost.down-arrow, .process-step.down-arrow {
+  .process-step-substrate {
+    border: 2px solid #ec1c24;
+    background-color: $default-white;
+  }
+
+  .process-step-arrow {
+    margin-top: -2px;
+    top: 100%;
+    display: block;
+    background-position: bottom center;
+  }
+
+  .process-step-container {
+    .process-step-controls {
+
+      .process-step-move {
+        color: $default-black;
+      }
+    }
+
+    .process-step-title {
+      color: $default-black;
+    }
+
+    .process-step-brick {
+      color: $default-black;
+    }
+
+    .process-step-additional-up-arrow {
+      display: block;
+    }
+  }
+}
+.process-ghost.down-arrow.adjustment-border,
+.process-step.down-arrow.adjustment-border {
+  .process-step-substrate {
+    border: 1px solid #ec1c24;
+    background-color: $default-white;
+  }
+
+  .process-step-arrow {
+    margin-top: -1px;
+  }
+}
+
+
+//Start Finish
+.app-process-start-finish {
+  display: inline-block;
+  position: absolute;
+  z-index: 50;
+  .process-start-finish-substrate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #7F7F7F;
+  }
+
+  .process-start-finish-title {
+    width: 100px;
+    height: 25px;
+    position: relative;
+    font-size: 11px;
+    line-height: 25px;
+    color: $default-white;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}

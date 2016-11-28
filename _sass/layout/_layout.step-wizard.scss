@@ -1,0 +1,1175 @@
+//================================================
+//  Step wizard modal
+//================================================
+
+//  Modal window
+.ec-wizard-main {
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 0 30px;
+  width: 380px;
+  min-width: 380px;
+  background-color: #244873;
+  letter-spacing: normal;
+  padding-bottom: 0;
+
+  .ec-wizard-wrapper-content {
+    height: 100%;
+    display: flex;
+  }
+  .ec-wizard-content-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .ec-wizard-vertical-bar {
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    float: left;
+
+    .sds-icon {
+      @include sds-icon-size(12px, 30px, 30px);
+      color: $default-white;
+      cursor: pointer;
+
+      &.pipeline {
+        font-size: 9px;
+      }
+      &.add-component {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .ec-wizard-title {
+    line-height: 30px;
+    height: 30px;
+    text-align: left;
+
+    .sds-icon {
+      vertical-align: top;
+      @include sds-icon-size(12px, 30px, 30px);
+      color: $title-icon-color;
+      cursor: default;
+    }
+  }
+
+  .ec-wizard-wrapper-content {
+    position: relative;
+
+    &.ec-wizard-loader {
+      .loader.modal-loader {
+        display: block;
+      }
+    }
+  }
+
+  .ec-wizard-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .ec-wizard-head,
+  .ec-wizard-head-separator,
+  .ec-wizard-content-body,
+  .ec-wizard-foot {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    &__inner {
+      flex: 1;
+    }
+    .ec-wizard-body {
+      flex: 1;
+      max-width: 100%;
+    }
+    .ec-wizard-foot-inner {
+      position: relative;
+      z-index: 9999;
+    }
+  }
+  .ec-wizard-content-body {
+    flex: 1;
+  }
+
+  .ec-wizard-body {
+    flex: 1;
+  }
+
+  .ec-wizard-head {
+    height: 44px;
+    line-height: 44px;
+    min-height: 44px;
+    text-align: center;
+
+    .sds-icon {
+      cursor: default;
+      color: $default-text-color;
+      @include sds-icon-size(18px, 38px, 44px);
+      padding: 0;
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      &.remove {
+        color: $app-delete-icon-color;
+        cursor: pointer;
+      }
+      &.arrow-back {
+        cursor: pointer;
+        z-index: 1;
+      }
+    }
+
+    .ec-title-right-btn {
+      font-size: 14px;
+      right: 0;
+      position: absolute;
+      margin-right: 10px;
+
+      &.disabled {
+        cursor: default;
+        color: $disabled-btn-color;
+
+        .sds-icon {
+          color: $disabled-btn-color !important;
+          cursor: default !important;
+          position: static;
+        }
+      }
+    }
+
+    .ec-wizard-title {
+      vertical-align: middle;
+      margin-left: 0;
+      line-height: 44px;
+      text-align: center;
+    }
+
+    .ec-title-btn-wrapper {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .ec-title-right-btn {
+        position: static;
+
+        .sds-icon {
+          position: static;
+        }
+      }
+    }
+  }
+
+  .ec-wizard-head-right-sub-view-container {
+    float: right;
+  }
+
+  .ec-wizard-head-separator {
+    height: 2px;
+    min-height: 2px;
+    background-color: $default-black;
+
+    &.transparent {
+      background-color: transparent;
+    }
+  }
+
+  .ec-wizard-body {
+    position: relative;
+
+    .header {
+      height: 38px;
+      border-bottom: 2px solid $default-black;
+
+      .sds-icon {
+        @include sds-icon-size(11px, 38px, 38px);
+        cursor: default;
+      }
+
+      .title {
+        line-height: 38px;
+      }
+    }
+
+    .sds-form {
+      margin: 10px 10px 0;
+      border-bottom: 2px solid $separatorBG;
+    }
+
+    .sds-form-col {
+      &.left {
+        width: 40%;
+      }
+      &.right {
+        width: 59%;
+      }
+    }
+
+    .right .sds-form-label {
+      width: 80px;
+    }
+
+    .sds-form-label {
+      width: 50px;
+    }
+
+    .sds-input[type="text"],
+    .sds-input[type="time"] {
+      display: inline-block;
+      font-size: 12px;
+      height: 20px;
+      line-height: 20px;
+      padding: 0 0 0 8px;
+      width: 158px;
+    }
+
+    .sds-form-select {
+      width: 166px;
+    }
+
+    .sds-textarea {
+      display: inline-block;
+      font-size: 12px;
+      padding: 0 0 0 8px;
+      width: 260px;
+      vertical-align: top;
+    }
+
+    .sds-form-parameters-header {
+      font-weight: bold;
+      margin: 10px 0 0 16px;
+    }
+  }
+
+  .ec-wizard-foot,
+  .ec-wizard-confirmation-footer,
+  .ec-modal-alert-buttons {
+    height: 60px;
+    min-height: 60px;
+    background-color: #e5e5e5;
+
+    .ec-wizard-button {
+      user-select: none;
+      width: 200px;
+      height: 60px;
+      float: right;
+      text-align: center;
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: 200;
+      color: $default-white;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+
+    .ec-btn-submit,
+    .ec-btn-next {
+      background-color: $submit-btn-color;
+
+      &:hover {
+        background-color: $submit-btn-hover-color;
+      }
+    }
+
+    .ec-btn-submit.disabled,
+    .ec-btn-next.disabled {
+      cursor: default;
+      color: $submit-btn-disabled-text-color;
+      background-color: $submit-btn-disabled-color;
+    }
+
+    .ec-delete-cancel-btn,
+    .ec-btn-cancel {
+      background-color: #b2b2b2;
+
+      &:hover {
+        background-color: #959595;
+      }
+    }
+
+    .ec-delete-btn,
+    .ec-btn-delete {
+      background-color: $submit-btn-color;
+
+      &:hover {
+        background-color: $submit-btn-hover-color;
+      }
+    }
+  }
+
+  .plugins,
+  .procedures {
+    .ec-grid {
+      height: 545px;
+      margin: 10px 0 5px;
+
+      .ec-grid-empty {
+        padding-left: 12px;
+      }
+
+      .ec-row {
+        height: 30px;
+        border-bottom: 2px solid #7d7d7d;
+        margin: 0;
+        cursor: default;
+        background-color: $default-white;
+      }
+
+      .ec-col {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        padding: 0 5px;
+      }
+
+      .sds-icon {
+        width: 38px;
+        height: 30px;
+        font-size: 12px;
+        line-height: 30px;
+      }
+
+      .col-plugin-name {
+        width: 242px;
+        line-height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .col-description {
+        width: 240px;
+        line-height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .on-error {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+    margin-bottom: 10px;
+
+    span {
+      display: block;
+      width: 20%;
+      float: left;
+    }
+
+    .on-stop {
+      width: 30%;
+    }
+
+    .on-continue {
+      width: 50%;
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      float: left;
+      line-height: 48px;
+    }
+
+    input {
+      height: 20px;
+      width: 20px;
+      margin-left: 5px;
+    }
+
+    .separator {
+      height: 2px;
+      clear: both;
+      background-color: $separatorBG;
+    }
+  }
+
+  .step-dependency-join {
+    display: flex;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+
+    .step-dependency-join__radio-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .step-dependency-join__label {
+      line-height: 48px;
+      display: inline-block;
+    }
+
+    .step-dependency-join__input {
+      height: 20px;
+      width: 20px;
+      margin-left: 5px;
+    }
+  }
+}
+
+// Bread crumbs
+.ec-wizard-vertical-bar {
+  &.remove {
+    background-color: #888888;
+  }
+  &.app-from {
+    background-color: #666666;
+  }
+  &.apps-list {
+    background-color: #4a4a4a;
+  }
+
+  &.command {
+    background-color: $pctx-main-background;
+  }
+
+  &.view-components {
+    background-color: #244873;
+  }
+
+  &.sort {
+    background-color: $sub-view-bg;
+  }
+
+  &.component2 {
+    background-color: $sub-view-lvl2-bg;
+  }
+
+  &.plugin {
+    background-color: $sub-view-lvl2-bg;
+  }
+
+  &.custom-condition {
+    background-color: $custom-cond-view-bg;
+  }
+}
+
+
+// First Window.
+.ec-wizard-main.step-first-window {
+  width: 596px;
+  background: $customInputColor;
+
+  .embedded {
+    position: relative;
+
+    .flap {
+      position: absolute;
+      top: 180px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $wizardStepFlap;
+    }
+  }
+
+  .wizard-form-row {
+    min-height: 40px;
+    padding: 0 20px;
+    margin-bottom: 21px;
+
+    .wizard-label, .wizard-note {
+      width: 96px;
+      margin: 0;
+      line-height: 40px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .wizard-artifact-total-wrapper {
+      line-height: 40px;
+      float: left;
+      width: 215px;
+      @include sds-ellipsis;
+    }
+    .wizard-note {
+      width: 70px;
+      text-align: right;
+      vertical-align: middle;
+      .at-run-artifact-selected-count-label,
+      .at-run-parameter-required-count-label {
+        margin-right: 3px;
+      }
+    }
+
+    .wizard-input {
+      width: 318px;
+      height: 38px;
+      padding: 0 5px;
+      margin: 0;
+      border-radius: 0;
+      text-align: center;
+    }
+
+    .wizard-text-area {
+      width: 318px;
+      height: 104px;
+      padding: 0 5px;
+      margin: 0;
+      border-radius: 0;
+      resize: none;
+    }
+
+    .wizard-separator {
+      @include separator();
+    }
+
+    .wizard-row-wrapper {
+      width: 328px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      &.run-type-row {
+        font-size: 16px;
+        width: 100%;
+        display: block;
+        margin-top: -42px;
+      }
+    }
+  }
+
+  .wizard-form-row.wizard-step-head {
+    height: 40px;
+    border-bottom: 2px solid $wizardStepBorder;
+    text-align: center;
+
+    .wizard-step-message {
+      line-height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  .wizard-form-row.wizard-step-title {
+    height: 40px;
+    text-align: center;
+
+    .wizard-step-message {
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 23px;
+    }
+  }
+
+  .wizard-form-row.wizard-step-description {
+    .wizard-text-area {
+      height: 165px;
+    }
+
+    &.normal .wizard-text-area {
+      height: 104px;
+    }
+  }
+
+  .wizard-form-row.wizard-step-credential {
+    cursor: pointer;
+
+    .wizard-credential-count {
+      display: block;
+      @include sds-ellipsis();
+      line-height: 40px;
+    }
+
+    &.at-cloud-resources-container.disabled {
+      .wizard-artifact-total-wrapper, .wizard-note {
+        opacity: .5;
+      }
+    }
+
+    .sds-icon {
+      @include sds-icon-size(16px, 20px, 38px);
+    }
+  }
+
+  .wizard-form-row.wizard-step-time-limit {
+    height: 40px;
+
+    .wizard-limit-input {
+      width: 150px;
+      height: 38px;
+      padding: 0 5px;
+      margin: 0;
+      border-radius: 0;
+      text-align: center;
+      float: left;
+    }
+
+    .wizard-limit-select-wrapper {
+      width: 160px;
+      height: 40px;
+      float: right;
+    }
+  }
+}
+
+.ec-wizard-main.command-editor {
+  background: $wizard-background;
+  width: 900px;
+
+  .ec-wizard-body {
+    height: 514px;
+
+    .content-body {
+      height: 600px;
+      padding: 1px 0;
+    }
+  }
+}
+
+.ec-step-command-editor-language-container {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  .ec-step-command-editor-language {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+
+//  Define from Command
+//  from Command
+.ec-wizard-main.from-command {
+  background: $wizard-background;
+  width: 726px;
+
+  .ec-step-command-editor-language-container {
+    margin-right: 2px;
+  }
+
+  .ec-wizard-body {
+    width: 504px;
+    height: 514px;
+
+    .expand-area {
+      position: absolute;
+      right: 60px;
+      margin-top: -3px;
+      cursor: pointer;
+    }
+
+    .content-body {
+      height: 520px;
+      padding: 1px 0;
+    }
+
+    .define-step-title {
+      width: 382px;
+      height: 24px;
+      padding-left: 112px;
+      margin: 15px auto 10px;
+      text-align: center;
+    }
+
+    .define-step-form {
+      width: 472px;
+      margin: 0 auto;
+
+      .define-step-form-row {
+        height: 22px;
+        margin-bottom: 15px;
+
+        .form-label {
+          height: 22px;
+          width: 114px;
+
+          float: left;
+
+          text-align: right;
+          font-size: 14px;
+          line-height: 22px;
+
+          background-color: $default-white;
+        }
+
+        .name-input, .shell-input, .wizard-input {
+          height: 20px;
+          width: 342px;
+
+          float: right;
+
+          padding: 0 2px;
+          margin: 0;
+
+          border: 1px solid $input-border;
+          border-radius: 0;
+
+          background-color: $input-border;
+
+          &:focus {
+            border: 1px solid $input-border;
+          }
+        }
+
+        .tier-select {
+          height: 22px;
+          width: 346px;
+
+          float: right;
+
+          padding: 0;
+          margin: 0;
+          border-radius: 0;
+
+          background-color: $input-bg;
+
+        }
+
+        .step-description {
+          height: 110px;
+          width: 342px;
+
+          float: right;
+
+          padding: 0 2px;
+          margin: 0;
+          resize: none;
+
+          border: 1px solid #c5c5c5;
+          border-radius: 0;
+
+          background-color: $input-bg;
+
+          &:focus {
+            border: 1px solid $submit-btn-color;
+          }
+        }
+
+        .codemirror-wrap {
+          height: 325px;
+          width: 348px;
+          float: right;
+        }
+
+        .step-command {
+          height: 325px;
+          width: 320px;
+          padding: 0 2px;
+          margin: 0;
+          resize: none;
+
+          border: 1px solid $input-border;
+          border-radius: 0;
+
+          background-color: $input-bg;
+
+          &:focus {
+            border: 1px solid $submit-btn-color;
+          }
+        }
+      }
+
+      .define-step-form-row.big-text-description {
+        height: 110px;
+      }
+
+      .define-step-form-row.big-text-command {
+        height: 128px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.ec-wizard-main.from-command.editable {
+  width: 654px;
+  .expand-area {
+    position: absolute;
+    right: 40px;
+    margin-top: -3px;
+    cursor: pointer;
+  }
+}
+
+
+//  from Component
+.ec-wizard-main.from-component {
+  width: 726px;
+  background-color: $default-white;
+
+  .wizard-form {
+    height: 490px;
+  }
+
+  .define-step-title {
+    width: 532px;
+    height: 32px;
+
+    padding: 6px;
+    margin: 5px auto;
+
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 36px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      background-color: #4d4d4d;
+    }
+
+    background-color: #808080;
+
+    span {
+      height: 32px;
+      display: inline-block;
+
+      position: relative;
+
+      color: $default-white;
+      vertical-align: middle;
+    }
+
+    .sds-icon {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    .symbol {
+      font-size: 22px;
+      line-height: 32px;
+
+      &.slash {
+        margin: 0 4px;
+      }
+    }
+
+    .text {
+      max-width: 200px;
+
+      font-size: 14px;
+      line-height: 32px;
+
+      @include sds-ellipsis;
+    }
+  }
+
+  .component-process-parameters {
+    height: 324px;
+  }
+
+  .define-step-form {
+    width: 356px;
+
+    margin: 20px auto 0;
+
+    .define-step-form-row {
+      height: 22px;
+      margin-bottom: 21px;
+
+      .form-label {
+        height: 22px;
+        width: 80px;
+
+        float: left;
+
+        text-align: right;
+        font-size: 14px;
+        line-height: 22px;
+
+        background-color: $default-white;
+      }
+
+      .name-input {
+        height: 20px;
+        width: 266px;
+
+        float: right;
+
+        padding: 0 2px;
+        margin: 0;
+
+        border: 1px solid $input-border;
+        border-radius: 0;
+
+        background-color: $input-bg;
+
+        &:focus {
+          border: 1px solid $submit-btn-color;
+        }
+      }
+
+      .tier-select {
+        height: 22px;
+        width: 270px;
+
+        float: right;
+
+        padding: 0;
+        margin: 0;
+
+        border-radius: 0;
+
+        background-color: $input-bg;
+      }
+
+      .step-description {
+        height: 270px;
+        width: 266px;
+
+        float: right;
+
+        padding: 0 2px;
+        margin: 0;
+        resize: none;
+
+        border: 1px solid $input-border;
+        border-radius: 0;
+
+        background-color: $input-bg;
+
+        &:focus {
+          border: 1px solid $submit-btn-color;
+        }
+      }
+    }
+
+    .define-step-form-row.big-text {
+      height: 166px;
+    }
+  }
+}
+.ec-wizard-main.from-component.editable {
+  width: 654px;
+}
+
+
+//  Define from Component Operation
+//  from Component Operation
+.ec-wizard-main.from-component-operation {
+  width: 726px;
+  background-color: $default-white;
+
+  .operation-parameters-form {
+    height: 430px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}
+.ec-wizard-main.from-component-operation.editable {
+  width: 654px;
+}
+
+//  Plugin List
+.ec-wizard-main.plugin-list {
+  width: 726px;
+  background-color: $default-white;
+
+  .ec-wizard-body .plugins {
+    width: 576px;
+    height: 600px;
+
+    .ec-row {
+      width: 554px;
+
+      .col-description {
+        width: 220px;
+      }
+    }
+  }
+}
+
+//  from Plugin
+.ec-wizard-main.from-plugin {
+  width: 726px;
+  background-color: $default-white;
+
+  .procedure-parameters-form {
+    height: 426px;
+    overflow-y: auto;
+  }
+}
+.ec-wizard-main.from-plugin.editable {
+  width: 654px;
+}
+
+// Procedure List
+.ec-wizard-main.procedures {
+  width: 726px;
+  background-color: $default-white;
+
+  .ec-wizard-body .procedures {
+    width: 606px;
+    height: 600px;
+  }
+}
+
+//  From Procedure
+.ec-wizard-main.from-procedure {
+  width: 726px;
+  background-color: $default-white;
+
+  .procedure-parameters-form {
+    height: 426px;
+    overflow-y: auto;
+  }
+
+  .procedure-parameters-form {
+    max-width: 606px;
+  }
+}
+.ec-wizard-main.from-procedure.editable {
+  width: 654px;
+}
+
+.ec-wizard-main {
+  &.from-plugin,
+  &.from-command,
+  &.from-procedure {
+    .ec-select {
+      width: 356px;
+      margin: 30px auto;
+    }
+    .separator {
+      height: 0;
+      border: 1px solid $default-black;
+    }
+    .lookup-btn {
+      .sds-icon {
+        position: static;
+
+      }
+    }
+  }
+}
+
+.ec-wizard-main {
+  &.from-command,
+  &.from-component,
+  &.from-component-operation,
+  &.from-plugin,
+  &.from-procedure {
+    height: 648px;
+  }
+}
+
+.ec-react-wizard--step {
+  .ec-row {
+    height: 50px;
+    line-height: 50px;
+    font-weight: 200;
+    font-size: 17px;
+  }
+
+  .ec-row--header {
+    @include modal-header-text();
+  }
+
+  .ec-row--separator {
+    height: 0;
+    border: 1px solid $default-black;
+  }
+
+  .ec-row--automatch {
+    height: 40px;
+    overflow: visible;
+    min-width: 160px;
+    line-height: 20px;
+    font-size: 14px;
+    white-space: normal;
+    text-align: left;
+
+    .sds-select-automatch {
+      width: 100%;
+    }
+
+    .sds-icon.users {
+      color: $default-black;
+    }
+  }
+
+  .ec-row--title {
+    color: $seventy-percent-gray;
+  }
+
+  .ec-row--area {
+    height: 160px;
+
+    .ec-row--textarea {
+      width: 560px;
+      height: 160px;
+      resize: none;
+      text-align: left;
+      background-color: $ten-percent-gray;
+      color: $input-text-color;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+  }
+
+  .ec-row--options {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    user-select: none;
+    border-top: 2px solid $forty-percent-gray;
+    border-bottom: 2px solid $forty-percent-gray;
+
+    .ec-row--option-left {
+      width: 50%;
+      display: inline-block;
+      text-align: left;
+
+      .parameters {
+        font-size: 15px;
+        margin: 0 14px;
+        top: -1px;
+        position: relative;
+      }
+    }
+
+    .ec-row--option-right {
+      width: 50%;
+      display: inline-block;
+      text-align: right;
+
+      .arrow-open {
+        font-size: 28px;
+        margin-left: 14px;
+        vertical-align: middle;
+      }
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $light-gray;
+      border-top: 2px solid $light-gray;
+      border-bottom: 2px solid $light-gray;
+    }
+  }
+}
+
+.ec-react-wizard--step-from-manual {
+  .ec-row--title-text {
+    vertical-align: middle;
+  }
+
+  .wizard-row__manual-variable-hint {
+    height: 50px;
+    line-height: 50px;
+    font-weight: 500;
+  }
+
+  .sds-svg-icon {
+    &--icon-manual-process-step {
+      fill: $default-black;
+    }
+    &--icon-manual-instructions {
+      fill: $seventy-percent-gray;
+    }
+  }
+}

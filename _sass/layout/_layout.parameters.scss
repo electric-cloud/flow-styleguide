@@ -1,0 +1,126 @@
+//================================================
+//  Parameters
+//================================================
+
+.parameters-list-wizard {
+  width: 630px;
+  height: 600px;
+  font-weight: normal;
+  background-color: $default-bg-white;
+
+  .ec-grid-primary {
+    padding: 0 30px;
+  }
+
+  .ec-grid-primary--with-underline {
+    .ec-grid-primary__head .ec-grid-primary__row {
+      border-width: 1px;
+    }
+
+    .ec-grid-primary__row {
+      border-color: $default-black;
+      font-weight: normal;
+    }
+
+    .sds-icon.check-mark {
+      color: $default-green;
+    }
+  }
+
+  .parameters-item-name {
+    @include modal-header-text();
+    @include sds-ellipsis;
+    border-bottom: 1px solid $default-black;
+    font-weight: normal;
+    font-size: 21px;
+
+    .sds-svg-icon {
+      margin: 0 9px;
+      width: 24px;
+      height: 24px;
+      vertical-align: text-bottom;
+    }
+
+    .sds-svg-icon--icon-pipeline {
+      width: 28px;
+    }
+  }
+
+  .ec-wizard-head {
+    font-size: 18px;
+    height: 44px;
+    border-bottom: 2px solid $default-border-dark;
+
+    .sds-icon {
+      position: static;
+      width: 20px;
+    }
+    .delete-btn {
+      &:not(.enabled) {
+        color: $disabled-btn-color;
+        cursor: default;
+
+        .sds-svg-icon {
+          &--button-delete {
+            vertical-align: sub;
+            fill: $forty-percent-gray;
+          }
+        }
+      }
+
+      &.enabled {
+        color: $controlBarColor;
+        .sds-svg-icon.sds-svg-icon--button-delete {
+          vertical-align: sub;
+          fill: $default-red;
+        }
+        &:hover {
+          color: $default-black;
+          .sds-svg-icon.sds-svg-icon--button-delete {
+            fill: $default-black;
+          }
+        }
+      }
+    }
+
+    &__block--parameters {
+      margin-left: 20px;
+
+      .parameters-count {
+        margin-right: 5px;
+      }
+    }
+
+    &__group {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 42px;
+      vertical-align: top;
+
+      &--select {
+        margin-right: 30px;
+      }
+
+      &--delete {
+        margin-right: 30px;
+      }
+      &--add {
+        margin-right: 14px;
+      }
+    }
+
+    &__separator {
+      border-bottom: 2px solid $default-border-dark;
+    }
+
+    &__control {
+      cursor: pointer;
+    }
+    .toggle-btn {
+      @include select-all-toggler();
+      vertical-align: top;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+  }
+}

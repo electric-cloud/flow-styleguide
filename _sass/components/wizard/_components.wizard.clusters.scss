@@ -1,0 +1,94 @@
+//================================================
+//  Wizard clusters
+//================================================
+
+.wizard-cluster-configuration {
+  font-size: 16px;
+
+  .ec-react-wizard__content {
+    height: 490px;
+  }
+
+  .cluster-header {
+    position: relative;
+    @include modal-header-text();
+  }
+
+  .separator {
+    @include separator();
+
+    margin-bottom: 10px;
+  }
+
+  .platform-select {
+    margin: 0 auto;
+    width: 330px;
+  }
+
+  .platform-form {
+    margin-top: 10px;
+    height: 370px;
+    overflow: auto;
+
+    .react-form__checkbox-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .react-form__checkbox {
+        margin-left: 10px;
+        margin-top: -2px;
+      }
+    }
+
+    .react-form__label {
+      font-size: 16px;
+      width: 165px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 40px;
+    }
+
+    .react-form__txt-input-holder,
+    .react-form__textarea-holder {
+      text-align: left;
+    }
+
+    .react-form__validation {
+      margin-left: 0;
+    }
+
+    .react-form__textarea-wrapper {
+      .react-form__label {
+        height: 20px;
+      }
+    }
+
+    .react-form__textarea {
+      width: 330px;
+    }
+
+    .react-form__select-wrapper {
+      margin: 0 auto 20px;
+
+      &::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .react-form__select-holder {
+        text-align: left;
+        float: left;
+      }
+
+      .ec-select {
+        width: 330px;
+      }
+    }
+  }
+}

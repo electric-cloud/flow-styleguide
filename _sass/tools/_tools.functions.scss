@@ -1,0 +1,8 @@
+//================================================
+//  Functions
+//================================================
+
+// Convert pixels to ems
+@function em($pxval, $base: 14) {
+  @return ($pxval / $base) * 1em;
+}

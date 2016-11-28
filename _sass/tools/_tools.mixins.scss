@@ -1,0 +1,442 @@
+//================================================
+//  Mixins
+//================================================
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+           font-url('#{$file-path}.woff')                format('woff'),
+           font-url('#{$file-path}.ttf')                 format('truetype'),
+           font-url('#{$file-path}.svg##{$font-family}') format('svg');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+           url('#{$file-path}.woff')                     format('woff'),
+           url('#{$file-path}.ttf')                      format('truetype'),
+           url('#{$file-path}.svg##{$font-family}')      format('svg');
+    }
+  }
+}
+@include font-face('sds-icons', '../fonts/sds-icons');
+
+
+/**
+ * Mixin to include a font-based icon. Any parameters after $icon will be
+ * passed to the `sds-icon-size` mixin.
+ *
+ * Sample usage:
+ *
+ *   // Renders the "x" icon 16px tall within a 16px-by-16px bounding box
+ *   .my-close-button {
+ *     @include sds-icon($sds-icon-x, 16px);
+ *   }
+ *
+ * @param $icon {string} The unicode value to use for the icon
+ */
+@mixin sds-icon($icon, $dimensions...) {
+  &:before {
+    content: $icon;
+  }
+
+  @if $dimensions and length($dimensions) > 0 {
+    @include sds-icon-size($dimensions...);
+  } @else {
+    font-family: "sds-icons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    // @extend .sds-icon-base;
+  }
+}
+
+/**
+ * Mixin to specify the size and placement of an icon within its bounding box.
+ *
+ * If $bound-width or $bound-height are omitted, `auto` and $icon-height will
+ * be used, respectively.
+ *
+ * $position-x should be a number indicating the number of pixels to the
+ * left of the icon within its bounding box, or one of: `left`, `right` or
+ * `auto`. Specifying `auto` will center the icon horizontally. Default is
+ * `auto`.
+ *
+ * $position-y should be a number indicating the number of pixels to the top
+ * of the icon within its bounding box, or one of: `top`, `bottom` or `auto`.
+ * Specifying `auto` will center the icon vertically. Default is `auto`.
+ *
+ * Sample usage:
+ *
+ *   .global-header {
+ *     // Renders the dashboard icon with 40px tall and centered within a
+ *     // 58px-by-58px bounding box
+ *     .dashboard {
+ *       color: #ffffff;
+ *       @include sds-icon-size(40px, 58px, 58px);
+ *     }
+ *   }
+ *
+ * @param $icon-height {number}  The height of the icon itself
+ * @param $bound-width {number}  The width of the icon's bounding box
+ * @param $bound-height {number} The height of the icon's bounding box
+ * @param $position-x {mixed}    The horizontal position of the icon within
+ *                                 its bounding box [Optional]
+ * @param $position-y {mixed}    The vertical position of the icon within its
+ *                                 bounding box [Optional]
+ */
+@mixin sds-icon-size($icon-height, $bound-width: 0, $bound-height: 0,
+                $position-x: auto, $position-y: auto, $display: inline-block,
+                $cursor: pointer) {
+  // @extend .sds-icon-base;
+  font-family: "sds-icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+
+  @if $bound-height == 0 {
+    $bound-width: auto;
+    $position-x: auto;
+  }
+
+  @if $bound-height == 0 {
+    $bound-height: $icon-height;
+  } @else if $bound-height < $icon-height {
+    $bound-height: $icon-height;
+  }
+
+  @if not $position-x or $position-x == auto or $position-x == center {
+    text-align: center;
+  } @else if $position-x == left {
+    text-align: left;
+  } @else if $position-x == right {
+    text-align: right;
+  } @else if type-of($position-x) == "number" {
+    text-align: left;
+    padding-left: $position-x;
+  }
+
+  @if $bound-height > $icon-height {
+    $v-gap: $bound-height - $icon-height;
+
+    @if not $position-y or $position-y == auto or $position-y == middle {
+      padding-top: floor($v-gap / 2);
+      padding-bottom: ceil($v-gap / 2);
+    } @else if $position-y == top {
+      padding-top: 0;
+      padding-bottom: $v-gap;
+    } @else if $position-y == bottom {
+      padding-top: $v-gap;
+      padding-bottom: 0;
+    } @else if type-of($position-y) == "number" {
+      padding-top: $position-y;
+      padding-bottom: max($v-gap - $position-y, 0);
+    }
+  }
+
+  font-size: $icon-height;
+  line-height: $icon-height;
+  width: $bound-width;
+  display: $display;
+  cursor: $cursor;
+}
+
+
+@mixin sds-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+@mixin menu-base {
+  width: 256px;
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    height: 7%;
+    min-height: 106px;
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+
+@mixin menu-base-item {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -25px;
+
+  line-height: 50px;
+  font-size: 24px;
+}
+
+
+// Modern micro clearfix provides an easy way to contain floats without adding additional markup.
+//
+// Example usage:
+//
+//    // Contain all floats within .wrapper
+//    .wrapper {
+//      @include clearfix;
+//      .content,
+//      .sidebar {
+//        float : left;
+//      }
+//    }
+
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+
+@mixin placeholder {
+  &::placeholder { @content; }
+}
+
+
+@mixin ec-field-media-scale($baseWidth, $scaleNum) {
+  @for $i from 1 through 30 {
+    $min: 1000px + $i * 100 - 100;
+    $max: 1000px + $i * 100 + 100;
+
+    @media (max-width: $max) and (min-width: $min) {
+      width: $baseWidth + $i * $scaleNum;
+      @if $i < 10 {
+        width: $baseWidth + $i * $scaleNum;
+      } @else {
+        width: $baseWidth + $i * ($scaleNum+10);
+      }
+    }
+  }
+}
+
+
+@mixin separator {
+  border-bottom: 2px solid $separatorBG;
+}
+
+
+@mixin disabled {
+  color: $gray !important;
+  fill: $gray !important;
+  opacity: 0.6 !important;
+  cursor: default !important;
+}
+
+@mixin sds-modal {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  min-width: 975px;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  bottom: 2.5%;
+  right: 2.5%;
+  margin: auto;
+  background: $white;
+  z-index: 105;
+  padding-bottom: 0;
+  font-weight: normal;
+}
+
+@mixin modal-header-text {
+  margin: 0 auto;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 70px;
+  height: 70px;
+  text-align: center;
+  @include sds-ellipsis();
+}
+
+
+@mixin modal-row {
+  display: flex;
+  height: 43px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  box-sizing: border-box;
+
+  &.disabled {
+    @include disabled();
+  }
+}
+
+@mixin backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $white;
+  opacity: 0.6;
+}
+
+@mixin ec-icon-menu-square {
+  position: absolute;
+  right: -20px;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@mixin animate-pulsation {
+  animation-name: PULSATE;
+  animation-duration: 1s;
+  animation-delay: 0;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin animate-fade-in($duration: 0.4s) {
+  animation-name: FADE_IN;
+  animation-duration: $duration;
+  animation-delay: 0;
+  animation-timing-function: linear;
+}
+
+@mixin ec-grid-fixed-column($width) {
+  flex: initial;
+  text-align: right;
+  vertical-align: middle;
+  width: $width;
+  justify-content: flex-end;
+}
+
+@mixin ec-grid-action-column($width) {
+  @include ec-grid-fixed-column($width);
+  text-align: center;
+  cursor: pointer;
+  &.disabled {
+    cursor: default;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin radio-button--standard {
+  .react-form__radio-container__label {
+    width: 208px;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .radio-btn {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+}
+
+@mixin remove-button {
+  @include sds-icon-size(15px, 50px, 50px);
+  &:hover {
+    color: $controlBarColor;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+@mixin select-all-toggler {
+  display: inline-block;
+  user-select: none;
+  border: 1px solid $controlBarSelectAllBg;
+  text-align: center;
+  margin: 0 0 0 5px;
+  padding: 2px 10px;
+  font-size: 12px;
+  line-height: 14px;
+  min-width: 35px;
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+
+  &.active {
+    background: $controlBarSelectAllBg;
+    color: $default-white;
+  }
+}
+
+@mixin stretch($zIndex: null) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @if $zIndex != null {
+    z-index: $zIndex;
+  }
+}
+
+@mixin fixed-stretch($zIndex: null) {
+  @include stretch($zIndex);
+  position: fixed;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin form-control {
+  display: block;
+  background-color: $input-bg;
+  border: 1px solid $input-border-color;
+  color: $default-black;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-family;
+  letter-spacing: $base-letter-spacing;
+  line-height: 24px;
+  margin: 0;
+  padding: 7px;
+}
+
+@mixin smart-input {
+  position: relative;
+  border: 2px solid $light-gray;
+  background: $default-white;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding-left: 7px;
+}
+
+@mixin wizard-message {
+  color: $default-black;
+  font: $base-font;
+  letter-spacing: $base-letter-spacing;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 28px;
+}

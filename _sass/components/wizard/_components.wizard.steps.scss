@@ -1,0 +1,829 @@
+//================================================
+//  Wizard steps
+//================================================
+
+.modals-box .step-first-window {
+  .ec-react-wizard__content {
+    padding: 0 20px;
+  }
+  .ec-react-wizard__overlay {
+    height: auto;
+    top: 160px;
+    bottom: 60px;
+  }
+}
+
+.modals-box .from-command {
+  .ec-react-wizard__content {
+    padding: 0 30px;
+  }
+}
+
+.modals-box .command-editor {
+  .ec-react-wizard__content {
+    padding: 0;
+  }
+}
+
+.step-wizard-shared {
+  &__separator {
+    height: 0;
+    border: 1px solid $default-black;
+  }
+  &__tiers {
+    height: 100px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    .ec-select {
+      width: 356px;
+      font-size: 18px;
+      .ec-select-header .sds-icon.view-tiers {
+        color: $black;
+      }
+    }
+  }
+}
+
+.step-first-window {
+  &__header {
+    @include modal-header-text();
+  }
+
+  &__input {
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__area {
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  &__workspaces {
+    margin: 20px 0;
+    .ec-select {
+      width: 330px;
+      font-weight: 200;
+      font-size: 18px;
+    }
+  }
+
+  &__process-type {
+    margin: 20px 0 40px;
+    .ec-select {
+      width: 330px;
+      font-weight: 200;
+      font-size: 18px;
+    }
+  }
+
+  &__timelimit {
+    text-align: left;
+    height: 40px;
+    .react-form__txt-input-wrapper {
+      display: inline-block;
+      margin: 0 auto;
+      vertical-align: top;
+      height: 40px;
+    }
+    .react-form__txt-input {
+      padding: 0;
+      width: 50px;
+      box-sizing: border-box;
+      height: 40px;
+      &-holder {
+        width: 50px;
+      }
+    }
+    .ec-select {
+      display: inline-block;
+      margin-left: 20px;
+      width: 140px;
+      font-weight: 200;
+      font-size: 18px;
+      &-header-title {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__on-error {
+    height: 40px;
+    text-align: left;
+    &--title {
+      display: inline-block;
+      line-height: 40px;
+      margin-bottom: 0;
+      width: 115px;
+    }
+  }
+
+  &__step-dependency {
+    height: 40px;
+    text-align: left;
+    &--start-title {
+      display: inline-block;
+      line-height: 40px;
+      margin-bottom: 0;
+      width: 115px;
+    }
+    &--end-title {
+      display: inline-block;
+      line-height: 40px;
+      margin-left: 5px;
+    }
+  }
+
+  &__credentials {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    &--number {
+      flex: 0 0 20px;
+      font-size: 18px;
+    }
+    &--title {
+      flex: auto;
+      font-size: 16px;
+    }
+    .sds-svg-icon--icon-credentials {
+      margin: 0 15px 0 0;
+    }
+    .sds-icon.credentials {
+      margin-right: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__add-block {
+    display: flex;
+    flex: 0 0 60px;
+    height: 40px;
+    &--add-title {
+      flex: 40;
+      font-size: 16px;
+    }
+    .sds-svg-icon {
+      width: 24px;
+      height: 24px;
+      margin: 0 0 0 10px;
+
+    }
+    .sds-svg-icon__wrapper &--icon-go-to-details {
+      line-height: 40px;
+      flex: 60;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .ec-select .ec-select-header {
+    .sds-icon.dropdown {
+      line-height: 44px;
+      width: 40px;
+      margin: 0;
+    }
+    .sds-svg-icon {
+      margin: 0 10px;
+    }
+  }
+
+  .react-form__textarea {
+    background-color: $white;
+    height: 68px;
+  }
+
+  .react-form__radio-container,
+  .react-form__radio-block--on-error,
+  .react-form__radio-block--step-dependency {
+    display: inline-block;
+  }
+
+  .react-form__radio-container--continue,
+  .react-form__radio-container--all {
+    width: 145px;
+  }
+
+  .react-form__radio-container--stop,
+  .react-form__radio-container--any {
+    width: 110px;
+  }
+
+  .react-form__radio-container__label {
+    font-weight: normal;
+  }
+
+  .react-form__checkbox-container {
+    margin-left: 115px;
+    display: inline-block;
+    width: 120px;
+    vertical-align: top;
+    &__label {
+      &--text {
+        margin-bottom: 0;
+        height: 40px;
+        font-size: 14px;
+        user-select: none;
+        color: $forty-percent-black;
+        &.checked {
+          color: $default-text-color;
+        }
+      }
+      &__icon {
+        font-size: 20px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .radio-btn {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+}
+.from-command {
+  &__header {
+    height: 24px;
+    margin: 15px auto 10px;
+  }
+  &__post-processor,
+  &__shell {
+    height: 22px;
+    margin-bottom: 15px;
+    .react-form__label {
+      line-height: 20px;
+    }
+    .react-form__txt-input {
+      height: 20px;
+      width: 342px;
+      padding: 0 2px;
+      font-size: 14px;
+      line-height: 20px;
+      vertical-align: middle;
+      background-color: $soft-gray;
+      text-align: start;
+    }
+  }
+  &__command {
+    text-align: left;
+    .react-form__textarea-wrapper {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .sds-icon.expand-area {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+  .ec-react-wizard__header-left-block {
+    height: 44px;
+    .sds-svg-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .react-form__label {
+    width: 125px;
+  }
+}
+
+.from-component {
+  &__header {
+    width: 540px;
+    height: 40px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    color: $white;
+    background-color: $fifty-percent-gray;
+    &:before {
+      content: "";
+      width: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: $dark-gray;
+    }
+    .sds-svg-icon {
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      fill: $white;
+      margin: 0;
+      &--icon-process-step {
+        margin-left: 12px;
+        position: relative;
+      }
+      &--icon-process {
+        margin-left: 5px;
+      }
+    }
+    &--symbol {
+      font-size: 22px;
+      line-height: 40px;
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 5px;
+      position: relative;
+    }
+    &--text {
+      margin: 0 5px;
+      vertical-align: middle;
+      display: inline-block;
+      max-width: 200px;
+      font-size: 14px;
+      @include sds-ellipsis;
+    }
+  }
+  &__parameters {
+    height: 424px;
+  }
+  .ec-react-wizard__header-left-block {
+    height: 44px;
+    margin-top: 0;
+    line-height: 44px;
+    .sds-svg-icon.process-step {
+      width: 18px;
+      height: 18px;
+      margin-top: auto;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+.modals-box {
+  .ec-react-wizard--step-from-plugin,
+  .ec-react-wizard--step-from-component {
+    .ec-react-wizard__content {
+      padding-top: 23px;
+      padding-bottom: 17px;
+    }
+  }
+
+  .ec-react-wizard--plugin-form .ec-react-wizard__content {
+    padding: 0 30px;
+  }
+
+  .ec-react-wizard--plugin .ec-react-wizard__content,
+  .ec-react-wizard--procedures-list .ec-react-wizard__content {
+    padding-bottom: 0;
+  }
+
+  .ec-react-wizard--step-type .ec-react-wizard__content {
+    padding: 0;
+  }
+
+  .ec-react-wizard--step-utilities-list .ec-react-wizard__content {
+    padding: 10px 20px 0;
+  }
+
+  .from-component .ec-react-wizard__content {
+    padding: 30px 30px 0;
+  }
+
+  .ec-react-wizard--plugin-category,
+  .ec-react-wizard--plugin-projects,
+  .ec-react-wizard--procedure-projects,
+  .ec-react-wizard--step-type,
+  .ec-react-wizard--procedure-projects,
+  .ec-react-wizard--component-list,
+  .ec-react-wizard--component-process-list {
+    .ec-react-wizard__head {
+      border-bottom-color: $white;
+    }
+  }
+}
+
+.modals-box {
+  .ec-react-wizard--step-from-plugin,
+  .ec-react-wizard--step-from-procedure,
+  .ec-react-wizard--step-from-component {
+    .ec-react-wizard__header-left-block {
+      margin-top: 10px;
+      line-height: 18px;
+      font-size: 16px;
+    }
+    .ec-react-wizard__header-center-block {
+      width: 68%;
+      margin: 0 16%;
+    }
+    .sds-svg-icon.details {
+      fill: $white;
+    }
+    .ec-grid-primary .ec-grid-primary__row {
+      margin-bottom: 0;
+      line-height: 38px;
+      height: 38px;
+    }
+    .ec-grid-primary .ec-grid-primary__col {
+      line-height: 38px;
+      height: 38px;
+      .sds-icon.steps {
+        margin-right: 23px;
+      }
+    }
+    .ec-grid-primary .ec-grid-primary__col--text {
+      flex: 1;
+    }
+    .plugin-display-wrapper {
+      padding-top: 20px;
+      overflow: auto;
+    }
+  }
+}
+
+.ec-react-wizard--step-utilities-list {
+  .ec-react-wizard__header-left-block {
+    margin-top: 10px;
+    line-height: 18px;
+    font-size: 16px;
+  }
+  .ec-grid-primary .ec-grid-primary__row {
+    margin-bottom: 0;
+    line-height: 40px;
+    height: 40px;
+  }
+  .ec-grid-primary .ec-grid-primary__col {
+    line-height: 40px;
+    height: 40px;
+  }
+}
+
+.ec-react-wizard--plugin,
+.ec-react-wizard--procedures-list {
+  .ec-grid-primary .ec-grid-primary__row {
+    background: $white;
+    &:not(.select-off):hover {
+      background: $white;
+    }
+  }
+  .ec-grid-primary .ec-grid-primary__col {
+    background: $white;
+    border-bottom: 2px solid $default-black;
+  }
+  .ec-grid-primary .ec-grid-primary__col:hover {
+    background: $ten-percent-gray;
+  }
+}
+
+.ec-react-wizard--plugin-category,
+.ec-react-wizard--procedure-projects,
+.ec-react-wizard--component-list,
+.ec-react-wizard--component-process-list {
+  .ec-react-wizard__header-left-block {
+    .sds-svg-icon {
+      fill: $white;
+      vertical-align: baseline;
+    }
+  }
+  .ec-react-wizard__inner {
+    background: $sub-view-bg;
+    color: $white;
+  }
+  .ec-grid-primary .ec-grid-primary__row {
+    background: $sub-view-bg;
+    color: $white;
+  }
+  .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
+    color: $white;
+    background: $wBreadcrumbColorThird;
+  }
+}
+
+.ec-react-wizard--step-type {
+  .ec-react-wizard__content {
+    height: 554px;
+  }
+  .ec-react-wizard__header-left-block {
+    margin-top: 10px;
+    line-height: 18px;
+    .sds-svg-icon {
+      fill: $white;
+    }
+  }
+
+  .ec-react-wizard__inner {
+    background: $deep-dark-blue;
+    color: $white;
+  }
+
+  .ec-grid-primary {
+    @include flex-column;
+  }
+
+  .ec-grid-primary .ec-grid-primary__row {
+    color: $white;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-bottom: 2px solid $white;
+    margin-bottom: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .sds-icon {
+      color: $white;
+      @include sds-icon-size(22px);
+    }
+
+    .sds-svg-icon {
+      fill: $white;
+      vertical-align: middle;
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__col {
+    margin: 0;
+  }
+
+  .ec-grid-primary .ec-grid-primary__row:last-child {
+    border-bottom: 0;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--step-icon {
+    width: 102px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
+    color: $white;
+    background: $simple-dark-blue;
+  }
+}
+
+.ec-react-wizard--utility-form {
+  .ec-react-wizard__header-left-block {
+    margin-top: 10px;
+    line-height: 22px;
+    font-size: 16px;
+  }
+}
+
+.ec-react-wizard--plugin-projects {
+  .ec-react-wizard__inner {
+    background: $sub-view-lvl2-bg;
+    color: $white;
+  }
+  .ec-grid-primary .ec-grid-primary__row {
+    background: $sub-view-lvl2-bg;
+    color: $white;
+  }
+  .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
+    color: $white;
+    background: $wBreadcrumbColorFifth;
+  }
+}
+
+
+.ec-react-wizard--plugin-category,
+.ec-react-wizard--plugin-projects,
+.ec-react-wizard--component-list,
+.ec-react-wizard--component-process-list {
+  .sds-svg-icon {
+    &--icon-component,
+    &--icon-process,
+    &--icon-plugin-category,
+    &--icon-plugin {
+      fill: $white;
+      margin: 0 19px 0 0;
+    }
+
+  }
+}
+
+.ec-react-wizard--procedure-projects {
+  .sds-svg-icon--icon-project {
+    fill: $white;
+    margin: 0 22px 0 0;
+  }
+}
+
+.modals-box .ec-react-wizard--step-from-comp-operation {
+  .ec-react-wizard__content-title {
+    margin: 10px 0 0;
+  }
+
+  .plugin-display-wrapper {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .plugin-form {
+    position: relative;
+  }
+
+  .flap {
+    @include stretch;
+    background-color: $wizardStepFlap;
+  }
+}
+.modals-box .ec-react-wizard--step-from-rollback .ec-react-wizard__content {
+  font-size: 16px;
+  display: flex;
+  padding: 0;
+}
+
+.ec-react-wizard--step-from-rollback {
+  .ec-row--title-text {
+    vertical-align: middle;
+  }
+
+  .ec-react-wizard__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .wizard-row__left {
+    width: 540px;
+    padding: 30px 30px 0;
+  }
+
+  .wizard-row__right {
+    width: 540px;
+    margin-top: 20px;
+    overflow-y: auto;
+    height: 474px;
+    padding: 0 30px 0 28px;
+    border-left: 2px solid $very-light-gray;
+  }
+
+  .wizard-row--align-middle {
+    vertical-align: middle;
+  }
+
+  .react-form__radio-block--radio-rollback-type {
+    @include radio-button--standard();
+  }
+
+  .react-form__radio-block--radio-rollback-type .react-form__radio-container__label {
+    font-size: 18px;
+    line-height: 32px;
+    width: 247px;
+    margin-bottom: 7px;
+  }
+
+  .react-form__radio-block--radio-rollback-type .radio-btn {
+    margin-right: 10px;
+  }
+
+  .wizard-row__type-variable {
+    height: 40px;
+    padding-top: 13px;
+
+    .wizard-row__type-variable-holder {
+      width: 356px;
+      height: 40px;
+      display: inline-block;
+      position: relative;
+      background: red;
+    }
+
+    .sds-svg-icon--icon-variable {
+      position: absolute;
+      left: 0;
+      fill: $middle-blue;
+    }
+
+    .wizard-row__type-variable-input {
+      width: 356px;
+      height: 40px;
+      padding-left: 34px;
+      margin: 0;
+      border-radius: 0;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+  }
+
+  .wizard-row__smart-deploy {
+    padding: 28px 0 18px;
+
+    .ec-run-smart-toggler {
+      vertical-align: middle;
+      margin: 0 5px 0 10px;
+    }
+
+    .ec-react-help__icon {
+      font-size: 18px !important;
+    }
+  }
+
+  .wizard-row__turn-process {
+    padding: 17px 0 0;
+    line-height: 40px;
+    border-top: 2px solid $default-black;
+
+    .react-form__checkbox-container {
+      display: inline-block;
+      margin-left: 10px;
+
+      &__label__icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .wizard-row__skip-if-failed {
+    padding-top: 2px;
+    padding-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    .checkbox-label {
+      line-height: 17px;
+      width: 200px;
+      display: inline-block;
+    }
+    .react-form__checkbox-container {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 10px;
+
+      &__label__icon {
+        font-size: 20px;
+      }
+    }
+    &.disabled .checkbox-label {
+      opacity: .3;
+    }
+  }
+
+  .wizard-row__process-selector {
+    padding-bottom: 30px;
+
+    .ec-select {
+      width: 356px;
+    }
+
+    .ec-select .view-processes {
+      font-size: 18px;
+      margin-top: 2px;
+      color: $default-black;
+    }
+  }
+
+  .ec-wizard-row.ec-wizard-row__parameter-block {
+    font-weight: 200;
+    font-size: 17px;
+    user-select: none;
+    border-top: 2px solid $default-black;
+    border-bottom: 2px solid $default-black;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
+    &.disabled {
+      border-top: 2px solid red;
+      border-bottom: 2px solid red;
+    }
+    .parameters-row {
+      height: 36px;
+    }
+  }
+}
+
+
+.process-details-create-wizard {
+
+  .step-first-window__area {
+    height: 66px;
+  }
+  .react-form__textarea {
+    height: 54px;
+  }
+
+  .step-first-window__undeploy-skip {
+    padding-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: -30px;
+    .checkbox-label {
+      line-height: 20px;
+      width: 250px;
+      display: inline-block;
+      font-size: 16px;
+      margin-left: -10px;
+      text-align: right;
+    }
+    .react-form__checkbox-container {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 10px;
+      width: auto;
+
+      &__label__icon {
+        font-size: 20px;
+      }
+    }
+    &.disabled .checkbox-label {
+      opacity: .3;
+    }
+  }
+  .ec-react-help__icon {
+    font-size: 18px !important;
+  }
+}

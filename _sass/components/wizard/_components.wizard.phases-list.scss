@@ -1,0 +1,355 @@
+//================================================
+//  Wizard phases-list
+//================================================
+
+.modals-box .phases-list-wizard .ec-react-wizard__content {
+  padding: 0;
+}
+
+.phases-list-wizard {
+
+  .sds-svg-icon {
+    &--button-close-modal {
+      fill: $soft-dark-gray;
+    }
+
+    &--button-delete {
+      fill: $default-red;
+    }
+  }
+
+  .phases-list-wizard__header-control {
+    cursor: pointer;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  .header-control-icon {
+    display: inline-block;
+  }
+
+  .phases-list-wizard__header-control--selectable:hover {
+    color: $black;
+  }
+
+  .phases-list-wizard__header-control--disabled {
+    color: $soft-gray;
+    cursor: default;
+
+    &:hover {
+      color: $soft-gray;
+    }
+  }
+
+  .phases-list-wizard__header-control-icon--disabled {
+    fill: $soft-gray;
+  }
+
+  .phases-list-wizard__header-control-title {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+
+  .phases-list-wizard__header-control-icon-select {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid $controlBarSelectAllBg;
+    text-align: center;
+    margin: 0 0 0 5px;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 14px;
+    min-width: 35px;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+
+  .phases-list-wizard__header-control-icon-select--active {
+    background: $controlBarSelectAllBg;
+    color: $default-white;
+  }
+
+  .phases-list-wizard__header-control-icon-select--disabled {
+    border: 1px solid $soft-gray;
+    background: none;
+    color: $soft-gray;
+
+    &:hover {
+      background: none;
+      color: $soft-gray;
+    }
+  }
+
+  .phases-list-wizard__content-header {
+    height: 70px;
+    line-height: 70px;
+    font-size: 24px;
+    max-width: 1266px;
+    @include sds-ellipsis;
+
+    .sds-icon.environment {
+      font-size: 22px;
+      margin: 0 5px;
+      color: $orange;
+    }
+  }
+
+  .phases-list-wizard__content {
+    width: 860px;
+    margin: 0 auto;
+  }
+
+  .ec-grid-primary {
+    height: 413px;
+  }
+
+  .ec-grid-primary__empty {
+    display: block;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col {
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    min-height: 40px;
+    min-width: 1px;
+
+    .sds-svg-icon--button-close-modal {
+      vertical-align: top;
+    }
+
+    .sds-svg-icon--icon-resource {
+      fill: $orange;
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-action {
+    width: 140px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--controls {
+    line-height: 40px;
+    color: $default-white;
+    margin-right: 0;
+    padding: 0;
+    background-color: $middle-blue;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: 140px;
+
+    .sds-icon.done,
+    .sds-icon.remove-icon {
+      left: 10px;
+      font-size: 20px;
+      position: absolute;
+    }
+
+    &:hover {
+      background-color: $hovered-base-blue;
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--disabled-controls {
+    background-color: $forty-percent-gray;
+    cursor: default;
+
+    &:hover {
+      background-color: $forty-percent-gray;
+    }
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--controls-remove {
+    margin-right: 10px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--drag {
+    width: 70px;
+    text-align: center;
+    cursor: default;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--draggable {
+    .sds-icon.drag {
+      cursor: pointer;
+      color: $default-black;
+    }
+  }
+
+  .ec-grid-primary__input {
+    width: 386px;
+    height: 30px;
+    padding: 4px 6px;
+    border-radius: 0;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .phases-list-wizard__assign-phases {
+    height: 40px;
+    line-height: 40px;
+    width: 540px;
+    margin: 0 auto 30px;
+    position: relative;
+    background-color: $middle-blue;
+    font-size: 16px;
+    cursor: pointer;
+    color: $default-white;
+
+    .sds-svg-icon {
+      fill: $default-white;
+    }
+
+    &:hover {
+      background-color: $hovered-base-blue;
+    }
+  }
+
+  .phases-list-wizard__assign-phases-icon {
+    position: absolute;
+    right: 5px;
+    top: 0;
+  }
+
+  .ec-grid-primary .ec-grid-primary__row {
+    font-size: 16px;
+  }
+  .ec-grid-primary .ec-grid-primary__row--disabled {
+    color: $soft-gray;
+
+    .sds-icon {
+      color: $soft-gray;
+    }
+
+    .sds-svg-icon--icon-resource {
+      fill: $soft-gray;
+    }
+
+  }
+
+  .ec-grid-primary .ec-grid-primary__row--details {
+    height: 40px;
+    padding: 10px 10px 10px 0;
+  }
+
+  .phases-list-wizard__phase-action-item {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .phases-list-wizard__phase-action-item-icon {
+    cursor: pointer;
+  }
+
+  .phases-list-wizard__phase-action-item-icon--disabled {
+    cursor: default;
+    .sds-svg-icon {
+      fill: $soft-gray;
+    }
+  }
+  .phases-list-wizard__phase-action-item-icon--active {
+    cursor: pointer;
+    .sds-svg-icon {
+      fill: $black;
+    }
+  }
+
+  .phases-list-wizard__phase-action-item-icon--broadcast {
+    padding-left: 13px;
+  }
+
+  .phases-list-wizard__phase-action-item-icon--condition {
+    padding-left: 13px;
+  }
+
+  .phases-list-wizard__phase-details-header,
+  .phases-list-wizard__phase-details-content,
+  .phases-list-wizard__phase-details-buttons {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+  }
+
+  .phases-list-wizard__phase-details-header {
+    max-height: 30px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-conditons {
+    height: auto;
+    min-height: 242px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-broadcast {
+    height: auto;
+    min-height: 136px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-edit {
+    height: auto;
+    min-height: 142px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-details-close-icon {
+    position: absolute;
+    z-index: 1;
+    height: 12px;
+    line-height: 12px;
+    top: 4px;
+    left: 0;
+  }
+
+  .ec-grid-primary .ec-grid-primary__col--phase-details-title {
+    justify-content: center;
+    min-height: 20px;
+    height: 20px;
+  }
+
+  .phases-list-wizard__phase-details-buttons {
+    margin-bottom: 10px;
+    max-height: 50px;
+  }
+
+  .phases-list-wizard__phase-details-content {
+    .react-form__textarea-holder {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .broadcast-option-container {
+      margin-top: 10px;
+    }
+
+    .react-form__textarea {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .react-form__textarea-wrapper {
+      width: 100%;
+    }
+
+    .ec-react-help__icon {
+      font-size: 18px !important;
+    }
+
+    .ec-grid-primary__input {
+      width: 100%;
+    }
+  }
+
+  .phases-list-wizard__phase-details-content-checkbox {
+    margin: 0 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+}

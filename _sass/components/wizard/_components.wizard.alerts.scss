@@ -1,0 +1,108 @@
+//================================================
+//  Wizard alerts
+//================================================
+
+.ec-react-wizard__confirmation-attention,
+.ec-react-wizard__attention-container {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  z-index: 11002;
+
+  &--top {
+    top: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+}
+
+.ec-react-wizard__confirmation-attention {
+  padding: 15px 20px;
+  background-color: $medium-dark-blue;
+  color: $white;
+  font-size: 18px;
+  .sds-icon.warning {
+    float: left;
+    font-size: 44px;
+    margin-right: 20px;
+    line-height: 60px;
+  }
+  &--left {
+    left: 0;
+  }
+  &-button {
+    float: right;
+    line-height: 30px;
+    padding: 15px 0;
+    &--border-left {
+      border-left: 2px solid $white;
+    }
+    &-item {
+      width: 60px;
+      display: inline-block;
+      text-align: right;
+      cursor: pointer;
+      &--left {
+        text-align: left;
+        border-right: 2px solid $default-white;
+      }
+    }
+  }
+  &-content {
+    float: left;
+    line-height: 60px;
+  }
+}
+.ec-react-wizard__attention-container {
+  &--auto-width {
+    width: auto;
+  }
+}
+
+.ec-react-wizard__attention {
+  padding: 15px;
+  .sds-icon.remove {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    right: 0;
+    top: 0;
+    color: $white;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  &-title {
+    color: $white;
+    margin: 0 auto 10px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;
+    .alert-icon {
+      background-image: url('../img/attention.png');
+      display: inline-block;
+      margin-right: 3px;
+      margin-bottom: -3px;
+      width: 24px;
+      height: 19px;
+    }
+  }
+  &-content {
+    color: $white;
+    line-height: 17px;
+    text-align: center;
+  }
+}
+
+.ec-react-wizard__attention--info {
+  background-color: $medium-dark-blue;
+}
+
+.ec-react-wizard__attention--error {
+  background-color: $dark-red;
+}

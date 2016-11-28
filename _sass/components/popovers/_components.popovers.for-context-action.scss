@@ -1,0 +1,214 @@
+//================================================
+//  Popover-for-context-action
+//================================================
+
+.popover-for-context-action {
+  width: $main-width;
+  letter-spacing: 0.5px;
+
+  position: absolute;
+  z-index: 101;
+
+  background-color: $pctx-main-background;
+  box-shadow: $box-shadow;
+
+  .item {
+    height: $item-height;
+    border-top: $item-border;
+    position: relative;
+
+    text-align: right;
+    line-height: $item-height;
+    font-size: 12px;
+    color: $pctx-text-color;
+    cursor: pointer;
+    background-color: $pctx-main-background;
+    a,
+    a:hover,
+    a:visited {
+      color: $pctx-text-color;
+    }
+
+    &:first-child {
+      border-top-width: 0;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $pctx-text-color-disbl;
+
+      .sds-icon.delete {
+        color: $pctx-text-color-disbl;
+      }
+
+      .sds-svg-icon.sds-svg-icon--button-delete {
+        fill: $fifty-percent-gray;
+      }
+
+      &:hover {
+        background-color: $pctx-main-background;
+      }
+
+      a, a:hover, a:visited {
+        color: $pctx-text-color-disbl;
+        cursor: default;
+      }
+    }
+
+    &:hover {
+      background-color: $pctx-hover-background;
+    }
+
+    &__loader {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 14px;
+      left: 5px;
+      background-size: contain;
+      background-image: url('../img/loader.gif');
+    }
+
+    .title {
+      width: $main-width - $icon-width;
+      float: left;
+    }
+
+    .sds-icon {
+      width: $icon-width;
+      height: $item-height;
+      float: left;
+
+      line-height: $item-height;
+    }
+
+    .sds-svg-icon {
+      fill: $white;
+      height: 18px;
+      &--icon-tier-capabilities,
+      &--icon-tier-requirements {
+        margin: 0 10px;
+      }
+    }
+
+    .sds-svg-icon--button-export {
+      margin: 0 8px 2px 10px;
+    }
+
+    .sds-svg-icon--button-delete {
+      margin: 0 10px 4px 8px;
+    }
+
+    .sds-svg-icon--icon-component {
+      margin: 0 12px 0 0;
+    }
+
+    .sds-svg-icon--icon-conditions {
+      margin: 0 10px 4px 8px;
+    }
+
+    .sds-icon.go-to-details {
+      font-size: 14px;
+    }
+
+    .sds-icon.properties {
+      font-size: 12px;
+    }
+
+    .sds-icon.access {
+      font-size: 16px;
+    }
+
+    .sds-icon.track-changes {
+      font-size: 17px;
+    }
+
+    .sds-icon.task {
+      font-size: 14px;
+    }
+
+    .sds-icon.add-process {
+      font-size: 18px;
+    }
+
+    .sds-icon.add-task-before,
+    .sds-icon.add-task-after {
+      font-size: 20px;
+    }
+
+    .sds-svg-icon {
+      &--icon-task {
+        width: 18px;
+        height: 18px;
+        margin: 0 10px;
+        fill: $default-white;
+      }
+    }
+
+    &--application-snapshot-menu-item {
+      .title {
+        padding: 0 15px;
+        font-size: 14px;
+        width: 100px;
+      }
+
+      .sds-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.arrow:before {
+    content: '';
+    width: $arrow-size;
+    height: $arrow-size;
+
+    position: absolute;
+    z-index: -1;
+
+    transform: rotate(45deg);
+
+    background-color: $pctx-main-background;
+    box-shadow: $box-shadow;
+  }
+
+  &.arrow.top:before {
+    bottom: 36px;
+  }
+
+  &.arrow.right:before {
+    left: -10px;
+  }
+
+  &.arrow.bottom:before {
+    top: 36px;
+  }
+
+  &.arrow.left:before {
+    right: -10px;
+  }
+
+  &.confirm-context {
+    height: 48px;
+    width: auto;
+    .item {
+      float: left;
+      border-top: none;
+      border-left: 1px solid $pctx-hover-background;
+      &:first-child {
+        border-left: none;
+      }
+      .title {
+        width: auto;
+        padding-left: 40px;
+      }
+    }
+    &.arrow.bottom:before {
+      top: 12px;
+    }
+  }
+
+  &--application-snapshot {
+    width: 130px;
+  }
+}

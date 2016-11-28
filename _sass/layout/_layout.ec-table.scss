@@ -1,0 +1,161 @@
+//================================================
+//  Ec-table
+//================================================
+
+.ec-table {
+  background-color: $ec-table-default-background;
+
+  &--nested {
+    .ec-table__row {
+      padding-left: 30px;
+    }
+  }
+
+  &--horizontal-margin {
+    margin: 0 15px;
+  }
+
+  &__head {
+    font-size: 15px;
+    font-weight: 500;
+
+    &--underlined {
+      border-bottom: 2px solid $ec-table-header-underline;
+    }
+  }
+
+  &__head-select {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    color: $default-bg-white;
+    text-align: center;
+    margin: 0 0 0 5px;
+    background: $select-toggle-bg-color;
+    border: 1px solid $select-toggle-bg-color;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    min-width: 35px;
+
+    &--none {
+      background: $default-white;
+      border: 1px solid $default-black;
+      color: $default-black;
+    }
+  }
+
+  &__list {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &--height-small {
+      height: 270px;
+    }
+
+    &--horizontal-padding-small {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &--nested {
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    font-size: 13px;
+
+    &--ghost {
+      opacity: 0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+
+    &--height-small {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    &--overlined {
+      border-top: 1px solid $ec-table-row-underline;
+    }
+
+    &--underlined {
+      border-bottom: 1px solid $ec-table-row-underline;
+
+      &_fat {
+        border-bottom: 2px solid $ec-table-row-underline;
+      }
+    }
+
+    &--selected {
+      background-color: grey;
+      color: white;
+    }
+
+    &--nested {
+      padding-left: 30px;
+    }
+
+    &--horizontal-padding-small {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__cell {
+    flex: 1;
+    @include sds-ellipsis();
+
+    &--drag {
+      cursor: pointer;
+
+      &:active {
+        cursor: move;
+      }
+    }
+
+    &--icon-pointer {
+      .sds-icon {
+        cursor: pointer;
+      }
+    }
+
+    &--centered {
+      text-align: center;
+    }
+
+    &--expand-fix {
+      font-size: 20px;
+    }
+
+    &--horizontal-padding-small {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  &__cell-inner {
+    @include sds-ellipsis();
+  }
+  &__cell--process {
+    margin-right: 20px;
+    @include sds-ellipsis();
+  }
+  &__empty {
+    font-size: 17px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+
+    &--blue {
+      background-color: $ec-grid-empty-blue-bg;
+      color: $ec-grid-empty-blue-color;
+    }
+  }
+}

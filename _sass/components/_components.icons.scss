@@ -1,0 +1,1037 @@
+//================================================
+//  Icon selectors
+//================================================
+
+/**
+ * Pre-defined classes for the icon set.
+ */
+.sds-icon {
+  font-family: "sds-icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  // @extend .sds-icon-base;
+
+  &.disabled {
+    color: $disabled-btn-color;
+    cursor: default;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &.clock:before {
+    content: $sds-icon-clock;
+  }
+
+  &.home:before {
+    content: $sds-icon-home;
+  }
+
+  &.acl:before {
+    content: $sds-icon-acl;
+  }
+
+  &.version:before {
+    content: $sds-icon-version;
+  }
+
+  &.details-arrow:before {
+    content: $sds-icon-details-arrow;
+  }
+
+  &.menu-slide:before {
+    content: $sds-icon-menu-slide;
+  }
+
+  &.dashboard:before {
+    content: $sds-icon-dashboard;
+  }
+
+  &.search:before {
+    content: $sds-icon-search;
+  }
+
+  &.notifications:before {
+    content: $sds-icon-notifications;
+  }
+
+  &.toolbox:before {
+    content: $sds-icon-toolbox;
+    color: $brown;
+  }
+
+  &.settings:before {
+    content: $sds-icon-settings;
+  }
+
+  &.view-tile:before {
+    content: $sds-icon-view-tile;
+  }
+
+  &.view-col-2:before {
+    content: $sds-icon-row;
+  }
+
+  &.view-col-1:before {
+    content: $sds-icon-view-col-1;
+  }
+
+  &.tag:before,
+  &.tags:before {
+    content: $sds-icon-tag;
+  }
+
+  &.sort:before {
+    content: $sds-icon-sort;
+  }
+
+  &.expand:before,
+  &.view-expanded:before {
+    content: $sds-icon-expand;
+  }
+
+  &.collapse:before,
+  &.view-collapsed:before {
+    content: $sds-icon-collapse;
+  }
+
+  &.command:before {
+    content: $sds-icon-command;
+  }
+
+  &.procedure:before {
+    content: $sds-icon-procedure;
+  }
+
+  &.zoom-in:before {
+    content: $sds-icon-zoom-in;
+  }
+
+  &.zoom-out:before {
+    content: $sds-icon-zoom-out;
+  }
+
+  &.header-expand:before {
+    content: $sds-icon-header-expand;
+  }
+
+  &.header-collapse:before {
+    content: $sds-icon-header-collapse;
+  }
+
+  &.back:before {
+    content: $sds-icon-back;
+  }
+
+  &.row-last:before {
+    content: $sds-icon-row-last;
+  }
+
+  &.row-first:before {
+    content: $sds-icon-row-first;
+  }
+
+  &.import:before {
+    content: $sds-icon-import;
+  }
+
+  &.plugin:before {
+    content: $sds-icon-plugin;
+  }
+
+  &.plus-sign:before {
+    content: $sds-icon-plus-sign;
+  }
+
+  &.menu-slide-collapsed:before {
+    content: $sds-icon-menu-slide-collapsed;
+  }
+
+  &.view-architecture:before {
+    content: $sds-icon-view-architecture;
+  }
+
+  &.view-hierarchy:before {
+    content: $sds-icon-view-hierarchy;
+  }
+
+  &.edit-mode:before {
+    content: $sds-icon-edit-mode;
+  }
+
+  &.undo:before {
+    content: $sds-icon-undo;
+  }
+
+  &.redo:before {
+    content: $sds-icon-redo;
+  }
+
+  &.scale-to-fit:before {
+    content: $sds-icon-scale-to-fit;
+  }
+
+  // Edit Mode
+  &.add-tier:before {
+    content: $sds-icon-add-tier;
+  }
+
+  // Edit Mode
+  &.add-map:before {
+    content: $sds-icon-add-map;
+  }
+
+  // Edit Mode
+  &.add-process:before {
+    content: $sds-icon-add-process;
+  }
+
+  &.add-step:before {
+    content: $sds-icon-add-step;
+  }
+
+  // View mode
+  &.view-processes:before,
+  &.process:before {
+    content: $sds-icon-view-processes;
+  }
+
+  &.add-component:before {
+    content: $sds-icon-add-component;
+  }
+
+  &.view-components:before {
+    content: $sds-icon-view-components;
+  }
+
+  &.move:before {
+    content: $sds-icon-move;
+  }
+
+  &.edit:before {
+    content: $sds-icon-edit;
+  }
+
+  &.view-details:before {
+    content: $sds-icon-view-details;
+  }
+
+  &.remove:before,
+  &.close:before {
+    content: $sds-icon-x;
+  }
+
+  &.component:before {
+    content: $sds-icon-component;
+  }
+
+  // View Mode
+  &.view-properties:before {
+    content: $sds-icon-view-properties;
+  }
+
+  // View Mode
+  &.view-tiers:before {
+    content: $sds-icon-view-tiers;
+  }
+
+  &.repository:before {
+    content: $sds-icon-repository;
+  }
+
+  &.arrow-open:before {
+    content: $sds-icon-arrow-open;
+  }
+
+  &.arrow-back:before {
+    content: $sds-icon-arrow-back;
+  }
+
+  &.arrow-close:before {
+    content: $sds-icon-arrow-close;
+  }
+
+  &.file-system:before {
+    content: $sds-icon-file-system;
+  }
+
+  &.source:before {
+    content: $sds-icon-source;
+  }
+
+  &.steps:before {
+    content: $sds-icon-steps;
+  }
+
+  &.arrow-up:before {
+    content: $sds-icon-arrow-up;
+  }
+
+  &.arrow-down:before {
+    content: $sds-icon-arrow-down;
+  }
+
+  &.place-above:before {
+    content: $sds-icon-place-above;
+  }
+
+  &.place-below:before {
+    content: $sds-icon-place-below;
+  }
+
+  &.panel-collapsed:before {
+    content: $sds-icon-panel-collapsed;
+  }
+
+  &.panel-open:before {
+    content: $sds-icon-panel-open;
+  }
+
+  &.sort-down:before {
+    content: $sds-icon-sort-down;
+  }
+
+  &.sort-up:before {
+    content: $sds-icon-sort-up;
+  }
+
+  &.dropdown:before {
+    content: $sds-icon-dropdown;
+  }
+
+  &.application:before {
+    content: $sds-icon-application;
+  }
+
+  &.component2:before {
+    content: $sds-icon-component2;
+  }
+
+  &.ec-component:before {
+    content: $sds-icon-component2;
+  }
+
+  &.ec-procedure:before {
+    content: $sds-icon-procedure;
+  }
+
+  &.ec-process:before {
+    content: $sds-icon-component2;
+  }
+
+  &.ec-command:before {
+    content: $sds-icon-command;
+  }
+
+  &.ec-plugin:before {
+    content: $sds-icon-plugin;
+  }
+
+  &.plugin:before {
+    content: $sds-icon-plugin;
+  }
+
+  &.attention:before {
+    content: $sds-icon-attention;
+  }
+
+  &.check-mark:before {
+    content: $sds-icon-check-mark;
+  }
+
+  &.folder-plus:before {
+    content: $sds-icon-folder-plus;
+  }
+
+  &.folder:before {
+    content: $sds-icon-folder;
+  }
+
+  &.access:before {
+    content: $sds-icon-access;
+  }
+
+  &.properties:before {
+    content: $sds-icon-properties;
+  }
+
+  &.property:before {
+    content: $sds-icon-property;
+  }
+
+  &.go-to-details:before {
+    content: $sds-icon-go-to-details;
+  }
+
+  &.row-icon:before {
+    content: $sds-icon-row;
+  }
+
+  &.environment:before {
+    content: $sds-icon-row;
+  }
+
+  &.inventory:before {
+    content: $sds-icon-inventory;
+  }
+
+  &.artifact:before {
+    content: $sds-icon-artifact;
+  }
+
+  &.remove-icon:before {
+    content: $sds-icon-remove;
+  }
+
+  &.tier-map:before {
+    content: $sds-icon-tier-map;
+  }
+
+  &.add-resource:before {
+    content: $sds-icon-add-resource;
+  }
+  &.resource:before {
+    content: $sds-icon-static-resource;
+  }
+  &.equal-to:before {
+    content: $sds-icon-equal-to;
+  }
+  &.not-equal-to:before {
+    content: $sds-icon-not-equal-to;
+  }
+  &.greater-than:before {
+    content: $sds-icon-greater-than;
+  }
+  &.greater-than-or-equal-to:before {
+    content: $sds-icon-greater-than-or-equal-to;
+  }
+  &.less-than:before {
+    content: $sds-icon-less-than;
+  }
+  &.less-than-or-equal-to:before {
+    content: $sds-icon-less-than-or-equal-to;
+  }
+  &.contains:before {
+    content: $sds-icon-contains;
+  }
+  &.not-contains:before {
+    content: $sds-icon-not-contains;
+  }
+  &.empty:before {
+    content: $sds-icon-empty;
+  }
+  &.conditions:before {
+    content: $sds-icon-conditions;
+  }
+  &.credentials:before {
+    content: $sds-icon-credentials;
+  }
+  &.delete:before {
+    content: $sds-icon-delete;
+  }
+  &.linux:before {
+    content: $sds-icon-linux;
+  }
+  &.windows:before {
+    content: $sds-icon-windows;
+  }
+  &.solaris:before {
+    content: $sds-icon-solaris;
+  }
+  &.hpux:before {
+    content: $sds-icon-hpux;
+  }
+  &.macos:before {
+    content: $sds-icon-macos;
+  }
+  &.g-expand:before {
+    content: $sds-icon-g-expand;
+  }
+  &.g-collapse:before {
+    content: $sds-icon-g-collapse;
+  }
+  &.notification:before {
+    content: $sds-icon-notification;
+  }
+  &.notification-add:before {
+    content: $sds-icon-notification-add;
+  }
+  &.notification-remove:before {
+    content: $sds-icon-notification-remove;
+  }
+  &.template:before {
+    content: $sds-icon-template;
+  }
+  &.error-warning:before {
+    content: $sds-icon-error;
+  }
+  &.sort-item-up:before {
+    content: $sds-icon-sort-item-up;
+  }
+  &.sort-item-down:before {
+    content: $sds-icon-sort-item-down;
+  }
+  &.schedule:before {
+    content: $sds-icon-schedule;
+  }
+  &.recipients:before {
+    content: $sds-icon-recipients;
+  }
+  &.eye:before {
+    content: $sds-icon-eye;
+  }
+  &.snapshot:before {
+    content: $sds-icon-snapshot;
+  }
+  &.no-snapshot:before {
+    content: $sds-icon-no-snapshot;
+  }
+  &.export-change:before {
+    content: $sds-icon-export-change;
+  }
+  &.view-path:before {
+    content: $sds-icon-view-path;
+  }
+  &.modified:before {
+    content: $sds-icon-history-modified;
+  }
+  &.created:before {
+    content: $sds-icon-history-created;
+  }
+  &.deleted:before {
+    content: $sds-icon-history-deleted;
+  }
+  &.change-tracking-on:before {
+    content: $sds-icon-history-enabled;
+  }
+  &.change-tracking-off:before {
+    content: $sds-icon-history-disabled;
+  }
+  &.track-changes:before {
+    content: $sds-icon-track-changes;
+  }
+  &.time-until:before {
+    content: $sds-icon-time-until;
+  }
+  &.lock:before {
+    content: $sds-icon-lock;
+  }
+  &.compare:before {
+    content: $sds-icon-compare;
+  }
+  &.description:before {
+    content: $sds-icon-description;
+  }
+  &.info-description:before {
+    content: $sds-icon-info-description;
+  }
+  &.undeployed:before {
+    content: $sds-icon-undeployed;
+  }
+  &.change-alert:before {
+    content: $sds-icon-change-alert;
+  }
+  &.expand-details:before {
+    content: $sds-icon-expand-details;
+  }
+  &.expand-details-copy:before {
+    content: $sds-icon-expand-details-copy;
+  }
+  &.success:before {
+    content: $sds-icon-success;
+  }
+  &.bb:before {
+    content: $sds-icon-bb;
+  }
+  &.expand-area:before {
+    content: $sds-icon-expand-area;
+  }
+  &.resource-pool:before {
+    content: $sds-icon-resource-pool;
+  }
+  &.provider-aws:before {
+    content: $sds-icon-provider-aws;
+  }
+  &.provider-openstack:before {
+    content: $sds-icon-provider-openstack;
+  }
+  &.provider-chef:before {
+    content: $sds-icon-provider-chef;
+  }
+  &.provider-default:before {
+    content: $sds-icon-provider-default;
+  }
+  &.env-template:before {
+    content: $sds-icon-env-template;
+  }
+  &.btn-on:before {
+    content: $sds-icon-cb-toggler-btn-on;
+  }
+  &.btn-off:before {
+    content: $sds-icon-cb-toggler-btn-off;
+  }
+  &.dynamic-resource:before {
+    content: $sds-icon-dynamic-resource;
+  }
+  &.dynamic-env:before {
+    content: $sds-icon-dynamic-env;
+  }
+  &.kill-switch:before {
+    content: $sds-icon-kill-switch;
+  }
+  &.cloud-provider:before {
+    content: $sds-icon-cloud-provider;
+  }
+  &.provision:before {
+    content: $sds-icon-provision;
+  }
+  &.cloud-instance:before {
+    content: $sds-icon-cloud-instance;
+  }
+  &.parameters:before {
+    content: $sds-icon-parameters;
+  }
+  &.help:before {
+    content: $sds-icon-help;
+  }
+  &.info:before {
+    content: $sds-icon-info;
+  }
+  &.info-round:before {
+    content: $sds-info-round;
+  }
+  &.resource-template:before {
+    content: $sds-icon-environment-tmpl-not-empty;
+  }
+  &.static-env-up:before {
+    content: $sds-icon-static-env-up;
+  }
+  &.static-env-down:before {
+    content: $sds-icon-static-env-down;
+  }
+  &.dynamic-env-up:before {
+    content: $sds-icon-dynamic-env-up;
+  }
+  &.dynamic-env-down:before {
+    content: $sds-icon-dynamic-env-down;
+  }
+  &.mixed-env-up:before {
+    content: $sds-icon-mixed-env-up;
+  }
+  &.mixed-env-down:before {
+    content: $sds-icon-mixed-env-down;
+  }
+  &.drag:before {
+    content: $sds-icon-drag;
+  }
+  &.lookup:before {
+    content: $sds-icon-lookup;
+  }
+  &.pipeline:before {
+    content: $sds-icon-pipeline;
+  }
+  &.right-arrow:before {
+    content: $sds-icon-right-arrow;
+  }
+  &.stages:before {
+    content: $sds-icon-stages;
+  }
+  &.add-task:before {
+    content: $sds-icon-add-task;
+  }
+  &.twox:before {
+    content: $sds-icon-2x;
+  }
+  &.add-before:before {
+    content: $sds-icon-add-before;
+  }
+  &.add-after:before {
+    content: $sds-icon-add-after;
+  }
+  &.radio-btn {
+    &:before {
+      content: $sds-icon-radio-btn;
+    }
+    &.selected:before {
+      content: $sds-icon-radio-btn-selected;
+    }
+  }
+  &.entry-gate:before {
+    content: $sds-icon-entry-gate;
+  }
+  &.exit-gate:before {
+    content: $sds-icon-exit-gate;
+  }
+  &.add-rule:before {
+    content: $sds-icon-add-rule;
+  }
+  &.approval-label:before {
+    content: $sds-icon-approval-label;
+  }
+  &.drill-down:before {
+    content: $sds-icon-drill-down;
+  }
+  &.task:before {
+    content: $sds-icon-task;
+  }
+  &.reload:before {
+    content: $sds-icon-reload;
+  }
+  &.hand-stop:before {
+    content: $sds-icon-hand-stop;
+  }
+  &.hand-stop-white:before {
+    content: $sds-icon-hand-stop-white;
+  }
+  &.pipelines-run:before {
+    content: $sds-icon-pipelines-run;
+  }
+  &.warning:before {
+    content: $sds-icon-warning;
+  }
+  &.success-round:before {
+    content: $sds-icon-success-round;
+  }
+  &.done:before {
+    content: $sds-icon-done;
+  }
+  &.slider-arrow-left:before {
+    content: $sds-icon-slider-arrow-left;
+  }
+  &.slider-arrow-right:before {
+    content: $sds-icon-slider-arrow-right;
+  }
+  &.checkbox {
+    &:before {
+      content: $sds-icon-checkbox;
+    }
+    &.checked:before {
+      content: $sds-icon-checkbox-checked;
+    }
+  }
+  &.users:before {
+    content: $sds-icon-users;
+  }
+  &.add-task-before:before {
+    content: $sds-icon-add-task-before;
+  }
+  &.add-task-after:before {
+    content: $sds-icon-add-task-after;
+  }
+  &.beta:before {
+    content: $sds-icon-beta;
+  }
+  &.manual:before {
+    content: $sds-icon-hand-stop;
+  }
+  &.workflow:before {
+    content: $sds-icon-workflow;
+  }
+  &.squeeze-details:before {
+    content: $sds-icon-squeeze-details;
+  }
+  &.error-details:before {
+    content: $sds-icon-error-details;
+  }
+  &.stage-plus:before {
+    content: $sds-icon-stage-plus;
+  }
+  &.arrow-down-inverse:before {
+    content: $sds-icon-arrow-down-inverse;
+  }
+  &.stage-warning:before {
+    content: $sds-icon-stage-warning;
+  }
+  &.type-variable:before {
+    content: $sds-icon-type-variable;
+  }
+  &.type-variable:before {
+    content: $sds-icon-type-variable;
+  }
+  &.drill-down-content:before {
+    content: $sds-icon-drill-down-content;
+  }
+  &.comment:before {
+    content: $sds-icon-comment;
+  }
+  &.releases:before {
+    content: $sds-icon-releases;
+  }
+  &.ref-component:before {
+    content: $sds-icon-ref-component;
+  }
+  &.alert-flag:before {
+    content: $sds-icon-alert-flag;
+  }
+  &.move-right:before {
+    content: $sds-icon-move-right;
+  }
+  &.plugin-category:before {
+    content: $sds-icon-plugin-category;
+  }
+  &.abort:before {
+    content: $sds-icon-abort;
+  }
+  &.move-left:before {
+    content: $sds-icon-move-left;
+  }
+  &.deployer:before {
+    content: $sds-icon-deployer;
+  }
+  &.fillcell:before {
+    content: $sds-icon-fillcell;
+  }
+  &.clearcell:before {
+    content: $sds-icon-clearcell;
+  }
+  &.narrowcolumn:before {
+    content: $sds-icon-narrowcolumn;
+  }
+  &.expandcolumn:before {
+    content: $sds-icon-expandcolumn;
+  }
+  &.missingenvironment1:before {
+    content: $sds-icon-missingenvironment1;
+  }
+  &.missingenvironment2:before {
+    content: $sds-icon-missingenvironment2;
+  }
+  &.missingtiermap1:before {
+    content: $sds-icon-missingtiermap1;
+  }
+  &.missingtiermap2:before {
+    content: $sds-icon-missingtiermap2;
+  }
+  &.markedna1:before {
+    content: $sds-icon-markedna1;
+  }
+  &.markedna2:before {
+    content: $sds-icon-markedna2;
+  }
+  &.emptycells1:before {
+    content: $sds-icon-emptycells1;
+  }
+  &.emptycells2:before {
+    content: $sds-icon-emptycells2;
+  }
+  &.dots:before {
+    content: $sds-icon-dots;
+  }
+  &.planning:before {
+    content: $sds-icon-planning;
+  }
+  &.completed:before {
+    content: $sds-icon-completed;
+  }
+  &.note:before {
+    content: $sds-icon-note;
+  }
+  &.start:before {
+    content: $sds-icon-start;
+  }
+  &.end:before {
+    content: $sds-icon-end;
+  }
+  &.collapse-horizontal:before {
+    content: $sds-collapse-horizontal;
+    cursor: pointer;
+  }
+  &.expand-horizontal:before {
+    content: $sds-expand-horizontal;
+    cursor: pointer;
+  }
+  &.mismatch:before {
+    content: $sds-mismatch;
+  }
+  &.mismatch-box:before {
+    content: $sds-mismatch-box;
+  }
+  &.error-box:before {
+    content: $sds-error-box;
+  }
+  &.re-run:before {
+    content: $sds-icon-re-run;
+  }
+  &.thin-arrow:before {
+    content: $sds-thin-arrow;
+  }
+  &.missing-process:before  {
+    content: $sds-missing-process;
+  }
+  &.missing-configuration:before  {
+    content: $sds-missing-configuration;
+  }
+  &.re-run-pipeline:before {
+    content: $sds-re-run-pipeline;
+  }
+  &.dots-in-circle:before {
+    content: $sds-dots-in-circle;
+  }
+  &.skipped:before {
+    content: $sds-icon-skipped;
+  }
+  &.order:before {
+    content: $sds-order-icon;
+  }
+  &.rule:before {
+    content: $sds-icon-rule;
+  }
+  &.early:before {
+    content: $sds-early-icon;
+  }
+  &.frequency-once:before {
+    content: $sds-frequency-once-icon;
+  }
+  &.frequency-daily:before {
+    content: $sds-frequency-daily-icon;
+  }
+  &.frequency-weekly:before {
+    content: $sds-frequency-weekly-icon;
+  }
+  &.frequency-monthly:before {
+    content: $sds-frequency-monthly-icon;
+  }
+  &.schedule-end:before {
+    content: $sds-schedule-end;
+  }
+  &.custom-config:before {
+    content: $sds-custom-config;
+  }
+  &.rerun:before {
+    content: $sds-rerun;
+  }
+  &.component-process:before {
+    content: $sds-component-process;
+  }
+}
+
+
+//SVG icons
+
+
+.sds-svg-icon {
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  pointer-events: none;
+  vertical-align: middle;
+
+  &__wrapper {
+    cursor: pointer;
+    display: inline-block;
+    &.disabled {
+      opacity: 1 !important;
+      cursor: default;
+    }
+  }
+
+  &.disabled {
+    opacity: 1 !important;
+    fill: $prGhostStepDroppedControl !important;
+    cursor: default !important;
+  }
+
+  &__container--inline-block {
+    display: inline-block;
+  }
+
+  &--big {
+    height: 24px;
+    width: 24px;
+  }
+
+  &--no-left-offset {
+    margin-left: 0;
+  }
+
+  &--no-right-offset {
+    margin-right: 0;
+  }
+
+  &--no-offset {
+    margin: 0;
+  }
+
+  &--icon-application {
+    fill: $soft-blue;
+  }
+  &--icon-mastercomponent {
+    fill: $soft-blue;
+  }
+  &--icon-component {
+    fill: $very-soft-blue;
+  }
+  &--icon-container {
+    fill: $light-violet;
+  }
+  &--icon-cluster {
+    fill: $middle-purple;
+  }
+  &--icon-service {
+    fill: $very-soft-blue;
+  }
+  &--icon-application-tier {
+    fill: $ninety-percent-blue;
+  }
+  &--icon-menu-dropdown {
+    width: 10px;
+    height: 10px;
+  }
+  &--icon-menu-dropdown-close {
+    width: 10px;
+    height: 10px;
+  }
+  &--icon-process {
+    fill: $light-green;
+  }
+  &--icon-snapshot {
+    fill: $dark-blue;
+  }
+  &--icon-runtime-run:not(.disabled) {
+    fill: $saturated-green;
+  }
+  &--icon-project {
+    fill: $brown;
+    margin-top: -2px;
+  }
+  &--icon-manual-process-step {
+    fill: $dark-blue;
+  }
+  &--icon-artifact {
+    fill: $medium-dark-blue;
+  }
+  &--icon-pipeline {
+    fill: $violet;
+  }
+  &--icon-release {
+    fill: $bright-blue;
+  }
+  &.object-menu {
+    fill: $white;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 100%;
+
+    &--clickable {
+      cursor: pointer;
+    }
+    &--disabled {
+      fill: $prGhostStepDroppedControl;
+      .sds-svg-icon {
+        fill: $prGhostStepDroppedControl;
+      }
+    }
+  }
+}

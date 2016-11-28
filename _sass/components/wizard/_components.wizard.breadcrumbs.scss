@@ -1,0 +1,92 @@
+//================================================
+//  Wizard breadcrumbs
+//================================================
+
+.modals-box {
+
+  //EC wizard breadcrumbs
+  .ec-react-wizard__breadcrumbs {
+    &__container {
+      display: flex;
+
+      .breadcrumb {
+        width: 30px;
+        cursor: pointer;
+        text-align: center;
+        padding-top: 9px;
+        color: $white;
+
+        .sds-svg-icon {
+          fill: $white;
+        }
+
+        &--first {
+          background-color: $wBreadcrumbColorFirst;
+        }
+        &--second {
+          background-color: $wBreadcrumbColorSecond;
+        }
+        &--third {
+          background-color: $wBreadcrumbColorThird;
+        }
+        &--fourth {
+          background-color: $wBreadcrumbColorFourth;
+        }
+        &--fifth {
+          background-color: $wBreadcrumbColorFifth;
+        }
+        &--sixth {
+          background-color: $wBreadcrumbColorSixth;
+        }
+        &--seventh {
+          background-color: $wBreadcrumbColorSeventh;
+        }
+        &--eighth {
+          background-color: $wBreadcrumbColorEigth;
+        }
+        &--expandable {
+          padding-top: 0;
+          width: 60px;
+          background-color: $ten-percent-gray;
+          cursor: default;
+          text-align: center;
+          .sds-icon {
+            line-height: 44px;
+            font-size: 22px;
+            &.arrow-open {
+              color: $default-black;
+              cursor: pointer;
+            }
+            &.environment {
+              font-size: 24px;
+              color: $orange;
+            }
+            &.application {
+              font-size: 28px;
+              color: $very-soft-blue;
+            }
+            &.property {
+              font-size: 28px;
+              color: $ninety-percent-blue;
+            }
+            &.disabled {
+              color: $soft-gray;
+              cursor: default;
+            }
+          }
+        }
+        .sds-icon.pipeline {
+          font-size: 9px;
+          top: -2px;
+          position: relative;
+        }
+        .sds-icon.releases {
+          font-size: 8px;
+        }
+        .sds-icon.toolbox:before {
+          color: $white;
+        }
+      }
+    }
+  }
+}

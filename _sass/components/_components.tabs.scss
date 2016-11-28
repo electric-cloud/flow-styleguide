@@ -1,0 +1,176 @@
+//================================================
+//  Tabs
+//================================================
+
+.category-bar {
+  text-align: center;
+}
+
+.ec-tabs {
+  text-align: center;
+
+  &.tabs-for-screen-list {
+    padding: 10px 0 15px;
+  }
+
+  .ec-tabs-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid $ec-tabs-active-color;
+    white-space: nowrap;
+
+    &:after {
+      visibility: hidden;
+      display: block;
+      content: "";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .ec-tabs-tab {
+    min-width: 98px;
+    height: 32px;
+    padding: 0 30px;
+    border: 1px solid $ec-tabs-active-color ;
+    float: left;
+    text-align: center;
+    font-size: 15px;
+    line-height: 32px;
+    cursor: pointer;
+
+    &--list-nav {
+      width: 260px;
+      box-sizing: border-box;
+    }
+
+    .sds-icon {
+      padding: 0 3px;
+      &.ref-component,
+      &.application {
+        color: $very-soft-blue;
+      }
+    }
+
+    &.tab-environments {
+      .sds-icon {
+        color: $orange;
+      }
+    }
+
+    &.tab-environment-templates {
+      .sds-icon {
+        color: $orange;
+      }
+    }
+
+    &.tab-resource-templates,
+    &.tab-applications {
+      .sds-icon {
+        color: $resTplIconColor;
+      }
+    }
+
+    &.tab-components {
+      .sds-icon {
+        color: $snapshots-create-switch-component-color;
+      }
+    }
+
+    &.tab-app-processes {
+      .sds-icon {
+        color: $snapshots-create-switch-processes-color;
+      }
+    }
+
+    &:hover {
+      background-color: $ec-tabs-hover-color;
+    }
+
+    &.active {
+      cursor: default;
+      color: $ec-tabs-active-text-color;
+      background-color: $ec-tabs-active-color;
+      .sds-icon {
+        color: $ec-tabs-active-text-color;
+      }
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $ec-tabs-disabled-color;
+      background-color: $ec-tabs-disabled-text-color;
+    }
+  }
+}
+
+//ToDo delete previous 'ec-tabs' and rename this className
+.ec-tabs2 {
+  height: 32px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid $emperor-gray;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+
+  &.list-tabs {
+    margin: 10px 0 15px;
+  }
+
+  .ec-tab {
+    height: 30px;
+    width: 266px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid $emperor-gray;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  .ec-tab.active {
+    cursor: default;
+    color: $default-white;
+    background-color: $emperor-gray;
+
+    .sds-svg-icon {
+      fill: $default-white;
+    }
+  }
+
+  .ec-tab-text {
+    line-height: 30px;
+    vertical-align: middle;
+  }
+
+  .ec-tab .ec-tab-error,
+  .ec-tab.active .ec-tab-error {
+    fill: $errorRed;
+  }
+
+  .sds-svg-icon {
+    &--icon-environments-static {
+      fill: $orange;
+    }
+
+    &--icon-templates {
+      fill: $orange;
+      width: 17px;
+    }
+  }
+
+  .resource-template-tab {
+    .sds-svg-icon--icon-templates {
+      fill: $soft-blue;
+    }
+  }
+}

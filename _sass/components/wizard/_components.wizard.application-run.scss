@@ -1,0 +1,360 @@
+//================================================
+//  Wizard run application process modal
+//================================================
+
+.modals-box .run-app-body {
+  .ec-react-wizard__content {
+    padding: 0;
+  }
+  .run-app-name {
+    margin: 0;
+    @include modal-header-text();
+
+    .sds-icon.application {
+      margin: 0 8px;
+      color: $very-soft-blue;
+    }
+  }
+
+  .ec-smart-run-container {
+    .wizard-form-row.wizard-step-credential {
+      padding: 0 25px;
+    }
+
+    .react-form__checkbox-container__label--text {
+      font-size: 16px;
+    }
+
+    .react-form__checkbox-container {
+      display: inline-block;
+    }
+  }
+
+  .run-type-row {
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    margin-top: -42px;
+    .wizard-credential-count {
+      display: block;
+      @include sds-ellipsis();
+      line-height: 40px;
+    }
+  }
+
+  .ec-run__fixed-process {
+    @include sds-ellipsis();
+    font-size: 18px;
+    line-height: 40px;
+    height: 40px;
+    .sds-icon {
+      color: $light-green;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  }
+
+  .select-env {
+    margin-bottom: 8px;
+
+    .ec-run-smart-toggler {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 auto;
+      width: 50px;
+      height: 25px;
+      text-align: center;
+    }
+  }
+
+  .ec-smart-run-container {
+    position: relative;
+    .loader-bg {
+      background-color: transparent;
+      z-index: 8;
+    }
+    .at-snapshots-selection-container {
+      .at-snapshots-list-details {
+        display: inline-block;
+        line-height: 40px;
+        vertical-align: middle;
+      }
+
+      .disabled {
+        cursor: default;
+        color: $default-text-color;
+        .sds-icon {
+          cursor: default;
+        }
+      }
+      .wizard-note--title {
+        margin-right: 10px;
+      }
+    }
+    .wizard-parameter-total-wrapper {
+      display: inline-block;
+      line-height: 40px;
+      vertical-align: middle;
+    }
+    .at-parameter-required-container {
+      .wizard-note {
+        color: $default-text-color;
+        .attention{
+          display: none;
+          font-size: 16px;
+          padding: 0;
+          top: 1px;
+          margin: 0 3px;
+        }
+        &.alarm {
+          vertical-align: middle;
+          color: $default-red;
+          .attention{
+            display: inline-block;
+          }
+        }
+      }
+      .arrow-open {
+        color: $default-text-color;
+      }
+    }
+    .ec-smart-locker + .wizard-form-row {
+      .wizard-note, .wizard-artifact-total-wrapper,
+      .wizard-parameter-total-wrapper {
+        opacity: .5;
+      }
+    }
+  }
+
+  .ec-select {
+    .ec-select-header {
+      font-size: 18px;
+    }
+    .ec-select-body {
+      font-size: 18px;
+    }
+    .view-processes {
+      font-size: 18px;
+      margin-top: 2px;
+    }
+
+    .environment:before,
+    .dynamic-env:before {
+      margin-left: 2px;
+      color: $sds-select-icon-color-inactive;
+    }
+
+    &.active .ec-select-header {
+      .environment:before, .dynamic-env:before {
+        color: $envIconColor;
+      }
+
+      .view-processes {
+        color: $light-green;
+      }
+    }
+  }
+
+  .wizard-form-row.react-form__row {
+    margin-bottom: 7px;
+  }
+
+  .react-form__txt-input-wrapper--visible {
+    margin: 0 auto;
+  }
+
+  .react-form__txt-input-holder {
+    visibility: hidden;
+    margin-bottom: 8px;
+    &--visible {
+      visibility: visible;
+    }
+    input[type="text"] {
+      margin-bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  .run-app-small-item-centered {
+    width: 292px;
+    margin: 0 auto 20px;
+    text-align: center;
+    position: relative;
+    min-height: 40px;
+    .middle-part__row {
+      height: 47px;
+      .react-form__txt-input-wrapper {
+        position: relative;
+        right: 21px;
+      }
+    }
+    ul {
+      margin-left: 15px;
+      li {
+        line-height: 17px;
+      }
+    }
+    &.run-app-tip {
+      text-align: left;
+      &.wizard-form-row {
+        margin-bottom: 0;
+      }
+      .run-app-tip-icon {
+        float: left;
+        margin: 0 6px 0 0;
+        font-size: 24px;
+      }
+    }
+    &.smart-deploy-on {
+      width: 450px;
+      text-align: left;
+    }
+  }
+
+  .wizard-step-credential {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    .arrow-open {
+      padding-top: 13px !important;
+    }
+    &--number {
+      font-size: 18px;
+    }
+    &--title {
+      font-size: 16px;
+      max-width: 200px;
+      position: relative;
+      display: inline-block;
+      @include sds-ellipsis;
+      vertical-align: top;
+    }
+    .wizard-label {
+      width: 130px !important;
+      display: block;
+      float: left;
+    }
+
+    .wizard-row-wrapper {
+      display: block;
+      float: left;
+      text-align: center;
+    }
+
+    .sds-icon {
+      margin: 0 8px;
+      position: relative;
+      top: -1px;
+      &.arrow-open {
+        top: 0;
+        margin: 0 0 0 12px;
+      }
+      &.dropdown {
+        font-size: 13px !important;
+      }
+      &.snapshot {
+        top: -2px;
+      }
+    }
+    .wizard-note {
+      position: relative;
+      display: block;
+      float: right;
+      width: auto !important;
+      &--number {
+        font-size: 18px;
+        vertical-align: middle;
+      }
+      &--title {
+        font-size: 16px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+
+    .snapshot-tier-map {
+      float: right;
+      margin-right: 45px;
+      margin-top: 4px;
+      .sds-icon {
+        &.help {
+          font-size: 18px !important;
+        }
+      }
+
+      .sds-svg-icon {
+        &__wrapper--icon-add-tier-map {
+          padding: 6px 0;
+          &.red .sds-svg-icon {
+            fill: $default-red;
+          }
+        }
+
+        &--icon-runtime-status-failed {
+          fill: $default-red;
+        }
+      }
+
+
+      .ec-react-help__wrapper {
+        width: 32px;
+        margin: 0;
+        line-height: 38px;
+      }
+    }
+  }
+
+  .ec-toggler-wrapper {
+    float: left;
+    padding-left: 25px;
+    .ec-react-help__icon {
+      font-size: 18px !important;
+    }
+  }
+
+  .new-env-map {
+    margin-top: 15px;
+    position: absolute;
+    height: 122px;
+    padding: 0;
+    background: $active-blue;
+    color: $default-white;
+    text-align: left;
+    font-size: 16px;
+    z-index: 10000;
+    width: 100%;
+    bottom: -62px;
+
+    &__btn {
+      line-height: 60px;
+      padding: 0 30px;
+      position: relative;
+      cursor: pointer;
+      .sds-svg-icon {
+        margin-right: 10px;
+        fill: $default-white;
+      }
+      .plus-sign {
+        position: absolute;
+        right: 30px;
+        top: 0;
+        font-size: 25px;
+      }
+      &:hover {
+        background: $soft-blue;
+      }
+    }
+    &__text {
+      line-height: 60px;
+      margin: 0 30px;
+      border-bottom: 2px solid $default-white;
+      .sds-svg-icon {
+        margin-right: 10px;
+        fill: $default-white;
+      }
+    }
+  }
+  .ec-wizard-row--select-row {
+    margin-bottom: 8px;
+  }
+}

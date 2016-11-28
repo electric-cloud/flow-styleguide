@@ -1,0 +1,432 @@
+//================================================
+//  Grid icons
+//================================================
+
+.ec-grid-primary {
+  .sds-svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.manual-action {
+      width: 30px;
+    }
+
+    &.process {
+      height: 22px;
+      margin-top: -2px;
+    }
+
+    &--icon-checkmarked {
+      fill: $very-light-gray;
+    }
+
+    &--icon-checkmarked.selected {
+      fill: $light-green;
+    }
+
+    &--icon-stage {
+      fill: $light-blue;
+    }
+
+    &--icon-runtime-run:not(.disabled) {
+      fill: $saturated-green;
+    }
+
+    &--icon-rolling-deploy {
+      fill: $saturated-green;
+    }
+
+    &--icon-rolling-deploy-disabled {
+      fill: $default-red;
+    }
+
+    &--icon-environment-reservation {
+      fill: $saturated-green;
+    }
+
+    &--icon-process {
+      fill: $light-green;
+    }
+
+    &--icon-environments-static {
+      fill: $orange;
+    }
+
+    &--icon-environments-dynamic {
+      fill: $orange;
+    }
+    &--icon-cluster.mapped {
+      fill: $soft-dark-gray;
+    }
+
+    &--icon-application-tier {
+      fill: $ninety-percent-blue;
+    }
+
+    &--icon-resource {
+      fill: $medium-soft-blue;
+    }
+
+    &--icon-environments-dynamic {
+      fill: $orange;
+    }
+
+    &--icon-environments-dynamic-down,
+    &--icon-environments-static-down {
+      fill: $default-red;
+    }
+  }
+
+  .sds-icon {
+    text-decoration: none;
+    vertical-align: middle;
+
+    &.locked {
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    &--pointer {
+      cursor: pointer;
+    }
+
+    &.is-disabled {
+      visibility: hidden;
+    }
+
+    &.attention {
+      color: $default-red;
+    }
+
+    &.application {
+      color: $soft-blue;
+      font-size: 24px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    &.pipeline {
+      color: $violet;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    &.template {
+      font-size: 22px;
+      color: $orange;
+      &.black {
+        color: $default-black;
+      }
+      &.blue {
+        color: $soft-blue;
+      }
+    }
+
+    &.kill-switch {
+      color: $dark-red;
+    }
+
+    &.dynamic-env-up {
+      font-size: 18px;
+      color: $orange;
+    }
+
+    &.static-env-up,
+    &.row-icon {
+      font-size: 21px;
+      color: $orange;
+    }
+
+    &.static-env-down {
+      font-size: 18px;
+      color: $default-red;
+    }
+
+    &.dynamic-env-down,
+    &.mixed-env-down {
+      color: $default-red;
+    }
+
+    &.view-tiers {
+      color: $ninety-percent-blue;
+    }
+
+    &.environment {
+      color: $orange;
+      font-size: 16px;
+    }
+
+    &.resource {
+      position: relative;
+      top: -2px;
+      color: $medium-soft-blue;
+    }
+
+    &.resource-pool {
+      position: relative;
+      top: -2px;
+      font-size: 22px;
+      color: $very-dark-blue;
+    }
+
+    &.toolbox {
+      font-size: 18px;
+    }
+
+    &.component2 {
+      position: relative;
+      top: -2px;
+      color: $very-soft-blue;
+      font-size: 19px;
+    }
+
+    &.ref-component {
+      color: $soft-blue;
+      font-size: 18px;
+    }
+
+    &.dropdown {
+      cursor: pointer;
+      font-size: 10px;
+    }
+
+    &.view-processes {
+      color: $light-green;
+      font-size: 22px;
+    }
+
+    &.tier-map {
+      font-size: 18px;
+    }
+
+    &.snapshot {
+      position: relative;
+      color: $dark-blue;
+      display: inline-block;
+      margin-top: -2px;
+      cursor: pointer;
+    }
+
+    &.panel-open {
+      color: $saturated-green;
+      font-size: 25px;
+    }
+
+    &.expand,
+    &.collapse {
+      font-size: 27px;
+      &.disabled {
+        color: $prGhostStepDroppedControl;
+      }
+    }
+
+    &.track-changes {
+      font-size: 22px;
+    }
+
+    &.view-details {
+      font-size: 22px;
+      line-height: 22px;
+    }
+
+    &.stages {
+      font-size: 10px;
+      margin-top: -2px;
+      margin-right: 4px;
+      display: inline-block;
+      color: $light-blue;
+    }
+
+    &.kill-switch {
+      font-size: 24px;
+      color: $dark-red;
+    }
+
+    &.provider-default {
+      font-size: 22px;
+    }
+
+    &.provider-aws {
+      font-size: 22px;
+      color: $eighty-percent-black;
+    }
+    &.provider-openstack {
+      font-size: 22px;
+      color: $dark-red;
+    }
+
+    &.provision {
+      color: $true-green;
+    }
+
+    &.artifact {
+      color: $medium-dark-blue;
+    }
+
+    &.hand-stop {
+      cursor: pointer;
+    }
+
+
+    &.sort-list {
+      &.sort-item-down,
+      &.sort-item-up {
+        margin-right: 0;
+        cursor: pointer;
+        font-size: 10px;
+        &.active {
+          color: $default-red;
+        }
+      }
+      &.sort-item-up {
+        margin-left: 7px;
+      }
+    }
+
+    &.expand-area {
+      font-size: 16px;
+    }
+
+    &.releases {
+      font-size: 12px;
+      color: $bright-blue;
+    }
+
+    &.schedule-end-icon {
+      margin-left: 12px;
+    }
+
+    &.schedule {
+      font-size: 16px;
+    }
+
+    &.frequency-daily,
+    &.frequency-once,
+    &.frequency-weekly,
+    &.frequency-monthly {
+      font-size: 16px;
+      margin-right: 7px;
+    }
+
+    &.view-path {
+      font-size: 10px;
+    }
+
+    &.change-tracking-on,
+    &.change-tracking-off,
+    &.deleted,
+    &.created,
+    &.modified {
+      font-size: 20px;
+    }
+
+    &.expand-details {
+      font-size: 18px;
+    }
+
+    &.check-mark {
+      &.light-grey {
+        color: $very-light-gray;
+      }
+      &.grey {
+        color: $soft-dark-gray;
+      }
+      &.selected {
+        color: $light-green !important;
+        &:before {
+          color: $light-green !important;
+        }
+      }
+    }
+
+    &.procedure {
+      color: $dark-blue;
+    }
+
+    &.deployer {
+      color: $dark-blue;
+    }
+
+    &.indicator {
+      width: 10px;
+      height: 100%;
+      &.green {
+        background-color: $true-green;
+      }
+      &.disabled {
+        background-color: $soft-dark-gray;
+      }
+    }
+
+    &.notification {
+      color: $gray;
+    }
+
+    &.users {
+      color: $gray;
+    }
+
+    &.drag {
+      color: $gray;
+      &.black {
+        color: $default-black;
+      }
+    }
+
+    &.radio-btn {
+      color: $soft-black;
+      font-size: 18px;
+    }
+
+    &.alert-flag {
+      color: $sunny;
+    }
+
+    &--pointer {
+      cursor: pointer;
+    }
+  }
+
+  .pseudo-radio {
+    vertical-align: middle;
+    display: inline-block;
+    background: $ten-percent-gray;
+    box-shadow: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid $fifty-percent-gray;
+    border-radius: 10px;
+    position: relative;
+    &.checked:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: $default-black;
+      position: absolute;
+      left: 6px;
+      top: 6px;
+    }
+  }
+}
+
+.ec-grid-primary__empty {
+  .sds-icon {
+
+    &.pipeline {
+      color: $middle-blue;
+    }
+  }
+}
+
+.ec-grid-primary__col--approvers {
+  .sds-icon {
+    &.dropdown {
+      cursor: pointer;
+    }
+    &.hand-stop {
+      cursor: default;
+    }
+  }
+}

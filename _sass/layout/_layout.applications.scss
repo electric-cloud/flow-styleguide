@@ -1,0 +1,560 @@
+//================================================
+//  Applications
+//================================================
+
+.applications {
+
+  .applications-container {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+
+    .canvas-process-container {
+      width: 100px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .col-process,
+    .col-map {
+      .dropdown {
+        cursor: pointer;
+        font-size: 10px;
+      }
+
+      .is-disabled {
+        visibility: hidden;
+      }
+    }
+  }
+
+}
+
+.quick-nav-popover,
+.component-processes-popover {
+  max-width: 365px;
+}
+
+.create-form,
+.edit-form {
+  text-align: center;
+
+  .sds-input,
+  .sds-textarea {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+    width: 320px;
+  }
+  .sds-textarea {
+    text-align: left;
+  }
+}
+
+.modal-create-app-from-scratch {
+
+  .new-name-input {
+    margin: 0 auto;
+  }
+
+  .sds-form-row.select {
+    padding: 0 32px;
+    margin: 10px 0 20px;
+  }
+}
+
+.at-app-select-container {
+  height: 411px;
+  overflow: auto;
+  margin: 0 30px;
+}
+
+.at-app-select-modal-item {
+  height: 40px;
+  line-height: 40px;
+  background-color: $table-row-bg;
+  margin-bottom: 4px;
+  padding: 0 10px 0 0;
+  cursor: pointer;
+  color: $table-row-color;
+  @include sds-ellipsis;
+
+  .sds-icon {
+    @include sds-icon-size(20px, 38px, 15px);
+  }
+  &.selected {
+    background-color: $table-row-selected-bg;
+    color: $table-row-selected-color;
+    &:hover {
+      color: $table-row-selected-color;
+      background-color: $table-row-selected-hover-bg;
+    }
+  }
+  &:hover {
+    background-color: $table-row-hover-bg;
+  }
+  .application {
+    color: $app-table-app-icon-color;
+  }
+}
+
+.ec-wizard-main.process-parameter-detailed-list {
+  width: 600px;
+  height: 600px;
+
+  .ec-wizard-head__inner {
+    min-width: 1px;
+  }
+
+  .ec-wizard-head {
+    .ec-wizard-title {
+      text-align: center;
+      max-width: 80%;
+      margin: 0 auto;
+      @include sds-ellipsis();
+      display: block;
+      line-height: 44px;
+      height: 44px;
+    }
+  }
+
+  .ec-wizard-foot {
+    height: 60px;
+    min-height: 60px;
+
+    .ec-wizard-button {
+      width: 50%;
+      height: 60px;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 60px;
+    }
+  }
+
+  &__schedule {
+    width: 690px;
+    height: 650px;
+
+    &--create-from-previous {
+      width: 750px;
+    }
+  }
+}
+
+
+.ec-release-chosen-applications {
+  .ec-grid {
+    clear: both;
+    height: 390px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &--drag-placeholder {
+      height: auto;
+      margin: 0;
+      z-index: 10;
+    }
+    .ec-react-help__wrapper {
+      display: inline;
+      margin-right: 5px;
+      position: relative;
+      bottom: 1px;
+    }
+    .ec-row {
+      margin: 0;
+      padding-right: 30px;
+      background-color: $default-white;
+      height: 38px;
+      line-height: 22px;
+      cursor: pointer;
+      border-bottom: 2px solid $very-light-gray;
+      &__inner {
+        display: flex;
+        width: 100%;
+      }
+      &:first-child {
+        border-top: 2px solid $very-light-gray;
+      }
+    }
+    .ec-col {
+      height: 38px;
+      font-size: 14px;
+      &__name {
+        text-align: left;
+        width: 250px;
+        .sds-icon {
+          color: $violet;
+          margin: 0 5px 0 0;
+        }
+      }
+      &__drag.ec-col {
+        font-size: 18px;
+        cursor: pointer;
+        width: 28px;
+        padding-left: 0;
+      }
+      &__alert {
+        width: 36px;
+        .alert-flag {
+          color: $sunny;
+        }
+        .error-warning {
+          color: $dark-red;
+        }
+      }
+      &--existing-list-item .toolbox {
+        margin-right: 5px;
+        font-size: 22px;
+      }
+      &__applications {
+        text-align: left;
+        width: 345px;
+        line-height: 22px;
+        padding-left: 13px;
+        .index {
+          display: inline-block;
+          text-align: center;
+          width: 22px;
+        }
+        .application {
+          position: relative;
+          top: 2px;
+          color: $very-soft-blue;
+          margin: 0 5px 0 10px;
+          font-size: 28px;
+        }
+      }
+      &__snapshot,
+      &__process,
+      &__project,
+      &--existing-list-item {
+        flex: 1;
+        text-align: left;
+        @include sds-ellipsis();
+        .snapshot-count,
+        .process-count {
+          padding: 0 5px;
+        }
+        .sds-icon.dropdown {
+          cursor: pointer;
+          font-size: 10px;
+        }
+        .sds-icon.snapshot {
+          color: $default-black;
+          font-size: 22px;
+          padding-right: 5px;
+        }
+        .sds-icon.view-processes {
+          line-height: 18px;
+          position: relative;
+          top: 5px;
+          font-size: 28px;
+          color: $light-green;
+          padding-right: 5px;
+        }
+      }
+      &__smart-deploy {
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+    .ec-row {
+      &.selected {
+        .ec-col {
+          &__check {
+            color: $light-green;
+          }
+          &__applications .application {
+            color: $default-white;
+          }
+          &__alert {
+            color: $default-white;
+          }
+          &--existing-list-item .toolbox:before {
+            color: $default-white;
+          }
+        }
+      }
+      &.disabled {
+        color: $very-light-gray;
+        background: transparent;
+        cursor: default;
+        .ec-col {
+          .sds-icon {
+            color: $very-light-gray;
+          }
+          &__check {
+            color: $very-light-gray;
+          }
+          &--existing-list-item .toolbox:before {
+            color: $very-light-gray;
+          }
+        }
+      }
+    }
+  }
+  .ec-react-wizard__content {
+    padding: 0 !important;
+  }
+  &__content {
+    padding: 0;
+  }
+
+}
+
+.ec-release-applications {
+  background: $ten-percent-gray;
+  z-index: 11002;
+  position: relative;
+  &__content {
+    width: 810px;
+    margin: 0 0 0 30px;
+    .ec-grid {
+      margin: 0 30px 0 0;
+      position: relative;
+      width: auto;
+      .ec-row.ec-row-loading {
+      border-bottom: none;
+      .loader-icon {
+        width: 39px;
+        margin-top: -19px;
+      }
+      }
+    }
+  }
+
+  &__search {
+    width: 355px;
+    height: 40px;
+    position: static;
+    text-align: right;
+    margin-top: auto;
+
+    .search-collapsable__search-input {
+      &.sds-input {
+        background-color: $default-white;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 23px;
+      }
+    }
+
+    .search-collapsable {
+      .sds-icon {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__projects-select {
+    position: relative;
+    width: 355px;
+    height: 60px;
+
+    margin-right: 30px;
+    font-size: 18px;
+
+    .toolbox {
+      font-size: 22px;
+    }
+
+    .project-select-popover {
+      cursor: pointer;
+    }
+  }
+
+  &__check-all {
+    line-height: 40px;
+    cursor: pointer;
+    color: $very-light-gray;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-top: auto;
+
+    &.selected {
+      color: $light-green;
+    }
+  }
+
+  &__header-right-controls {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  &__header-right-controls-labels {
+    display: flex;
+    color: $soft-dark-gray;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  &__header-right-controls-buttons {
+    display: flex;
+    height: 20px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+
+  &__header-right-controls-buttons-item {
+    cursor: pointer;
+  }
+
+  &__header-right-controls-item {
+    flex: 1;
+    text-align: right;
+
+    &--stage {
+      flex: none;
+      width: 60px;
+    }
+
+    &--smart {
+      flex: none;
+      width: 60px;
+    }
+
+    &--stop-on-error {
+      flex: none;
+      padding-left: 40px;
+      width: 60px;
+    }
+  }
+
+  &__move {
+    position: absolute;
+    background: $ten-percent-gray;
+    width: 60px;
+    height: 60px;
+    top: 265px;
+    left: 840px;
+  }
+  &__chose-button {
+    cursor: pointer;
+    margin: 10px 10px 10px 0;
+    height: 40px;
+    line-height: 36px;
+    background: $submit-btn-color;
+    text-align: center;
+    .move-right {
+      color: $default-white;
+      font-size: 23px;
+    }
+    &:hover {
+      background: $submit-btn-hover-color;
+    }
+    &--disabled {
+      cursor: default;
+      background: $gray;
+      &:hover {
+        background: $gray;
+      }
+      .move-right {
+        color: $simple-light-gray;
+      }
+    }
+  }
+  .arrow-close {
+    margin-right: 18px;
+    font-size: 22px;
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+  }
+  &__block {
+    background: $ten-percent-gray;
+    float: left;
+    width: 840px;
+    z-index: 1;
+    position: absolute;
+  }
+  &__head {
+    font-size: 14px;
+    height: 40px;
+    margin: 20px 30px 20px 0;
+    display: flex;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .ec-react-help__wrapper {
+      margin-right: 5px;
+      bottom: 2px;
+    }
+    .ec-col__project {
+      line-height: 40px;
+      width: 300px;
+      @include sds-ellipsis();
+    }
+    &--chosen-list {
+      margin: 5px 30px 20px 0;
+      height: 55px;
+    }
+  }
+
+  .ec-grid-release-applications {
+    height: 450px;
+    .ec-row {
+      padding-right: 0;
+      background-color: $ten-percent-gray;
+    }
+    .ec-col__check {
+      margin-left: 0;
+    }
+  }
+}
+
+.run-app-manual-approvals {
+  overflow: auto;
+  max-height: 179px;
+  .run-app-manual-approvals__item {
+    margin: 5px 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $ten-percent-gray;
+    }
+  }
+
+  .run-app-manual-approvals__item-name {
+    font-weight: bold;
+    @include sds-ellipsis;
+
+    .sds-svg-icon {
+      vertical-align: middle;
+      margin: 0 8px 0 0;
+    }
+
+    .run-app-manual-approvals__item-name-text {
+      vertical-align: middle;
+    }
+  }
+
+  .run-app-manual-approvals__instruction {
+    @include sds-ellipsis;
+
+    .sds-svg-icon--icon-manual-instructions {
+      margin-right: 8px;
+    }
+  }
+
+  .run-app-manual-approvals__approvers {
+    @include sds-ellipsis;
+
+    .sds-svg-icon--icon-assignee-person {
+      margin-right: 11px;
+    }
+  }
+
+  .run-app-manual-approvals__separator {
+    margin-top: 4px;
+    border-bottom: 2px solid $default-black;
+  }
+}

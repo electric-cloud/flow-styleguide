@@ -1,0 +1,107 @@
+//================================================
+//  Breadcrumbs
+//================================================
+
+.breadcrumbs-bar {
+  height: 30px;
+  line-height: 33px;
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  @include sds-ellipsis;
+  margin-top: -4px;
+}
+
+.breadcrumbs-hidden-container {
+  position: absolute;
+  visibility: hidden;
+  height: auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+.breadcrumb-icon.sds-icon {
+  font-size: 14px;
+  line-height: 33px;
+  vertical-align: top;
+  margin-right: 5px;
+  &.back {
+    font-size: 16px;
+  }
+  &.application {
+    font-size: 14px;
+  }
+  &.releases {
+    font-size: 6px;
+  }
+  &.pipeline {
+    font-size: 8px;
+  }
+}
+
+.breadcrumb-item {
+  @include sds-ellipsis;
+  display: inline-block;
+  line-height: 33px;
+  white-space: nowrap;
+  vertical-align: top;
+  position: relative;
+  text-decoration: none;
+  color: $controlBarBreadCrumbsText;
+  &.link {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $chHoverIconFont;
+  }
+  .item-number {
+    color: $black;
+  }
+}
+
+.breadcrumb-item--disabled {
+  color: $medium-dark-gray;
+  &:hover {
+    cursor: initial;
+    color: $medium-dark-gray;
+  }
+
+  .sds-icon {
+    color: $medium-dark-gray;
+    cursor: initial;
+    &:before {
+      color: $medium-dark-gray;
+    }
+  }
+}
+
+.breadcrumb-item--active {
+  .sds-icon {
+    &.view-processes {
+      color: $light-green;
+    }
+    &.application {
+      color: $soft-blue;
+    }
+    &.environment, &.template, &.row-icon {
+      color: $orange;
+    }
+    &.pipeline {
+      font-size: 10px;
+    }
+    &.snapshot {
+      color: $dark-blue;
+    }
+    &.releases {
+      color: $bright-blue;
+    }
+  }
+}
+
+.breadcrumb-text {
+  white-space: pre;
+}

@@ -11,12 +11,10 @@ baseurl:          ''
 github:
   url:            'https://electric-cloud.github.io/flow-styleguide'
 
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-
 collections:
   components:
+    output: true
+  grids:
     output: true
 
 sass:

@@ -1,0 +1,41 @@
+//================================================
+//  Parameters-row
+//================================================
+
+.parameters-row {
+  @include modal-row();
+  @include separator();
+  cursor: pointer;
+
+  &.parameters-row--no-separator {
+    border: 0;
+  }
+
+  .parameters-row__total-number {
+    display: flex;
+    align-items: center;
+  }
+
+  .sds-svg-icon--icon-parameters {
+    width: 18px;
+    height: 18px;
+    margin: 0 8px;
+  }
+
+  .parameters-row__required-number {
+    display: flex;
+    .sds-svg-icon--icon-go-to-details {
+      vertical-align: top;
+    }
+  }
+
+  .parameters-row__required-parameters-number {
+    display: flex;
+    fill: $light-green;
+  }
+
+  .parameters-row__required-parameters-number--alarm {
+    fill: $errorRed;
+    color: $errorRed;
+  }
+}

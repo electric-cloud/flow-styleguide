@@ -9,3 +9,11 @@
     color: $default-black;
   }
 }
+
+.active-link {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

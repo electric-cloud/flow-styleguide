@@ -6,9 +6,27 @@
   .react-form__label {
     font-size: 14px;
   }
-  .service-form-row .react-form__txt-input {
+  .service-form-row .react-form__txt-input,
+  .service-form-row .react-form__textarea {
     width: 374px;
   }
+
+  .react-form__textarea-holder {
+    width: 386px;
+  }
+
+  .service-config-volume-textarea .react-form__textarea {
+    resize: vertical;
+  }
+
+  .react-form__validation {
+    width: 100%;
+    max-width: 386px;
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+  }
+
   .service-header {
     position: relative;
     width: calc(100% - 15px);
@@ -78,7 +96,7 @@
     text-align: right;
   }
   .container-icon {
-    flex: 0 0 27px;
+    flex: 0 0 37px;
   }
   .container-name {
     flex: auto;

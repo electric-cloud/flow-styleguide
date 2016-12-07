@@ -8,7 +8,7 @@
   color: $default-black;
   line-height: 20px;
 
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   padding: 10px;
 
@@ -28,9 +28,8 @@
 
   #{$block}__project {
     display: flex;
-    padding: 4px 0;
+    padding: 5px 0;
     cursor: default;
-    margin: 2px 0;
   }
 
   #{$block}__project-options {
@@ -128,6 +127,11 @@
 
   .search-collapsable__search-input {
     padding-left: 23px;
+    height: 30px;
+  }
+
+  .search-collapsable .sds-icon {
+    line-height: 30px;
   }
 
   #{$block}-buttons {
@@ -136,6 +140,7 @@
   }
 
   #{$block}-button {
+    font-size: 18px;
     height: 30px;
     line-height: 30px;
     width: 50%;

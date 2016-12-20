@@ -1,0 +1,109 @@
+---
+layout: page
+title: Form controls
+---
+
+<h3>Inputs</h3>
+
+<input type="text" placeholder="Name" class="react-form__txt-input">
+<br>
+<br>
+<input type="text" placeholder="Name" class="react-form__txt-input" disabled>
+
+<h3>Textarea</h3>
+
+<textarea placeholder="Description" class="react-form__textarea"></textarea>
+<br>
+<br>
+<textarea placeholder="Description" class="react-form__textarea" disabled></textarea>
+
+<h3>Select</h3>
+
+<div style="width: 318px;">
+  <div class="ec-select">
+    <div class="ec-select-header">
+      <div class="sds-icon"></div>
+      <div class="ec-select-header-title">Select text</div>
+      <div class="sds-icon dropdown"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="ec-select prompted">
+    <div class="ec-select-header">
+      <div class="sds-icon"></div>
+      <div class="ec-select-header-title">Select text</div>
+      <div class="sds-icon dropdown"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="ec-select disabled">
+    <div class="ec-select-header">
+      <div class="sds-icon"></div>
+      <div class="ec-select-header-title">Select text</div>
+      <div class="sds-icon dropdown"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="ec-select">
+    <div class="ec-select-header">
+      <div class="sds-icon toolbox"></div>
+      <div class="ec-select-header-title">Select text</div>
+      <div class="sds-icon dropdown"></div>
+    </div>
+  </div>
+</div>
+
+<h3>Checkbox</h3>
+
+<div class="react-form__checkbox-container">
+  <input class="react-form__checkbox hide" id="checkbox-1" type="checkbox" value="on">
+  <label class="react-form__checkbox-container__label" for="checkbox-1">
+    <span class="react-form__checkbox-container__label__icon sds-icon checkbox"></span>
+    <span class="react-form__checkbox-container__label react-form__checkbox-container__label--text">Checkbox text</span>
+  </label>
+</div>
+
+<div class="react-form__checkbox-container">
+  <input class="react-form__checkbox hide" id="checkbox-2" type="checkbox" value="on" checked>
+  <label class="react-form__checkbox-container__label" for="checkbox-2">
+    <span class="react-form__checkbox-container__label__icon sds-icon checkbox checked"></span>
+    <span class="react-form__checkbox-container__label react-form__checkbox-container__label--text checked">Checkbox text</span>
+  </label>
+</div>
+
+<div class="react-form__checkbox-container disabled">
+  <input class="react-form__checkbox hide" id="checkbox-3" type="checkbox" value="on" disabled>
+  <label class="react-form__checkbox-container__label" for="checkbox-3">
+    <span class="react-form__checkbox-container__label__icon sds-icon checkbox"></span>
+    <span class="react-form__checkbox-container__label react-form__checkbox-container__label--text">Checkbox text</span>
+  </label>
+</div>
+
+<h3>Radio button</h3>
+
+<div class="react-form__radio-container" style="margin-bottom: 10px;">
+  <input class="react-form__radio hide" id="radio-1" type="radio" value="">
+  <label class="react-form__radio-container__label" for="radio-1">
+    <span class="react-form__radio-container__label__icon sds-icon radio-btn"></span>
+    <span class="react-form__radio-container__label__text">Radio button text</span>
+  </label>
+</div>
+
+<div class="react-form__radio-container selected" style="margin-bottom: 10px;">
+  <input class="react-form__radio hide" id="radio-2" type="radio" value="" checked>
+  <label class="react-form__radio-container__label" for="radio-2">
+    <span class="react-form__radio-container__label__icon sds-icon radio-btn selected"></span>
+    <span class="react-form__radio-container__label__text">Radio button text</span>
+  </label>
+</div>
+
+<div class="react-form__radio-container selected" style="margin-bottom: 10px;">
+  <input class="react-form__radio hide" id="radio-3" type="radio" value="">
+  <label class="react-form__radio-container__label disabled" for="radio-3">
+    <span class="react-form__radio-container__label__icon sds-icon radio-btn"></span>
+    <span class="react-form__radio-container__label__text">Radio button text</span>
+  </label>
+</div>

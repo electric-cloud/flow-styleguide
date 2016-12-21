@@ -48,10 +48,70 @@
   }
 
   .container-form {
-    height: calc(100% - 90px);
+    height: calc(100% - 76px);
     overflow-y: scroll;
     position: relative;
     margin-right: -10px;
+
+    .container-config-registry {
+      margin: 10px 34px 20px;
+      line-height: 60px;
+      border-top: 2px solid $default-black;
+      border-bottom: 2px solid $default-black;
+
+      .container-config-registry-title {
+        display: inline-block;
+        margin: 0 33px 0 137px;
+      }
+
+      .container-config-registry-radio {
+        text-align: left;
+      }
+
+      .container-form-row {
+        margin-left: 35px;
+        line-height: 40px;
+      }
+
+      .ec-row.ec-row--select {
+        width: 331px;
+      }
+
+      .container-config-private-registry-browse {
+        position: absolute;
+        top: 0;
+        left: 560px;
+      }
+
+      .container-config-private-registry-select {
+        position: relative;
+      }
+
+      .container-config-private-registry-close-browse {
+        position: absolute;
+        top: 0;
+        left: 171px;
+        line-height: 40px;
+
+        .sds-svg-icon {
+          fill: $soft-dark-gray;
+        }
+      }
+
+      .react-form__radio-block--container-config {
+        display: inline-block;
+      }
+
+      .react-form__radio-container {
+        display: inline-block;
+        width: 165px;
+      }
+
+      .radio-btn {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+    }
 
     .error-tile {
       left: 35px;
@@ -63,15 +123,21 @@
       margin-left: 70px;
     }
 
-    .container-config-command-textarea {
+    .container-config-command-textarea,
+    .container-config-volume-mounts-textarea {
       .react-form__textarea {
         width: 318px;
         box-sizing: initial;
       }
     }
 
+    .container-config-volume-mounts-textarea .react-form__textarea {
+      resize: vertical;
+    }
+
     .has-error {
-      .react-form__txt-input {
+      .react-form__txt-input,
+      .react-form__textarea {
         border-color: $errorRed;
       }
 

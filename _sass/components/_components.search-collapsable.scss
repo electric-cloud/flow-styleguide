@@ -1,0 +1,41 @@
+//================================================
+//  Search-collapsable
+//================================================
+
+.search-collapsable {
+  position: relative;
+  line-height: 16px;
+  vertical-align: middle;
+  .sds-icon {
+    line-height: 23px;
+    cursor: pointer;
+  }
+  &__inner {
+    overflow: hidden;
+    position: static;
+  }
+  &__search-input.sds-input {
+    background: $ten-percent-gray;
+    height: 24px;
+    padding: 4px 23px 4px 4px;
+    text-align: left;
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    border-color: $forty-percent-gray;
+  }
+  &__remove-icon {
+    font-size: 13px;
+    color: $forty-percent-gray;
+    position: absolute;
+    right: 6px;
+    top: 1px;
+  }
+  &__search-icon {
+    top: 1px;
+    position: absolute;
+    font-size: 18px;
+    color: $forty-percent-gray;
+  }
+}

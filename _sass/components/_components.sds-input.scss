@@ -1,0 +1,25 @@
+//================================================
+//  Sds-input
+//================================================
+
+.sds-input[type="text"],
+.sds-input[type="time"],
+.sds-input[type="password"] {
+  @include form-control;
+  height: 24px;
+  @include placeholder {
+    color: $placeholder-color;
+    text-align: left;
+  }
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+
+  &:focus {
+    border: 1px solid $input-border-color-focus;
+    box-shadow: none;
+  }
+  &.text-center {
+    text-align: center;
+  }
+}

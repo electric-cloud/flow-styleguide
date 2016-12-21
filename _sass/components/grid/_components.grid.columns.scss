@@ -296,13 +296,4 @@
   .ec-grid-primary__col--error-background {
     background: $dark-red;
   }
-
-  .ec-grid-primary__col--link {
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
 }

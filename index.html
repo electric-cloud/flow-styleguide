@@ -4,12 +4,25 @@ title: Home
 ---
 
 <div class="posts">
-  {% for component in site.components %}
-    <div class="post">
-      <h1 class="post-title">
-        <a href="{{ component.url | prepend: site.github.url }}">{{ component.title }}</a>
-      </h1>
-      {{ component.content }}
-    </div>
-  {% endfor %}
+  <h1>Contents</h1>
+  <ul>
+    <li>
+      <h3><a href="{{ site.baseurl }}/components/">Components</a></h3>
+      <ul>
+        {% for component in site.components %}
+          <li><h4><a href="{{ component.url | prepend: site.github.url }}" title="{{component.path}}">{{component.title}}</a></h4></li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <h3><a href="{{ site.baseurl }}/components/">List Grids</a></h3>
+
+      <ul>
+        {% for grid in site.grids %}
+          <li><h4><a href="{{ grid.url | prepend: site.github.url }}" title="{{grid.path}}">{{grid.title}}</a></h4></li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
 </div>

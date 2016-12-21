@@ -259,3 +259,11 @@ a.sidebar-nav-item:focus {
 .svg-icons-list .svg-icon .sds-svg-icon {
   vertical-align: baseline;
 }
+
+.page-content {
+  margin: 20px;
+}
+
+.page-title {
+  margin: 0 0 20px;
+}

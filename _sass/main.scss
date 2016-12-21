@@ -44,6 +44,7 @@
 //================================================
 @import 'utilities/utilities.clearfix';
 @import 'utilities/utilities.visibility';
+@import 'utilities/utilities.platform';
 
 
 //================================================
@@ -52,7 +53,10 @@
 @import 'components/components.form-controls';
 @import 'components/components.icons';
 @import 'components/components.buttons';
-@import 'layout/layout.forms';
+@import 'components/components.sds-input';
+@import 'components/forms/components.forms.react-form';
+@import 'components/components.search-collapsable';
+@import 'components/components.parameters-row';
 @import 'components/components.modals';
 @import 'components/popovers/components.popovers.main';
 @import 'components/components.project-select';
@@ -92,61 +96,19 @@
 //================================================
 //  Components / Layout
 //================================================
-@import 'layout/layout.content-header';
-@import 'layout/layout.control-bar';
-@import 'layout/layout.menu';
 @import 'components/components.object-menu';
-@import 'layout/layout.applications';
 @import 'components/components.breadcrumbs';
-@import 'layout/layout.step-wizard';
-@import 'layout/layout.environments';
-@import 'layout/layout.app-processes';
 @import 'components/components.app-run-menu';
-@import 'layout/layout.application-mapping';
-@import 'layout/layout.embedded';
-@import 'layout/layout.about';
-@import 'layout/layout.home';
-@import 'layout/layout.login';
 @import 'components/components.loader';
-@import 'layout/layout.canvas';
 @import 'components/popovers/components.popovers.popover';
 @import 'components/popovers/components.popovers.for-context-action';
-@import 'layout/layout.tier';
-@import 'layout/layout.parameters';
-@import 'layout/layout.mxgraph';
-@import 'layout/layout.credentials';
-@import 'layout/layout.resources-modal';
-@import 'layout/layout.art-versioning-modal';
-@import 'layout/layout.provision-res-number-modal';
-@import 'layout/layout.gwt-plugins';
-@import 'layout/layout.notifications';
 @import 'components/components.select2-automatch';
-
-
-//================================================
-//  Schedule
-//================================================
-@import 'layout/schedule/layout.schedule.confirmation-wizard';
-@import 'layout/schedule/layout.schedule.manager-wizard';
-@import 'layout/schedule/layout.schedule.create-from-previous-wizard';
-@import 'layout/schedule/layout.schedule.details-wizard';
-@import 'layout/schedule/layout.schedule.schedules-reservations-header';
 
 
 //================================================
 //  Components / Layout
 //================================================
-@import 'layout/layout.snapshots';
-@import 'layout/layout.history';
-@import 'layout/layout.resource-templates';
-@import 'layout/layout.ec-table';
 @import 'components/components.number-input';
-@import 'layout/layout.pipelines';
-@import 'layout/layout.stages';
-@import 'layout/layout.tasks';
-@import 'layout/layout.releases';
-@import 'layout/layout.path-to-production';
-
 
 //================================================
 //  React-select
@@ -158,14 +120,6 @@
 @import "vendor/react-select/vendor.react-select.menu";
 @import "vendor/react-select/vendor.react-select.multi";
 @import "vendor/react-select/vendor.react-select.select-dark";
-
-
-//================================================
-//  Components / Layout
-//================================================
-@import 'layout/layout.new-components';
-@import 'layout/layout.credential-parameter';
-@import 'layout/layout.parameters-wizard';
 
 
 //================================================
@@ -186,14 +140,6 @@
 
 
 //================================================
-//  Freemium
-//================================================
-@import 'layout/freemium/layout.freemium.home-menu';
-
-
-//================================================
 //  Components / Layout
 //================================================
-@import 'layout/layout.app-env-dependency';
-@import 'layout/layout.architecture-starting-option';
 @import 'components/components.error-tile';

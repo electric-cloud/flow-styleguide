@@ -551,6 +551,12 @@
         right: -15px;
         top: 34px;
       }
+      &:after {
+        border-width: 12px 0 12px 12px;
+        border-color: transparent transparent transparent $default-white;
+        top: 37px;
+        right: -12px;
+      }
     }
     &.loading {
       &.bottom:after {

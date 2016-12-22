@@ -1,0 +1,22 @@
+---
+layout: wide
+title: Applications List Icons
+parent: Screens Icons
+parentUrl: screens-icons
+---
+
+<div style="margin: 0 30px;">
+  <table>
+    {% for icon in site.data.screens-icons.application-list %}
+      <tr>
+        <td>
+          <svg style="width: 20px; height: 20px; margin: 10px 0;">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{icon.name}}"></use>
+          </svg>
+        </td>
+        <td>{{icon.name}}</td>
+        <td>{{icon.description}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

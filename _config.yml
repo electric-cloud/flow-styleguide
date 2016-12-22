@@ -16,6 +16,8 @@ collections:
     output: true
   grids:
     output: true
+  screens-icons:
+    output: true
 
 sass:
   sass_dir: _sass

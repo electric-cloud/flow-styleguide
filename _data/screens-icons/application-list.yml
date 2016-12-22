@@ -1,0 +1,88 @@
+- name: icon-menu-dropdown
+  description: |
+    test text
+    test text
+
+- name: icon-application
+  description:
+
+- name: icon-project
+  description:
+
+- name: icon-component
+  description:
+
+- name: icon-process
+  description:
+
+- name: icon-tier-map
+  description:
+
+- name: icon-snapshot
+  description:
+
+- name: icon-runtime-run
+  description:
+
+- name: icon-row-collapse
+  description:
+
+- name: icon-row-expand
+  description:
+
+- name: icon-go-to-details
+  description:
+
+- name: icon-runtime-status-success
+  description:
+
+- name: icon-runtime-duration
+  description:
+
+- name: icon-runtime-status-running
+  description:
+
+- name: icon-runtime-status-flagged
+  description:
+
+- name: icon-runtime-status-aborted
+  description:
+
+- name: icon-runtime-status-failed
+  description:
+
+- name: icon-runtime-status-waiting
+  description:
+
+- name: icon-environments-static
+  description:
+
+- name: icon-manual-response-alert
+  description:
+
+- name: icon-change-history
+  description:
+
+- name: icon-runtime-duration
+  description:
+
+- name: icon-mastercomponent
+  description:
+
+- name: icon-object-description
+  description:
+
+- name: icon-container
+  description:
+
+- name: button-delete
+  description:
+
+- name: button-add
+  description:
+
+- name: icon-back
+  description: http://prntscr.com/dmmxt5
+
+
+

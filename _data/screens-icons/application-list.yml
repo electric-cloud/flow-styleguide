@@ -4,85 +4,85 @@
     test text
 
 - name: icon-application
-  description:
+  description: Application
 
 - name: icon-project
-  description:
+  description: Project
 
 - name: icon-component
-  description:
+  description: Application Component
 
 - name: icon-process
-  description:
+  description: ( Needs to be contextual ) Application Process or Component Process 
 
 - name: icon-tier-map
-  description:
+  description: Tier Map
 
 - name: icon-snapshot
-  description:
+  description: Snapshot
 
 - name: icon-runtime-run
-  description:
+  description: ( Needs to be contexual ) Application Run or Pipeline Run or Release Run
 
 - name: icon-row-collapse
-  description:
+  description: Collapse Row
 
 - name: icon-row-expand
-  description:
+  description: Expand Row
 
 - name: icon-go-to-details
-  description:
+  description: Go to item Details
 
 - name: icon-runtime-status-success
-  description:
+  description: Success Status
 
 - name: icon-runtime-duration
-  description:
+  description: Time Elaspsed 
 
 - name: icon-runtime-status-running
-  description:
+  description: Running Status
 
 - name: icon-runtime-status-flagged
-  description:
+  description: Warning Status
 
 - name: icon-runtime-status-aborted
-  description:
+  description: Aborted Status
 
 - name: icon-runtime-status-failed
-  description:
+  description: Failed Status
 
 - name: icon-runtime-status-waiting
-  description:
+  description: Waiting Status
 
 - name: icon-environments-static
-  description:
+  description: Static Environment
 
 - name: icon-manual-response-alert
-  description:
+  description: User Response  
 
 - name: icon-change-history
-  description:
+  description: Change History
 
 - name: icon-runtime-duration
-  description:
+  description: ( Duplicated above )
 
 - name: icon-mastercomponent
-  description:
+  description: Master Component
 
 - name: icon-object-description
-  description:
+  description: Description 
 
 - name: icon-container
-  description:
+  description: Container
 
 - name: button-delete
-  description:
+  description: Delete Selected Records
 
 - name: button-add
-  description:
+  description: Add New 
 
 - name: icon-back
-  description: http://prntscr.com/dmmxt5
+  description: http://prntscr.com/dmmxt5  ( Back to Previous )
 
 
 

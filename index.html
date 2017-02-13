@@ -24,5 +24,15 @@ title: Home
         {% endfor %}
       </ul>
     </li>
+
+    <li>
+      <h3><a href="{{ site.baseurl }}/screens-icons/">Screens Icons</a></h3>
+
+      <ul>
+        {% for screens-icons in site.screens-icons %}
+          <li><h4><a href="{{ screens-icons.url | prepend: site.github.url }}" title="{{screens-icons.path}}">{{screens-icons.title}}</a></h4></li>
+        {% endfor %}
+      </ul>
+    </li>
   </ul>
 </div>

@@ -1,7 +1,5 @@
 - name: icon-menu-dropdown
-  description: |
-    test text
-    test text
+  description: Dropdown menu arrow
 
 - name: icon-application
   description: Application
@@ -13,7 +11,7 @@
   description: Application Component
 
 - name: icon-process
-  description: ( Needs to be contextual ) Application Process or Component Process 
+  description: ( Needs to be contextual ) Application Process or Component Process
 
 - name: icon-tier-map
   description: Tier Map
@@ -37,7 +35,7 @@
   description: Success Status
 
 - name: icon-runtime-duration
-  description: Time Elaspsed 
+  description: Time Elaspsed
 
 - name: icon-runtime-status-running
   description: Running Status
@@ -58,7 +56,7 @@
   description: Static Environment
 
 - name: icon-manual-response-alert
-  description: User Response  
+  description: User Response
 
 - name: icon-change-history
   description: Change History
@@ -70,7 +68,7 @@
   description: Master Component
 
 - name: icon-object-description
-  description: Description 
+  description: Description
 
 - name: icon-container
   description: Container
@@ -79,10 +77,11 @@
   description: Delete Selected Records
 
 - name: button-add
-  description: Add New 
+  description: Add New
 
-- name: icon-back
-  description: http://prntscr.com/dmmxt5  ( Back to Previous )
+- name: back (not SVG icon)
+  description: Back to Home screen
+  fontIcon: true
 
 
 

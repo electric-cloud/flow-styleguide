@@ -1,0 +1,61 @@
+- name: icon-environments-static
+  description: Environment or Static Environment
+
+- name: icon-environments-dynamic
+  description: Dynamic Environment
+
+- name: icon-templates
+  description: Environment Templates or Resource Templates
+
+- name: icon-project
+  description: Project
+
+- name: icon-row-collapse
+  description: Collapse Row
+
+- name: icon-row-expand
+  description: Expand Row
+
+- name: icon-go-to-details
+  description: Go to item Details
+
+- name: icon-object-description
+  description: Description
+
+- name: icon-menu-dropdown
+  description: Dropdown menu arrow
+
+- name: button-delete
+  description: Delete Selected Rows
+
+- name: button-add
+  description: Add New
+
+- name: icon-application
+  description: Application
+
+- name: icon-resource
+  description: Resource
+
+- name: icon-environment-reservation
+  description: Environment Reservations
+
+- name: inventory (not SVG icon)
+  description: Inventory
+  fontIcon: true
+
+- name: back (not SVG icon)
+  description: Back to Home screen
+  fontIcon: true
+
+- name: kill-switch (not SVG icon)
+  description: Retire Environment
+  fontIcon: true
+
+- name: view-tiers (not SVG icon)
+  description: Environment Tier
+  fontIcon: true
+
+- name: details-arrow (not SVG icon)
+  description: Resoucre Details
+  fontIcon: true

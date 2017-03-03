@@ -78,10 +78,3 @@
 
 - name: button-add
   description: Add New
-
-- name: back (not SVG icon)
-  description: Back to Home screen
-  fontIcon: true
-
-
-

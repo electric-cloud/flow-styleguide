@@ -40,22 +40,158 @@
 - name: icon-environment-reservation
   description: Environment Reservations
 
-- name: inventory (not SVG icon)
-  description: Inventory
-  fontIcon: true
 
-- name: back (not SVG icon)
-  description: Back to Home screen
-  fontIcon: true
+- name: button-general-menu
+  description: Main Menu
 
-- name: kill-switch (not SVG icon)
-  description: Retire Environment
-  fontIcon: true
+- name: icon-change-history
+  description: Change History
 
-- name: view-tiers (not SVG icon)
-  description: Environment Tier
-  fontIcon: true
+- name: button-menu-tours
+  description: Tours Window
 
-- name: details-arrow (not SVG icon)
-  description: Resoucre Details
-  fontIcon: true
+
+#schedule modal
+- name: icon-tier-capabilities
+  description: Capabilities
+
+- name: button-export
+  description: DSL Exprot
+
+- name: button-helptip
+  description: Help tooltip
+
+- name: icon-timezone
+  description: Timezone
+
+- name: icon-view--as-list-selected
+  description: View As List
+
+- name: icon-view--as-calendar-selected
+  description: View As Calendar
+
+- name: icon-schedule-blackout
+  description: Blackout
+
+- name: icon-schedule-start
+  description: Schedule Start
+
+- name: icon-schedule-end
+  description: Schedule End
+
+- name: icon-no-overlap
+  description: Prevent Overlap
+
+- name: icon-pipeline
+  description: Pipeline
+
+- name: icon-release
+  description: Release
+
+#inventory page + modals
+- name: icon-snapshot
+  description: Snapshot
+
+- name: icon-artifact
+  description: Artifact
+
+- name: icon-process
+  description: Process
+
+- name: icon-component
+  description: Component
+
+- name: icon-leave-system
+  description: Details
+
+
+#Environment arhitecture page + modals
+- name: button-editor-fit-to-screen
+  description: Fit to Screen
+
+- name: button-editor-zoom-in
+  description: Zoom In
+
+- name: button-editor-zoom-out
+  description: Zoom Out
+
+- name: icon-canvas-dsl-view
+  description: Canvas DSL View
+
+- name: icon-canvas-model-view
+  description: Canvas Default View
+
+- name: icon-cluster-add
+  description: Add Cluster
+
+- name: icon-add-tier
+  description: Add Environment Tier
+
+- name: icon-toggle-enabled
+  description: Toggle Enabled
+
+- name: icon-toggle-disabled
+  description: Toggle Disabled
+
+- name: icon-tier-resources
+  description: Resource
+
+- name: icon-resource-discovery
+  description: Resource Discovery
+
+- name: icon-application-tier
+  description: Application Tier
+
+- name: button-remove
+  description: Remove
+
+- name: icon-nodes
+  description: Cluser Node
+
+- name: icon-cluster
+  description: Cluster
+
+- name: icon-resources-big
+  description: Environment Empty Resource
+
+- name: icon-dsl-edit
+  description: DSL Edit
+
+- name: icon-rolling-deploy
+  description: Rolling Deploy
+
+- name: icon-modal-expand
+  description: Modal Window Expand
+
+- name: icon-modal-collapse
+  description: Modal Window Collapse
+
+- name: icon-phases
+  description: Rolling Deploy Phases
+
+- name: icon-batch
+  description: Rolling Deploy Batch
+
+- name: button-close-modal
+  description: Close Button
+
+- name: button-object-menu
+  description: Menu Button
+
+- name: icon-broadcast-add
+  description: Add Phase Broadcast
+
+- name: icon-condition-add
+  description: Add Phase Condition
+
+- name: button-edit
+  description: Edit Button
+
+- name: icon-type-entry
+  description: Type Entry
+
+- name: icon-variable
+  description: Type Variable
+
+- name: icon-require-reservation
+  description: Reservation Required

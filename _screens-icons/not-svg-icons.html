@@ -1,0 +1,20 @@
+---
+layout: page
+title: Not SVG Icons
+parent: Screens Icons
+parentUrl: screens-icons
+---
+
+<div style="margin: 30px;" class="icons-list">
+  <table>
+    {% for icon in site.data.screens-icons.not-svg-icons %}
+      <tr>
+        <td>
+          <div class="sds-icon {{icon.name}}" style="width: 20px; height: 20px; margin: 10px 0;"></div>
+        </td>
+        <td>{{icon.name}}</td>
+        <td>{{icon.description}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

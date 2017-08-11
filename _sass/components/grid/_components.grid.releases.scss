@@ -274,6 +274,7 @@
         }
 
         &--too-late {
+          font-size: 17px;
           color: $default-red;
         }
       }
@@ -281,17 +282,24 @@
       &-title {
         color: $default-black;
       }
+
+      .sds-svg-icon {
+        width: 18px;
+        height: 14px;
+        fill: currentColor;
+        vertical-align: -1px;
+      }
+
+      .sds-svg-icon--icon-time-early {
+        height: 18px;
+        vertical-align: -2px;
+      }
     }
 
     &--toggler {
-      width: 18px;
+      width: 40px;
       margin: 0;
-    }
-  }
-
-  .ec-grid-primary__col--approver {
-    .sds-icon {
-      margin: 0;
+      text-align: center;
     }
   }
 
@@ -305,13 +313,6 @@
 
     &.dots {
       font-size: 7px;
-    }
-
-    &.release-summary {
-      position: relative;
-      top: -1px;
-      cursor: pointer;
-      color: $gray;
     }
 
     &.pipeline {
@@ -339,37 +340,35 @@
       position: relative;
       font-size: 15px;
     }
+  }
 
-    &.planning {
-      margin: 0 7px;
-      font-size: 25px;
-      color: $true-green;
-    }
+  .sds-svg-icon--icon-release {
+    margin-right: 7px;
+  }
 
-    &.reload {
-      margin: 0 7px;
-      font-size: 25px;
-      color: $soft-light-blue;
-    }
+  .sds-svg-icon--icon-environment-reservation,
+  .sds-svg-icon--icon-runtime-status-running,
+  .sds-svg-icon--icon-completed {
+    margin: 0 7px;
+    fill: $true-green;
+  }
 
-    &.completed {
-      margin: 0 7px;
-      font-size: 25px;
-      color: $dark-blue;
-    }
+  .sds-svg-icon--icon-runtime-status-running {
+    fill: $soft-light-blue;
+  }
 
-    &.inventory {
-      &.disabled {
-        color: $simple-light-gray;
-        cursor: default;
-      }
-    }
+  .sds-svg-icon--icon-completed {
+    fill: $dark-blue;
+  }
+
+  .sds-svg-icon--icon-manual-instructions {
+    fill: $gray;
+    cursor: pointer;
   }
 
   .note-list {
     cursor: pointer;
   }
-
 
   .release-list-pipeline-runs {
     position: absolute;
@@ -428,10 +427,17 @@
     .pipeline-runs-filters {
       width: 250px;
       padding-right: 0;
-      fill: $thirty-percent-black;
 
-      .sds-svg-icon {
-        margin: 0 10px;
+      .sds-svg-icon__wrapper {
+        .sds-svg-icon {
+          margin: 0 10px;
+          fill: $thirty-percent-black;
+        }
+        &.active {
+          .sds-svg-icon {
+            fill: $default-black;
+          }
+        }
       }
 
       .sds-svg-icon__wrapper:last-child .sds-svg-icon {
@@ -440,10 +446,6 @@
 
       .sds-svg-icon--icon-runtime-status-failed {
         margin: 0 7px;
-      }
-
-      .active {
-        fill: $black;
       }
     }
 
@@ -457,9 +459,6 @@
       }
       .sds-svg-icon--icon-runtime-status-failed {
         fill: $default-red;
-      }
-      .sds-svg-icon--icon-runtime-status-running {
-        fill: $soft-light-blue;
       }
       .sds-svg-icon--icon-runtime-status-running {
         fill: $soft-light-blue;

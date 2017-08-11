@@ -14,10 +14,6 @@
     justify-content: center;
     align-items: center;
 
-    .sds-svg-icon--icon-environments-static {
-      fill: $orange;
-    }
-
     .header__env-name {
       max-width: calc(100% - 100px);
       text-align: center;
@@ -41,7 +37,7 @@
   }
 
   .app-run-rolling-deploy-phases-list {
-     @include separator();
+    @include separator();
   }
 
   .app-run-rolling-deploy-manual-step {
@@ -84,6 +80,7 @@
 .rolling-deploy-strategy-wizard {
   .ec-row--header {
     @include sds-ellipsis();
+    white-space: pre;
     .sds-icon.environment {
       font-size: 22px;
       color: $orange;
@@ -104,7 +101,7 @@
     margin-bottom: 40px;
 
     .react-form__radio-container.selected .react-form__radio-container__label {
-      background-color: gray;
+      background-color: $fifty-percent-gray;
       color: $default-white;
       fill: $default-white;
       &:hover {
@@ -159,7 +156,7 @@
     }
 
     &.selected .react-form__radio-container__label {
-      background-color: gray;
+      background-color: $fifty-percent-gray;
       color: $default-white;
       fill: $default-white;
       &:hover {

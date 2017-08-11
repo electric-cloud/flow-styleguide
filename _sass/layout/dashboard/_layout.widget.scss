@@ -1,0 +1,385 @@
+.widgets-list {
+  flex: 1;
+  height: calc(100vh - 144px);
+
+  .rows {
+    display: flex;
+    margin: 0 10px 20px;
+    height: calc(100vh - 164px);
+    min-height: 520px; // min height by spec 520 (not include margins)
+    min-width: 1346px; // min width by spec 1366 (include margins)
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .rows-multiple {
+    flex-wrap: wrap;
+    .widget-item {
+      margin-bottom: 20px;
+      flex-grow: 1;
+      height: calc(50% - 10px);
+      min-height: 250px;
+      min-width: 316px;
+      display: inline-block;
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.widget-item {
+  flex: 1;
+  height: 100%;
+  margin: 0 10px 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid $soft-gray;
+
+  .widget {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .loader-bg,
+  .loader-icon {
+    z-index: 1;
+  }
+
+  .widget-header {
+    font-size: 14px;
+    height: 30px;
+    line-height: 28px;
+    display: flex;
+    vertical-align: middle;
+  }
+
+  .widget-description {
+    width: 28px;
+    align-items: center;
+    justify-content: center;
+    .ec-react-help__wrapper {
+      margin: 0;
+    }
+    .sds-svg-icon {
+      margin: 1px 0 0;
+      &.disabled {
+        fill: $soft-gray !important;
+      }
+    }
+  }
+
+  .widget-label {
+    flex: 1;
+    text-align: left;
+    @include sds-ellipsis;
+    .sds-svg-icon {
+      margin-top: -2px;
+      margin-left: 0;
+    }
+  }
+
+  .widget-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex: 1;
+  }
+
+  .ec-grid-primary__empty-simple {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 50px);
+    align-self: center;
+    color: $very-dark-grey;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .chart-label {
+    color: $default-text-color;
+    fill: $default-text-color;
+  }
+}
+
+.widget-item--creating {
+  border: none;
+
+  .widget-create {
+    display: flex;
+    height: 100%;
+    max-height: calc(50% - 10px);
+  }
+
+  .widget-create-form {
+    width: 410px;
+    padding: 10px;
+    height: calc(100% - 20px);
+    background: $very-soft-gray;
+  }
+
+  .widget-create-gag {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $very-soft-gray;
+    .sds-svg-icon {
+      fill: $soft-gray;
+    }
+  }
+
+  .react-form__txt-input-holder,
+  .react-form__textarea-holder {
+    width: 100%;
+  }
+
+  .react-form__txt-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .react-form__txt-input-wrapper,
+  .react-form__textarea-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .react-form__textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .widget-bottom {
+    height: calc(100% - 188px);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .widget-controls {
+    display: flex;
+    margin-right: 0;
+    padding: 0;
+    position: relative;
+    background-color: $blue;
+    font-weight: 200;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      background-color: $hovered-pale-blue;
+    }
+
+    .save-and-add,
+    .save-and-define,
+    .save-and-done {
+      height: 32px;
+      position: relative;
+      z-index: 1;
+      line-height: 32px;
+      color: $default-white;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-align: center;
+      cursor: pointer;
+      margin: 4px 0 4px 10px;
+
+      .sds-svg-icon {
+        margin: 0 7px 0 0;
+        fill: $default-white;
+        vertical-align: text-bottom;
+      }
+    }
+
+    .save-and-add {
+      width: 160px;
+      background-color: $middle-blue;
+
+      &:hover {
+        background-color: $hovered-base-blue;
+      }
+    }
+
+    .save-and-define {
+      width: 120px;
+      background-color: $middle-blue;
+
+      &:hover {
+        background-color: $hovered-base-blue;
+      }
+    }
+
+    .save-and-done {
+      width: 110px;
+      margin-left: 0;
+
+      .sds-svg-icon {
+        margin: 0 14px 0 15px;
+      }
+
+      &:hover + .overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .widget-controls.disabled {
+    background-color: $forty-percent-gray;
+
+    .overlay {
+      display: none;
+    }
+
+    .save-and-add,
+    .save-and-define,
+    .save-and-done {
+      cursor: default;
+    }
+
+    .save-and-add,
+    .save-and-define {
+      background-color: $fifty-percent-gray;
+    }
+  }
+}
+
+.widget-item--blank {
+  border-color: $silver-chalice;
+  border-top: none;
+}
+
+.widget-blank {
+
+  .widget-toolbar {
+    display: flex;
+    background: $silver-chalice;
+    height: 30px;
+  }
+  .toolbar-action {
+    width: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .sds-svg-icon {
+    fill: $default-white;
+    margin: 0;
+    &.disabled {
+      fill: $soft-gray !important;
+    }
+    &.sds-svg-icon--icon-move-coachmark {
+      cursor: pointer;
+    }
+  }
+  .widget-name {
+    flex: 1;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+    color: $default-white;
+  }
+  .ec-react-help__wrapper {
+    margin: 0;
+    height: 14px;
+    line-height: 14px;
+    &--disabled {
+      .sds-svg-icon {
+        fill: $soft-gray;
+      }
+    }
+  }
+}
+
+.widget-item.sortable-ghost {
+  border-color: $deep-blue;
+  .widget-toolbar {
+    background: $deep-blue;
+  }
+}
+
+.widgets-list .layout-type-3 {
+  flex-flow: column wrap;
+
+  .widget-item {
+    flex: 1;
+    width: 100%;
+    max-width: calc(50% - 20px);
+  }
+  .widget-item:first-child {
+    flex: 1 0 100%;
+  }
+  .widget-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.widgets-list .rows-multiple {
+
+  .widget-create {
+    max-height: 100%;
+  }
+}
+
+.widgets-list .layout-type-6,
+.widgets-list .layout-type-7,
+.widgets-list .layout-type-8,
+.widget-item--creating.widget-item--small {
+  .widget-create-gag {
+    display: none;
+  }
+}
+
+.widget-item--creating.widget-item--small {
+  .widget-create {
+
+    .widget-bottom {
+      height: calc(100% - 148px);
+    }
+
+    .widget-create-form {
+      width: calc(100% - 10px);
+      padding: 5px;
+      height: calc(100% - 10px);
+    }
+
+    .react-form__txt-input-holder,
+    .react-form__textarea-holder,
+    .react-form__txt-input {
+      width: 100%;
+    }
+
+    .react-form__textarea {
+      width: 100%;
+      height: 80px;
+    }
+    .widget-controls {
+      height: 80px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .save-and-add {
+      flex: 160;
+      min-width: 160px;
+      margin-left: 5px;
+    }
+    .save-and-define {
+      flex: 110;
+      min-width: 110px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .save-and-done {
+      flex: 1;
+      min-width: 100%;
+      text-align: center;
+    }
+  }
+}

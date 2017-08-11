@@ -90,5 +90,41 @@
         width: 330px;
       }
     }
+
+    .react-form__radio-wrapper {
+      margin: 0 auto 20px;
+      @include clearfix();
+
+      .ec-react-help__wrapper {
+        float: left;
+        margin-left: -18px;
+        line-height: 40px;
+      }
+
+      .react-form__radio-container {
+        height: 40px;
+        align-items: center;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .react-form__radio-holder {
+        width: 330px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .react-form__radio-container__label {
+          width: 305px;
+          @include sds-ellipsis;
+        }
+
+        .react-form__radio {
+          width: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }

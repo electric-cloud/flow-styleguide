@@ -1,0 +1,160 @@
+//================================================
+//  Resource-templates
+//================================================
+
+.resource-templates {
+
+  .sds-icon {
+    &.resource-pool,
+    &.provider-aws,
+    &.provider-chef,
+    &.provider-openstack {
+      font-size: 22px;
+    }
+  }
+
+  .count {
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  .resource-template-row {
+
+    .col-template-icon {
+      color: $soft-blue;
+      font-size: 24px;
+      text-align: center;
+      padding-left: 12px;
+      padding-right: 0;
+    }
+    .col-name {
+      flex: 6;
+      .name-field {
+        .at-resource-template-name:hover {
+          text-decoration: none;
+          cursor: default;
+        }
+      }
+    }
+    .col-pools {
+      width: 120px;
+      .sds-icon.resource-pool {
+        color: $very-dark-blue;
+      }
+    }
+    .col-cloud {
+      width: 130px;
+    }
+    .col-chef {
+      width: 130px;
+      text-align: center;
+    }
+    .col-project {
+      min-width: 130px;
+    }
+    .col-modified {
+      flex: 0 auto;
+      width: 220px;
+    }
+    .col-whom {
+      width: 135px;
+    }
+
+    .sds-icon {
+      &.provider-chef,
+      &.provider-aws {
+        color: $resource-templates-provider-icons-color;
+      }
+      &.provider-openstack {
+        color: $resource-templates-provider-openstack-color;
+      }
+    }
+  }
+
+  .resource-pools {
+    margin-right: 0;
+  }
+
+}
+
+.resource-pools {
+  position: relative;
+  min-height: 58px;
+
+  .resource-pool-row {
+
+    .col-index {
+      text-align: center;
+    }
+    .col-name {
+      flex: 6;
+    }
+    .col-resources {
+      flex: 5;
+      min-width: 143px;
+      text-align: center;
+    }
+    .col-environment {
+      flex: 5;
+      min-width: 155px;
+    }
+    .col-duration {
+      flex: 5;
+      color: $medium-dark-blue;
+    }
+    .col-whom {
+      flex: 6;
+    }
+
+    .sds-icon {
+      &.resource {
+        color: $resource-templates-resource-icon-color;
+      }
+    }
+  }
+
+  .empty,
+  .loading {
+    cursor: default;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+}
+
+.ec_provisioning-wizard__content {
+  font-weight: 200;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ec_provisioning-wizard__number-input {
+  display: flex;
+  flex-direction: column;
+
+  .sds-number-input {
+    margin: 0 auto;
+  }
+}
+
+.ec_provisioning-wizard__keep-on-error {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.ec_provisioning-wizard__keep-on-error-label {
+  line-height: 44px;
+  margin-right: 10px;
+}
+
+.resource-tpl-list-content {
+  .resource-template {
+    &:first-child {
+      margin-top: 30px;
+    }
+  }
+}

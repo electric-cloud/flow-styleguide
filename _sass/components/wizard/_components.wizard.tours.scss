@@ -1,0 +1,185 @@
+//================================================
+//  Wizard tours
+//================================================
+
+.modals-box {
+  .ec-react-wizard.guild-tours-modal {
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 510px;
+    width: 1000px;
+    position: absolute;
+    border: 1px solid $very-light-gray;
+    z-index: zindex(toursModal);
+    box-sizing: border-box;
+
+    .ec-react-wizard__header-center-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .sds-svg-icon--button-menu-tours {
+        margin-top: -4px;
+        fill: $simple-sky-blue;
+      }
+    }
+
+    .ec-react-wizard__loader {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ec-react-wizard__attention-container {
+      height: 100%;
+      background: $eighty-fill-white;
+      .ec-react-wizard__attention--info {
+        position: absolute;
+        width: 100%;
+        bottom: 62px;
+        box-sizing: border-box;
+      }
+
+      .ec-react-wizard__footer {
+        border-top: 2px solid $default-white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+        .ec-wizard-btn {
+          display: inline-block;
+          width: 200px;
+          float: none;
+          &.ec-cancel {
+            border-left: 2px solid $default-white;
+          }
+        }
+      }
+    }
+
+    .ec-react-wizard__content-wrapper {
+      flex: 1;
+      position: relative;
+    }
+
+    .ec-grid-primary__col--center-align {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tours-activity {
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .last-activity-col {
+      width: 110px;
+      position: relative;
+    }
+
+    .tours-reset {
+      width: 80px;
+      margin-right: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      color: $soft-dark-gray;
+      .sds-svg-icon--button-tour-reset {
+        margin-top: -3px;
+        fill: $soft-dark-gray;
+      }
+    }
+
+    .toggler-col,
+    .view-details-col {
+      .sds-svg-icon__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+
+    .tour-type-icon {
+      min-width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tour-name {
+      @include sds-ellipsis;
+      white-space: pre;
+    }
+
+    .search-collapsable {
+      margin: 10px 0 0 10px;
+      .search-collapsable__search-icon,
+      .search-collapsable__remove-icon {
+        top: 5px;
+      }
+
+      .search-collapsable__search-input {
+        padding: 4px 23px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+
+    .sds-svg-icon {
+      &--icon-runtime-status-success {
+        fill: $default-green;
+      }
+
+      &--icon-tour-in-progress {
+        fill: $dark-gray;
+      }
+
+      &__wrapper--button-view-hide {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        z-index: 1;
+      }
+    }
+
+    .tours-head {
+      font-weight: 200;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 10px;
+      display: flex;
+      .tours-count {
+        font-size: 16px;
+        width: 24px;
+        text-align: right;
+      }
+
+      .tours-search {
+        flex: 50;
+        margin: 0 10px;
+      }
+
+      .tours-last-activity {
+        width: 110px;
+        text-align: left;
+      }
+
+      .tours-duration {
+        width: 140px;
+        margin-right: 40px;
+        text-align: right;
+      }
+    }
+
+    .tour-steps {
+      .ec-grid-primary {
+        padding: 0;
+      }
+      .ec-grid-primary__row:hover {
+        cursor: initial;
+        background-color: $default-white;
+      }
+    }
+  }
+}

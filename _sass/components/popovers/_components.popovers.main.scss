@@ -3,26 +3,14 @@
 //================================================
 
 /**
- * Popover dropdown arrow
- */
-.sds-popover-btn {
-  color: $popover-btn-color;
-  @include sds-icon($sds-icon-sort-down, $popover-btn-size, 28px, 28px);
-
-  &.disabled {
-    color: $popover-btn-disabled-color;
-  }
-}
-
-/**
  * Popover menu
  */
 .sds-popover {
   z-index: 9999;
   top: 0;
   left: 0;
-  background-color: $popover-bg;
-  border: 2px solid $popover-border-color;
+  background-color: $default-white;
+  border: 2px solid $default-black;
   display: block;
   list-style: none;
   position: absolute;
@@ -42,7 +30,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: $runMenuBackground url(../img/loader.gif) center no-repeat;
+    background: $dark-gray url(../img/loader.gif) center no-repeat;
     content: '';
     display: block;
     z-index: 10;
@@ -75,8 +63,8 @@
     cursor: pointer;
 
     > a {
-      background-color: $popover-link-bg;
-      color: $popover-link-color;
+      background-color: transparent;
+      color: $default-black;
       cursor: pointer;
       display: block;
       height: 28px;
@@ -98,18 +86,18 @@
       }
 
       > .sds-popover-icon {
-        color: $popover-link-color;
+        color: $default-black;
         vertical-align: top;
         text-shadow: none;
       }
 
       &:not(.disabled):hover {
-        background-color: $popover-link-hover-bg;
-        color: $popover-link-hover-color;
+        background-color: $chateau-gray;
+        color: $default-white;
         text-decoration: none;
 
         > .sds-popover-icon {
-          color: $popover-link-hover-color;
+          color: $default-white;
           text-shadow: none;
         }
       }
@@ -118,8 +106,8 @@
       }
 
       &.disabled {
-        background: $popover-link-bg;
-        color: $popover-disabled-color;
+        background: transparent;
+        color: $medium-soft-gray;
         cursor: default;
         text-decoration: none;
       }
@@ -140,7 +128,7 @@
   width: 0;
 
   &.top {
-    border-bottom-color: $popover-arrow-color;
+    border-bottom-color: $default-white;
     &.top-right {
       left: auto;
       right: 10px;
@@ -154,7 +142,7 @@
 
   &.right {
     top: 50%;
-    border-left-color: $popover-arrow-color;
+    border-left-color: $default-white;
 
     &.right-top {
       top: 14px;
@@ -168,7 +156,7 @@
 
   &.bottom {
     top: 100%;
-    border-top-color: $popover-arrow-color;
+    border-top-color: $default-white;
     &.bottom-right {
       left: auto;
       right: 10px;
@@ -181,7 +169,7 @@
 
   &.left {
     top: 50%;
-    border-right-color: $popover-arrow-color;
+    border-right-color: $default-white;
 
     &.left-top {
       top: 14px;
@@ -230,7 +218,7 @@
   z-index: 1060;
 
   &.top {
-    border-bottom-color: $popover-arrow-border-color;
+    border-bottom-color: $default-black;
     margin-top: -15px;
     margin-left: -15px;
     border-width: 0 15px 15px;
@@ -241,7 +229,7 @@
   }
 
   &.right {
-    border-left-color: $popover-arrow-border-color;
+    border-left-color: $default-black;
     border-width: 10px;
     margin-top: -10px;
     right: -21px;
@@ -257,14 +245,14 @@
     margin-left: -15px;
     border-width: 15px 15px 0;
     left: 50%;
-    border-top-color: $popover-arrow-border-color;
+    border-top-color: $default-black;
     &.bottom-right {
       margin-right: -3px;
     }
   }
 
   &.left {
-    border-right-color: $popover-arrow-border-color;
+    border-right-color: $default-black;
     border-width: 10px;
     margin-top: -10px;
     left: -21px;
@@ -278,25 +266,25 @@
 .sds-popover.loading {
   .popover-arrow {
     &.top {
-      border-bottom-color: $snapshots-create-loading-popover-background;
+      border-bottom-color: $dark-gray;
       &.top-right {
         border-left-color: transparent;
       }
     }
 
     &.right {
-      border-left-color: $snapshots-create-loading-popover-background;
+      border-left-color: $dark-gray;
     }
 
     &.bottom {
-      border-top-color: $snapshots-create-loading-popover-background;
+      border-top-color: $dark-gray;
       &.bottom-right {
         border-left-color: transparent;
       }
     }
 
     &.left {
-      border-right-color: $snapshots-create-loading-popover-background;
+      border-right-color: $dark-gray;
     }
   }
 }
@@ -333,7 +321,7 @@
 
     &.popover-arrow {
       z-index: 1061;
-      border-bottom-color: $popover-arrow-color;
+      border-bottom-color: $default-white;
       margin-top: -17px;
       margin-left: -17px;
       border-width: 0 17px 17px;
@@ -342,7 +330,7 @@
 
     &.popover-arrow-border {
       z-index: 1060;
-      border-bottom-color: $popover-arrow-border-color;
+      border-bottom-color: $default-black;
       margin-top: -20px;
       margin-left: -20px;
       border-width: 0 20px 20px;
@@ -351,7 +339,7 @@
   }
   &.loading {
     .popover-arrow {
-      border-bottom-color: $snapshots-create-loading-popover-background;
+      border-bottom-color: $dark-gray;
     }
   }
 }
@@ -376,212 +364,267 @@
     color: $gray;
     position: relative;
     font-size: 14px !important;
+
     &.description {
       color: $fifty-percent-gray;
       font-size: 17px !important;
       cursor: pointer !important;
     }
+
     &.info-description {
       color: $fifty-percent-gray;
       cursor: pointer !important;
+    }
+
+    &:before {
+      display: none !important;
+    }
+
+    .sds-svg-icon {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      display: inline-block;
+      vertical-align: text-top !important;
     }
   }
 }
 
 .ec-react-popover {
   &__wrapper {
-    z-index: 12000;
+    z-index: zindex(popover);
     position: absolute;
     background-color: $default-white;
     border: 2px solid $default-black;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
-    &:after {
-      content: "";
-      margin-left: -12px;
-      border-style: solid;
-      height: 0;
-      position: absolute;
-      width: 0;
-    }
-    &:before {
-      content: "";
-      margin-left: -15px;
-      border-style: solid;
-      height: 0;
-      position: absolute;
-      width: 0;
-    }
-    &.bottom,
-    &.custom-bottom {
-      &:before {
-        border-width: 0 15px 15px;
-        border-color: transparent transparent $default-black transparent;
-        top: -15px;
-        left: 50%;
-      }
+    .arrow {
       &:after {
-        border-width: 0 12px 12px;
-        border-color: transparent transparent $default-white transparent;
-        top: -12px;
-        left: 50%;
+        content: "";
+        margin-left: -12px;
+        border-style: solid;
+        height: 0;
+        position: absolute;
+        width: 0;
       }
-    }
-    &.top {
       &:before {
-        border-width: 15px 15px 0;
-        border-color: $default-black transparent transparent transparent;
-        bottom: -15px;
-        left: 50%;
+        content: "";
+        margin-left: -15px;
+        border-style: solid;
+        height: 0;
+        position: absolute;
+        width: 0;
       }
-      &:after {
-        border-width: 12px 12px 0;
-        border-color: $default-white transparent transparent transparent;
-        bottom: -12px;
-        left: 50%;
+      &.bottom,
+      &.custom-bottom {
+        &:before {
+          border-width: 0 15px 15px;
+          border-color: transparent transparent $default-black transparent;
+          top: -15px;
+          left: 50%;
+        }
+        &:after {
+          border-width: 0 12px 12px;
+          border-color: transparent transparent $default-white transparent;
+          top: -12px;
+          left: 50%;
+        }
       }
-    }
-    &.left {
-      &:before {
-        border-width: 15px 0 15px 15px;
-        border-color: transparent transparent transparent $default-black;
-        top: 50%;
-        right: -15px;
-        margin: -15px 0 0 0;
+      &.top {
+        &:before {
+          border-width: 15px 15px 0;
+          border-color: $default-black transparent transparent transparent;
+          bottom: -15px;
+          left: 50%;
+        }
+        &:after {
+          border-width: 12px 12px 0;
+          border-color: $default-white transparent transparent transparent;
+          bottom: -12px;
+          left: 50%;
+        }
       }
-      &:after {
-        border-width: 12px 0 12px 12px;
-        border-color: transparent transparent transparent $default-white;
-        top: 50%;
-        right: -12px;
-        margin: -12px 0 0 0;
+      &.left {
+        &:before {
+          border-width: 15px 0 15px 15px;
+          border-color: transparent transparent transparent $default-black;
+          top: 50%;
+          right: -15px;
+          margin: -15px 0 0 0;
+        }
+        &:after {
+          border-width: 12px 0 12px 12px;
+          border-color: transparent transparent transparent $default-white;
+          top: 50%;
+          right: -12px;
+          margin: -12px 0 0 0;
+        }
       }
-    }
-    &.right {
-      &:before {
-        border-width: 15px 15px 15px 0;
-        border-color: transparent $default-black transparent transparent;
-        top: 50%;
-        left: -15px;
-        margin: -15px 0 0 0;
+      &.right {
+        &:before {
+          border-width: 15px 15px 15px 0;
+          border-color: transparent $default-black transparent transparent;
+          top: 50%;
+          left: -15px;
+          margin: -15px 0 0 0;
+        }
+        &:after {
+          border-width: 12px 12px 12px 0;
+          border-color: transparent $default-white transparent transparent;
+          top: 50%;
+          left: -12px;
+          margin: -12px 0 0 0;
+        }
       }
-      &:after {
-        border-width: 12px 12px 12px 0;
-        border-color: transparent $default-white transparent transparent;
-        top: 50%;
-        left: -12px;
-        margin: -12px 0 0 0;
+      &.top-left {
+        &:before {
+          border-width: 15px 15px 0;
+          border-color: $default-black transparent transparent transparent;
+          bottom: -15px;
+          right: 5px;
+        }
+        &:after {
+          border-width: 12px 12px 0;
+          border-color: $default-white transparent transparent transparent;
+          bottom: -12px;
+          right: 8px;
+        }
       }
-    }
-    &.top-left {
-      &:before {
-        border-width: 15px 15px 0;
-        border-color: $default-black transparent transparent transparent;
-        bottom: -15px;
-        right: 5px;
+      &.top-right {
+        &:before {
+          border-width: 15px 15px 0;
+          border-color: $default-black transparent transparent transparent;
+          bottom: -15px;
+          left: 20px;
+        }
+        &:after {
+          border-width: 12px 12px 0;
+          border-color: $default-white transparent transparent transparent;
+          bottom: -12px;
+          left: 20px;
+        }
       }
-      &:after {
-        border-width: 12px 12px 0;
-        border-color: $default-white transparent transparent transparent;
-        bottom: -12px;
-        right: 8px;
+      &.bottom-left {
+        &:before {
+          border-width: 0 15px 15px;
+          border-color: transparent transparent $default-black transparent;
+          top: -15px;
+          right: 7px;
+        }
+        &:after {
+          border-width: 0 12px 12px;
+          border-color: transparent transparent $default-white transparent;
+          top: -12px;
+          right: 10px;
+        }
       }
-    }
-    &.top-right {
-      &:before {
-        border-width: 15px 15px 0;
-        border-color: $default-black transparent transparent transparent;
-        bottom: -15px;
-        left: 20px;
+      &.bottom-right {
+        &:before {
+          border-width: 0 15px 15px;
+          border-color: transparent transparent $default-black transparent;
+          top: -15px;
+          left: 20px;
+        }
+        &:after {
+          border-width: 0 12px 12px;
+          border-color: transparent transparent $default-white transparent;
+          top: -12px;
+          left: 20px;
+        }
       }
-      &:after {
-        border-width: 12px 12px 0;
-        border-color: $default-white transparent transparent transparent;
-        bottom: -12px;
-        left: 20px;
+      &.left-top {
+        &:before {
+          border-width: 15px 0 15px 15px;
+          border-color: transparent transparent transparent $default-black;
+          bottom: 7px;
+          right: -15px;
+          margin: -15px 0 0 0;
+        }
+        &:after {
+          border-width: 12px 0 12px 12px;
+          border-color: transparent transparent transparent $default-white;
+          bottom: 10px;
+          right: -12px;
+          margin: -12px 0 0 0;
+        }
       }
-    }
-    &.bottom-left {
-      &:before {
-        border-width: 0 15px 15px;
-        border-color: transparent transparent $default-black transparent;
-        top: -15px;
-        right: 40px;
+      &.left-bottom {
+        &:before {
+          border-width: 15px 0 15px 15px;
+          border-color: transparent transparent transparent $default-black;
+          right: -15px;
+          top: 34px;
+        }
+        &:after {
+          border-width: 12px 0 12px 12px;
+          border-color: transparent transparent transparent $default-white;
+          top: 37px;
+          right: -12px;
+        }
       }
-      &:after {
-        border-width: 0 12px 12px;
-        border-color: transparent transparent $default-white transparent;
-        top: -12px;
-        right: 43px;
+      &.right-top,
+      &.right-bottom {
+        &:before,
+        &:after {
+          margin: 0;
+        }
+        &:before {
+          border-width: 15px 15px 15px 0;
+          border-color: transparent $default-black transparent transparent;
+          bottom: 7px;
+          left: -15px;
+        }
+        &:after {
+          border-width: 12px 12px 12px 0;
+          border-color: transparent $default-white transparent transparent;
+          bottom: 10px;
+          left: -12px;
+        }
       }
-    }
-    &.bottom-right {
-      &:before {
-        border-width: 0 15px 15px;
-        border-color: transparent transparent $default-black transparent;
-        top: -15px;
-        left: 20px;
+      &.right-bottom {
+        &:before,
+        &:after {
+          bottom: auto;
+        }
+        &:before {
+          top: 34px;
+        }
+        &:after {
+          top: 37px;
+        }
       }
-      &:after {
-        border-width: 0 12px 12px;
-        border-color: transparent transparent $default-white transparent;
-        top: -12px;
-        left: 20px;
-      }
-    }
-    &.left-top {
-      &:before {
-        border-width: 15px 0 15px 15px;
-        border-color: transparent transparent transparent $default-black;
-        bottom: 7px;
-        right: -15px;
-        margin: -15px 0 0 0;
-      }
-      &:after {
-        border-width: 12px 0 12px 12px;
-        border-color: transparent transparent transparent $default-white;
-        bottom: 10px;
-        right: -12px;
-        margin: -12px 0 0 0;
-      }
-    }
-    &.left-bottom {
-      &:before {
-        border-width: 15px 0 15px 15px;
-        border-color: transparent transparent transparent $default-black;
-        right: -15px;
-        top: 34px;
-      }
-      &:after {
-        border-width: 12px 0 12px 12px;
-        border-color: transparent transparent transparent $default-white;
-        top: 37px;
-        right: -12px;
+
+      &.position-by-container {
+        position: absolute;
+        top: 0;
+        margin-left: -2px;
       }
     }
     &.loading {
-      &.bottom:after {
-        border-color: transparent transparent $dark-gray transparent;
-      }
-      &.top:after {
-        border-color: $dark-gray transparent transparent transparent;
-      }
-      &.left:after {
-        border-color: transparent transparent transparent $dark-gray;
-      }
-      &.right:after {
-        border-color: transparent $dark-gray transparent transparent;
-      }
-      &.top-left:after {
-        border-color: $dark-gray transparent transparent transparent;
-      }
-      &.top-right:after {
-        border-color: $dark-gray transparent transparent transparent;
-      }
-      &.bottom-left:after {
-        border-color: transparent transparent $dark-gray transparent;
-      }
-      &.bottom-right {
-        border-color: transparent transparent $dark-gray transparent;
+      .arrow {
+        &.bottom:after {
+          border-color: transparent transparent $dark-gray transparent;
+        }
+        &.top:after {
+          border-color: $dark-gray transparent transparent transparent;
+        }
+        &.left:after {
+          border-color: transparent transparent transparent $dark-gray;
+        }
+        &.right:after {
+          border-color: transparent $dark-gray transparent transparent;
+        }
+        &.top-left:after {
+          border-color: $dark-gray transparent transparent transparent;
+        }
+        &.top-right:after {
+          border-color: $dark-gray transparent transparent transparent;
+        }
+        &.bottom-left:after {
+          border-color: transparent transparent $dark-gray transparent;
+        }
+        &.bottom-right {
+          border-color: transparent transparent $dark-gray transparent;
+        }
       }
     }
   }
@@ -607,6 +650,20 @@
       }
     }
   }
+
+  &__input-field {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    height: 30px;
+    width: 100%;
+  }
+
+  &__input-item {
+    height: 30px;
+    margin: 5px 5px 0;
+    text-align: right;
+  }
+
   &__title {
     text-align: center;
     margin: 10px 0 0;
@@ -670,7 +727,7 @@
     &.with-icon {
       &:hover {
         .info-description {
-          color: $white;
+          color: $default-white;
         }
       }
       .sds-icon {
@@ -718,7 +775,7 @@
         padding: 0;
         height: 40px;
         line-height: 40px;
-        border-bottom: 2px solid $black;
+        border-bottom: 2px solid $default-black;
       }
       &:last-child .ec-react-popover__not-link {
         border-bottom: 0;
@@ -779,11 +836,11 @@
       }
 
       .sds-svg-icon__wrapper .sds-svg-icon {
-          fill: $default-white;
-          opacity: .3;
+        fill: $default-white;
+        opacity: .3;
       }
       .sds-svg-icon__wrapper:hover .sds-svg-icon {
-          opacity: 1;
+        opacity: 1;
       }
     }
   }
@@ -803,6 +860,7 @@
     display: block;
     color: inherit;
     @include sds-ellipsis;
+    white-space: pre;
     &:hover,
     &:focus {
       color: inherit;
@@ -815,15 +873,26 @@
     padding: 5px 20px 4px;
     display: block;
     @include sds-ellipsis;
+    white-space: pre;
     &.selectable {
       cursor: pointer;
       &:hover {
         background-color: $gray;
         color: $default-white;
         .sds-icon.info-description {
-          color: $white;
+          color: $default-white;
         }
       }
+    }
+    .sds-svg-icon {
+      margin: 4px;
+      &--icon-runtime-status-failed {
+        fill: $errorRed;
+      }
+    }
+    .sds-icon.right,
+    .sds-svg-icon.right {
+      float: right;
     }
   }
   &__loader {
@@ -871,10 +940,10 @@
   z-index: 12000;
   position: absolute;
   background: $dark-red;
-  box-shadow: 1px 0 8px $black;
+  box-shadow: 1px 0 8px $default-black;
   padding: 0 15px 0 54px;
   box-sizing: border-box;
-  color: $white;
+  color: $default-white;
   height: 50px;
   line-height: 50px;
 
@@ -887,6 +956,7 @@
 
   &__text {
     @include sds-ellipsis;
+    white-space: pre;
   }
 
   .arrow {
@@ -934,6 +1004,7 @@
         padding: 0 10px 0 5px;
         height: 30px;
         @include sds-ellipsis();
+        white-space: pre;
         line-height: 30px;
         flex: 1;
         text-decoration: none;
@@ -960,7 +1031,7 @@
           }
         }
       }
-       .popover-item-wrapper {
+      .popover-item-wrapper {
         overflow: hidden;
       }
     }
@@ -983,11 +1054,11 @@
         color: $default-white;
       }
       .sds-svg-icon__wrapper .sds-svg-icon {
-          fill: $default-white;
-          opacity: .3;
+        fill: $default-white;
+        opacity: .3;
       }
       .sds-svg-icon__wrapper:hover .sds-svg-icon {
-          opacity: 1;
+        opacity: 1;
       }
     }
   }
@@ -1011,7 +1082,7 @@
       .environment-template-tier {
         padding: 8px 0;
         margin: 0 8px;
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $default-black;
         &:last-child {
           border-bottom: none;
         }
@@ -1043,8 +1114,8 @@
   border: none;
   background: $default-white;
   box-shadow: none;
+  margin-top: -11px;
 
-  margin: -11px 0 0 -27px;
   &:before,
   &:after {
     display: none;

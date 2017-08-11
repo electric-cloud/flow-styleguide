@@ -21,22 +21,16 @@
 
   .header {
     @include modal-header-text();
-    white-space: pre;
-
-    .sds-svg-icon--icon-pipeline {
-      fill: $violet;
+    .subheader-icon {
+      vertical-align: baseline;
     }
   }
 
   .stages-row {
     @include modal-row();
     @include separator();
-    border-top: 2px solid $separatorBG;
+    border-top: 2px solid $forty-percent-gray;
     cursor: pointer;
-
-    .sds-svg-icon--icon-stage {
-      fill: $light-blue;
-    }
 
     .stages-number {
       display: flex;

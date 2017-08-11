@@ -4,8 +4,8 @@
 
 .ec-icon-run-menu {
   border: none;
-  background-color: $runMenuBackground;
-  box-shadow: $runMenuBoxShadow;
+  background-color: $dark-gray;
+  box-shadow: $default-black 0 0 30px 0;
 
   &__square {
     @include ec-icon-menu-square;
@@ -19,10 +19,10 @@
     }
 
     &.in-progress {
-      background: $runMenuBackground;
+      background: $dark-gray;
 
       &:hover {
-        background-color: $runMenuBorderColor;
+        background-color: $fifty-percent-gray;
       }
     }
 
@@ -46,14 +46,14 @@
     }
   }
 
-  &:after {
+  .arrow:after {
     display: none;
   }
 
-  &.left:before,
-  &.left-bottom:before,
-  &.left-top:before {
-    border-color: transparent transparent transparent $runMenuBackground;
+  .arrow.left:before,
+  .arrow.left-bottom:before,
+  .arrow.left-top:before {
+    border-color: transparent transparent transparent $dark-gray;
   }
 
   .ec-icon-run-menu__content {
@@ -64,12 +64,12 @@
   .ec-icon-run-menu__row {
     height: 48px;
     padding-left: 20px;
-    border-bottom: 2px solid $runMenuBorderColor;
+    border-bottom: 2px solid $fifty-percent-gray;
     cursor: pointer;
-    background-color: $runMenuBackground;
+    background-color: $dark-gray;
 
     &:hover {
-      background-color: $runMenuBorderColor;
+      background-color: $fifty-percent-gray;
     }
   }
 
@@ -89,7 +89,7 @@
     height: 48px;
     float: left;
     line-height: 48px;
-    color: white;
+    color: $default-white;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
@@ -100,7 +100,7 @@
     @include sds-ellipsis;
 
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
     }
   }
 
@@ -135,7 +135,7 @@
     display: inline-block;
     text-align: center;
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
     }
   }
 
@@ -236,7 +236,7 @@
 
   .ec-icon-run-menu__title {
     margin-right: 10px;
-    color: $runMenuTitleColor;
+    color: $white-smoke;
     text-align: right;
     line-height: 48px;
   }
@@ -262,6 +262,11 @@
 .env-picker {
   margin: 0 auto;
 }
+
+.env-picker {
+  padding: 0 5px;
+}
+
 .tab-container {
   width: 100%;
   height: 34px;
@@ -276,13 +281,13 @@
     display: inline-block;
     width: 152px;
     height: 34px;
-    border: 2px solid $select-toggle-active-border-color;
+    border: 2px solid $soft-black;
     line-height: 30px;
     cursor: pointer;
     box-sizing: border-box;
     &.active {
-      background-color: $select-toggle-active-bg-color;
-      color: $select-toggle-active-color;
+      background-color: $soft-black;
+      color: $default-white;
     }
   }
 }
@@ -291,44 +296,37 @@
   &:before {
     content: ' ';
   }
-  margin: 10px auto;
-  max-height: 150px;
+
+  margin: 10px auto 4px;
+  max-height: 300px;
   overflow-y: auto;
-  .credential-item,
+
   .env-item {
-    overflow: hidden;
-    width: 100%;
-    height: 22px;
-    padding: 2px 0;
-    font-size: 13px;
-    line-height: 21px;
-    text-align: left;
+    display: flex;
+    height: 30px;
+    align-items: center;
     cursor: pointer;
+    font-size: 14px;
+
     &:hover {
-      background-color: $search-header-bg;
+      background-color: $some-light-gray;
     }
+
     &__name {
-      display: inline-block;
-      vertical-align: top;
-      width: calc(100% - 160px);
       @include sds-ellipsis;
+      padding-right: 30px;
+      flex-shrink: 1;
+      white-space: pre;
     }
-    &__date {
-      display: inline-block;
-      width: 160px;
-      text-align: right;
-      vertical-align: top;
-      color: $envResCheckSelectedDefaultColor;
-    }
-    .sds-icon {
-      margin-left: 2px;
-      vertical-align: top;
-      margin-right: 10px;
-      color: $sds-select-icon-color-inactive;
-      &:before {
-        color: $sds-select-icon-color-inactive;
-      }
+
+    .ec-react-help__wrapper {
+      width: 30px;
+      flex-shrink: 0;
+      margin: 0;
+      height: 14px;
+      text-align: center;
+      color: $fifty-percent-gray;
+      line-height: 1;
     }
   }
-
 }

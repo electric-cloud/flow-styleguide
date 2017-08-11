@@ -1,0 +1,2004 @@
+//================================================
+//  Releases
+//================================================
+
+.release-page.page-content {
+  overflow: hidden;
+}
+.create-release {
+  .heading {
+    width: 536px;
+    @include modal-header-text();
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    .add-component {
+      font-size: 14px;
+    }
+    .releases {
+      font-size: 9px;
+    }
+  }
+}
+
+.release-inner {
+  width: 90%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+  min-width: 900px;
+}
+
+.release {
+  &__panel {
+    max-width: 590px;
+    float: left;
+    min-width: 450px;
+    width: 48%;
+
+    &--right {
+      background: $ten-percent-gray;
+      margin-left: 20px;
+    }
+  }
+
+  &__menu-item {
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 10px;
+    background: $very-soft-gray;
+    font-size: 18px;
+    box-sizing: border-box;
+
+    &-bottom-msg {
+      position: absolute;
+      top: 26px;
+      font-size: 12px;
+      left: 0;
+      right: 0;
+      color: $default-black;
+    }
+
+    .sds-svg-icon__wrapper,
+    .sds-svg-icon {
+      position: absolute;
+      left: 10px;
+      top: 28px;
+      width: 34px;
+      text-align: center;
+    }
+
+    .sds-svg-icon {
+      &--icon-parameters,
+      &--icon-deployer {
+        width: 20px;
+      }
+
+      &--icon-pipeline {
+        top: 24px;
+      }
+
+      &--icon-release-missing-process,
+      &--icon-release-missing-config {
+        width: 34px;
+      }
+
+      &--icon-release-missing-env {
+        width: 40px;
+      }
+
+      &--icon-release-missing-tier-map {
+        width: 24px;
+      }
+
+    }
+
+    .sds-svg-icon.sds-svg-icon--button-helptip {
+      width: 14px;
+      height: 14px;
+      fill: $gray;
+    }
+
+    .ec-react-help__wrapper {
+      margin-right: 5px;
+    }
+
+    .sds-icon.ec-react-help__icon {
+      margin: 0;
+    }
+
+    .sds-svg-icon__wrapper {
+      .sds-svg-icon {
+        position: static;
+      }
+      top: 0;
+      left: auto;
+      cursor: pointer;
+      right: 0;
+      width: 50px;
+    }
+
+    .sds-svg-icon__wrapper--icon-manual-instructions {
+      position: absolute;
+      right: -8px;
+      left: auto;
+      fill: $gray;
+    }
+
+    &-warnings {
+      position: absolute;
+      top: 0;
+      right: 50px;
+      color: $dark-red;
+      .sds-svg-icon {
+        position: static;
+        fill: $dark-red;
+      }
+    }
+
+    &-warning {
+      display: inline-block;
+      line-height: 50px;
+      vertical-align: middle;
+      &--line {
+        height: 2px;
+        width: 90px;
+        background: $default-white;
+        margin-right: 9px;
+      }
+      &--first-item {
+        border-bottom: 2px solid $default-white;
+      }
+      &--small-item {
+        text-align: right;
+        line-height: 26px;
+      }
+      &--right-border {
+        border-right: 2px solid;
+        border-color: $default-white;
+      }
+      &--soft-gray-border {
+        border-color: $soft-gray;
+      }
+      &--info {
+        color: $default-black;
+        .sds-svg-icon {
+          fill: $default-black;
+        }
+      }
+      &--small-text {
+        font-size: 14px;
+      }
+      .sds-icon {
+        position: relative;
+        left: 0;
+        margin: 0 9px;
+      }
+    }
+
+    &.no-hover {
+      cursor: default;
+    }
+    &.white {
+      border: 2px solid $very-soft-gray;
+      background: $default-white;
+      cursor: default;
+    }
+    &.disabled {
+      cursor: default;
+      color: $soft-gray;
+      .sds-svg-icon {
+        fill: $soft-gray;
+      }
+    }
+    &:not(.no-hover):not(.disabled):hover {
+      background: $soft-gray;
+    }
+  }
+  &__menu-item-name {
+    display: inline-block;
+    max-width: 310px;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include sds-ellipsis();
+    white-space: pre;
+    a {
+      color: $default-black;
+    }
+  }
+  &__notes-header {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 2px solid $twenty-percent-black;
+    font-size: 18px;
+  }
+  &__notes-header-block {
+    display: inline-block;
+    width: 118px;
+    text-align: center;
+    .sds-icon {
+      &.note {
+        margin: 0 5px 0 9px;
+      }
+      &.dropdown {
+        cursor: pointer;
+        margin-right: 3px;
+        font-size: 8px;
+      }
+      &.search {
+        cursor: pointer;
+      }
+      &.plus-sign {
+        margin-left: 5px;
+      }
+    }
+    .sds-svg-icon.sds-svg-icon--button-delete {
+      vertical-align: sub;
+      fill: $default-red;
+    }
+    &--delete {
+      width: 130px;
+      font-size: 16px;
+      float: right;
+      cursor: pointer;
+    }
+    &--add {
+      cursor: pointer;
+      float: right;
+      width: 90px;
+      text-align: right;
+      padding-right: 15px;
+      font-size: 16px;
+
+    }
+    &--disabled {
+      color: $soft-gray;
+      cursor: default;
+      .sds-svg-icon.sds-svg-icon--button-delete {
+        fill: $soft-gray;
+      }
+    }
+
+  }
+  &__notes-list {
+    height: 398px;
+    overflow: auto;
+    padding: 0 18px;
+  }
+  &__notes-item {
+    background: $some-light-gray;
+    margin: 0 0 8px;
+    padding: 6px 12px 6px 8px;
+  }
+}
+.release-note-item {
+  &--selected {
+    background: $gray;
+    color: $default-white;
+  }
+  &__head {
+    overflow: hidden;
+  }
+  &__notes-item-text {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  &__date {
+    float: left;
+    max-width: 90%;
+    @include sds-ellipsis;
+  }
+  &__edit-btn {
+    float: right;
+    cursor: pointer;
+    display: none;
+  }
+  &:hover {
+    .release-note-item__edit-btn {
+      display: block;
+    }
+  }
+}
+
+.create-release-note-wizard {
+  .heading {
+    width: 536px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+  }
+  .release-note-content {
+    width: 486px;
+    margin: 0 auto;
+    font-size: 18px;
+    height: 276px;
+  }
+}
+
+.modals-box .release-env-map {
+  &__head {
+    .ec-react-wizard__header-center-block {
+      .sds-icon.pipeline {
+        vertical-align: middle;
+        margin: 0 4px;
+        font-size: 14px;
+        color: $violet;
+      }
+    }
+
+    .ec-react-wizard__header-left-block {
+      .separator {
+        margin: 0 4px;
+      }
+
+      &--right-margin {
+        margin: 0 4px 0 0;
+      }
+
+      &--ellipsis {
+        display: inline-block;
+        max-width: 470px;
+        @include sds-ellipsis();
+        white-space: pre;
+      }
+
+      .sds-icon {
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+
+      .sds-icon.releases {
+        font-size: 12px;
+        color: $bright-blue;
+      }
+
+      .sds-icon.environment {
+        color: $orange;
+      }
+
+      .sds-icon.property {
+        color: $ninety-percent-blue;
+        position: relative;
+        font-size: 19px;
+        bottom: 1px;
+      }
+    }
+
+    .ec-react-wizard__header-right-block {
+      margin-top: 10px;
+      margin-right: 10px;
+      .sds-icon {
+        cursor: pointer;
+        margin-right: 24px;
+
+        &.squeeze-details {
+          font-size: 16px;
+          vertical-align: middle;
+        }
+
+        &.disabled {
+          cursor: default;
+        }
+      }
+
+      .control {
+        cursor: pointer;
+        margin-right: 24px;
+
+        .label {
+          font-size: 15px;
+        }
+
+        .dropdown {
+          margin: 0 4px 0 0;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .ec-react-wizard__content {
+    padding: 0;
+  }
+
+  .app-run-rolling-deploy {
+    height: 410px;
+  }
+
+  &__list-head {
+    border-bottom: none;
+    margin: 0 24px 0 20px;
+
+    .ec-react-wizard__header-left-block {
+      position: absolute;
+      margin-left: 0;
+      z-index: 1;
+      left: 0;
+
+      .search-collapsable {
+        margin-top: 8px;
+
+        &__search-input.sds-input {
+          font-size: 16px;
+          padding: 0 26px;
+          height: 28px;
+        }
+
+        .sds-icon.remove {
+          font-size: 14px;
+          top: 3px;
+          right: 5px;
+        }
+
+        .sds-icon.search {
+          top: 2px;
+          cursor: default;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .ec-react-wizard__header-center-block {
+      .sds-icon {
+        margin: 0 10px;
+        cursor: pointer;
+        color: $fifty-percent-gray;
+
+        &.active {
+          color: $light-black;
+        }
+      }
+    }
+
+    .ec-react-wizard__header-right-block {
+      .control {
+        cursor: pointer;
+
+        .sds-svg-icon--icon-configuration {
+          fill: $default-black;
+        }
+
+        &--disabled {
+          color: $soft-gray;
+          cursor: default;
+
+          .sds-svg-icon--icon-configuration {
+            fill: $soft-gray;
+          }
+        }
+      }
+
+      .label {
+        font-size: 15px;
+        margin-right: 8px;
+      }
+
+      .sds-icon.clearcell {
+        margin-right: 24px;
+        font-size: 17px;
+      }
+    }
+  }
+
+  &__table {
+    width: 1236px;
+    height: 426px;
+    line-height: 38px;
+    font-size: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &__stages-head {
+    height: 42px;
+  }
+
+  &__stages-head-item {
+    overflow: hidden;
+    border-left: 2px solid $fifty-percent-gray;
+    box-sizing: border-box;
+    float: left;
+    @include sds-ellipsis;
+    white-space: pre;
+    position: relative;
+
+    &--last {
+      border-right: 2px solid $fifty-percent-gray;
+    }
+
+    &--number {
+      border-left: none;
+    }
+
+    .application {
+      color: $very-soft-blue;
+      vertical-align: middle;
+      font-size: 24px;
+    }
+  }
+  &__table-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: -2px;
+  }
+  &__table-content-inner {
+    overflow: auto;
+    padding-bottom: 22px;
+
+    .ec-react-help__icon {
+      position: relative;
+      top: 2px;
+    }
+  }
+  &__apps-header {
+    float: left;
+  }
+  &__apps-header-item {
+    overflow: hidden;
+    border-left: 2px solid $fifty-percent-gray;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+
+    &--number {
+      text-align: right;
+      border-left: none;
+    }
+    &-parameter {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .sds-icon {
+        margin: 0 5px;
+      }
+    }
+    &-text {
+      padding: 0 40px 0 10px;
+      display: block;
+      @include sds-ellipsis();
+      white-space: pre;
+      text-align: left;
+    }
+  }
+
+  &__maps {
+    float: left;
+    position: relative;
+  }
+  &__map {
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    float: left;
+    border-left: 2px solid $fifty-percent-gray;
+    box-sizing: border-box;
+    @include sds-ellipsis();
+    white-space: pre;
+
+    &--last {
+      border-right: 2px solid $fifty-percent-gray;
+    }
+
+    &--empty {
+      width: 100%;
+    }
+
+    &--selected {
+      background-color: $forty-fill-blue;
+    }
+  }
+  &__warning {
+    position: absolute;
+    font-size: 12px;
+    line-height: 12px;
+    bottom: 2px;
+    right: 2px;
+    color: $dark-red;
+  }
+
+  &__config {
+    font-size: 18px;
+    color: $light-green;
+    &--missing {
+      color: $soft-red;
+    }
+  }
+
+  &__cell-selector {
+    box-sizing: border-box;
+    position: absolute;
+    background-color: $forty-fill-blue;
+    z-index: 50;
+  }
+
+  &__cell-rolling-deploy {
+    line-height: 12px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+}
+
+.ec-release-fill-side-bar {
+  width: 0;
+  position: relative;
+  z-index: 11002;
+
+  //Copy style from .ec-react-wizard--wizard-create
+  //TODO: make this style global not only for .ec-react-wizard--wizard-create
+  .ec-col--projects-select,
+  .ec-col--search,
+  .ec-col--environment-tabs {
+    position: relative;
+    width: 355px;
+  }
+
+  .ec-grid-primary .ec-grid-primary__row--column {
+    height: auto;
+  }
+
+  .ec-col__project {
+    line-height: 40px;
+  }
+
+  .ec-col--projects-select {
+    margin-right: 30px;
+    font-size: 18px;
+
+    .toolbox {
+      font-size: 22px;
+    }
+
+    .project-select-popover {
+      cursor: pointer;
+    }
+  }
+
+  .ec-col--search {
+    position: static;
+    text-align: right;
+
+    .search-collapsable__search-input {
+      &.sds-input {
+        background-color: $default-white;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 23px;
+      }
+
+    }
+    .search-collapsable {
+      .sds-icon {
+        line-height: 40px;
+      }
+    }
+  }
+  //End copy
+
+  .ec-react-help__wrapper {
+    position: relative;
+    margin-left: 8px;
+    width: 25px;
+  }
+
+  .react-form__textarea {
+    background-color: $default-white;
+  }
+
+  &--environment-content {
+    left: 400px;
+  }
+
+  &__footer {
+    position: absolute;
+    width: 460px;
+    bottom: 0;
+
+    &--environment-content {
+      width: 1296px;
+    }
+
+    .ec-wizard-btn {
+      float: right;
+    }
+  }
+  &__content {
+    flex: 1;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    .parameter-container {
+      height: 450px;
+    }
+  }
+  .fill-item-type {
+    display: flex;
+    height: 108px;
+    line-height: 108px;
+
+    .ec-col--projects-select {
+      margin-right: 0;
+      height: 40px;
+    }
+
+    &__wrapper {
+      width: 355px;
+      display: flex;
+    }
+
+    &--center {
+      justify-content: center;
+      align-items: center;
+    }
+    &--selected {
+      background-color: $some-light-gray;
+    }
+    &__right {
+      width: 40px;
+    }
+
+    &__left {
+      width: 60px;
+      text-align: center;
+      font-size: 21px;
+      line-height: 103px;
+      .sds-icon {
+        cursor: pointer;
+      }
+      &--small {
+        width: 35px;
+      }
+      &--left-text-align {
+        text-align: left;
+      }
+    }
+
+    &__center {
+      flex: 1;
+      .ec-wizard-row--text {
+        line-height: 40px;
+        font-size: 18px;
+        text-align: left;
+      }
+      &--no-flex {
+        flex: none;
+      }
+      .react-form__txt-input {
+        width: 308px;
+      }
+      .ec-col--projects-select {
+        margin-right: 0;
+        height: 40px;
+      }
+    }
+
+  }
+  .arrow-close:not(.disabled),
+  .arrow-open:not(.disabled) {
+    font-size: 22px;
+    cursor: pointer;
+  }
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $ten-percent-gray;
+    position: absolute;
+    width: 460px;
+    &--environment-content {
+      width: 834px;
+      border-left: 2px solid $default-white;
+      left: 460px;
+    }
+  }
+
+  &__head {
+    margin-right: 20px;
+    .sds-icon {
+      font-size: 20px;
+      margin-right: 15px;
+      &.arrow-close {
+        margin-right: 0;
+      }
+      &.environment {
+        color: $orange;
+      }
+      &.property {
+        color: $ninety-percent-blue;
+      }
+    }
+    &--show-environment-content {
+      margin-right: 0;
+      .sds-icon.arrow-close {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__grid {
+    height: 330px;
+    padding: 0 24px 0 30px;
+
+    .ec-row {
+      margin: 0;
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    .ec-row__sub {
+      margin: 0 10px;
+      width: 100%;
+      height: 58px;
+      border-top: 2px solid $very-light-gray;
+      display: flex;
+      flex-direction: row;
+
+      .ec-col {
+        height: auto;
+      }
+
+      .ec-wizard-row .react-form__txt-input {
+        width: 237px;
+      }
+
+      .ec-col--projects-select {
+        padding: 8px 0;
+        margin: 0 0 0 17px;
+        overflow: visible;
+      }
+
+      .ec-col--help-icon {
+        margin-top: 8px;
+        margin-left: 2px;
+      }
+
+      .ec-react-help__icon {
+        font-size: 24px !important;
+        color: $default-white;
+      }
+    }
+
+    .sds-icon.template,
+    .sds-icon.environment {
+      color: $orange;
+      position: relative;
+      top: 2px;
+      margin: 0 5px 0 10px;
+      font-size: 18px;
+    }
+
+    .ec-react-help__icon {
+      font-size: 14px !important;
+      line-height: 14px;
+    }
+
+    .ec-row--no-objects {
+      text-align: center;
+      display: block;
+      line-height: 40px;
+      border-bottom: none;
+    }
+  }
+
+  &__sub-head {
+    height: 40px;
+    margin: 20px 30px 0;
+    display: flex;
+    justify-content: center;
+
+    &--last {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .react-form__txt-input {
+      width: 277px;
+    }
+
+    .tab-container {
+      margin-top: 0;
+      height: 100%;
+
+      &__environment,
+      &__environment-template {
+        width: 50%;
+        height: 40px;
+        line-height: 35px;
+        border-color: $medium-dark-gray;
+        color: $medium-dark-gray;
+
+        &.active {
+          color: $default-white;
+          background-color: $medium-dark-gray;
+        }
+      }
+    }
+
+    .ec-col--help-icon {
+      position: absolute;
+    }
+  }
+
+  &__overlay {
+    opacity: .2;
+    top: 0;
+    left: 0;
+    height: 576px;
+    width: 100%;
+    background-color: $default-black;
+    position: absolute;
+    z-index: 11002;
+  }
+}
+
+.ec-release-fill-side-bar-help .sds-svg-icon--button-helptip {
+  width: 18px;
+  height: 18px;
+}
+
+.ec-release-fill-side-bar-project-select .react-form__select-wrapper {
+  width: 100%;
+}
+
+.ec-release-fill-side-bar--rolling-deploy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 460px;
+  height: 576px;
+}
+
+.ec-release-fill-side-bar-deployer {
+
+  & > .ec-release-fill-side-bar__wrapper {
+    width: 1296px;
+  }
+
+  .ec-release-fill-side-bar__head {
+    margin: 0;
+  }
+
+  .ec-react-wizard__header-right-block .arrow-close {
+    margin-right: 20px;
+  }
+
+  .ec-release-fill-side-bar__content {
+    padding: 0 30px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .ec-release-fill-side-bar__empty {
+    line-height: 40px;
+  }
+
+  .fill-side-bar-label-header {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-bottom: 2px solid $very-light-gray;
+    display: flex;
+  }
+
+  .fill-side-bar-label-header-stage,
+  .fill-side-bar-label-header-environment,
+  .fill-side-bar-label-header-rolling-deploy {
+    @include sds-ellipsis();
+    display: flex;
+    align-items: center;
+  }
+
+  .fill-side-bar-label-header-stage {
+    width: 545px;
+    padding-left: 5px;
+  }
+
+  .fill-side-bar-label-header-environment {
+    flex: 1;
+  }
+
+  .fill-side-bar-label-header-environment-text {
+    margin-left: 8px;
+  }
+
+  .fill-side-bar-label-header-rolling-deploy {
+    width: 165px;
+    margin-left: 30px;
+
+    .sds-svg-icon--icon-rolling-deploy {
+      margin: 0 7px;
+    }
+  }
+
+  .ec-grid-primary--with-underline {
+    padding: 0;
+    flex: 1;
+  }
+
+  .ec-grid-primary {
+    .ec-grid-primary__col--rolling-deploy-actions {
+      width: 80px;
+    }
+
+    .ec-grid-primary__col--rolling-deploy-go-details-disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .ec-grid-primary__col--deployer-icon {
+      margin-right: 23px;
+    }
+
+    .ec-grid-primary__col--checkmarked {
+      text-align: right;
+      width: 30px;
+      margin: 0;
+    }
+
+    .ec-grid-primary__col--simple-index {
+      width: 35px;
+      margin: 0;
+    }
+
+    .ec-grid-primary__col--info {
+      margin: 0 3px;
+    }
+
+    .ec-grid-primary__col--task {
+      width: 340px;
+      margin: 0;
+      display: flex;
+    }
+
+    .ec-grid-primary__col--expression {
+      width: 25px;
+      margin: 0;
+    }
+
+    .ec-grid-primary__col--deployer-environment {
+      flex: 1;
+      margin: 0 0 0 80px;
+    }
+
+    .ec-grid-primary__col--deployer-run-type {
+      margin: 0;
+    }
+
+    .fill-side-bar-label-header-environment,
+    .ec-grid-primary__col--deployer-environment {
+      .sds-svg-icon--icon-environments-static {
+        margin: 0 7px;
+      }
+    }
+
+    .ec-grid-primary__col--deployer-environment {
+      display: flex;
+    }
+
+    .ec-grid-primary__col--select-deployer {
+      margin: 0;
+      text-align: center;
+    }
+
+    .ec-grid-primary__col--deployer-phase {
+      width: 286px;
+      display: flex;
+      margin: 0;
+
+      .sds-svg-icon--icon-phases,
+      .sds-svg-icon--icon-phases-unassign {
+        margin: 0 8px;
+      }
+
+    }
+
+    .ec-grid-primary__col--no-deployer-phase {
+      text-align: left;
+      margin: 0 0 0 40px;
+      width: 246px;
+    }
+
+  }
+}
+
+.modals-box .wizard-release-note-list {
+  $block: '.ec-react-wizard';
+
+  &__head {
+    #{$block} {
+      &__header-left-block {
+        .sds-icon.close {
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+
+      &__header-right-block {
+        margin-right: 10px;
+
+        .search-collapsable__search-input {
+          &.sds-input {
+            padding-left: 23px;
+          }
+        }
+      }
+
+      &__header-center-block {
+        width: 420px;
+        left: 50%;
+        margin-left: -225px;
+        font-size: 16px;
+        padding: 0 15px;
+
+        @include sds-ellipsis;
+
+        span {
+          margin: 3px;
+        }
+
+        .sds-icon.releases {
+          font-size: 12px;
+          vertical-align: middle;
+          position: relative;
+          top: -1px;
+          color: $bright-blue;
+        }
+      }
+    }
+  }
+
+  #{$block} {
+    &__inner {
+      overflow: hidden;
+    }
+
+    &__loader {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    &__content {
+      overflow: auto;
+    }
+  }
+
+  &__item {
+    padding: 16px 0;
+    text-align: left;
+    border-bottom: 2px solid $light-black;
+    background-color: $default-white;
+  }
+}
+
+.ec-release-fill-side-bar-settings {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+
+  .ec-release-fill-side-bar__wrapper {
+    width: 400px;
+  }
+
+  .ec-release-fill-side-bar__footer {
+    border-top: 2px solid $default-white;
+    box-sizing: border-box;
+    height: 60px;
+    background: $ten-percent-gray;
+    width: 400px;
+  }
+
+  .ec-release-fill-side-bar__content {
+    padding: 0 20px;
+    margin-bottom: 60px;
+  }
+
+  .ec-react-wizard__header-right-block .arrow-open {
+    margin: 0;
+    left: 6px;
+    position: relative;
+  }
+
+  .ec-grid-primary {
+    padding: 2px 0 0;
+
+    .ec-grid-primary__row {
+      background: $ten-percent-gray;
+    }
+
+    .ec-grid-primary__col {
+      width: 120px;
+      margin: 0;
+    }
+
+    .ec-grid-primary__col--error-handling {
+      width: 300px;
+    }
+
+    .ec-grid-primary__col--manual-retry {
+      width: 320px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+
+      .ec-grid-primary__col--text {
+        text-align: right;
+        min-width: 80px;
+        margin-right: 10px;
+      }
+
+      .automatch {
+        font-size: 14px;
+        line-height: 20px;
+        flex: 1;
+        overflow: hidden;
+        text-align: left;
+      }
+
+      .sds-select-automatch {
+        min-height: 30px;
+        padding-left: 55px;
+      }
+
+      .sds-select-automatch__menu {
+        width: 55px;
+      }
+
+      .sds-select-automatch__menu-active {
+        height: 26px;
+        line-height: 26px;
+
+        .sds-select-automatch__menu-active-icon {
+          width: 30px;
+          vertical-align: middle;
+          .sds-icon.access {
+            font-size: 19px;
+            line-height: 26px;
+          }
+        }
+      }
+
+      .sds-svg-icon__wrapper--icon-menu-dropdown {
+        top: 0;
+      }
+
+      .sds-select-automatch__menu-active-icon .sds-icon.access {
+        bottom: 3px;
+        font-size: 20px;
+      }
+
+      .sds-select-automatch__menu-active-icon .sds-svg-icon--icon-variable,
+      .Select-item .sds-icon.users,
+      .Select-item .sds-icon.access {
+        position: relative;
+        bottom: 1px;
+      }
+
+      .sds-select-automatch__remove-all {
+        top: 8px;
+        font-size: 10px;
+        line-height: 10px;
+      }
+
+      .sds-select-automatch__variable-input-container {
+        margin: 2px 0;
+      }
+
+      .sds-select-automatch-select2-container {
+        overflow: hidden;
+        height: 26px;
+      }
+
+      .sds-select-automatch__variable-input {
+        height: 22px;
+        line-height: 22px;
+      }
+
+      .Select-placeholder {
+        padding: 3px 40px 3px 0;
+      }
+
+      .Select--dark.is-multi .Select-control {
+        padding: 0 32px 0 0;
+      }
+
+      .Select-input {
+        height: 26px;
+        padding: 0;
+
+        > .select-input-autosize {
+          height: 18px;
+        }
+      }
+
+      .Select-item-icon {
+        padding: 1px 2px 0 6px;
+      }
+
+      .Select-item-label {
+        padding: 1px 10px 0 5px;
+      }
+
+      .Select-item .sds-icon.access {
+        bottom: 2px;
+        font-size: 15px;
+      }
+    }
+
+    .ec-grid-primary__col--template-select {
+      width: 230px;
+      align-items: center;
+
+      .react-form__select-wrapper {
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .ec-select-header {
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+      }
+
+      .react-form__select-holder {
+        width: 230px;
+      }
+    }
+
+    .ec-grid-primary__col--retry {
+      width: 170px;
+      margin-right: 50px;
+      display: flex;
+
+      .ec-grid-primary__col--text {
+        text-align: right;
+        min-width: 80px;
+        margin-right: 10px;
+      }
+
+      .sds-number-input {
+        padding: 0;
+      }
+
+      .sds-number-input__input {
+        width: 36px;
+        height: 20px;
+      }
+
+      .sds-number-input__btn {
+        margin-bottom: 0;
+      }
+
+    }
+
+    .ec-grid-primary__col--retry-intervals {
+      width: 155px;
+      margin-right: 40px;
+      display: flex;
+
+      .ec-grid-primary__col--text {
+        text-align: left;
+        min-width: 65px;
+        white-space: pre-line;
+        line-height: 15px;
+        height: 30px;
+        padding: 0;
+      }
+
+      .react-form__txt-input-holder {
+        width: 100%;
+        display: flex;
+      }
+
+      .react-form__txt-input {
+        width: 90px;
+        height: 30px;
+        line-height: 28px;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+
+    .ec-grid-primary__col--after-last-retry {
+      flex: 1;
+    }
+  }
+
+  .error-handling-popover {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  .after-last-retry-popover {
+    display: flex;
+    align-items: center;
+  }
+
+  .after-last-retry-popover-labels {
+    line-height: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+.ec-release-fill-side-bar-settings--full-line {
+  .ec-release-fill-side-bar__head {
+    margin-right: 0;
+
+    .ec-react-wizard__header-right-block .arrow-open {
+      left: -14px;
+    }
+  }
+
+}
+
+.ec-release-fill-side-bar-settings--expanded {
+  width: 950px;
+
+  .ec-release-fill-side-bar__wrapper {
+    width: 950px;
+  }
+
+  .ec-release-fill-side-bar__footer {
+    width: 950px;
+  }
+}
+
+.ec-release-fill-side-bar__header-right-controls {
+  height: 80px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ec-release-fill-side-bar__header-right-controls-labels {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  color: $soft-dark-gray;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 13px;
+  white-space: pre-line;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ec-release-fill-side-bar__header-right-controls-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .ec-react-help__wrapper {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  .ec-react-help__icon {
+    font-size: 16px !important;
+  }
+
+  .sds-svg-icon__wrapper {
+    margin-left: 20px;
+  }
+}
+
+.ec-release-fill-side-bar__header-right-controls-item {
+  width: 120px;
+}
+
+.ec-release-chosen-applications {
+  .ec-grid-primary--with-underline .ec-grid-primary__row--border-width-2 {
+    height: 40px;
+  }
+
+  .ec-react-wizard__overlay {
+    opacity: 0;
+  }
+
+
+  .ec-grid {
+    clear: both;
+    height: 390px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &--drag-placeholder {
+      height: auto;
+      margin: 0;
+      z-index: 10;
+    }
+
+    .ec-react-help__wrapper {
+      display: inline;
+      margin-right: 5px;
+      position: relative;
+      bottom: 1px;
+    }
+
+    .ec-row {
+      margin: 0;
+      padding-right: 30px;
+      background-color: $default-white;
+      height: 38px;
+      line-height: 22px;
+      cursor: pointer;
+      border-bottom: 2px solid $very-light-gray;
+
+      &__inner {
+        display: flex;
+        width: 100%;
+      }
+
+      &:first-child {
+        border-top: 2px solid $very-light-gray;
+      }
+    }
+
+    .ec-col {
+      height: 38px;
+      font-size: 14px;
+
+      &__name {
+        text-align: left;
+        width: 250px;
+
+        .sds-icon {
+          color: $violet;
+          margin: 0 5px 0 0;
+        }
+      }
+
+      &__drag.ec-col {
+        font-size: 18px;
+        cursor: pointer;
+        width: 28px;
+        padding-left: 0;
+      }
+
+      &__alert {
+        width: 36px;
+        .alert-flag {
+          color: $sunny;
+        }
+
+        .error-warning {
+          color: $dark-red;
+        }
+      }
+
+      &--existing-list-item .toolbox {
+        margin-right: 5px;
+        font-size: 22px;
+      }
+
+      &__applications {
+        text-align: left;
+        width: 345px;
+        line-height: 22px;
+        padding-left: 13px;
+
+        .index {
+          display: inline-block;
+          text-align: center;
+          width: 22px;
+        }
+
+        .application {
+          position: relative;
+          top: 2px;
+          color: $very-soft-blue;
+          margin: 0 5px 0 10px;
+          font-size: 28px;
+        }
+      }
+
+      &__snapshot,
+      &__process,
+      &__project,
+      &--existing-list-item {
+        flex: 1;
+        text-align: left;
+        @include sds-ellipsis();
+
+        .snapshot-count,
+        .process-count {
+          padding: 0 5px;
+        }
+
+        .sds-icon.dropdown {
+          cursor: pointer;
+          font-size: 10px;
+        }
+
+        .sds-icon.snapshot {
+          color: $default-black;
+          font-size: 22px;
+          padding-right: 5px;
+        }
+
+        .sds-icon.view-processes {
+          line-height: 18px;
+          position: relative;
+          top: 5px;
+          font-size: 28px;
+          color: $light-green;
+          padding-right: 5px;
+        }
+      }
+
+      &__smart-deploy {
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+    .ec-row {
+
+      &.selected {
+
+        .ec-col {
+
+          &__check {
+            color: $light-green;
+          }
+
+          &__applications .application {
+            color: $default-white;
+          }
+
+          &__alert {
+            color: $default-white;
+          }
+
+          &--existing-list-item .toolbox:before {
+            color: $default-white;
+          }
+        }
+      }
+
+      &.disabled {
+        color: $very-light-gray;
+        background: transparent;
+        cursor: default;
+
+        .ec-col {
+
+          .sds-icon {
+            color: $very-light-gray;
+          }
+
+          &__check {
+            color: $very-light-gray;
+          }
+
+          &--existing-list-item .toolbox:before {
+            color: $very-light-gray;
+          }
+        }
+      }
+    }
+  }
+
+  .ec-react-wizard__loader {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .ec-react-wizard__content {
+    overflow: hidden;
+    flex: 1;
+    padding: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .ec-grid-primary__sortable-container {
+    height: 100%;
+    flex: 1;
+    display: flex;
+  }
+
+  .ec-grid-primary {
+    flex: 1;
+
+    .sds-icon {
+      position: relative;
+    }
+
+    .sds-icon.drag.black {
+      bottom: 3px;
+    }
+
+    .sds-icon.application {
+      bottom: 2px;
+    }
+
+    .sds-icon.toolbox {
+      bottom: 1px;
+    }
+
+    .sds-icon.checkbox {
+      bottom: 4px;
+    }
+
+    .ec-react-help__icon.info-description {
+      vertical-align: sub;
+    }
+  }
+}
+
+.ec-release-applications {
+  background: $ten-percent-gray;
+  z-index: 11002;
+  position: relative;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 810px;
+    margin: 0 0 0 30px;
+    height: calc(100% - 46px);
+
+    .ec-grid {
+      margin: 0 30px 0 0;
+      position: relative;
+      width: auto;
+
+      .ec-row.ec-row-loading {
+        border-bottom: none;
+
+        .loader-icon {
+          width: 39px;
+          margin-top: -19px;
+        }
+      }
+    }
+  }
+
+  &__search {
+    width: 355px;
+    height: 40px;
+    position: static;
+    text-align: right;
+    margin-top: auto;
+
+    .search-collapsable__search-input {
+
+      &.sds-input {
+        background-color: $default-white;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 23px;
+      }
+    }
+
+    .search-collapsable {
+
+      .sds-icon {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__projects-select {
+    position: relative;
+    width: 355px;
+    height: 60px;
+
+    margin-right: 30px;
+    font-size: 18px;
+
+    .toolbox {
+      font-size: 22px;
+    }
+
+    .project-select-popover {
+      cursor: pointer;
+    }
+  }
+
+  &__check-all {
+    line-height: 40px;
+    cursor: pointer;
+    color: $very-light-gray;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-top: auto;
+
+    &.selected {
+      color: $light-green;
+    }
+  }
+
+  &__move {
+    position: absolute;
+    background: $ten-percent-gray;
+    top: 265px;
+    left: 840px;
+    padding: 10px 10px 10px 0;
+  }
+
+  &__chose-button {
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    line-height: 36px;
+    background: $simple-middle-blue;
+    text-align: center;
+
+    .move-right {
+      color: $default-white;
+      font-size: 23px;
+    }
+
+    .move-right--left {
+      display: inline-block;
+      transform: rotate(180deg);
+      line-height: 44px;
+    }
+
+    &:hover {
+      background: $medium-dark-blue;
+    }
+
+    &--disabled {
+      cursor: default;
+      background: $gray;
+
+      &:hover {
+        background: $gray;
+      }
+
+      .move-right {
+        color: $soft-gray;
+      }
+    }
+  }
+
+  .arrow-close {
+    margin-right: 18px;
+    font-size: 22px;
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+  }
+
+  &__block {
+    background: $ten-percent-gray;
+    float: left;
+    width: 840px;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    font-size: 14px;
+    height: 40px;
+    margin: 20px 30px 20px 0;
+    display: flex;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .ec-react-help__wrapper {
+      margin-right: 5px;
+      bottom: 2px;
+    }
+
+    .ec-col__project {
+      line-height: 40px;
+      width: 300px;
+      @include sds-ellipsis();
+    }
+
+    &--chosen-list {
+      margin: 20px 20px 20px 0;
+      min-height: 40px;
+    }
+
+    .ec-release-applications__chose-button {
+      margin-left: auto;
+    }
+  }
+
+  .ec-grid-release-applications {
+    height: 450px;
+
+    .ec-row {
+      padding-right: 0;
+      background-color: $ten-percent-gray;
+    }
+
+    .ec-col__check {
+      margin-left: 0;
+    }
+  }
+}
+
+.ec-release-applications__head-right {
+  display: flex;
+  color: $soft-dark-gray;
+  font-weight: bold;
+  font-size: 14px;
+
+  .full-screen-mode-controls {
+    min-width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+  }
+
+}
+
+.ec-release-applications__head-right-item {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+
+  .ec-react-help__wrapper {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  .ec-react-help__icon {
+    font-size: 16px !important;
+  }
+
+  &--last {
+    margin-right: 10px;
+  }
+}
+
+.ec-release-applications__head-right-item-button {
+  cursor: pointer;
+
+  .sds-svg-icon--icon-release-app-run-setting,
+  .sds-svg-icon--icon-release-app-on-error-setting {
+    fill: $simple-middle-blue;
+  }
+
+  &:hover {
+    .sds-svg-icon--icon-release-app-run-setting,
+    .sds-svg-icon--icon-release-app-on-error-setting {
+      fill: $medium-dark-blue;
+    }
+  }
+}
+
+.ec-release-applications-header-popover-list {
+  margin-bottom: 0;
+}

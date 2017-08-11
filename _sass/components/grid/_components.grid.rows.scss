@@ -15,11 +15,11 @@
     font-weight: 200;
     position: relative;
     background-color: $ten-percent-gray;
-    color: $black;
+    color: $default-black;
 
-    &:not(.select-off):hover {
+    &:not(.select-off):not(.disabled):hover {
       background: $soft-gray;
-      color: $black;
+      color: $default-black;
       cursor: pointer;
       .execution {
         .progress-bar {
@@ -31,15 +31,15 @@
     &.selected {
       background: $fifty-percent-black;
       //This is very important
-      color: $white !important;
+      color: $default-white !important;
       a {
-        color: $white !important;
+        color: $default-white !important;
       }
       .sds-icon, .sds-icon:before {
-        color: $white !important;
+        color: $default-white !important;
       }
       .sds-svg-icon {
-        fill: $white !important;
+        fill: $default-white !important;
 
         &--icon-checkmarked {
           fill: $light-green !important;
@@ -53,7 +53,7 @@
       .ec-grid-primary__col--percentage {
         color: $default-white;
       }
-      &:hover {
+      &:not(.disabled):hover {
         background: $sixty-percent-black;
       }
     }
@@ -86,6 +86,8 @@
 
     &.disabled {
       color: $soft-dark-gray !important;
+      cursor: static;
+      opacity: 0.5;
       .sds-icon:not(.not-disabled) {
         color: $soft-dark-gray !important;
         &:before {
@@ -93,12 +95,15 @@
         }
       }
 
-      .sds-svg-icon__wrapper:not(.not-disabled) {
+      .sds-svg-icon__wrapper:not(.not-disabled),
+      .sds-svg-icon:not(.not-disabled)
+      {
+        fill: $soft-dark-gray !important;
+
         .sds-svg-icon:not(.not-disabled),
         .sds-svg-icon:not(.sds-svg-icon--icon-leave-system) {
           fill: $soft-dark-gray !important;
         }
-
       }
 
       .ec-grid-primary__col {
@@ -135,6 +140,169 @@
         a {
           color: $very-light-gray !important;
         }
+      }
+    }
+  }
+
+  .ec-grid-primary__group {
+    border: 2px solid $forty-percent-gray;
+    padding: 10px 8px 0;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+
+    &:not(.select-off):hover {
+      background: lighten($default-black, 96%);
+    }
+
+    .edit-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      background: $fifty-fill-white;
+      z-index: 2;
+    }
+
+    .ec-grid-primary__row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .ec-grid-primary__row--second-level {
+      margin-left: 30px;
+    }
+
+    .ec-grid-primary__group-place-edit {
+      font-weight: 200;
+      display: flex;
+      font-size: 18px;
+      border-top: 2px solid $soft-gray;
+
+      .ec-grid-primary__col--radio__title {
+        margin-left: 28px;
+      }
+
+      .ec-grid-primary__group-edit-buttons {
+        flex: 1;
+        margin-top: 10px;
+      }
+
+      .ec-grid-primary__group-place-save,
+      .ec-grid-primary__group-place-cancel {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        color: $default-white;
+        float: right;
+      }
+
+      .ec-grid-primary__group-place-save {
+        background: $blue;
+        .sds-svg-icon {
+          margin: -4px 10px 0 0;
+          fill: $default-white;
+        }
+        &:hover {
+          background: $hovered-pale-blue;
+        }
+      }
+
+      .ec-grid-primary__group-place-cancel {
+        background: $very-light-gray;
+        &:hover {
+          background: $gray;
+        }
+      }
+    }
+
+    .react-form__radio-block--group-task-place-change {
+      display: inline-block;
+      .react-form__radio-container {
+        display: inline-block;
+        margin-left: 25px;
+      }
+
+      .react-form__radio-container__label__icon {
+        margin-right: 5px;
+        font-size: 17px;
+      }
+
+      .react-form__radio-container__label__text {
+        vertical-align: top;
+        font-size: 18px;
+      }
+    }
+
+    &:not(.select-off) .ec-grid-primary__group-header {
+      cursor: pointer;
+    }
+
+    .ec-grid-primary__group-header {
+      height: 28px;
+      display: flex;
+      font-size: 18px;
+      font-weight: 200;
+
+      .ec-grid-primary__group-header-index {
+        width: 36px;
+        text-align: right;
+        margin-right: 5px;
+      }
+
+      .ec-grid-primary__group-header-menu {
+        position: absolute;
+        right: 22px;
+      }
+
+      .ec-grid-primary__group-header-select-all {
+        position: absolute;
+        right: 75px;
+      }
+
+      .ec-grid-primary__group-header-error-handling {
+        position: absolute;
+        right: 121px;
+      }
+
+      .ec-grid-primary__group-header-error-handling-label {
+        margin-right: 10px;
+        font-size: 12px;
+        text-align: right;
+        font-weight: normal;
+      }
+
+      .ec-grid-primary__group-header-text {
+        @include sds-ellipsis();
+        width: 700px;
+
+        .sds-svg-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &.selected {
+      background: $fifty-percent-gray;
+      .ec-grid-primary__group-place-edit,
+      .ec-grid-primary__group-header {
+        color: $default-white;
+        .sds-icon {
+          color: $default-white;
+        }
+        .sds-svg-icon {
+          fill: $default-white;
+        }
+      }
+      .ec-grid-primary__row {
+        box-shadow: inset 0 0 0 2px $default-white;
+      }
+
+      &:hover {
+        background: $soft-dark-gray;
       }
     }
   }

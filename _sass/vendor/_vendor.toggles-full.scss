@@ -2,9 +2,6 @@
   height: inherit;
   overflow: hidden;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   direction: ltr;
   text-align: center;
@@ -18,34 +15,6 @@
 .toggle-slide .toggle-blob {
   position: relative;
   z-index: 2;
-}
-
-.toggle-dark .toggle-slide {
-  border-radius: 5px;
-  box-shadow: 0 0 0 1px #242529, 0 1px 0 1px #666;
-}
-.toggle-dark .toggle-on,
-.toggle-dark .toggle-off,
-.toggle-dark .toggle-blob {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 11px;
-}
-.toggle-dark .toggle-on,
-.toggle-dark .toggle-select .toggle-inner .active {
-  background: linear-gradient(top, #1a70be 0%, #31a2e1 100%);
-}
-.toggle-dark .toggle-off,
-.toggle-dark .toggle-select .toggle-on {
-  background: linear-gradient(top, #242529 0%, #34363b 100%);
-}
-.toggle-dark .toggle-blob {
-  border-radius: 4px;
-  background: linear-gradient(top, #cfcfcf 0%, #f5f5f5 100%);
-  box-shadow: inset 0 0 0 1px #888, inset 0 0 0 2px white;
-}
-.toggle-dark .toggle-blob:hover {
-  background: linear-gradient(top, #c0c0c0 0%, #dadada 100%);
-  box-shadow: inset 0 0 0 1px #888,inset 0 0 0 2px #ddd;
 }
 
 .toggle-ec {
@@ -91,7 +60,7 @@
 }
 .toggle-iphone .toggle-on,
 .toggle-iphone .toggle-off {
-  color: white;
+  color: #fff;
   font-size: 18px;
   font-weight: bold;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
@@ -117,8 +86,8 @@
   box-shadow: inset -2px 2px 5px rgba(0, 0, 0, 0.4);
   border-radius: 0 9999px 9999px 0;
   color: #828282;
-  background: #ECECEC;
-  text-shadow: 0 0 1px white;
+  background: #ececec;
+  text-shadow: 0 0 1px #fff;
 }
 .toggle-iphone .toggle-off:after {
   background: linear-gradient(to bottom, #fafafa 0%, #fdfdfd 100%);
@@ -127,7 +96,7 @@
 .toggle-iphone .toggle-blob {
   border-radius: 50px;
   background: linear-gradient(to bottom, #d1d1d1 0%, #fafafa 100%);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #ffffff, 0 0 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6), inset 0 0 0 2px #fff, 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 .toggle-light .toggle-slide {
@@ -170,7 +139,7 @@
 .toggle-modern .toggle-on,
 .toggle-modern .toggle-off {
   transition: all 0.1s ease-out;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
   font-size: 11px;
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -204,7 +173,7 @@
 .toggle-soft .toggle-off {
   color: rgba(0, 0, 0, 0.7);
   font-size: 11px;
-  text-shadow: 1px 1px white;
+  text-shadow: 1px 1px #fff;
 }
 .toggle-soft .toggle-on,
 .toggle-soft .toggle-select .toggle-inner .active {
@@ -217,7 +186,7 @@
 .toggle-soft .toggle-blob {
   border-radius: 4px;
   background: linear-gradient(#cfcfcf, #f5f5f5);
-  box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px white;
+  box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px #fff;
 }
 .toggle-soft .toggle-blob:hover {
   background: linear-gradient(#e4e4e4, #f9f9f9);

@@ -155,7 +155,7 @@
 
   .select2-choices {
     // !important because select2 also use .select2-drop-above styles
-    background: $select2-automatch-choices-bg !important;
+    background: $athens-gray !important;
     border: 0 !important;
     border-radius: 0 !important;
     background-image: 0 !important;
@@ -163,7 +163,7 @@
     .select2-search-choice {
       font-size: 12px;
       line-height: 12px;
-      background: $select2-automatch-search-choice-bg;
+      background: $very-dark-orange;
       border: 0;
       border-radius: 0;
       box-shadow: none;
@@ -206,7 +206,7 @@
 
 .sds-select-automatch-dropdown {
   // !important beacuse select2 also use .select2-drop-above styles
-  background: $select2-automatch-drop-bg;
+  background: $athens-gray;
   border: 0 !important;
   border-radius: 0 !important;
   margin-top: 2px;
@@ -231,8 +231,8 @@
     }
 
     .select2-highlighted {
-      background: $select2-automatch-highlighted-bg;
-      color: $select2-automatch-highlighted-color;
+      background: $heather-gray;
+      color: $default-black;
     }
 
     .without-email {

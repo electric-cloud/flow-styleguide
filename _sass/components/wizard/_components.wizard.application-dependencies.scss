@@ -1,0 +1,145 @@
+//================================================
+//  Wizard application-dependencies
+//================================================
+
+.modals-box .application-dependencies .ec-react-wizard__content {
+  position: relative;
+  padding-right: 0;
+}
+
+.application-dependencies {
+  .row {
+    display: flex;
+    width: 1156px;
+  }
+
+  .col {
+    text-align: left;
+    border-bottom: 2px solid $soft-gray;
+
+    &.flex-100 {
+      flex: 100;
+    }
+
+    &.fixed-30 {
+      width: 30px;
+    }
+
+    &.fixed-60 {
+      width: 60px;
+    }
+
+    &.fixed-170 {
+      width: 170px;
+    }
+
+    &.fixed-370 {
+      width: 370px;
+    }
+
+    &.fixed-376 {
+      width: 376px;
+    }
+
+    &.flex {
+      display: flex;
+    }
+
+    &.separator {
+      text-align: center;
+      border: none;
+      width: 60px;
+    }
+
+    &.add-remove {
+      text-align: right;
+    }
+
+    &.popover-objects-list {
+      .sds-svg-icon--icon-menu-dropdown {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &.bottom-col {
+      line-height: 40px;
+      padding-top: 28px;
+
+      .text {
+        vertical-align: middle;
+      }
+    }
+
+    &.middle-col {
+      line-height: 50px;
+      padding-top: 18px;
+    }
+
+    &.disabled {
+      color: $forty-percent-gray;
+
+      .sds-svg-icon {
+        fill: $forty-percent-gray;
+      }
+    }
+  }
+
+  .attention-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 62px;
+    background: $eighty-fill-white;
+    z-index: 1;
+  }
+
+  .list-separator {
+    width: 2px;
+    height: 422px;
+    position: absolute;
+    top: 70px;
+    left: 449px;
+    background-color: $soft-gray;
+  }
+
+  .dependency-header {
+    .row {
+      height: 70px;
+      line-height: 68px;
+      font-size: 16px;
+    }
+
+    .title {
+      width: 272px;
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  .dependency-list {
+    overflow: auto;
+    height: 422px;
+
+    .row {
+      height: 60px;
+      line-height: 58px;
+      font-size: 18px;
+    }
+
+    .doted-text {
+      @include sds-ellipsis;
+    }
+  }
+}
+
+.application-dependency-popover {
+  .ec-react-popover__input-item {
+    margin: 5px;
+  }
+
+  .ec-react-popover__input-field {
+    border-radius: 0;
+  }
+}

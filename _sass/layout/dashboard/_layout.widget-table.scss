@@ -1,0 +1,62 @@
+.widget--table-report {
+  .ec-grid-primary__row {
+    border-bottom: 2px solid $light-gray;
+    font-weight: normal;
+    color: $default-text-color;
+  }
+  .ec-grid-primary__row:first-child {
+    border-top: 2px solid $light-gray;
+  }
+  .ec-grid-primary__col--number {
+    width: 25px;
+    text-align: right;
+  }
+  .ec-grid-primary__col--duration {
+    .sds-svg-icon__container {
+      position: absolute;
+    }
+
+    .sds-svg-icon--icon-runtime-duration {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .sds-svg-icon--icon-application,
+  .sds-svg-icon--icon-task {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sds-svg-icon--icon-release {
+    width: 20px;
+    height: 16px;
+  }
+
+
+  .ec-grid-primary__col--right-align {
+    .ec-grid-primary__col--text {
+      text-align: right;
+      flex: 1;
+    }
+  }
+
+  .ec-grid-primary__row--small {
+    .ec-grid-primary__row,
+    .ec-grid-primary__col {
+      height: 20px;
+      line-height: 20px;
+    }
+
+    .ec-grid-primary__col--text {
+      max-height: none;
+      display: block;
+      position: relative;
+      @include sds-ellipsis();
+      top: 0;
+      transform: translateY(0);
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

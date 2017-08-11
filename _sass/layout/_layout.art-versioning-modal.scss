@@ -1,0 +1,143 @@
+.popover-box .artifact-services-selection-artifacts .ec-react-popover__list {
+  max-height: 300px;
+}
+
+.artifact-services-selection {
+  .ec-react-wizard__loader {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ec-react-wizard__content {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.artifact-services-selection-container {
+  display: flex;
+  flex: 1;
+
+  .ec-grid-primary__head .ec-grid-primary__col--select-item .selected .sds-svg-icon--icon-checkmarked {
+    fill: $light-green;
+  }
+
+  .ec-grid-primary {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0;
+
+    .ec-grid-primary__empty {
+      display: block;
+    }
+
+    .ec-grid-primary__col {
+      margin: 0;
+    }
+
+    .ec-grid-primary__col--select-item {
+      width: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      .sds-svg-icon {
+        cursor: pointer;
+      }
+    }
+
+    .ec-grid-primary__col--tiers-services-label {
+      width: 500px;
+      text-align: left;
+    }
+
+    .ec-grid-primary__col--versions-label {
+      justify-content: flex-end;
+    }
+
+    .ec-grid-primary__col--versions-icon {
+      width: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .ec-grid-primary__col--toggle-details {
+      margin: 0 0 0 40px;
+      width: 40px;
+      justify-content: center;
+      align-items: center;
+
+      .sds-svg-icon {
+        cursor: pointer;
+      }
+    }
+
+    .ec-grid-primary__col--component-index,
+    .ec-grid-primary__col--tier-index,
+    .ec-grid-primary__col--service-index,
+    .ec-grid-primary__col--container-index {
+      width: 40px;
+      text-align: right;
+    }
+
+    .ec-grid-primary__col--container-index {
+      margin-left: 40px;
+    }
+    //TODO: use mixin or stay it like here ???
+    .ec-grid-primary__col--artifact-icon,
+    .ec-grid-primary__col--component-icon,
+    .ec-grid-primary__col--container-icon,
+    .ec-grid-primary__col--artifact-versions-select-icon,
+    .ec-grid-primary__col--tier-icon,
+    .ec-grid-primary__col--service-icon,
+    .ec-grid-primary__col--image-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+    }
+
+    .ec-grid-primary__col--container-icon,
+    .ec-grid-primary__col--component-icon {
+      margin-left: 20px;
+    }
+
+    .ec-grid-primary__col--artifact-icon,
+    .ec-grid-primary__col--image-icon {
+      justify-content: flex-start;
+    }
+
+    .ec-grid-primary__col--artifact-versions-select-icon {
+      margin-right: 80px;
+    }
+
+    .ec-grid-primary__col--tier-name,
+    .ec-grid-primary__col--service-name {
+      display: flex;
+      width: 420px;
+    }
+
+    .ec-grid-primary__col--component-name,
+    .ec-grid-primary__col--container-name {
+      display: flex;
+      width: 400px;
+    }
+
+    .ec-grid-primary__col--artifact-name,
+    .ec-grid-primary__col--artifact-versions,
+    .ec-grid-primary__col--artifact-size,
+    .ec-grid-primary__col--image-size,
+    .ec-grid-primary__col--image-name {
+      display: flex;
+      flex: 1;
+    }
+
+    .ec-grid-primary__col--artifact-versions {
+      justify-content: flex-end;
+    }
+  }
+}

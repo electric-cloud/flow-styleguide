@@ -1,0 +1,999 @@
+//================================================
+//  Tasks
+//================================================
+
+.modals-box {
+  .define-task {
+    .ec-select {
+      &.disabled {
+        color: $input-text-disabled-color;
+        .dropdown:before {
+          color: $input-text-disabled-color;
+        }
+        .plugin:before {
+          color: $input-text-disabled-color;
+        }
+      }
+      &:not(.disabled) {
+        .ec-select-header {
+          .toolbox:before {
+            color: $brown;
+          }
+          .plugin-category:before {
+            color: $brown;
+          }
+          .plugin:before {
+            color: $default-black;
+          }
+          .procedure:before {
+            color: $dark-blue;
+          }
+          .application {
+            color: $very-soft-blue;
+          }
+          .view-processes {
+            color: $light-green;
+          }
+          .dynamic-env, .environment {
+            color: $orange;
+          }
+          .snapshot {
+            color: $medium-dark-blue;
+          }
+          .workflow {
+            color: $default-black;
+          }
+        }
+      }
+    }
+
+    .app-run-rolling-deploy {
+      height: 445px;
+    }
+
+    //TODO: this is copy/paste from application-run.scss need to refactor both files
+    //and move to mixins
+    .ec-smart-run-container {
+      margin: 0 -25px;
+
+      .wizard-form-row.wizard-step-credential {
+        padding: 0 25px;
+      }
+
+      .react-form__checkbox-container__label--text {
+        font-size: 16px;
+      }
+
+      .react-form__checkbox-container {
+        display: inline-block;
+      }
+
+      .wizard-separator {
+        @include separator();
+      }
+    }
+
+    .ec-react-wizard__loader {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    &__container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+    .ec-react-wizard {
+      &__head {
+        //TODO header styles should be reused as much as possible
+        background-color: $soft-light-gray;
+        height: 50px;
+        line-height: 50px;
+        margin: 20px;
+        border: none;
+      }
+      &__header-left-block {
+        margin-left: 20px;
+        float: left;
+        width: calc(100% - 200px);
+        height: 50px;
+        text-align: left;
+        @include sds-ellipsis();
+
+        .task-define-title__stage-name,
+        .task-define-title__gate-type {
+          max-width: 50%;
+          @include sds-ellipsis();
+          white-space: pre;
+          float: left;
+          height: 100%;
+          .sds-svg-icon--icon-gate-exit,
+          .sds-svg-icon--icon-gate-entry {
+            vertical-align: text-bottom;
+          }
+        }
+
+        .task-define-title__task-name,
+        .task-define-title__rule-name {
+          max-width: 50%;
+          @include sds-ellipsis();
+          white-space: pre;
+          height: 100%;
+          .sds-svg-icon--icon-gate-rule {
+            vertical-align: text-bottom;
+          }
+        }
+
+        .title-name {
+          height: 100%;
+        }
+      }
+      &__header-right-block {
+        margin-right: 20px;
+        .sds-icon {
+          cursor: pointer;
+          margin-left: 20px;
+
+          &.disabled {
+            color: $medium-soft-gray;
+            cursor: default;
+          }
+        }
+      }
+      &__content {
+        flex-direction: column;
+        padding: 0;
+        flex: 1;
+        display: flex;
+        .left-part {
+          display: flex;
+          flex-direction: column;
+          width: 220px;
+          min-width: 220px;
+          box-sizing: border-box;
+          margin-left: 20px;
+          padding-right: 20px;
+          border-right: 2px solid $very-light-gray;
+          .react-form__radio-container {
+            height: 60px;
+            line-height: 60px;
+            position: relative;
+            .radio-custom-icon {
+              width: 46px;
+            }
+            .sds-svg-icon {
+              fill: $default-black;
+              position: absolute;
+              margin: auto;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 0;
+              &--icon-process {
+                width: 20px;
+                height: 20px;
+              }
+              &--icon-procedure {
+                width: 24px;
+                height: 15px;
+              }
+              &--icon-manual-process-step {
+                width: 24px;
+                height: 24px;
+              }
+              &--icon-workflow-task {
+                width: 22px;
+                height: 18px;
+              }
+              &--icon-plugin-type {
+                width: 20px;
+                height: 20px;
+              }
+              &--icon-utilities {
+                width: 26px;
+                height: 20px;
+              }
+            }
+            .radio-btn {
+              margin: 0 10px 0 17px;
+              font-size: 20px;
+              line-height: 60px;
+              cursor: pointer;
+              color: $sushi-green;
+            }
+            &.selected {
+              color: $default-white;
+              background-color: $sushi-green;
+              .radio-btn {
+                color: $default-white;
+              }
+              .sds-svg-icon {
+                fill: $default-white;
+              }
+              .ec-react-help__icon {
+                .sds-svg-icon {
+                  fill: $default-white;
+                }
+              }
+            }
+
+            .ec-react-help__wrapper {
+              position: absolute;
+              right: 40px;
+              top: 0;
+            }
+            .ec-react-help__icon {
+              .sds-svg-icon {
+                fill: $gray;
+                position: static;
+              }
+            }
+          }
+          .react-form__radio-container__label {
+            font-size: 18px;
+            letter-spacing: .3px;
+          }
+        }
+        .middle-part {
+          flex: 1 0 528px;
+          overflow: hidden;
+          border-right: 2px solid $very-light-gray;
+
+          .react-form {
+            &__txt-input-wrapper {
+              margin: 0 auto 8px;
+            }
+            &__txt-input {
+              width: 100%;
+              padding: 0;
+              box-sizing: border-box;
+            }
+          }
+
+          .ec-react-help__icon {
+            font-size: 18px !important;
+          }
+        }
+        .middle-part-inner {
+          display: flex;
+          flex-direction: column;
+          padding: 0 17%;
+        }
+        .right-part {
+          display: flex;
+          flex-direction: column;
+          flex: 1 0 528px;
+          min-width: 1px;
+          .provision-res-number-modal {
+            .react-form {
+              height: 370px;
+
+              &__txt-input-label {
+                float: none;
+                width: initial;
+              }
+            }
+            .sds-number-input {
+              display: inline-flex;
+            }
+          }
+        }
+      }
+
+      .ec-wizard-row--select-row {
+        margin-bottom: 8px;
+      }
+
+      &__footer {
+        .ec-wizard-btn {
+          width: 225px;
+          float: right;
+          &.ec-cancel {
+            border-left: 2px solid $default-white;
+          }
+        }
+      }
+      .ec-select .ec-select-options {
+        max-height: 260px;
+      }
+      .ec-project-select-picker__project-options {
+        max-height: 172px;
+      }
+    }
+
+    &__process-toggles {
+      margin-top: -2px;
+      width: 140%;
+      margin-left: -20%;
+      display: flex;
+    }
+
+    &__process-toggle {
+      flex: 1;
+
+      .ec-smart-deploy-text {
+        display: inline-block;
+        vertical-align: middle;
+        white-space: pre-wrap;
+        font-size: 14px;
+        text-align: left;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.modals-box .editing-task {
+  .ec-react-wizard__content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .editing-task__header {
+    @include modal-header-text();
+  }
+
+  .react-form__textarea-wrapper--editing-task {
+    margin-bottom: 40px;
+
+    .react-form__textarea {
+      height: 68px;
+    }
+  }
+
+  .editing-task__on-error {
+    line-height: 36px;
+    border-top: 2px solid $default-black;
+    border-bottom: 2px solid $default-black;
+    text-align: left;
+
+    &__title {
+      display: inline-block;
+      width: 115px;
+    }
+
+    .react-form__radio-block--editing-task {
+      display: inline-block;
+    }
+
+    .react-form__radio-container {
+      display: inline-block;
+      width: 165px;
+    }
+
+    .radio-btn {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+}
+
+.modals-box .editing-rule {
+  .ec-react-wizard__content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .editing-rule__header {
+    @include modal-header-text();
+    font-weight: 400;
+  }
+
+  .react-form__txt-input-wrapper--editing-rule {
+    margin-bottom: 20px;
+  }
+
+  .editing-rule__automatch {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .ec-grid-primary__col--template-select {
+    margin-bottom: 40px;
+    font-size: 18px;
+
+    .ec-select .ec-select-header {
+      .notification {
+        font-size: 16px;
+        color: $default-black;
+      }
+
+      .ec-select-header-title {
+        padding-left: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .react-form__textarea {
+    height: 80px;
+  }
+
+  .editing-rule-on-error {
+    display: flex;
+    font-size: 16px;
+    line-height: 36px;
+    border-top: 2px solid $default-black;
+    border-bottom: 2px solid $default-black;
+    align-items: center;
+    justify-content: space-between;
+
+    .react-form__radio-container,
+    .on-error-title {
+      flex: 1;
+    }
+
+    .task-error-handling-select {
+      text-align: left;
+    }
+
+    .task-always-run {
+      .ec-react-help__icon {
+        vertical-align: baseline;
+      }
+
+      .sds-svg-icon {
+        vertical-align: text-bottom;
+      }
+    }
+
+    .task-always-run-text {
+      display: inline-block;
+    }
+
+    .react-form__radio-block--editing-rule {
+      display: flex;
+      flex: 2;
+    }
+
+    .react-form__radio-container__label {
+      line-height: 36px;
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .radio-btn {
+      font-size: 20px;
+    }
+
+    .react-form__radio-container__label__text {
+      margin: 0 4px 0 8px;
+    }
+
+    .radio-custom-end-icon .sds-svg-icon {
+      vertical-align: sub;
+    }
+
+    .react-form__radio-container:not(.selected) .sds-svg-icon {
+      fill: $medium-dark-gray;
+    }
+  }
+
+  .automated-retry-settings {
+    .automated-retry-settings-retries {
+      .sds-number-input__input {
+        font-size: 14px;
+      }
+    }
+    .automated-retry-settings-intervals {
+      .react-form__txt-input-holder {
+        .react-form__txt-input {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .automated-retry-settings-after-last-retry {
+      .react-form__radio-block--editing-rule {
+        .react-form__radio-container__label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.ec-grid {
+  &--stage-tasks {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .ec-row {
+    .ec-col {
+      .sds-icon {
+        &.static-env-up,
+        &.dynamic-env-up {
+          color: $orange;
+        }
+
+        &.procedure {
+          color: $dark-blue;
+        }
+
+        &.deployer {
+          color: $dark-blue;
+        }
+
+        &.application {
+          color: $very-soft-blue;
+        }
+      }
+
+      &--task-project {
+        width: 60px;
+        text-align: center;
+        user-select: none;
+
+        .toolbox {
+          cursor: pointer;
+          color: $brown;
+        }
+      }
+    }
+    &.selected {
+      .ec-col__drag--draggable,
+      .sds-icon.procedure {
+        color: $default-white;
+      }
+    }
+  }
+  &.ec-row--creating {
+    margin: 16px 0 0;
+  }
+  &.ec-row--creating-first {
+    margin-top: 0;
+  }
+  &.ec-row--change-ordering {
+    border-bottom: 3px solid $default-white;
+  }
+}
+
+.sds-popover.sds-popover--task-select {
+  width: 300px;
+
+  .version-input {
+    width: 276px;
+    height: 24px;
+    margin: 5px;
+    border-radius: 0;
+  }
+
+  .sds-icon.search {
+    display: inline;
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    font-size: 20px;
+  }
+
+  .sds-popover-link.hidden {
+    display: none;
+  }
+}
+
+.sds-popover.sds-popover--task-toolbox {
+  .plain-text {
+    max-width: 230px;
+  }
+}
+
+.task-deployer {
+  width: 344px;
+  margin: 0 auto;
+  font-size: 16px;
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0 20px;
+  }
+  &__description {
+    text-align: center;
+  }
+  &__description-inner {
+    margin: 20px 0;
+    .ec-react-help__wrapper {
+      vertical-align: -2px;
+    }
+  }
+  &__attention {
+    text-align: center;
+    margin: 35px 0 0;
+    font-weight: 700;
+    font-size: 16px;
+    .alert-icon {
+      background-image: url('../img/attention.png');
+      display: inline-block;
+      margin-right: 6px;
+      margin-bottom: -3px;
+      width: 24px;
+      height: 19px;
+    }
+  }
+
+  .react-form__radio-block--task-deployer-type {
+    font-weight: 400;
+    width: 230px;
+    margin: 0 auto;
+    text-align: left;
+    .react-form__radio-container {
+      position: relative;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    .react-form__radio-container__label__icon {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .radio-custom-end-icon {
+      position: absolute;
+      right: 0;
+      top: 19px;
+      .sds-svg-icon {
+        width: 26px;
+        height: 16px;
+      }
+    }
+
+    .react-form__radio-container__label {
+      font-size: 16px;
+      font-weight: 400;
+      display: inline-block;
+    }
+  }
+  &__condition {
+    font-size: 16px;
+    .task-deployer__description {
+      margin: 0 auto;
+      width: 320px;
+    }
+
+    .react-form__textarea-holder {
+      width: 100%;
+      .react-form__textarea {
+        width: 476px;
+        height: 240px;
+      }
+
+    }
+  }
+}
+
+.task-deployer-tooltip {
+  .ec-react-popover__simple-content {
+    max-height: 350px;
+  }
+}
+
+.task-manual {
+  &__instruction {
+    text-align: left;
+    padding: 0 0 5px;
+    margin: 0 0 15px;
+    &-label {
+      color: $very-light-gray;
+      margin:  12px 0;
+      font-size: 16px;
+      text-align: center;
+      .sds-icon {
+        margin: 0 5px 0 0;
+      }
+    }
+    .react-form__textarea-holder {
+      width: 100%;
+    }
+    .react-form__textarea {
+      width: 100%;
+      height: 130px;
+      box-sizing: border-box;
+      border: 2px solid $light-gray;
+      &:focus {
+        box-shadow: none;
+        border-color: $middle-blue;
+      }
+    }
+  }
+  &__assignees {
+    font-size: 16px;
+    @include clearfix();
+    &-label {
+      float: left;
+      .sds-icon {
+        margin: 0 5px 0 0;
+      }
+    }
+    &-selected {
+      cursor: pointer;
+      float: right;
+      &--required {
+        color: $default-red;
+      }
+      .sds-icon {
+        color: $soft-black;
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+  &__automatch {
+    text-align: left;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.middle-part-inner {
+  height: 100%;
+  .from-command {
+    display: flex;
+    flex-direction: column;
+    width: calc(130% + 21px);
+    height: 100%;
+    margin-left: -15%;
+
+    &__header {
+      font-size: 20px;
+      flex: 0 0 24px;
+      margin: 15px auto 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__post-processor,
+    &__shell {
+      flex: 0 0 22px;
+      margin-right: 21px;
+      .react-form__txt-input-wrapper {
+        display: flex;
+      }
+      .react-form__label {
+        flex: 24;
+      }
+      .react-form__txt-input-holder {
+        flex: 76;
+      }
+    }
+    &__command {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      .react-form__textarea-wrapper {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        height: calc(100% - 20px);
+        .react-form__label {
+          flex: 24;
+        }
+        .react-form__textarea-holder {
+          flex: 76;
+          overflow: hidden;
+          .react-form__textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+          }
+          .CodeMirror {
+            box-sizing: border-box;
+          }
+        }
+      }
+      .sds-svg-icon__wrapper {
+        flex: 0 0 16px;
+        height: 16px;
+        margin: 5px 0 0 5px;
+        .sds-svg-icon--icon-use-copy {
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+.task-deployer-grid {
+  margin: 0 0 0 30px;
+
+  .loader-bg {
+    background: none;
+  }
+  .task-deployer {
+    &__empty-list {
+      text-align: center;
+      font-size: 16px;
+      margin: 10px 0 15px;
+    }
+  }
+}
+
+.modals-box {
+  .manual-task-approve {
+    .ec-react-wizard__head {
+      height: 50px;
+      line-height: 50px;
+      border-bottom: none;
+      margin: 20px;
+      background: $soft-light-gray;
+      .sds-icon {
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+}
+
+.manual-task-approve {
+  &__container {
+    @include clearfix();
+    text-align: left;
+  }
+  &__left,
+  &__right {
+    float: left;
+    width: 436px;
+  }
+  &__right {
+    margin: 0 0 0 80px;
+  }
+  &__label{
+    font-size: 16px;
+    margin: 0 0 4px;
+    &--choose {
+      margin-right: 40px;
+    }
+    .sds-icon {
+      margin: 0 7px 0 0;
+    }
+  }
+  &__instruction-content {
+    height: 272px;
+    font-size: 16px;
+    overflow: auto;
+  }
+  &__comment {
+    &-content--completed {
+      height: 150px;
+      overflow: auto;
+    }
+    .react-form {
+      &__textarea {
+        width: 100%;
+        font-size: 16px;
+        height: 360px;
+        box-sizing: border-box;
+      }
+      &__textarea-holder {
+        width: 100%;
+      }
+    }
+  }
+  &__instrucion-content {
+    height: 250px;
+  }
+  &__assignees {
+    margin: 30px 0 0;
+  }
+  &__automatch {
+    position: relative;
+  }
+  &__automatch-disabler {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__automatch-container {
+    .Select-item-icon {
+      display: none;
+    }
+    .sds-select-automatch__remove-all {
+      display: none;
+    }
+  }
+  &__choose {
+    font-size: 16px;
+    margin: 30px 0 0;
+    & > div {
+      display: inline-block;
+    }
+    .react-form__radio {
+      display: inline-block;
+      margin: 0 5px 0 0;
+      vertical-align: middle;
+      &-container__label {
+        font-size: 16px;
+        display: inline-block;
+      }
+      &-container {
+        margin: 0 20px 0 0;
+        display: inline-block;
+      }
+    }
+  }
+  &__results {
+    margin: 0 0 20px;
+    &-item {
+      list-style: none;
+      margin: 0 0 10px;
+      font-size: 16px;
+      &--left {
+        display: inline-block;
+        width: 200px;
+        .sds-icon {
+          display: inline-block;
+          width: 20px;
+          text-align: center;
+          margin: 0 5px 0 0;
+        }
+      }
+      &--right {
+        display: inline-block;
+        .sds-icon {
+          margin: 0 0 0 5px;
+          &.check-mark {
+            color: $default-green;
+          }
+          &.remove {
+            color: $default-red;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.modals-box .define-task__plugin-parameters .ec-react-wizard__header-left-block {
+  max-width: 100%;
+  .sds-icon {
+    font-size: 16px;
+    bottom: 0;
+  }
+  .sds-svg-icon--icon-utilities {
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+.define-task__plugin-form {
+  width: 924px;
+  height: 484px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.gate-condition {
+  .react-form__textarea {
+    width: 363px;
+    height: 315px;
+    box-sizing: border-box;
+    border: 2px solid $very-light-gray;
+  }
+
+  .react-form__textarea-holder {
+    width: auto;
+  }
+
+  .react-form__validation {
+    max-width: calc(100% - 10px);
+  }
+}
+
+.gate-condition-header {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 20px;
+}
+
+.gate-condition-title {
+  display: inline-block;
+  vertical-align: top;
+}

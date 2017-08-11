@@ -13,10 +13,9 @@
   text-align: center;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
-  // @extend .sds-icon-base;
 
   &.disabled {
-    color: $disabled-btn-color;
+    color: $soft-gray;
     cursor: default;
   }
 
@@ -329,10 +328,6 @@
   }
 
   &.ec-plugin:before {
-    content: $sds-icon-plugin;
-  }
-
-  &.plugin:before {
     content: $sds-icon-plugin;
   }
 
@@ -750,9 +745,6 @@
   &.type-variable:before {
     content: $sds-icon-type-variable;
   }
-  &.type-variable:before {
-    content: $sds-icon-type-variable;
-  }
   &.drill-down-content:before {
     content: $sds-icon-drill-down-content;
   }
@@ -918,8 +910,13 @@
   height: 20px;
   width: 20px;
   margin: 0 5px;
-  pointer-events: none;
+  pointer-events: auto;
   vertical-align: middle;
+  flex-shrink: 0;
+
+  use {
+    pointer-events: none;
+  }
 
   &__wrapper {
     cursor: pointer;
@@ -957,67 +954,171 @@
     margin: 0;
   }
 
-  &--icon-application {
-    fill: $soft-blue;
-  }
-  &--icon-mastercomponent {
-    fill: $soft-blue;
-  }
-  &--icon-component {
-    fill: $very-soft-blue;
-  }
-  &--icon-container {
-    fill: $light-violet;
-  }
-  &--icon-cluster {
-    fill: $middle-purple;
-  }
-  &--icon-service {
-    fill: $very-soft-blue;
-  }
-  &--icon-application-tier {
-    fill: $ninety-percent-blue;
-  }
   &--icon-menu-dropdown {
     width: 10px;
     height: 10px;
   }
+
   &--icon-menu-dropdown-close {
     width: 10px;
     height: 10px;
   }
+
+  &--icon-application {
+    fill: $soft-blue;
+  }
+
+  &--icon-mastercomponent {
+    fill: $soft-blue;
+  }
+
+  &--icon-component {
+    fill: $very-soft-blue;
+  }
+
+  &--icon-container {
+    fill: $light-violet;
+  }
+
+  &--icon-cluster {
+    fill: $middle-purple;
+  }
+
+  &--icon-service {
+    fill: $very-soft-blue;
+  }
+
+  &--icon-application-tier {
+    fill: $ninety-percent-blue;
+  }
+
   &--icon-process {
     fill: $light-green;
   }
+
   &--icon-snapshot {
     fill: $dark-blue;
   }
+
   &--icon-runtime-run:not(.disabled) {
     fill: $saturated-green;
   }
+
+  &--icon-runtime-abort:not(.disabled) {
+    fill: $dark-red;
+  }
+
   &--icon-project {
     fill: $brown;
-    margin-top: -2px;
   }
+
   &--icon-manual-process-step {
     fill: $dark-blue;
   }
+
   &--icon-artifact {
     fill: $medium-dark-blue;
   }
+
   &--icon-pipeline {
     fill: $violet;
   }
+
   &--icon-release {
     fill: $bright-blue;
   }
+
+  &--icon-task-gate-continue {
+    fill: $default-green;
+  }
+
+  &--icon-task-gate-stop {
+    fill: $default-red;
+  }
+
+  &--icon-deployer {
+    fill: $ninety-percent-blue;
+  }
+
+  &--icon-stage {
+    fill: $light-blue;
+  }
+
+  &--icon-task {
+    fill: $gray-blue;
+  }
+
+  &--icon-deploy-serial {
+    fill: $medium-blue;
+  }
+
+  &--icon-deploy-parallel {
+    fill: $very-light-violet;
+  }
+
+  &--icon-object-description {
+    fill: $fifty-percent-gray;
+    &.disabled {
+      fill: $fifteen-percent-gray;
+    }
+  }
+
+  &--icon-environments-static {
+    fill: $orange;
+  }
+
+  &--icon-templates {
+    fill: $orange;
+  }
+
+  &--icon-configuration {
+    fill: $ninety-percent-blue;
+  }
+
+  &--icon-gate-entry {
+    fill: $gray-blue;
+  }
+
+  &--icon-gate-exit {
+    fill: $gray-blue;
+  }
+
+  &--icon-gate-rule {
+    fill: $gray-blue;
+  }
+
+  &--icon-gate-automated,
+  &--icon-procedure {
+    fill: $dark-blue;
+  }
+
+  &--icon-click-next {
+    fill: $active-blue;
+  }
+
+  &--button-compare {
+    fill: $persian-green;
+  }
+
+  &--icon-retry-manual,
+  &--icon-retry-automated {
+    fill: $ninety-percent-blue;
+  }
+
+  &--icon-always-run {
+    fill: $blue;
+  }
+
+  &--button-create-new {
+    fill: $azure-blue;
+  }
+
   &.object-menu {
-    fill: $white;
+    fill: $default-white;
     width: 10px;
     height: 10px;
     margin: 0 6px;
   }
-
   &__container {
     display: flex;
     align-items: center;

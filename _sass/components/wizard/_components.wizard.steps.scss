@@ -19,12 +19,6 @@
   }
 }
 
-.modals-box .command-editor {
-  .ec-react-wizard__content {
-    padding: 0;
-  }
-}
-
 .step-wizard-shared {
   &__separator {
     height: 0;
@@ -38,7 +32,7 @@
       width: 356px;
       font-size: 18px;
       .ec-select-header .sds-icon.view-tiers {
-        color: $black;
+        color: $default-black;
       }
     }
   }
@@ -61,10 +55,21 @@
 
   &__workspaces {
     margin: 20px 0;
+    line-height: 40px;
+    height: 40px;
     .ec-select {
       width: 330px;
       font-weight: 200;
       font-size: 18px;
+    }
+
+    .react-form__select-wrapper {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .ec-react-help__wrapper {
+      margin: 0 10px 0 -20px;
     }
   }
 
@@ -87,7 +92,7 @@
       height: 40px;
     }
     .react-form__txt-input {
-      padding: 0;
+      padding: 0 5px;
       width: 50px;
       box-sizing: border-box;
       height: 40px;
@@ -95,7 +100,7 @@
         width: 50px;
       }
     }
-    .ec-select {
+    .react-form__select-wrapper {
       display: inline-block;
       margin-left: 20px;
       width: 140px;
@@ -108,17 +113,39 @@
   }
 
   &__on-error {
+    display: flex;
     height: 40px;
     text-align: left;
-    &--title {
-      display: inline-block;
-      line-height: 40px;
-      margin-bottom: 0;
-      width: 115px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    .step-always-run {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 150px;
+      .sds-svg-icon--button-helptip {
+        margin: 1px 5px 0 0;
+      }
+      .step-always-run-text {
+        margin-left: 10px;
+      }
+
+      .always-run-icon {
+        height: 16px;
+        .sds-svg-icon {
+          vertical-align: top;
+        }
+      }
+    }
+
+    .step-error-handling-value {
+      margin-left: -116px;
     }
   }
 
   &__step-dependency {
+    font-size: 16px;
     height: 40px;
     text-align: left;
     &--start-title {
@@ -135,20 +162,24 @@
   }
 
   &__credentials {
+    font-size: 16px;
     display: flex;
     height: 40px;
     line-height: 40px;
     text-align: left;
+    align-items: center;
     &--number {
-      flex: 0 0 20px;
-      font-size: 18px;
+      text-align: right;
+      flex: 0 0 16px;
+      font-size: 16px;
+      margin-right: 10px;
     }
     &--title {
       flex: auto;
       font-size: 16px;
     }
     .sds-svg-icon--icon-credentials {
-      margin: 0 15px 0 0;
+      margin: 0 8px 0 0;
     }
     .sds-icon.credentials {
       margin-right: 15px;
@@ -158,16 +189,18 @@
 
   &__add-block {
     display: flex;
-    flex: 0 0 60px;
     height: 40px;
+    line-height: 40px;
     &--add-title {
-      flex: 40;
       font-size: 16px;
+    }
+    .sds-svg-icon__wrapper {
+      margin-left: 8px;
     }
     .sds-svg-icon {
       width: 24px;
       height: 24px;
-      margin: 0 0 0 10px;
+      margin: -2px 0 0 0;
 
     }
     .sds-svg-icon__wrapper &--icon-go-to-details {
@@ -191,7 +224,7 @@
   }
 
   .react-form__textarea {
-    background-color: $white;
+    background-color: $default-white;
     height: 68px;
   }
 
@@ -208,7 +241,7 @@
 
   .react-form__radio-container--stop,
   .react-form__radio-container--any {
-    width: 110px;
+    width: 99px;
   }
 
   .react-form__radio-container__label {
@@ -243,6 +276,41 @@
     font-size: 20px;
   }
 }
+
+.step-error-handling-window {
+  font-size: 16px;
+
+  .step-on-error-title {
+    font-size: 24px;
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  .manual-retry-settings {
+    .manual-retry-settings-assignees {
+      margin: 20px 0;
+      text-align: left;
+    }
+  }
+
+  .automated-retry-settings {
+    .automated-retry-settings-retries {
+      margin: 20px 0;
+    }
+  }
+
+  .step-error-handling-select {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 2px solid $default-black;
+    border-top: 2px solid $default-black;
+    text-align: left;
+    .step-error-handling-dropdown {
+      cursor: pointer;
+    }
+  }
+}
+
 .from-command {
   &__header {
     height: 24px;
@@ -298,7 +366,7 @@
     padding: 0;
     position: relative;
     text-align: left;
-    color: $white;
+    color: $default-white;
     background-color: $fifty-percent-gray;
     &:before {
       content: "";
@@ -313,7 +381,7 @@
       vertical-align: middle;
       width: 20px;
       height: 20px;
-      fill: $white;
+      fill: $default-white;
       margin: 0;
       &--icon-process-step {
         margin-left: 12px;
@@ -338,6 +406,7 @@
       max-width: 200px;
       font-size: 14px;
       @include sds-ellipsis;
+      white-space: pre;
     }
   }
   &__parameters {
@@ -395,7 +464,7 @@
   .ec-react-wizard--component-list,
   .ec-react-wizard--component-process-list {
     .ec-react-wizard__head {
-      border-bottom-color: $white;
+      border-bottom-color: $default-white;
     }
   }
 }
@@ -405,8 +474,8 @@
   .ec-react-wizard--step-from-procedure,
   .ec-react-wizard--step-from-component {
     .ec-react-wizard__header-left-block {
-      margin-top: 10px;
-      line-height: 18px;
+      margin-top: 12px;
+      line-height: 14px;
       font-size: 16px;
     }
     .ec-react-wizard__header-center-block {
@@ -414,7 +483,7 @@
       margin: 0 16%;
     }
     .sds-svg-icon.details {
-      fill: $white;
+      fill: $default-white;
     }
     .ec-grid-primary .ec-grid-primary__row {
       margin-bottom: 0;
@@ -458,13 +527,13 @@
 .ec-react-wizard--plugin,
 .ec-react-wizard--procedures-list {
   .ec-grid-primary .ec-grid-primary__row {
-    background: $white;
-    &:not(.select-off):hover {
-      background: $white;
+    background: $default-white;
+    &:not(.select-off):not(.disabled):hover {
+      background: $default-white;
     }
   }
   .ec-grid-primary .ec-grid-primary__col {
-    background: $white;
+    background: $default-white;
     border-bottom: 2px solid $default-black;
   }
   .ec-grid-primary .ec-grid-primary__col:hover {
@@ -478,20 +547,20 @@
 .ec-react-wizard--component-process-list {
   .ec-react-wizard__header-left-block {
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
       vertical-align: baseline;
     }
   }
   .ec-react-wizard__inner {
-    background: $sub-view-bg;
-    color: $white;
+    background: $strong-blue;
+    color: $default-white;
   }
   .ec-grid-primary .ec-grid-primary__row {
-    background: $sub-view-bg;
-    color: $white;
+    background: $strong-blue;
+    color: $default-white;
   }
   .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
-    color: $white;
+    color: $default-white;
     background: $wBreadcrumbColorThird;
   }
 }
@@ -504,13 +573,13 @@
     margin-top: 10px;
     line-height: 18px;
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
     }
   }
 
   .ec-react-wizard__inner {
     background: $deep-dark-blue;
-    color: $white;
+    color: $default-white;
   }
 
   .ec-grid-primary {
@@ -518,23 +587,33 @@
   }
 
   .ec-grid-primary .ec-grid-primary__row {
-    color: $white;
+    color: $default-white;
     letter-spacing: 1px;
     background-color: transparent;
-    border-bottom: 2px solid $white;
+    border-bottom: 2px solid $default-white;
     margin-bottom: 0;
     flex: 1;
     display: flex;
     align-items: center;
 
     .sds-icon {
-      color: $white;
+      color: $default-white;
       @include sds-icon-size(22px);
     }
 
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
       vertical-align: middle;
+    }
+    &.disabled {
+      color: $gray !important;
+      .sds-icon {
+        color: $gray !important;
+      }
+
+      .sds-svg-icon:not(.not-disabled) {
+        fill: $gray !important;
+      }
     }
   }
 
@@ -551,7 +630,7 @@
   }
 
   .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
-    color: $white;
+    color: $default-white;
     background: $simple-dark-blue;
   }
 }
@@ -567,14 +646,14 @@
 .ec-react-wizard--plugin-projects {
   .ec-react-wizard__inner {
     background: $sub-view-lvl2-bg;
-    color: $white;
+    color: $default-white;
   }
   .ec-grid-primary .ec-grid-primary__row {
     background: $sub-view-lvl2-bg;
-    color: $white;
+    color: $default-white;
   }
   .ec-grid-primary .ec-grid-primary__row:not(.select-off):hover {
-    color: $white;
+    color: $default-white;
     background: $wBreadcrumbColorFifth;
   }
 }
@@ -589,7 +668,7 @@
     &--icon-process,
     &--icon-plugin-category,
     &--icon-plugin {
-      fill: $white;
+      fill: $default-white;
       margin: 0 19px 0 0;
     }
 
@@ -598,7 +677,7 @@
 
 .ec-react-wizard--procedure-projects {
   .sds-svg-icon--icon-project {
-    fill: $white;
+    fill: $default-white;
     margin: 0 22px 0 0;
   }
 }
@@ -620,7 +699,7 @@
 
   .flap {
     @include stretch;
-    background-color: $wizardStepFlap;
+    background-color: $fifty-fill-white;
   }
 }
 .modals-box .ec-react-wizard--step-from-rollback .ec-react-wizard__content {
@@ -681,7 +760,7 @@
       height: 40px;
       display: inline-block;
       position: relative;
-      background: red;
+      background: $red;
     }
 
     .sds-svg-icon--icon-variable {
@@ -777,8 +856,8 @@
     box-sizing: border-box;
 
     &.disabled {
-      border-top: 2px solid red;
-      border-bottom: 2px solid red;
+      border-top: 2px solid $red;
+      border-bottom: 2px solid $red;
     }
     .parameters-row {
       height: 36px;
@@ -822,8 +901,5 @@
     &.disabled .checkbox-label {
       opacity: .3;
     }
-  }
-  .ec-react-help__icon {
-    font-size: 18px !important;
   }
 }

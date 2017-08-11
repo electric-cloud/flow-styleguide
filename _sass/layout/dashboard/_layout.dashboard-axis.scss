@@ -1,0 +1,75 @@
+.axis {
+  path,
+  line {
+    fill: none;
+    stroke: $default-black;
+  }
+}
+
+.axis.axis--y,
+.axis.axis--x {
+  text {
+    fill: $default-text-color;
+    font-size: 12px;
+  }
+}
+
+.axis.axis--x {
+  text {
+    text-transform: uppercase;
+  }
+}
+
+.axis.axis--no-text-transform {
+  text {
+    text-transform: none;
+  }
+}
+
+.axis.axis--y.axis--transparent {
+  path {
+    stroke: transparent;
+  }
+  text {
+    transform: translate(20px, -10px);
+  }
+}
+
+.axis.axis--x.axis--line {
+  text {
+    text-anchor: middle;
+  }
+}
+
+
+.axis-horizontal-bars,
+.axis-vertical-bars {
+  path {
+    stroke: transparent;
+  }
+
+  line {
+    stroke: $soft-gray;
+  }
+
+  &.white-bars {
+    line {
+      stroke: $default-white;
+    }
+  }
+
+  g:nth-child(2) {
+    line {
+      stroke: transparent;
+    }
+  }
+}
+
+.horizontal-bars-container {
+  .line {
+    fill: $soft-gray;
+  }
+  .line:last-of-type {
+    fill: $default-black;
+  }
+}

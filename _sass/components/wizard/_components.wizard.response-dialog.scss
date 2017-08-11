@@ -34,25 +34,44 @@
 
     &--header {
       @include modal-header-text();
+      .sds-svg-icon--icon-stage {
+        vertical-align: 0;
+      }
+      .sds-svg-icon--icon-process-step {
+        vertical-align: 0;
+        fill: $active-blue;
+      }
+      .sds-svg-icon--icon-gate-rule {
+        vertical-align: 0;
+      }
     }
 
     &--separator {
       height: 0;
-      border: 1px solid $default-black;
+      border-top: 1px solid $default-black;
     }
 
     &--instruction {
-      padding: 5px 0;
+      padding: 11px 0;
       font-size: 14px;
       line-height: 18px;
-      height: 130px;
+      height: 117px;
       text-align: left;
       overflow-y: auto;
     }
   }
 
+  &__row-title {
+    margin-bottom: 7px;
+    text-align: center;
+    font-size: 18px;
+  }
+
   &__icon {
-    margin-right: 10px;
+    margin-right: 7px;
+    position: relative;
+    bottom: 1px;
+    font-size: 16px;
   }
 
   &__textarea {
@@ -69,6 +88,7 @@
     text-align: left;
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
 
     &--label {
       flex: none;
@@ -78,6 +98,8 @@
     &--item {
       flex: 1;
       cursor: pointer;
+      display: flex;
+      align-items: center;
     }
 
     &--item-icon {

@@ -1,0 +1,22 @@
+.modals-box .command-editor {
+  .ec-react-wizard__loader {
+    display: flex;
+    flex-direction: column;
+  }
+  .ec-react-wizard__content {
+    padding: 10px;
+    overflow: hidden;
+    flex: 1;
+  }
+  .react-form__textarea-wrapper,
+  .react-form__textarea-holder {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .CodeMirror {
+    box-sizing: border-box;
+    text-align: left;
+  }
+}

@@ -23,6 +23,7 @@
     max-width: 1000px;
     vertical-align: top;
     @include sds-ellipsis();
+    white-space: pre;
   }
   &__icon {
     fill: $orange;
@@ -75,7 +76,7 @@
 }
 
 .batch-size-item-header {
-  border-bottom: 2px solid $simple-light-gray;
+  border-bottom: 2px solid $soft-gray;
   box-sizing: border-box;
   &__index {
     display: inline-block;
@@ -87,6 +88,7 @@
     flex: 0 0 790px;
     text-align: left;
     @include sds-ellipsis();
+    white-space: pre;
     &--runtime {
       flex: 0 1 460px;
     }

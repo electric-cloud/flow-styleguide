@@ -29,7 +29,7 @@
   }
 
   .phases-list-wizard__header-control--selectable:hover {
-    color: $black;
+    color: $default-black;
   }
 
   .phases-list-wizard__header-control--disabled {
@@ -53,7 +53,7 @@
   .phases-list-wizard__header-control-icon-select {
     display: inline-block;
     user-select: none;
-    border: 1px solid $controlBarSelectAllBg;
+    border: 1px solid $soft-dark-gray;
     text-align: center;
     margin: 0 0 0 5px;
     padding: 2px 10px;
@@ -62,13 +62,13 @@
     min-width: 35px;
 
     &:hover {
-      background: $black;
-      color: $white;
+      background: $default-black;
+      color: $default-white;
     }
   }
 
   .phases-list-wizard__header-control-icon-select--active {
-    background: $controlBarSelectAllBg;
+    background: $soft-dark-gray;
     color: $default-white;
   }
 
@@ -89,6 +89,7 @@
     font-size: 24px;
     max-width: 1266px;
     @include sds-ellipsis;
+    white-space: pre;
 
     .sds-icon.environment {
       font-size: 22px;
@@ -209,6 +210,20 @@
     &:hover {
       background-color: $hovered-base-blue;
     }
+
+    &.disabled {
+      cursor: default;
+      background: $ten-percent-gray;
+      color: $soft-gray;
+
+      .sds-svg-icon {
+        fill: $soft-gray;
+      }
+
+      &:hover {
+        background-color: $ten-percent-gray;
+      }
+    }
   }
 
   .phases-list-wizard__assign-phases-icon {
@@ -246,6 +261,7 @@
   }
 
   .phases-list-wizard__phase-action-item-icon {
+    margin-top: -4px;
     cursor: pointer;
   }
 
@@ -258,7 +274,7 @@
   .phases-list-wizard__phase-action-item-icon--active {
     cursor: pointer;
     .sds-svg-icon {
-      fill: $black;
+      fill: $default-black;
     }
   }
 

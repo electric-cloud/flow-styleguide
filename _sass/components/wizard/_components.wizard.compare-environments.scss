@@ -1,0 +1,149 @@
+//================================================
+//  Wizard compare-environments
+//================================================
+
+.modals-box .compare-environments,
+.compare-environment-applications {
+
+  .ec-react-wizard__loader,
+  .ec-react-wizard__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ec-react-wizard__content {
+    padding: 0 0 5px;
+  }
+
+  .sub-header {
+    height: 50px;
+    display: flex;
+    line-height: 50px;
+    text-align: left;
+    padding: 0 20px;
+    font-size: 16px;
+
+    .sub-header-row {
+      display: flex;
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .sub-header-col {
+      flex: 1;
+    }
+
+    .sub-header-col.same-col {
+      text-align: right;
+      font-weight: bold;
+      color: $soft-dark-gray;
+    }
+
+    .same-counter {
+      font-size: 24px;
+      color: $soft-blue;
+      vertical-align: bottom;
+    }
+  }
+
+  .environments-block {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  .component-list-container,
+  .application-process-list-container {
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    .sds-svg-icon--icon-process,
+    .sds-svg-icon--icon-component,
+    .sds-svg-icon--icon-artifact {
+      fill: $default-black;
+    }
+  }
+
+  .application-process-list,
+  .application-process-list-header,
+  .component-list,
+  .component-list-header {
+    display: flex;
+  }
+
+  .applications-block {
+    flex: 1;
+    padding-left: 20px;
+    overflow: auto;
+
+    .applications-wrapper {
+      width: 1326px;
+      display: flex;
+    }
+  }
+
+  .ec-grid-primary {
+    flex: 1;
+    margin: 0 10px;
+    &--no-side-offsets {
+      margin: 0;
+    }
+
+    .empty-list-message {
+      line-height: 50px;
+      font-size: 18px;
+      margin-top: 58px;
+    }
+
+    .ec-grid-primary__row {
+      height: 46px;
+      border: 2px solid $ten-percent-gray;
+
+      &.highlighted {
+        background: $dim-blue;
+        border-color: $dim-blue;
+      }
+
+      .ec-grid-primary__col {
+        height: 46px;
+        line-height: 46px;
+      }
+
+      .sds-svg-icon {
+        &.sds-svg-icon--icon-project {
+          position: relative;
+          bottom: 3px;
+        }
+      }
+    }
+
+    //Del default :hover
+    .ec-grid-primary__row:not(.select-off):not(.disabled):hover {
+      background-color: $ten-percent-gray;
+      color: $default-black;
+      cursor: default;
+      &.highlighted {
+        background-color: $dim-blue;
+      }
+    }
+
+    .ec-grid-primary__row.same-application {
+      border: 2px solid $limegreen;
+      background-color: $default-white;
+
+      &:hover {
+        background-color: $default-white !important;
+      }
+    }
+
+    .ec-grid-primary__col.index {
+      text-align: right;
+    }
+
+    .ec-grid-primary__col.action {
+      cursor: pointer;
+      .objects-list-popover {
+        width: 100%;
+      }
+    }
+  }
+}

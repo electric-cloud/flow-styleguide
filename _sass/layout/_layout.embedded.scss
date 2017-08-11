@@ -1,0 +1,48 @@
+//================================================
+//  Embedded
+//================================================
+
+.embedded {
+  overflow: hidden;
+  .embedded-header {
+    .ec-select .ec-select-body {
+      max-height: 212px;
+      overflow-y: auto;
+    }
+  }
+  .control-bar-embedded {
+    .cb-btn-container.center {
+      width: 300px;
+      overflow: visible;
+      .ec-select {
+        line-height: 33px;
+        height: 33px;
+        .ec-select-header {
+          height: 33px;
+          .ec-select-header-title {
+            line-height: 33px;
+          }
+          .dropdown {
+            line-height: 33px;
+          }
+        }
+      }
+    }
+
+    .ec-select-options {
+      max-height: none;
+    }
+  }
+  .embedded-container {
+    width: 100%;
+    overflow: hidden;
+    .embedded-iframe-container {
+      height: 100%;
+      .embedded-iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -37,7 +37,7 @@
     max-height: 300px;
 
     #{$block}__project:hover {
-      background-color: $simple-light-gray;
+      background-color: $soft-gray;
     }
 
     #{$block}__project {
@@ -60,18 +60,18 @@
     #{$block}__option {
       &--number,
       &--project-name {
-        color: $white;
+        color: $default-white;
       }
       &--multiselect,
       &--icon {
         .sds-icon {
-          color: $white;
+          color: $default-white;
           &:before {
-            color: $white;
+            color: $default-white;
           }
         }
         .sds-svg-icon--icon-project {
-          fill: $white;
+          fill: $default-white;
         }
       }
     }
@@ -97,6 +97,7 @@
     width: 220px;
     text-align: left;
     @include sds-ellipsis();
+    white-space: pre;
   }
 
   #{$block}__option--multiselect {
@@ -116,7 +117,7 @@
     }
 
     &#{$block}__project--selected {
-      background-color: $white;
+      background-color: $default-white;
     }
 
     #{$block}__option--number,
@@ -146,7 +147,7 @@
     width: 50%;
     float: left;
     text-align: center;
-    color: $white;
+    color: $default-white;
     cursor: pointer;
   }
 
@@ -190,6 +191,7 @@
       flex: 0 auto;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: pre;
     }
   }
 }

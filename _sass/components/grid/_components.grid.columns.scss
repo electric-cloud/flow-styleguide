@@ -18,12 +18,12 @@
     margin: 0 10px;
 
     a {
-      color: $black;
+      color: $default-black;
     }
   }
 
   //Flexible grid columns classes from ec-grid-primary__col--flex-10 to ec-grid-primary__col--flex-100, step by 10
-  @for $i from 1 through 10 {
+  @for $i from 1 through 12 {
     $flexNumber: $i * 10;
     .ec-grid-primary__col--flex-#{$flexNumber} {
       vertical-align: middle;
@@ -89,6 +89,10 @@
     @include ec-grid-fixed-column(125px);
   }
 
+  .ec-grid-primary__col--fixed-140 {
+    @include ec-grid-fixed-column(140px);
+  }
+
   .ec-grid-primary__col--fixed-160 {
     @include ec-grid-fixed-column(160px);
   }
@@ -126,6 +130,13 @@
   .ec-grid-primary__col--action {
     @include ec-grid-action-column(30px);
     justify-content: center;
+
+    &.disabled {
+      cursor: default;
+    }
+    .sds-svg-icon__container--clickable {
+      display: inline-block;
+    }
   }
 
   .ec-grid-primary__col--action-40 {
@@ -133,13 +144,9 @@
     margin: 0;
   }
 
-  //Actions column (expand, run etc)
-  .ec-grid-primary__col--action {
-    @include ec-grid-action-column(30px);
-    justify-content: center;
-    &.disabled {
-      cursor: default;
-    }
+  .ec-grid-primary__col--action-50 {
+    @include ec-grid-action-column(50px);
+    margin: 0;
   }
 
 
@@ -149,7 +156,7 @@
   //Index column
   .ec-grid-primary__col--index {
     background: $seventy-percent-gray;
-    color: $white;
+    color: $default-white;
     font-size: 24px;
     text-align: right;
     padding-right: 5px;
@@ -161,14 +168,16 @@
 
   //Icon index column
   .ec-grid-primary__col--index-icon {
-    text-align: center;
     padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .sds-icon {
-      color: $white !important;
+      color: $default-white !important;
       margin: 0;
     }
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
     }
   }
 
@@ -186,7 +195,7 @@
 
     .ec-react-help__wrapper {
       width: 16px;
-      margin: 0;
+      margin: 2px 0 0;
     }
   }
 
@@ -194,6 +203,15 @@
   //Datetime column
   .ec-grid-primary__col--datetime {
     @include ec-grid-fixed-column(255px);
+  }
+
+  //runtime duration column
+  .ec-grid-primary__col--runtime-duration {
+    @include ec-grid-fixed-column(200px);
+    display: flex;
+    margin-right: 0;
+    margin-left: 0;
+    justify-content: flex-start;
   }
 
   //Job re run column
@@ -226,12 +244,29 @@
         content: $sds-icon-reload;
       }
     }
+
+    .sds-svg-icon {
+      fill: $soft-light-blue;
+    }
   }
 
 
   //Pipeline run stage task
   .ec-grid-primary__col--task-info {
     display: block;
+    white-space: pre;
+
+    .sds-svg-icon {
+      &--icon-workflow-task,
+      &--icon-plugin-type,
+      &--icon-utilities {
+        fill: $middle-violet;
+      }
+
+      &--icon-procedure {
+        fill: $ninety-percent-blue;
+      }
+    }
   }
 
   //Provision action col
@@ -241,6 +276,7 @@
 
   .ec-grid-primary__col--approvers {
     @include ec-grid-action-column(75px);
+    text-align: right;
     cursor: default;
   }
 
@@ -280,9 +316,22 @@
     text-align: center;
   }
 
+  .ec-grid-primary__col--flex-left-align {
+    justify-content: flex-start;
+  }
+
+  .ec-grid-primary__col--flex-right-align {
+    justify-content: flex-end;
+  }
+
+  .ec-grid-primary__col--flex-center-align {
+    justify-content: center;
+  }
+
   .ec-grid-primary__col--ellipsis {
     display: block;
     @include sds-ellipsis();
+    white-space: pre;
   }
 
   .ec-grid-primary__col--resource-inventory-error {
@@ -295,5 +344,9 @@
 
   .ec-grid-primary__col--error-background {
     background: $dark-red;
+  }
+
+  .ec-grid-primary__col--no-shrink {
+    flex-shrink: 0;
   }
 }

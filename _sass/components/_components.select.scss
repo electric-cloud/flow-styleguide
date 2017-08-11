@@ -20,23 +20,23 @@
     display: flex;
     line-height: 40px;
     text-align: center;
-    border-left: 1px solid $sds-select-bg-collor;
-    border-right: 1px solid $sds-select-bg-collor;
-    background-color: $sds-select-bg-collor;
+    border-left: 1px solid $some-light-gray;
+    border-right: 1px solid $some-light-gray;
+    background-color: $some-light-gray;
 
     .sds-icon {
-      margin-left: 5px;
-      width: 32px;
-      color: $sds-select-icon-color-active;
+      width: 40px;
+      color: $dark-gray;
 
       &.dropdown {
-        color: $sds-select-text-collor-dark;
+        color: $default-black;
         font-size: 12px;
       }
     }
 
     .ec-select-header-title {
       @include sds-ellipsis();
+      white-space: pre;
       flex: 1;
     }
   }
@@ -44,16 +44,16 @@
   &.opened, &.prompted {
     z-index: 10001;
     .ec-select-header {
-      border-left: 1px solid $sds-select-bg-collor-opened;
-      border-right: 1px solid $sds-select-bg-collor-opened;
-      background-color: $sds-select-bg-collor-opened;
-      color: $sds-select-text-collor;
+      border-left: 1px solid $medium-dark-blue;
+      border-right: 1px solid $medium-dark-blue;
+      background-color: $medium-dark-blue;
+      color: $default-white;
 
       .sds-icon, .sds-icon:before {
-        color: $sds-select-text-collor !important;
+        color: $default-white !important;
       }
       .sds-svg-icon {
-        fill: $sds-select-text-collor;
+        fill: $default-white;
       }
     }
   }
@@ -97,11 +97,11 @@
       right: 8px;
       top: 0;
       font-size: 13px;
-      color: $envResCheckSelectedDefaultColor;
+      color: $forty-percent-gray;
       cursor: pointer;
       display: block;
       &:hover {
-        color: $envResDefaultColor;
+        color: $default-black;
       }
       &.hidden {
         display: none;
@@ -113,11 +113,9 @@
       left: 6px;
       top: 0;
       font-size: 23px;
-      color: $envResCheckSelectedDefaultColor;
+      color: $forty-percent-gray;
     }
-  }
 
-  .search-container {
     &.tabs-input {
       .search-input.sds-input {
         width: calc(100% - 30px);
@@ -167,15 +165,21 @@
     }
   }
 
+  .sds-input--select-custom-text {
+    width: calc(100% - 15px);
+    height: 16px;
+    font-size: $base-wizard-font-size;
+  }
+
   .ec-select-body {
     font-size: 18px;
     box-sizing: border-box;
     top: 0;
     position: absolute;
-    z-index: 10000;
-    padding: 10px 10px 6px;
-    background-color: $sds-select-text-collor;
-    border: 1px solid $sds-select-bg-collor-opened;
+    z-index: zindex(select);
+    padding: 10px 15px 6px;
+    background-color: $default-white;
+    border: 2px solid $medium-dark-blue;
     border-top: none;
     &--relative {
       position: relative;
@@ -184,6 +188,8 @@
     .search-collapsable {
       &__search-input {
         padding-left: 23px;
+        height: 30px;
+        line-height: 30px;
       }
     }
 
@@ -198,17 +204,31 @@
     }
 
     .ec-select-option {
-      margin: 2px 0;
-      height: 28px;
-      line-height: 28px;
-      text-align: center;
+      margin: 0;
+      height: 30px;
+      line-height: 30px;
+      text-align: left;
       cursor: pointer;
       @include sds-ellipsis;
-
+      white-space: pre;
+      font-size: 14px;
       &:hover,
       &.selected {
-        background-color: $sds-select-bg-collor;
+        background-color: $some-light-gray;
       }
+    }
+
+    .ec-select__search {
+      margin-bottom: 10px;
+    }
+
+    .ec-select-option-index {
+      display: inline-block;
+      width: 30px;
+      margin-right: 10px;
+      text-align: right;
+      overflow: hidden;
+      vertical-align: top;
     }
   }
 
@@ -225,27 +245,27 @@
 }
 .sds-select.select2-container .select2-choice,
 .sds-select.select2-container.select2-drop-above .select2-choice {
-  background: $sds-select-bg-collor;
+  background: $some-light-gray;
   filter: none;
   border: none;
   border-radius: 0;
 }
 .sds-select.select2-container .select2-choice {
-    height: 40px;
-    padding: 0;
-    color: $sds-select-text-collor-dark;
-    text-align: center;
-    line-height: 40px;
+  height: 40px;
+  padding: 0;
+  color: $default-black;
+  text-align: center;
+  line-height: 40px;
 }
 
 .sds-select.select2-container .select2-choice > .select2-chosen {
-    margin: 0 40px 0 0;
-    padding-left: 40px;
-    font-size: 16px;
+  margin: 0 40px 0 0;
+  padding-left: 40px;
+  font-size: 16px;
 }
 
 .sds-select.select2-container .select2-choice abbr {
-    background-image: none;
+  background-image: none;
 }
 
 .select2-search input.select2-active,
@@ -258,96 +278,88 @@
 }
 
 .sds-select.select2-container.select2-allowclear .select2-choice abbr {
-    display: inline-block;
+  display: inline-block;
 }
 
 .sds-select.select2-container .select2-choice abbr:hover {
-    background-position: right -11px;
-    cursor: pointer;
+  background-position: right -11px;
+  cursor: pointer;
 }
 
 .sds-select-dropdown.select2-drop {
-    background: $sds-select-list-collor;
-    color: $sds-select-text-collor-dark;
-    border: 1px solid $sds-select-bg-collor-opened;
-    border-top: 0;
-    top: 0;
+  background: $default-white;
+  color: $default-black;
+  border: 1px solid $medium-dark-blue;
+  border-top: 0;
+  top: 0;
 
-    border-radius: 0;
-
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .sds-select-dropdown.select2-drop-auto-width {
-    border-top: 1px solid #aaa;
-    width: auto;
+  border-top: 1px solid $medium-soft-gray;
+  width: auto;
 }
 
 .sds-select-dropdown.select2-drop-auto-width .select2-search {
-    padding-top: 4px;
+  padding-top: 4px;
 }
 
 .sds-select-dropdown.select2-drop.select2-drop-above {
-    margin-top: 1px;
-    border-top: 1px solid #aaa;
-    border-bottom: 0;
+  margin-top: 1px;
+  border-top: 1px solid $medium-soft-gray;
+  border-bottom: 0;
 
-    border-radius: 0;
-
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .sds-select.select2-drop-active {
-    border: 1px solid #5897fb;
-    border-top: none;
+  border: 1px solid $maya-blue;
+  border-top: none;
 }
 
 .sds-select.select2-drop.select2-drop-above.select2-drop-active {
-    border-top: 1px solid #5897fb;
+  border-top: 1px solid $maya-blue;
 }
 
 .sds-select.select2-container .select2-choice .select2-arrow {
-    width: 42px;
-    border: none;
-    border-radius: 0;
+  width: 42px;
+  border: none;
+  border-radius: 0;
 
-    background: transparent;
-    filter: none;
+  background: transparent;
+  filter: none;
 }
 
 .sds-select.select2-container .select2-choice .select2-arrow b {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: none;
-    @include sds-icon($sds-icon-sort-down, 12px, $bound-height: 12px, $position-y: middle);
-    color: $sds-select-text-collor-dark;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: $default-black;
 }
 
 .sds-select.select2-container-active .select2-choice,
 .sds-select.select2-container-active .select2-choices {
-    border: none;
-    outline: none;
-
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .sds-select.select2-dropdown-open .select2-choice {
-    border-bottom-color: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
 
-    border-radius: 0;
+  border-radius: 0;
 
-    background-color: $sds-select-bg-collor-opened;
-    filter: none;
-    color: $sds-select-text-collor;
+  background-color: $medium-dark-blue;
+  filter: none;
+  color: $default-white;
 }
 .sds-select.select2-dropdown-open .select2-choice .select2-arrow b {
-  color: $sds-select-text-collor;
+  color: $default-white;
 }
 
 .sds-select-dropdown .select2-results .select2-result-label {
@@ -355,33 +367,33 @@
 }
 
 .sds-select-dropdown .select2-results .select2-highlighted {
-    background: $sds-select-bg-collor;
-    color: $sds-select-text-collor-dark;
-    &:active {
-      background: $sds-select-bg-collor-hovered;
-      color: $sds-select-text-collor;
-    }
+  background: $some-light-gray;
+  color: $default-black;
+  &:active {
+    background: $very-light-gray;
+    color: $default-white;
+  }
 }
 
 .sds-select-dropdown .select2-results li em {
-    background: #feffde;
-    font-style: normal;
+  background: $light-yellow;
+  font-style: normal;
 }
 
 .sds-select-dropdown .select2-results .select2-highlighted em {
-    background: transparent;
+  background: transparent;
 }
 
 .sds-select-dropdown .select2-results .select2-highlighted ul {
-    background: $sds-select-list-collor;
-    color: $sds-select-text-collor-dark;
+  background: $default-white;
+  color: $default-black;
 }
 
 .sds-select .select2-default {
-  color: $sds-select-text-collor-dark !important;
+  color: $default-black !important;
 }
 .sds-select.select2-dropdown-open .select2-default {
-  color: $sds-select-text-collor !important;
+  color: $default-white !important;
 }
 
 .sds-select-icon {
@@ -392,7 +404,7 @@
       font-size: 18px;
       line-height: 18px;
       vertical-align: middle;
-      color: #5c9d4b;
+      color: $saturated-green;
       position: absolute;
       left: 10px;
       top: 12px;
@@ -403,7 +415,7 @@
   }
   &.select2-dropdown-open {
     .select2-choice:before {
-      color: $sds-select-text-collor;
+      color: $default-white;
     }
   }
 
@@ -418,7 +430,7 @@
   .sds-select-icon .select2-choice {
     &:before {
       content: $sds-icon-view-processes;
-      color: #8ac33e;
+      color: $light-green;
     }
     &.select2-default:before {
       color: #7d7d7d;
@@ -426,18 +438,18 @@
   }
   .sds-select-icon.select2-dropdown-open {
     .select2-choice:before {
-      color: $sds-select-text-collor;
+      color: $default-white;
     }
   }
 }
 .select-plugin {
   .sds-select-icon .select2-choice:before {
     content: $sds-icon-add-component;
-    color: $sds-select-text-collor-dark;
+    color: $default-black;
   }
   .sds-select-icon.select2-dropdown-open {
     .select2-choice:before {
-      color: $sds-select-text-collor;
+      color: $default-white;
     }
   }
 }

@@ -1,0 +1,28 @@
+//================================================
+//  Grid objects list
+//================================================
+
+.ec-grid-primary--objects-list {
+  overflow: auto;
+  max-height: 300px;
+  margin: 0 10px 10px;
+
+  .ec-grid-primary__col--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ec-grid-primary__row {
+    background: none;
+    height: 30px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .ec-grid-primary__col {
+    height: 30px;
+    line-height: 30px;
+  }
+}

@@ -15,6 +15,7 @@
   .wizard-row__header {
     display: flex;
     @include modal-header-text();
+    justify-content: center;
 
     .sds-icon {
       vertical-align: middle;
@@ -56,6 +57,11 @@
     height: 40px;
     text-align: left;
     line-height: 40px;
+    font-size: 16px;
+
+    .react-form__radio-container__label {
+      font-size: inherit;
+    }
 
     .wizard-row__radio-box-title {
       width: 115px;
@@ -91,7 +97,6 @@
     .react-form__textarea {
       width: 356px;
       height: 120px;
-      padding: 0;
       box-sizing: border-box;
     }
   }
@@ -131,13 +136,17 @@
       width: 30px;
       height: 30px;
       font-size: 18px;
-      color: $white;
+      color: $default-white;
 
       &.enabled {
         cursor: pointer;
         color: $default-black;
       }
     }
+  }
+
+  .wizard-gate-rule-item--selected {
+    font-weight: bold;
   }
 
   .wizard-gate-rule-item__index {

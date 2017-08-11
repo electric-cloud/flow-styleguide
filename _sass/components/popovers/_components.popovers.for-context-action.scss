@@ -3,30 +3,30 @@
 //================================================
 
 .popover-for-context-action {
-  width: $main-width;
+  width: 180px;
   letter-spacing: 0.5px;
 
   position: absolute;
   z-index: 101;
 
-  background-color: $pctx-main-background;
-  box-shadow: $box-shadow;
+  background-color: $dark-gray;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 0 15px 0;
 
   .item {
-    height: $item-height;
-    border-top: $item-border;
+    height: 48px;
+    border-top: 2px solid $fifty-percent-gray;
     position: relative;
 
     text-align: right;
-    line-height: $item-height;
+    line-height: 48px;
     font-size: 12px;
-    color: $pctx-text-color;
+    color: $default-white;
     cursor: pointer;
-    background-color: $pctx-main-background;
+    background-color: $dark-gray;
     a,
     a:hover,
     a:visited {
-      color: $pctx-text-color;
+      color: $default-white;
     }
 
     &:first-child {
@@ -35,10 +35,10 @@
 
     &.disabled {
       cursor: default;
-      color: $pctx-text-color-disbl;
+      color: $fifty-percent-gray;
 
       .sds-icon.delete {
-        color: $pctx-text-color-disbl;
+        color: $fifty-percent-gray;
       }
 
       .sds-svg-icon.sds-svg-icon--button-delete {
@@ -46,17 +46,17 @@
       }
 
       &:hover {
-        background-color: $pctx-main-background;
+        background-color: $dark-gray;
       }
 
       a, a:hover, a:visited {
-        color: $pctx-text-color-disbl;
+        color: $fifty-percent-gray;
         cursor: default;
       }
     }
 
     &:hover {
-      background-color: $pctx-hover-background;
+      background-color: $fifty-percent-gray;
     }
 
     &__loader {
@@ -70,24 +70,32 @@
     }
 
     .title {
-      width: $main-width - $icon-width;
+      width: 140px;
       float: left;
     }
 
     .sds-icon {
-      width: $icon-width;
-      height: $item-height;
+      width: 40px;
+      height: 48px;
       float: left;
 
-      line-height: $item-height;
+      line-height: 48px;
     }
 
     .sds-svg-icon {
-      fill: $white;
+      fill: $default-white;
       height: 18px;
+
       &--icon-tier-capabilities,
       &--icon-tier-requirements {
         margin: 0 10px;
+      }
+
+      &--icon-task {
+        width: 18px;
+        height: 18px;
+        margin: 0 10px;
+        fill: $default-white;
       }
     }
 
@@ -136,15 +144,6 @@
       font-size: 20px;
     }
 
-    .sds-svg-icon {
-      &--icon-task {
-        width: 18px;
-        height: 18px;
-        margin: 0 10px;
-        fill: $default-white;
-      }
-    }
-
     &--application-snapshot-menu-item {
       .title {
         padding: 0 15px;
@@ -160,16 +159,16 @@
 
   &.arrow:before {
     content: '';
-    width: $arrow-size;
-    height: $arrow-size;
+    width: 28px;
+    height: 28px;
 
     position: absolute;
     z-index: -1;
 
     transform: rotate(45deg);
 
-    background-color: $pctx-main-background;
-    box-shadow: $box-shadow;
+    background-color: $dark-gray;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 15px 0;
   }
 
   &.arrow.top:before {
@@ -188,13 +187,18 @@
     right: -10px;
   }
 
+  &.confirm-context.left.top:before {
+    right: 6px;
+    bottom: -10px;
+  }
+
   &.confirm-context {
     height: 48px;
     width: auto;
     .item {
       float: left;
       border-top: none;
-      border-left: 1px solid $pctx-hover-background;
+      border-left: 1px solid $fifty-percent-gray;
       &:first-child {
         border-left: none;
       }

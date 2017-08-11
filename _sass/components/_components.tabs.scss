@@ -2,110 +2,12 @@
 //  Tabs
 //================================================
 
-.category-bar {
+.category-bar,
+.snapshot-category-bar {
   text-align: center;
 }
 
 .ec-tabs {
-  text-align: center;
-
-  &.tabs-for-screen-list {
-    padding: 10px 0 15px;
-  }
-
-  .ec-tabs-wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid $ec-tabs-active-color;
-    white-space: nowrap;
-
-    &:after {
-      visibility: hidden;
-      display: block;
-      content: "";
-      clear: both;
-      height: 0;
-    }
-  }
-
-  .ec-tabs-tab {
-    min-width: 98px;
-    height: 32px;
-    padding: 0 30px;
-    border: 1px solid $ec-tabs-active-color ;
-    float: left;
-    text-align: center;
-    font-size: 15px;
-    line-height: 32px;
-    cursor: pointer;
-
-    &--list-nav {
-      width: 260px;
-      box-sizing: border-box;
-    }
-
-    .sds-icon {
-      padding: 0 3px;
-      &.ref-component,
-      &.application {
-        color: $very-soft-blue;
-      }
-    }
-
-    &.tab-environments {
-      .sds-icon {
-        color: $orange;
-      }
-    }
-
-    &.tab-environment-templates {
-      .sds-icon {
-        color: $orange;
-      }
-    }
-
-    &.tab-resource-templates,
-    &.tab-applications {
-      .sds-icon {
-        color: $resTplIconColor;
-      }
-    }
-
-    &.tab-components {
-      .sds-icon {
-        color: $snapshots-create-switch-component-color;
-      }
-    }
-
-    &.tab-app-processes {
-      .sds-icon {
-        color: $snapshots-create-switch-processes-color;
-      }
-    }
-
-    &:hover {
-      background-color: $ec-tabs-hover-color;
-    }
-
-    &.active {
-      cursor: default;
-      color: $ec-tabs-active-text-color;
-      background-color: $ec-tabs-active-color;
-      .sds-icon {
-        color: $ec-tabs-active-text-color;
-      }
-    }
-
-    &.disabled {
-      cursor: default;
-      color: $ec-tabs-disabled-color;
-      background-color: $ec-tabs-disabled-text-color;
-    }
-  }
-}
-
-//ToDo delete previous 'ec-tabs' and rename this className
-.ec-tabs2 {
   height: 32px;
   display: inline-block;
   text-align: center;
@@ -131,9 +33,19 @@
     text-align: center;
     cursor: pointer;
     border: 1px solid $emperor-gray;
+    font-size: 14px;
 
     &:hover {
       background-color: $light-gray;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $medium-soft-gray;
+      background-color: $ec-tabs-disabled-text-color;
+      .sds-svg-icon {
+        fill: $medium-soft-gray;
+      }
     }
   }
 
@@ -158,13 +70,12 @@
   }
 
   .sds-svg-icon {
-    &--icon-environments-static {
+    &--icon-templates {
       fill: $orange;
     }
 
-    &--icon-templates {
-      fill: $orange;
-      width: 17px;
+    &--icon-runtime-status-failed {
+      fill: $default-red;
     }
   }
 
@@ -172,5 +83,11 @@
     .sds-svg-icon--icon-templates {
       fill: $soft-blue;
     }
+  }
+}
+
+.resource-edit-tabs {
+  .ec-tab {
+    width: 158px;
   }
 }

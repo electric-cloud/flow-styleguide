@@ -89,7 +89,7 @@
     font-size: 18px;
     align-items: center;
     box-sizing: border-box;
-    border-bottom: 2px solid $simple-light-gray;
+    border-bottom: 2px solid $soft-gray;
   }
   .container-index {
     flex: 0 0 30px;
@@ -103,6 +103,7 @@
     max-width: 594px;
     text-align: left;
     @include sds-ellipsis();
+    white-space: pre;
     &.empty {
       text-align: center;
     }
@@ -121,7 +122,7 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    border-bottom: 2px solid $simple-light-gray;
+    border-bottom: 2px solid $soft-gray;
   }
 
   .port-title {
@@ -147,7 +148,7 @@
     font-size: 18px;
     align-items: center;
     box-sizing: border-box;
-    border-bottom: 2px solid $simple-light-gray;
+    border-bottom: 2px solid $soft-gray;
     &:last-child {
       border-bottom: none;
     }
@@ -163,6 +164,7 @@
     padding-left: 5px;
     box-sizing: border-box;
     @include sds-ellipsis();
+    white-space: pre;
   }
   .port-target {
     flex: 15;

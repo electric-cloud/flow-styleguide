@@ -29,12 +29,12 @@
   &__btn {
     cursor: pointer;
     display: block;
-    background: $ec-ni-btn-bg;
+    background: $twenty-percent-gray;
     width: 20px;
     height: 15px;
     line-height: 15px;
     font-size: 8px;
-    color: $ec-ni-btn-color;
+    color: $default-white;
     text-align: center;
 
     &--disabled {

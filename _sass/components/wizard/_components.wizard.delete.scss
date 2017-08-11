@@ -8,6 +8,9 @@
   .wizard-delete {
     .ec-react-wizard__inner {
     }
+    .ec-react-wizard__loader {
+      flex-basis: auto;
+    }
     .ec-react-wizard__head {
       position: relative;
       font-size: 24px;

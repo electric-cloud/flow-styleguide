@@ -1,0 +1,164 @@
+.wizard-dashboard-widget-definition {
+  font-size: $base-wizard-font-size;
+
+  .ec-react-wizard__content {
+    height: 490px;
+  }
+
+  .widget-definition-container {
+    position: relative;
+    height: calc(100% - 76px);
+    overflow-y: scroll;
+    margin-right: -10px;
+  }
+
+  .header {
+    @include modal-header-text();
+  }
+
+  .separator {
+    @include separator();
+
+    margin-bottom: 10px;
+  }
+
+  .entry-category-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .global-expand-collapse,
+  .entry-expand-collapse {
+    position: absolute;
+    right: 0;
+  }
+
+  .global-expand-collapse {
+    right: 5px;
+  }
+
+  .widget-subblock-title {
+    &:before {
+      content: "";
+      display: block;
+      margin: 10px 50px;
+      @include separator();
+    }
+
+    position: relative;
+    margin-top: 40px;
+    font-weight: 600;
+  }
+
+  .widget-define-block {
+    &:after {
+      content: "";
+      display: block;
+      margin: 10px auto;
+      width: 400px;
+      @include separator();
+    }
+    &:last-child:after {
+      border: 0;
+    }
+  }
+
+  .widget-define-field {
+    min-height: 42px;
+    margin-left: 50px;
+    margin-top: 10px;
+    text-align: left;
+
+    //TODO: reuse?
+    .react-form__textarea {
+      width: 332px;
+    }
+
+    //TODO: reuse?
+    .react-form__textarea-holder,
+    .react-form__txt-input-holder,
+    .react-form__select-holder {
+      margin-left: 10px;
+    }
+
+    //TODO: reuse?
+    .react-form__select-holder {
+      width: 335px;
+      float: left;
+    }
+
+    .react-form__validation {
+      margin-left: 0;
+    }
+
+    .definition-textarea {
+      width: 530px;
+      height: 300px;
+    }
+  }
+
+  .widget-define-icon-picker {
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  .color-maps {
+    .color-map-add {
+      position: absolute;
+      top: 10px;
+      right: 40px;
+      display: flex;
+      align-items: flex-end;
+      font-weight: 400;
+
+      &.disabled {
+        @include disabled();
+      }
+    }
+
+    .color-map-item {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .color-map-item__index,
+      .color-map-item__color,
+      .color-map-item__remove {
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+
+      .color-map-item__index {
+        display: flex;
+        align-items: center;
+        flex-basis: 30px;
+        height: 40px;
+      }
+
+      .color-map-item__remove {
+        position: absolute;
+        right: 40px;
+        top: 6px;
+      }
+
+      .color-map-item__name {
+        flex-basis: 315px;
+      }
+
+      .color-map-item__color {
+        flex-basis: 70px;
+      }
+
+      .react-form__txt-input-holder {
+        width: calc(100% - 10px);
+      }
+
+      .react-form__txt-input {
+        width: inherit;
+      }
+    }
+  }
+}

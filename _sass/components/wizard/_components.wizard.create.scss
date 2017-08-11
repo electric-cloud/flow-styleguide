@@ -82,11 +82,11 @@
     }
     .row-icon,
     .template {
-      color: $envIconColor;
+      color: $orange;
     }
 
     .res-template {
-      color: $resTplIconColor;
+      color: $soft-blue;
     }
 
     .add-component,
@@ -95,7 +95,7 @@
     }
 
     .application {
-      color: $appCoEditButtonColor;
+      color: $very-soft-blue;
     }
     .pipeline {
       font-size: 14px;
@@ -133,6 +133,7 @@
           width: 40px;
           top: 0;
           left: 20px;
+
           .sds-svg-icon {
             margin: 0 auto;
           }
@@ -143,11 +144,11 @@
             fill: $dark-blue;
           }
 
-          &--icon-container {
-            fill: $light-violet;
+          &--icon-new-object {
+            fill: $dark-blue;
           }
 
-          &--icon-new-object {
+          &--icon-use-copy {
             fill: $dark-blue;
           }
         }
@@ -167,11 +168,11 @@
 
           &.row-icon,
           &.template {
-            color: $envIconColor;
+            color: $orange;
           }
 
           &.res-template {
-            color: $resTplIconColor;
+            color: $soft-blue;
           }
           &.add-component {
             color: $dark-blue;
@@ -197,7 +198,7 @@
         text-align: center;
         position: relative;
         &:hover {
-          background: $simple-light-gray;
+          background: $soft-gray;
           margin: -2px 0 0;
           padding: 0 20px;
           .sds-icon {

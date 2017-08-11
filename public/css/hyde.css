@@ -249,15 +249,57 @@ a.sidebar-nav-item:focus {
   color: #8f5536;
 }
 
+
+/* custom styles */
+.svg-icons-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.svg-icons-list .icon-item {
+  width: 150px;
+  min-height: 100px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.svg-icons-list .icon-item .icon-name {
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  display: block;
+}
+
 .svg-icons-list .svg-icon {
   width: 60px;
   height: 60px;
   line-height: 60px;
-  float: left;
+  background-color: #eee;
+  border-radius: .3125em;
+  overflow: hidden;
+  user-select: none;
+  margin: 0 auto 10px;
+  text-align: center;
 }
 
 .svg-icons-list .svg-icon .sds-svg-icon {
-  vertical-align: baseline;
+  vertical-align: middle;
+  max-width: 30px;
+  max-height: 30px;
+  width: 100%;
+  height: auto;
 }
 
 .page-content {
@@ -266,4 +308,10 @@ a.sidebar-nav-item:focus {
 
 .page-title {
   margin: 0 0 20px;
+}
+
+@media (min-width: 64em) {
+  .content {
+    max-width: 60rem;
+  }
 }

@@ -11,7 +11,7 @@
   .properties-type-icon {
     &:before {
       font-size: 24px;
-      color: $app-table-app-icon-color;
+      color: $very-soft-blue;
     }
     &.pipeline:before,
     &.stages:before,
@@ -46,8 +46,8 @@
   }
 
   .ec-grid-primary .ec-grid-primary__row {
-    background: $white;
-    border-bottom: 1px solid $prop-row-border;
+    background: $default-white;
+    border-bottom: 1px solid $iron-gray;
     margin-bottom: 0;
     height: 38px;
     font-size: 16px;
@@ -55,7 +55,7 @@
       background: $ten-percent-gray;
     }
     &.selected {
-      background: gray;
+      background: $fifty-percent-gray;
       &:hover {
         background: $soft-dark-gray;
       }
@@ -72,7 +72,7 @@
 
     .sds-icon.folder,
     .sds-icon.acl {
-      color: $activeFolder;
+      color: $simple-sky-blue;
     }
     .sds-svg-icon--icon-go-to-details {
       height: 100%;
@@ -88,9 +88,9 @@
 
       &.disabled {
         cursor: default;
-        color: $simple-light-gray;
+        color: $soft-gray;
         .sds-svg-icon.sds-svg-icon--button-delete {
-          fill: $simple-light-gray;
+          fill: $soft-gray;
         }
       }
 
@@ -109,7 +109,7 @@
         font-size: 14px;
         width: 44px;
         display: inline-block;
-        color: $activeFolder;
+        color: $simple-sky-blue;
       }
 
       .sds-icon.plus-sign {
@@ -153,7 +153,7 @@
   .select {
     &.disabled {
       &:hover {
-        color: $disabled-btn-color;
+        color: $soft-gray;
       }
     }
 
@@ -168,15 +168,15 @@
     &.select-toggle {
       &.disabled {
         cursor: default;
-        color: $controlBarSelectAllColor;
-        background: $disabled-btn-color;
+        color: $default-white;
+        background: $soft-gray;
       }
     }
   }
   .select-toggle {
     display: inline-block;
     user-select: none;
-    border: 1px solid $controlBarSelectAllBg;
+    border: 1px solid $soft-dark-gray;
     text-align: center;
     margin: 0 0 0 5px;
     padding: 2px 10px;
@@ -184,7 +184,7 @@
     line-height: 14px;
     min-width: 35px;
     &.active {
-      background: $controlBarSelectAllBg;
+      background: $soft-dark-gray;
       color: $default-white;
     }
   }

@@ -1,0 +1,362 @@
+.ec-react-wizard--wizard-create.catalog-item-create {
+  font-size: $base-wizard-font-size;
+
+  .ec-react-wizard__window--second {
+    display: none;
+  }
+
+  .ec-react-wizard {
+    position: relative;
+  }
+
+  .ec-react-wizard__loader {
+    min-height: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ec-react-wizard__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 1px;
+    padding: 0 30px 5px 50px;
+  }
+
+  .header {
+    position: relative;
+    @include modal-header-text();
+    font-weight: 400;
+    margin: 0;
+
+    .section-expand-collapse {
+      right: 26px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    overflow-y: scroll;
+    position: relative;
+    padding-right: 20px;
+    margin-right: -10px;
+  }
+
+  .separator {
+    @include separator();
+    margin-bottom: 10px;
+  }
+
+  .section-header {
+    position: relative;
+  }
+
+  .section-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: left;
+  }
+
+  .section-name {
+    font-size: 18px;
+  }
+
+  .section-expand-collapse {
+    position: absolute;
+    right: 0;
+  }
+
+  .section-content-display {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 8px;
+  }
+
+  .display-vertical-separator {
+    width: 2px;
+    height: 290px;
+    background-color: $forty-percent-gray;
+    margin: 0 39px;
+  }
+
+  .section-content-additional {
+    padding: 12px 0 8px;
+  }
+
+  .display-area {
+    width: 558px;
+    height: 290px;
+
+    .area-row {
+      display: flex;
+    }
+
+    .label, .example {
+      width: 150px;
+    }
+
+    .field, .message {
+      flex: 1;
+    }
+
+    .label {
+      line-height: 40px;
+      text-align: right;
+    }
+
+    .field {
+      padding-left: 22px;
+
+      .react-form__txt-input-wrapper,
+      .react-form__txt-input-holder {
+        margin: 0;
+      }
+
+      .react-form__txt-input {
+        width: 374px;
+      }
+    }
+  }
+
+  .example {
+    .catalog-item {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      padding: 12px 12px 36px;
+      box-sizing: border-box;
+      text-align: left;
+      background-color: $ten-percent-gray;
+    }
+
+    .catalog-item-icon {
+      display: block;
+      height: 30px;
+      margin-bottom: 8px;
+
+      .sds-svg-icon {
+        fill: $denim-blue;
+      }
+    }
+
+    .catalog-item-title {
+      @include sds-ellipsis;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .catalog-item-desc {
+      position: relative;
+      max-height: 36px;
+      overflow: hidden;
+      font-size: 11px;
+      line-height: 15px;
+    }
+
+    .catalog-item-desc-inner {
+      height: 45px;
+    }
+
+    .catalog-item-more {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 18px;
+      padding-left: 5px;
+      color: $color-link-primary;
+    }
+
+    .catalog-item-btn {
+      position: absolute;
+      right: 12px;
+      left: 12px;
+      bottom: 12px;
+      border: 1px solid;
+      color: $active-blue;
+      text-align: center;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  }
+
+  .message {
+    position: relative;
+    text-align: left;
+
+    .popover {
+      height: 146px;
+      font-size: 14px;
+      margin-left: 22px;
+      padding: 8px 16px;
+      box-sizing: border-box;
+      border: 2px solid $active-blue;
+      box-shadow: 0 4px 8px rgba($default-black, .6);
+    }
+
+    .sds-svg-icon--coach-pointer-left {
+      position: absolute;
+      left: -17px;
+      top: 59px;
+    }
+
+    .text-list {
+      margin-bottom: 0;
+    }
+
+    .main-tex {
+      margin: 0 0 7px;
+    }
+
+    .more {
+      color: $color-link-primary;
+    }
+  }
+
+  .catalog-item-additional-editor {
+    height: 310px;
+
+    .ql-toolbar {
+      background-color: $white-smoke;
+    }
+  }
+
+  .section-content-definition {
+    display: flex;
+    padding: 12px 0;
+
+    .left-part {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      min-width: 220px;
+      box-sizing: border-box;
+      padding-right: 20px;
+
+      .react-form__radio-holder {
+        border-bottom: 1px solid $sushi-green;
+      }
+
+      .react-form__radio-container {
+        height: 60px;
+        line-height: 60px;
+        position: relative;
+        box-sizing: border-box;
+        border-top: 1px solid $sushi-green;
+
+        .radio-custom-icon {
+          width: 46px;
+        }
+
+        .sds-svg-icon {
+          fill: $default-black;
+          position: absolute;
+          margin: auto;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+
+          &--icon-procedure {
+            width: 24px;
+            height: 15px;
+          }
+
+          &--icon-plugin-type {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .radio-btn {
+          margin: 0 10px 0 17px;
+          font-size: 20px;
+          line-height: 60px;
+          cursor: pointer;
+          color: $sushi-green;
+        }
+
+        &.selected {
+          color: $default-white;
+          background-color: $sushi-green;
+
+          .radio-btn {
+            color: $default-white;
+          }
+
+          .sds-svg-icon {
+            fill: $default-white;
+          }
+
+          .ec-react-help__icon {
+            .sds-svg-icon {
+              fill: $default-white;
+            }
+          }
+        }
+
+        .ec-react-help__wrapper {
+          position: absolute;
+          right: 40px;
+          top: 0;
+        }
+        .ec-react-help__icon {
+          .sds-svg-icon {
+            fill: $gray;
+            position: static;
+          }
+        }
+      }
+      .react-form__radio-container__label {
+        font-size: 18px;
+        letter-spacing: .3px;
+      }
+    }
+
+    .main-part {
+      flex: 1;
+    }
+
+    .plugin-wrapper,
+    .procedure-wrapper {
+      width: 801px;
+      height: 240px;
+      box-sizing: border-box;
+      margin: 0 200px 130px 0;
+      padding: 40px 185px;
+      border: 1px solid $code-mirror-border;
+    }
+  }
+
+  .code-row {
+    .code-row-header {
+      height: 40px;
+      line-height: 40px;
+      background: $white-smoke;
+      text-align: left;
+      padding: 0 20px;
+      border: 1px solid $code-mirror-border;
+      border-bottom: none;
+    }
+  }
+}
+
+.catalog-item-definition-code-popover {
+  .ec-react-popover__content {
+    max-height: 300px;
+    overflow: auto;
+  }
+
+  .code-description {
+    padding: 10px;
+  }
+
+  .code-example {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    line-height: 12px;
+    overflow: auto;
+    background: $code-blue;
+  }
+}

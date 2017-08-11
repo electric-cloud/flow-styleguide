@@ -1,0 +1,99 @@
+.automated-retry-settings {
+  .automated-retry-settings-retries {
+    margin: 40px 0 20px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .automated-retry-settings-retries-text {
+      margin-right: 3px;
+    }
+    .sds-number-input {
+      padding: 0 7px;
+    }
+    .sds-number-input__input {
+      width: 78px;
+      font-size: 16px;
+    }
+  }
+
+  .automated-retry-settings-intervals {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 82px;
+    margin-bottom: 20px;
+    .automated-retry-settings-retries-text {
+      margin-right: 10px;
+    }
+
+    .react-form__txt-input-wrapper {
+      margin: 0;
+    }
+
+    .react-form__txt-input-holder {
+      width: 90px;
+      .react-form__txt-input {
+        width: 80px;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .automated-retry-settings-after-last-retry {
+    padding-top: 12px;
+    border-top: 2px solid $default-black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .react-form__radio-block--step-automated-retry,
+    .react-form__radio-block--editing-rule {
+      .react-form__radio-holder {
+        display: flex;
+      }
+      .react-form__radio-container {
+        margin: 0 20px;
+      }
+      .react-form__radio-container__label {
+        font-weight: 400;
+        font-size: 16px;
+        &.unchecked {
+          .radio-custom-end-icon {
+            .sds-svg-icon {
+              fill: $forty-percent-gray;
+            }
+          }
+          .react-form__radio-container__label__text {
+            color: $forty-percent-gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+.manual-retry-settings {
+  .ec-grid-primary__col--template-select {
+    margin-bottom: 40px;
+
+    .ec-select .ec-select-header {
+      .notification {
+        font-size: 16px;
+        color: $default-black;
+      }
+
+      .ec-select-header-title {
+        padding-left: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .manual-retry-settings-assignees {
+    margin: 40px 0 20px;
+    text-align: left;
+  }
+}

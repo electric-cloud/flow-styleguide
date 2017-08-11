@@ -19,16 +19,18 @@
         background: $completeGreen;
       }
       &.warning {
-        background: $warningLighterYellow;
+        background: $orange-yellow;
       }
       &.error {
-        background: $errorLighterRed;
+        background: $light-red;
       }
-      &.aborted {
-        background: $simple-light-gray;
+      &.aborted,
+      &.force_abort,
+      &.abort {
+        background: $soft-gray;
       }
       &.skipped {
-        background: $simple-light-gray;
+        background: $soft-gray;
       }
     }
 
@@ -41,11 +43,10 @@
   .pending {
     .sds-svg-icon.manual-action {
       fill: $middle-blue;
-      @include animate-pulsation();
     }
   }
 
-    //Runtime statuses
+  //Runtime statuses
   .not-running {
     .ec-grid-primary__col--progress-icon {
       .sds-icon {
@@ -64,6 +65,10 @@
           content: $sds-icon-dots;
         }
       }
+
+      .sds-svg-icon {
+        fill: $dark-gray;
+      }
     }
   }
 
@@ -80,6 +85,10 @@
           content: $sds-icon-warning;
         }
       }
+
+      .sds-svg-icon {
+        fill: $default-red;
+      }
     }
   }
 
@@ -94,6 +103,10 @@
         &:before {
           content: $sds-icon-stage-warning;
         }
+      }
+
+      .sds-svg-icon {
+        fill: $dark-orange;
       }
     }
   }
@@ -110,10 +123,17 @@
           content: $sds-icon-success-round;
         }
       }
+
+      .sds-svg-icon {
+        fill: $default-green;
+      }
     }
   }
 
-  .aborted, .skipped {
+  .aborted,
+  .skipped,
+  .force_abort,
+  .abort {
     .ec-grid-primary__col--percentage {
       color: $seventy-percent-gray;
     }
@@ -125,6 +145,10 @@
           content: $sds-icon-abort;
         }
       }
+
+      .sds-svg-icon {
+        fill: $fifty-percent-gray;
+      }
     }
   }
 
@@ -135,6 +159,10 @@
         &:before {
           content: $sds-icon-skipped;
         }
+      }
+
+      .sds-svg-icon {
+        fill: $fifty-percent-gray;
       }
     }
   }

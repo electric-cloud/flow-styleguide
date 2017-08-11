@@ -30,7 +30,7 @@
     .fc-button {
       color:$medium-dark-gray;
       height: 30px;
-      background: $white;
+      background: $default-white;
       border: 2px solid $medium-dark-gray;
       box-sizing: border-box;
       border-radius: 0;
@@ -50,7 +50,7 @@
     .fc-state-active {
       box-shadow: none;
       text-shadow: none;
-      color: $white;
+      color: $default-white;
       background: $medium-dark-gray;
       outline: none;
     }
@@ -86,7 +86,7 @@
     border-radius: 0;
     background-color: $some-light-gray;
     border-color: $some-light-gray;
-    color: $black;
+    color: $default-black;
 
     .fc-time {
       font-weight: normal;
@@ -110,28 +110,20 @@
     }
 
     &.blackout {
-      background-color: $black;
-      color: $white;
+      background-color: $default-black;
+      color: $default-white;
 
       .fc-title {
         margin-left: 5px;
       }
 
       .sds-svg-icon {
-        fill: $white;
+        fill: $default-white;
       }
     }
 
-    &.pipeline .sds-svg-icon__wrapper--icon-pipeline {
-      fill: $violet;
-    }
-
-    &.release .sds-svg-icon__wrapper--icon-release {
-      fill: $bright-blue;
-    }
-
     &.application .sds-svg-icon--icon-runtime-run {
-      fill: $black;
+      fill: $default-black;
     }
   }
 
@@ -146,6 +138,10 @@
   .ec-react-wizard__content {
     position: relative;
     z-index: 11003;
+
+    .react-form__select-wrapper {
+      display: inline-block;
+    }
   }
   .content-title {
     font-size: 22px;
@@ -188,14 +184,12 @@
 
   .country-select {
     margin: 0 0 0 15px;
-    float: left;
     width: 265px;
   }
 
   .city-select {
     margin: 0 15px 0 0;
     margin-left: 30px;
-    float: right;
     width: 265px;
     margin-bottom: 0;
   }
@@ -205,6 +199,10 @@
 
   .ec-react-wizard__content {
     padding: 0 30px;
+
+    .react-form__select-wrapper {
+      display: inline-block;
+    }
   }
 
   .content-header {
@@ -290,13 +288,8 @@
     }
 
     .sds-svg-icon {
-      &--icon-pipeline {
-        width: 30px;
-        fill: $violet;
-      }
-
+      &--icon-pipeline,
       &--icon-release {
-        fill: $bright-blue;
         width: 30px;
       }
     }
@@ -307,14 +300,12 @@
   }
 
   .country-select {
-    float: left;
     width: 255px;
     margin-bottom: 0;
   }
 
   .city-select {
     margin-left: 30px;
-    float: right;
     width: 255px;
     margin-bottom: 0;
   }

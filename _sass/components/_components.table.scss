@@ -12,15 +12,15 @@
   .empty-table {
     position: absolute;
     top: 0;
-    background-color: $table-empty-bg;
-    color: $table-empty-color;
+    background-color: $default-white;
+    color: $suva-gray;
     font-size: 18px;
     line-height: 50px;
     text-align: center;
     vertical-align: middle;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid $table-empty-border-color;
+    border-bottom: 1px solid $gainsboro-white;
     cursor: pointer;
 
     .sds-icon {

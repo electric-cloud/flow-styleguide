@@ -132,7 +132,7 @@
 
       &.disabled {
         cursor: default;
-        color: $simple-light-gray;
+        color: $soft-gray;
         .sds-svg-icon {
           &--button-delete {
             fill: $forty-percent-gray;
@@ -163,7 +163,7 @@
   .select {
     &.disabled {
       &:hover {
-        color: $disabled-btn-color;
+        color: $soft-gray;
       }
     }
 
@@ -178,8 +178,8 @@
     &.select-toggle {
       &.disabled {
         cursor: default;
-        color: $controlBarSelectAllColor;
-        background: $disabled-btn-color;
+        color: $default-white;
+        background: $soft-gray;
       }
     }
   }

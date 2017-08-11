@@ -1,0 +1,1068 @@
+//================================================
+//  Control-bar
+//================================================
+
+.control-bar-container {
+  height: 40px;
+  position: relative;
+  z-index: 100;
+  padding: 0 15px 0 10px;
+  line-height: 33px;
+
+  .sds-icon {
+    &.stage-plus {
+      font-size: 13px;
+      margin: -4px 0 0 0;
+    }
+    &.add-rule  {
+      margin: -5px 0 0 0;
+    }
+  }
+
+  .backdrop {
+    @include backdrop;
+  }
+
+  .ec-icon-edit-menu__square {
+    @include ec-icon-menu-square;
+    top: 42px;
+    color: $default-white;
+    fill: $default-white;
+    background: $simple-middle-blue;
+
+    &:hover {
+      background-color: $active-blue;
+    }
+  }
+
+  .cb__run-btn {
+    position: absolute;
+    right: -20px;
+    top: 92px;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: $default-white;
+    background: $default-green;
+
+    &:hover {
+      background-color: $light-green;
+    }
+
+    &.disabled {
+      cursor: default;
+      background: $soft-gray;
+
+      .sds-icon {
+        cursor: default;
+      }
+    }
+  }
+
+  .cb {
+    &__control-button {
+      display: none;
+      position: absolute;
+      right: -20px;
+      top: 92px;
+      line-height: 50px;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+      color: $default-white;
+
+      &--run-btn {
+        display: block;
+        background: $default-green;
+
+        &:hover {
+          background-color: $light-green;
+        }
+      }
+
+      &--menu {
+        display: block;
+        background: $dark-gray;
+
+        &:hover {
+          background: $fifty-percent-gray;
+        }
+
+        .sds-icon.dots {
+          font-size: 7px;
+        }
+      }
+
+      &.disabled {
+        cursor: default;
+        background: $soft-gray;
+
+        .sds-icon {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .cb-text,
+  .cb-btn {
+    color: $soft-dark-gray;
+    display: inline-block;
+  }
+
+  .sds-svg-icon--icon-cluster-add {
+    fill: $soft-dark-gray;
+  }
+
+  .sds-svg-icon--icon-add-tier {
+    fill: $soft-dark-gray;
+  }
+
+  .control-bar-pipeline-list .pipeline {
+    color: $violet;
+  }
+
+  .sds-svg-icon {
+    &--button-add {
+      fill: $soft-dark-gray;
+    }
+    &--icon-service-add,
+    &--icon-add-task {
+      cursor: pointer;
+      fill: $soft-dark-gray;
+    }
+  }
+
+  .breadcrumbs-bar {
+    margin-right: 16px;
+  }
+}
+
+.release-header,
+.stage-header,
+.gate-rule-header {
+  box-sizing: border-box;
+  border-bottom: 2px solid $twenty-percent-black;
+  .sds-context-menu {
+    position: absolute;
+    width: 50px;
+    right: -20px;
+    top: 40px;
+  }
+}
+
+.control-bar-container .control-bar {
+  position: relative;
+  width: 100%;
+  height: 33px;
+  padding-top: 5px;
+}
+
+.control-bar-container .cb-btn-container {
+  position: relative;
+  z-index: 101;
+  height: 33px;
+}
+
+//-------left block----------
+.control-bar-container .left {
+  float: left;
+  width: 33%;
+}
+//---------------------------
+
+//-------right block----------
+.control-bar-container .right {
+  float: right;
+  text-align: right;
+  width: 33%;
+  white-space: nowrap;
+  //TODO: do smth with this holly crap
+  //-------
+  .cb-text,
+  .cb-btn {
+    font-weight: bold;
+  }
+  & > .cb-btn:first-child {
+    margin-left: 0;
+  }
+  .cb-btn {
+    margin-left: 30px;
+    &.select {
+      &.disabled {
+        &:hover {
+          color: $soft-gray;
+        }
+      }
+
+      &:hover {
+        color: $default-black;
+        .selectToggle:not(.disabled) {
+          background: $default-black;
+          color: $default-white;
+        }
+      }
+    }
+    &.selectToggle {
+      &.disabled {
+        cursor: default;
+        color: $default-white;
+        background: $soft-gray;
+      }
+    }
+  }
+  //-------
+
+  & > span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 33px;
+    height: 100%;
+  }
+
+  .cb-counter {
+    position: relative;
+    font-size: 14px;
+    color: $suva-gray;
+    line-height: 33px;
+    font-weight: bold;
+    margin-left: 30px;
+
+    &.service-counter {
+      margin-left: 0;
+    }
+
+    &>.cb-text {
+      margin-right: 5px;
+    }
+  }
+
+  .cb-counter + .cb-btn {
+    margin-left: 2px;
+  }
+
+  .selectToggle {
+    display: inline-block;
+    user-select: none;
+    border: 1px solid $soft-dark-gray;
+    text-align: center;
+    margin: 0 0 0 5px;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 14px;
+    min-width: 35px;
+    &.active {
+      background: $soft-dark-gray;
+      color: $default-white;
+    }
+  }
+
+  .delete {
+    color: $default-red;
+  }
+
+  .sds-svg-icon.sds-svg-icon--button-delete {
+    fill: $default-red;
+  }
+
+  .cb-text {
+    vertical-align: top;
+  }
+
+  .dashboard-popover-label {
+    display: inline;
+    font-weight: bold;
+    color: $simple-sky-blue;
+  }
+
+
+}
+//----------------------------
+
+//-------center block----------
+.control-bar-container .center {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  width: 34%;
+  @include sds-ellipsis;
+
+  .cb-text {
+    color: $default-black;
+    display: inline-block;
+    max-width: 75%;
+    vertical-align: top;
+    @include sds-ellipsis;
+    white-space: pre;
+  }
+
+  .sds-icon {
+    cursor: default;
+    &.application {
+      color: $very-soft-blue;
+    }
+    &.entry-gate,
+    &.exit-gate {
+      color: $gray-blue;
+    }
+    &.template,
+    &.dynamic-env-up,
+    &.view-col-2,
+    &.row-icon {
+      color: $orange;
+    }
+    &.view-processes {
+      color: $light-green;
+    }
+    &.snapshot {
+      color: $dark-blue;
+    }
+    &.pipeline {
+      color: $violet;
+    }
+    &.releases {
+      color: $bright-blue;
+    }
+  }
+
+  .stage-picker {
+    cursor: pointer;
+    display: inline-block;
+    .sds-icon {
+      cursor: inherit;
+    }
+  }
+
+}
+//-----------------------------
+
+.control-bar-container .cb-item-number {
+  color: $simple-sky-blue;
+  font-size: 24px;
+  vertical-align: top;
+  margin-right: 5px;
+  &.errors {
+    color: $default-red;
+  }
+}
+
+.control-bar-container .cb-item-number-with-dropdown {
+  height: 100%;
+  position: relative;
+  font-size: 24px;
+  display: inline-block;
+  margin-right: 0;
+  text-align: left;
+  white-space: nowrap;
+  color: $simple-sky-blue;
+  .dropdown {
+    display: none;
+    font-size: 7px;
+    margin-right: -2px;
+  }
+
+  &.processes-popover,
+  &.maps-popover {
+    cursor: pointer;
+
+    .dropdown {
+      display: inline;
+    }
+  }
+}
+
+.control-bar-container .sds-icon {
+  @include sds-icon-size(18px);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.control-bar-container .cb-btn {
+  cursor: pointer;
+
+  &:hover {
+    .cb-text {
+      color: $default-black;
+    }
+    .sds-icon {
+      color: $default-black;
+    }
+
+    .sds-svg-icon {
+      fill: $default-black;
+    }
+  }
+
+  &.disabled {
+    text-decoration: none;
+
+    .cb-text {
+      color: $soft-gray;
+    }
+    color: $soft-gray;
+    cursor: default;
+    .sds-icon {
+      color: $forty-percent-gray;
+      cursor: default;
+    }
+    .sds-svg-icon {
+      fill: $forty-percent-gray;
+    }
+    &:hover {
+      color: $soft-gray;
+      .sds-icon {
+        color: $forty-percent-gray;
+      }
+      .sds-svg-icon {
+        fill: $forty-percent-gray;
+      }
+    }
+  }
+}
+
+
+//---control-bar-app-env-dependency---
+.control-bar-container .control-bar__app-env-dependency {
+  .cb-item-number {
+    &.errors {
+      font-weight: 800;
+    }
+  }
+  .sds-svg-icon--icon-runtime-status-failed {
+    margin-top: -2px;
+  }
+}
+
+
+//---control-bar-architecture---
+.control-bar-container .control-bar-architecture {
+  .right {
+    .sds-icon {
+      vertical-align: middle;
+      &.add-map,
+      &.add-process {
+        font-size: 22px;
+        font-weight: normal;
+        width: 33px;
+      }
+      &.add-tier {
+        font-size: 15px;
+        font-weight: normal;
+        width: 33px;
+      }
+    }
+  }
+}
+
+//---control-bar-environment-list---
+.control-bar-container .control-bar-environment-list {
+  .sds-svg-icon--button-compare {
+    margin-left: 5px;
+  }
+}
+
+//---control-bar-environment---
+.control-bar-container .control-bar-environment {
+  .right {
+    .right__toggler-text {
+      vertical-align: top;
+      margin-right: 10px;
+      display: inline-block;
+      font-weight: bold;
+      color: $soft-dark-gray;
+    }
+    .sds-svg-icon {
+      &--icon-require-reservation {
+        margin-right: 36px;
+      }
+      &--shifted {
+        margin-right: 105px;
+      }
+    }
+    .sds-icon.add-tier {
+      margin: 0 5px;
+      font-size: 16px;
+    }
+    .sds-svg-icon__wrapper--icon-cluster-add,
+    .sds-svg-icon__wrapper--icon-add-tier {
+      vertical-align: top;
+    }
+  }
+  .left {
+    width: 35%;
+  }
+  .rolling-deploy-controls {
+    .sds-svg-icon__wrapper {
+      vertical-align: top;
+    }
+    .sds-svg-icon--icon-phases,
+    .sds-svg-icon--icon-batch {
+      vertical-align: top;
+      margin-top: 6px;
+    }
+    .sds-svg-icon--icon-batch {
+      width: 18px;
+      height: 18px;
+      margin-top: 8px;
+    }
+  }
+}
+//---control-bar-inventory---
+.control-bar-container .control-bar-inventory {
+  .sds-svg-icon {
+    &--icon-row-collapse,
+    &--icon-row-expand {
+      margin-right: 61px;
+    }
+  }
+}
+//---control-bar-inventory-compare---
+.control-bar-container .control-bar-inventory-compare {
+  .center .sds-icon {
+    font-size: 20px;
+    margin: 0 5px;
+    &.application {
+      font-size: 24px;
+    }
+  }
+  .inventory-compare-title {
+    display: flex;
+    .col {
+      flex: 1;
+      margin-right: 5px;
+      @include sds-ellipsis;
+      span {
+        display: inline;
+      }
+    }
+    .sds-icon {
+      margin: 0 5px;
+      line-height: 33px;
+    }
+  }
+  .sds-icon.change-alert {
+    cursor: default;
+  }
+  .right {
+    font-weight: bold;
+  }
+}
+
+//---control-bar-list---
+.control-bar-container .control-bar-list {
+  .left {
+    width: 40%;
+  }
+  .center {
+    width: 26%;
+  }
+}
+
+//---control-bar-processes---
+.control-bar-container .control-bar-processes {
+  .center .sds-icon {
+    font-size: 24px;
+  }
+  .sds-icon.add-step {
+    font-size: 15px;
+  }
+  .right .usage-count {
+    font-size: 18px;
+    font-weight: normal;
+    color: $medium-dark-blue;
+  }
+}
+
+//---control-bar-running-app---
+.control-bar-container .control-bar-running-app {
+  .left {
+    width: 75%;
+  }
+
+  .cb-counter {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+  }
+
+  .sds-svg-icon {
+    &--icon-row-collapse,
+    &--icon-row-expand {
+      margin: 0 69px;
+    }
+  }
+
+  .right {
+    width: 25%;
+    .sds-icon.attention {
+      width: 30px;
+      font-size: 16px;
+      cursor: default;
+      margin-right: 0;
+      vertical-align: middle;
+      font-weight: normal;
+    }
+  }
+}
+
+//---control-bar-snapshot-details---
+.control-bar-container .control-bar-snapshot-details {
+  .left {
+    width: 36%;
+  }
+  .right {
+    width: 36%;
+    padding-right: 60px;
+    box-sizing: border-box;
+    .created-by {
+      vertical-align: top;
+      max-width: 20%;
+      @include sds-ellipsis;
+    }
+  }
+  .center {
+    width: 28%;
+    .cb-text {
+      max-width: 60%;
+    }
+    .sds-icon {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+//---control-bar-snapshots-compare---
+.control-bar-container .control-bar-snapshots-compare {
+  .center .sds-icon {
+    font-size: 24px;
+  }
+  .sds-icon.change-alert {
+    cursor: default;
+  }
+}
+
+//---control-bar-snapshot-list---
+.control-bar-container .control-bar-snapshot-list {
+  .left {
+    width: 40%;
+  }
+  .right {
+    width: 40%;
+  }
+  .center {
+    width: 20%;
+    .sds-icon {
+      width: 32px;
+      padding-bottom: 5px;
+    }
+  }
+  .compare-snapshots-btn {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .compare {
+    color: $snapshots-list-compare-btn-color;
+  }
+}
+
+//---control-bar-stage---
+.control-bar-container {
+  &.stage-header,
+  &.gate-rule-header {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .control-bar-stage,
+  .control-bar-stage-gates {
+    .left,
+    .right {
+      width: 35%;
+    }
+
+    .center {
+      width: 30%;
+      line-height: 31px;
+
+      .sds-icon {
+        font-size: 10px;
+        padding-bottom: 5px;
+      }
+    }
+
+    .breadcrumbs-bar .pipeline {
+      vertical-align: top;
+      font-size: 9px;
+      color: $violet;
+    }
+
+    .right {
+      > .cb-btn {
+        margin-left: 23px;
+      }
+
+      > span {
+        line-height: 29px;
+      }
+
+      .selectToggle {
+        margin-left: 5px;
+      }
+
+      .select-item {
+        margin-right: 6px;
+      }
+
+      .cb-counter {
+        margin-left: 29px;
+      }
+    }
+
+    .sds-svg-icon--button-make-parallel {
+      margin-left: 5px;
+    }
+
+    .sds-context-menu {
+      right: -15px;
+    }
+  }
+
+  .control-bar-stage-gates {
+    .cb-counter + .cb-btn {
+      margin-left: 2px;
+    }
+  }
+}
+
+//---control-bar-stage-gates---
+.control-bar-container .control-bar-stage-gates {
+  .center {
+    line-height: 29px;
+
+    .dropdown {
+      font-size: 10px;
+      cursor: pointer;
+    }
+  }
+  .breadcrumbs-bar .stages {
+    vertical-align: top;
+    font-size: 8px;
+  }
+}
+
+//---control-bar-path-to-production---
+.control-bar-container .control-bar-path-to-production {
+  .left,
+  .right {
+    width: 28%;
+  }
+  .right {
+    .sds-icon {
+      user-select: none;
+    }
+    .expand-horizontal {
+      font-size: 8px;
+    }
+    .move-left,
+    .move-right {
+      &.disabled {
+        cursor: default;
+        color: $soft-gray;
+      }
+    }
+  }
+  .center {
+    width: 44%;
+    .cb-text {
+      max-width: 30%;
+    }
+    .sds-icon {
+      font-size: 12px;
+      margin: -2px 6px 0 6px;
+    }
+  }
+}
+
+//---search in control-bar---
+.control-bar-container .control-bar {
+  .search-collapsable {
+    display: inline-block;
+
+    .sds-icon {
+      line-height: 23px;
+      cursor: pointer;
+    }
+    &__inner {
+      position: static;
+    }
+    &__remove-icon {
+      font-size: 13px;
+    }
+    &__search-icon {
+      display: none;
+    }
+    &__search-input {
+      text-align: left;
+    }
+  }
+}
+
+
+.control-bar-container .control-bar-react-list {
+  &__left {
+    width: 38%;
+  }
+  &__center {
+    width: 24%;
+  }
+  &__right {
+    width: 38%;
+  }
+}
+
+.start-deliver {
+  float: right;
+  white-space: nowrap;
+  &__separator {
+    display: inline-block;
+    margin: 0 2px 0 4px;
+    line-height: 19px;
+    color: $very-light-gray;
+  }
+  &__container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  &__label {
+    display: inline-block;
+    line-height: 19px;
+    margin-right: 5px;
+    color: $very-light-gray;
+  }
+  &__date {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    color: $light-blue;
+    margin-right: 5px;
+  }
+  &__edit-icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+    line-height: 20px;
+  }
+  .sds-icon.edit {
+    font-size: 14px;
+  }
+
+  &.disabled {
+    .start-deliver__container {
+      cursor: default;
+    }
+    .sds-icon.edit {
+      cursor: default;
+      color: $soft-gray;
+    }
+  }
+}
+
+.control-bar-project-select-container {
+  cursor: pointer;
+
+  .sds-icon.toolbox {
+    margin-top: -2px;
+    cursor: pointer;
+  }
+}
+
+.control-bar-container {
+  .control-bar--flex {
+    display: flex;
+
+    .left, .right {
+      float: none;
+      width: auto;
+    }
+
+    .left {
+      flex: 1;
+      @include sds-ellipsis;
+    }
+
+    .right {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 270px;
+
+      &.control-bar__application--right {
+        width: 600px;
+      }
+
+      &.control-bar__release--right {
+        width: 400px;
+      }
+    }
+  }
+}
+
+.control-bar-release .cb-btn-container.right {
+  z-index: 106;
+  width: auto;
+}
+
+.embedded-header .control-bar-react-list__center {
+  .ec-select .ec-select-header {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    line-height: 34px;
+  }
+}
+
+.control-bar-container .control-dashboard {
+
+  .control-dashboard__left,
+  .control-dashboard__right {
+    flex: none;
+    width: 290px;
+    @include sds-ellipsis;
+  }
+
+  .control-dashboard__center {
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .dashboard-filter-item {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    &:first-child {
+      justify-content: flex-end;
+    }
+
+    &:last-child {
+      justify-content: flex-start;
+      margin-right: 0 !important;
+    }
+
+    &.dashboard-applications-popover,
+    &.dashboard-environments-popover,
+    &.dashboard-releases-popover {
+      flex: 0 1 auto;
+      overflow: hidden;
+      min-width: 100px;
+      text-overflow: ellipsis;
+      display: inline-block;
+      text-align: left;
+      .dashboard-object-popover-label {
+        flex: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+  }
+
+  .dashboard-start-end-popover-delimiter {
+    margin: 0 5px;
+  }
+
+  .dashboard-start-end-popover-set-start-label,
+  .dashboard-start-end-popover-set-end-label {
+    display: inline-flex;
+    color: $simple-sky-blue;
+    fill: $simple-sky-blue;
+    align-items: center;
+  }
+
+  &.control-dashboard--editor {
+    .breadcrumbs-bar {
+      margin-right: 0;
+    }
+
+    .control-dashboard__center {
+      justify-content: flex-end;
+      flex-grow: 0;
+      width: auto;
+    }
+
+    .control-dashboard__left {
+      flex: 1;
+    }
+
+    .control-dashboard__right {
+      min-width: auto;
+      width: auto;
+      margin-left: auto;
+    }
+
+    .right .cb-counter {
+      margin-left: 60px;
+    }
+
+    .sds-svg-icon--button-helptip {
+      fill: $soft-gray;
+      width: 16px;
+      height: 16px;
+    }
+
+    .dashboard-filters-label {
+      margin-right: 10px;
+    }
+
+    .dashboard-filter-item {
+      margin-right: 50px;
+      font-size: 16px;
+    }
+  }
+}
+
+.control-bar-container .control-dashboard .control-dashboard__center {
+  &.without-date-filter {
+    &.filters-count-2 {
+      .dashboard-environments-popover,
+      .dashboard-applications-popover,
+      .dashboard-releases-popover {
+        max-width: calc(50% - 15px); // margins / 2 = 15
+      }
+    }
+
+    &.filters-count-3 {
+      .dashboard-environments-popover,
+      .dashboard-applications-popover,
+      .dashboard-releases-popover {
+        max-width: calc(33% - 20px); // margins / 3 = 20
+      }
+    }
+  }
+
+  &.contains-date-filter {
+
+    &.filters-count-3 {
+      .dashboard-environments-popover,
+      .dashboard-applications-popover,
+      .dashboard-releases-popover {
+        max-width: calc(50% - 210px); // date filter width + margins / 2 = 210
+      }
+    }
+
+    &.filters-count-4 {
+      .dashboard-environments-popover,
+      .dashboard-applications-popover,
+      .dashboard-releases-popover {
+        max-width: calc(33% - 150px); // date filter width + margins / 3 = 150
+      }
+    }
+  }
+}

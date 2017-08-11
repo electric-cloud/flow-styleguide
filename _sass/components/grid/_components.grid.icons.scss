@@ -24,14 +24,6 @@
       fill: $light-green;
     }
 
-    &--icon-stage {
-      fill: $light-blue;
-    }
-
-    &--icon-runtime-run:not(.disabled) {
-      fill: $saturated-green;
-    }
-
     &--icon-rolling-deploy {
       fill: $saturated-green;
     }
@@ -44,36 +36,24 @@
       fill: $saturated-green;
     }
 
-    &--icon-process {
-      fill: $light-green;
-    }
-
-    &--icon-environments-static {
-      fill: $orange;
-    }
-
     &--icon-environments-dynamic {
       fill: $orange;
-    }
-    &--icon-cluster.mapped {
-      fill: $soft-dark-gray;
-    }
-
-    &--icon-application-tier {
-      fill: $ninety-percent-blue;
     }
 
     &--icon-resource {
       fill: $medium-soft-blue;
     }
 
-    &--icon-environments-dynamic {
-      fill: $orange;
+    &--icon-display-tutorial-videos {
+      fill: $default-green;
     }
 
     &--icon-environments-dynamic-down,
     &--icon-environments-static-down {
       fill: $default-red;
+    }
+    &--icon-runtime-rerun {
+      fill: $saturated-green;
     }
   }
 
@@ -120,10 +100,6 @@
       &.blue {
         color: $soft-blue;
       }
-    }
-
-    &.kill-switch {
-      color: $dark-red;
     }
 
     &.dynamic-env-up {
@@ -367,6 +343,8 @@
     }
 
     &.drag {
+      position: relative;
+      bottom: 2px;
       color: $gray;
       &.black {
         color: $default-black;
@@ -380,10 +358,6 @@
 
     &.alert-flag {
       color: $sunny;
-    }
-
-    &--pointer {
-      cursor: pointer;
     }
   }
 

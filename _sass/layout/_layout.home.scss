@@ -1,0 +1,80 @@
+//================================================
+//  Home
+//================================================
+
+.home-screen,
+.tutorial-videos-screen {
+  background: url('../img/login-page-background.png');
+  height: 100%;
+}
+.home-menu {
+  padding: 20px 0 0;
+  &--fixed-width {
+    width: 470px;
+    margin: 0 auto;
+  }
+  .ec-row {
+    &__item {
+      color: $default-black;
+      display: block;
+      height: 98px;
+      line-height: 98px;
+      border-bottom: 2px solid $default-white;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &--hovered {
+        &:hover {
+          text-decoration: none;
+          color: $default-black;
+          background: rgba(255,255,255,.7);
+        }
+      }
+    }
+  }
+
+  .ec-col {
+    &__item-left {
+      width: 98px;
+      margin-right: 8px;
+    }
+    &__item-right {
+      text-align: left;
+      width: 360px;
+    }
+    &__item-left,
+    &__item-right {
+      line-height: 26px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &__item-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    &__item-icon {
+      width: 98px;
+      .sds-svg-icon {
+        fill: $default-black;
+      }
+    }
+    &__item-description-list {
+      padding-left: 17px;
+      margin: 0;
+    }
+    &__item-description-list-item {
+      font-size: 18px;
+    }
+    &__item-arrow {
+      display: inline-block;
+      margin-left: 26px;
+      margin-right: -14px;
+      vertical-align: middle;
+    }
+  }
+}

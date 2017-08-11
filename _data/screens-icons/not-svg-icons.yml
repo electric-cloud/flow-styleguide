@@ -1,0 +1,134 @@
+- name: inventory
+  description: Inventory
+
+- name: back
+  description: Back to Home screen
+
+- name: kill-switch
+  description: Retire Environment
+
+- name: view-tiers
+  description: Environment Tier
+
+- name: details-arrow
+  description: Resoucre Details
+
+- name: check-mark
+  description: Check Selected Rows
+
+- name: provision
+  description: Provision
+
+- name: properties
+  description: Properties
+
+- name: access
+  description: User Accesses
+
+- name: provider-aws
+  description: AWS provider
+
+- name: provider-openstack
+  description: OpenStack provider
+
+- name: provider-default
+  description: Default provider
+
+- name: folder-plus
+  description: Properties add folder
+
+- name: folder
+  description: Properties folder
+
+- name: checkbox
+  description: Checkbox button
+
+- name: schedule
+  description: Reservations
+
+- name: frequency-daily
+  description: Daily Freaquency
+
+- name: frequency-once
+  description: Once Freaquency
+
+- name: frequency-weekly
+  description: Weekly Freaquency
+
+- name: frequency-monthly
+  description: Monthly Freaquency
+
+- name: edit
+  description: Edit
+
+- name: version
+  description: Version
+
+- name: component2
+  description: Component
+
+- name: artifact
+  description: Artifact
+
+- name: snapshot
+  description: Snapshot
+
+- name: view-processes
+  description: Processes
+
+- name: plugin
+  description: Plugins
+
+- name: sort-item-down
+  description: Sort Down
+
+- name: sort-item-up
+  description: Sort Up
+
+- name: arrow-up
+  description: Resource Up
+
+- name: arrow-down
+  description: Resource Down
+
+- name: linux
+  description: OS Linux
+
+- name: windows
+  description: OS Windows
+
+- name: resource-pool
+  description: Resource Pool
+
+- name: search
+  description: Search
+
+- name: arrow-back
+  description: Back to previous
+
+- name: environment
+  description: Environment
+
+- name: radio-btn
+  description: Radio button
+
+- name: done
+  description: Done button
+
+- name: drag
+  description: Drag
+
+- name: remove-icon
+  description: Remove
+
+- name: add-component
+  description: Create from Scratch
+
+- name: expand-area
+  description: Copy Existing
+
+- name: row-icon
+  description: Environment
+
+- name: application
+  description: Application

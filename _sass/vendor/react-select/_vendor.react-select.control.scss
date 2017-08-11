@@ -1,4 +1,4 @@
-// 
+//
 // Control
 // ------------------------------
 
@@ -151,28 +151,28 @@
 
 // arrow indicator
 
-.Select-arrow-zone {
+.Select-arrow-zone,
+.Select-arrow {
   content: " ";
   display: block;
   position: absolute;
+  cursor: pointer;
+}
+
+.Select-arrow-zone {
   right: 0;
   top: 0;
   bottom: 0;
   width: 30px;
-  cursor: pointer;
 }
 
 .Select-arrow {
   border-color: $select-arrow-color transparent transparent;
   border-style: solid;
   border-width: $select-arrow-width $select-arrow-width 0;
-  content: " ";
-  display: block;
   height: 0;
   margin-top: ceil($select-arrow-width / 2);
-  position: absolute;
   right: $select-padding-horizontal;
   top: $select-padding-vertical + $select-arrow-width + 1;
   width: 0;
-  cursor: pointer;
 }

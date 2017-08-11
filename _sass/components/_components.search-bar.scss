@@ -1,0 +1,79 @@
+//================================================
+//  Search Bar
+//================================================
+.search-bar {
+  margin-bottom: 10px;
+
+  .search-bar-controls {
+    display: flex;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .ec-tabs {
+    flex-grow: 1;
+    display: flex;
+    margin-right: 10px;
+    border: 1px solid $soft-dark-gray;
+    box-sizing: border-box;
+    height: 100%;
+
+    .ec-tab {
+      flex: 1;
+      height: 100%;
+      width: auto;
+      border: 0;
+      font-size: 13px;
+      color: $dim-gray;
+
+      &.active {
+        background-color: $soft-dark-gray;
+        color: $default-white;
+      }
+    }
+
+    .ec-tab-text {
+      line-height: 28px;
+    }
+  }
+
+  .search-bar-btn {
+    width: 30px;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    background-color: $medium-white;
+    border: 1px solid $input-border;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $gainsboro-white;
+    }
+
+    &.active {
+      border-color: $soft-dark-gray;
+      background-color: $soft-dark-gray;
+
+      .sds-svg-icon {
+        fill: $default-white;
+      }
+    }
+
+    .sds-svg-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -7px 0 0 -7px;
+      fill: $fifty-percent-gray;
+    }
+  }
+
+  .sds-input {
+    height: 30px;
+    padding: 0 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+  }
+}

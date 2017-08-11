@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 //================================================
 //  Vendor
@@ -9,6 +9,9 @@
 @import 'vendor/vendor.codemirror';
 @import 'vendor/vendor.codemirror-addons';
 @import 'vendor/vendor.fullcalendar';
+@import 'vendor/vendor.spectrum-colorpicker';
+@import 'vendor/vendor.trumbowyg';
+@import 'vendor/vendor.tippy';
 
 
 //================================================
@@ -19,6 +22,7 @@
 @import 'settings/settings.fonts';
 @import 'settings/settings.form-controls';
 @import 'settings/settings.icons';
+@import 'settings/settings.z-indexes';
 
 
 //================================================
@@ -26,6 +30,7 @@
 //================================================
 @import 'tools/tools.functions';
 @import 'tools/tools.mixins';
+@import 'tools/tools.animations.mixins';
 
 
 //================================================
@@ -33,7 +38,6 @@
 //================================================
 @import 'base/base.normalize';
 @import 'base/base.print';
-@import 'base/base.animations';
 @import 'base/base.elements';
 @import 'base/base.links';
 @import 'base/base.text';
@@ -63,15 +67,20 @@
 @import 'components/components.select';
 @import 'components/components.table';
 @import 'components/components.tabs';
+@import 'components/components.list-filters';
+@import 'components/components.rich-text-editor';
 
 
 //================================================
 //  Wizard
 //================================================
+@import 'components/wizard/components.wizard.catalog-item-create';
 @import 'components/wizard/components.wizard.create';
+@import 'components/wizard/components.wizard.compare-environments';
 @import 'components/wizard/components.wizard.delete';
 @import 'components/wizard/components.wizard.breadcrumbs';
 @import 'components/wizard/components.wizard.alerts';
+@import 'components/wizard/components.wizard.application-dependencies';
 @import 'components/wizard/components.wizard.response-dialog';
 @import 'components/wizard/components.wizard.steps';
 @import 'components/wizard/components.wizard.approve-gate';
@@ -90,25 +99,69 @@
 @import 'components/wizard/components.wizard.containers';
 @import 'components/wizard/components.wizard.services';
 @import 'components/wizard/components.wizard.clusters';
+@import 'components/wizard/components.wizard.tours';
+@import 'components/wizard/components.wizard.credentials';
+@import 'components/wizard/components.wizard.run-service-catalog';
+@import 'components/wizard/components.wizard.command-editor';
 @import 'components/wizard/components.wizard.main';
 
 
 //================================================
 //  Components / Layout
 //================================================
+@import 'layout/layout.content-header';
+@import 'layout/layout.control-bar';
+@import 'layout/layout.menu';
 @import 'components/components.object-menu';
+@import 'layout/layout.applications';
 @import 'components/components.breadcrumbs';
+@import 'layout/layout.step-wizard';
+@import 'layout/layout.environments';
+@import 'layout/layout.app-processes';
 @import 'components/components.app-run-menu';
+@import 'layout/layout.application-mapping';
+@import 'layout/layout.embedded';
+@import 'layout/layout.about';
+@import 'layout/layout.home';
+@import 'layout/layout.login';
 @import 'components/components.loader';
+@import 'layout/layout.canvas';
 @import 'components/popovers/components.popovers.popover';
 @import 'components/popovers/components.popovers.for-context-action';
+@import 'layout/layout.tier';
+@import 'layout/layout.parameters';
+@import 'layout/layout.mxgraph';
+@import 'layout/layout.resources-modal';
+@import 'layout/layout.art-versioning-modal';
+@import 'layout/layout.provision-res-number-modal';
+@import 'layout/layout.gwt-plugins';
+@import 'layout/layout.notifications';
 @import 'components/components.select2-automatch';
+
+//================================================
+//  Schedule
+//================================================
+@import 'layout/schedule/layout.schedule.confirmation-wizard';
+@import 'layout/schedule/layout.schedule.manager-wizard';
+@import 'layout/schedule/layout.schedule.create-from-previous-wizard';
+@import 'layout/schedule/layout.schedule.details-wizard';
+@import 'layout/schedule/layout.schedule.schedules-reservations-header';
 
 
 //================================================
 //  Components / Layout
 //================================================
+@import 'layout/layout.snapshots';
+@import 'layout/layout.history';
+@import 'layout/layout.resource-templates';
+@import 'layout/layout.ec-table';
 @import 'components/components.number-input';
+@import 'layout/layout.pipelines';
+@import 'layout/layout.stages';
+@import 'layout/layout.tasks';
+@import 'layout/layout.releases';
+@import 'layout/layout.path-to-production';
+
 
 //================================================
 //  React-select
@@ -120,6 +173,14 @@
 @import "vendor/react-select/vendor.react-select.menu";
 @import "vendor/react-select/vendor.react-select.multi";
 @import "vendor/react-select/vendor.react-select.select-dark";
+
+
+//================================================
+//  Components / Layout
+//================================================
+@import 'layout/layout.new-components';
+@import 'layout/layout.credential-parameter';
+@import 'layout/layout.parameters-wizard';
 
 
 //================================================
@@ -137,9 +198,27 @@
 @import 'components/grid/components.grid.compare';
 @import 'components/grid/components.grid.task';
 @import 'components/grid/components.grid.last-changes';
+@import 'components/grid/components.grid.objects-list';
+
+//================================================
+//  Freemium
+//================================================
+@import 'layout/freemium/layout.freemium.tutorial-videos';
 
 
 //================================================
 //  Components / Layout
 //================================================
+@import 'layout/layout.app-env-dependency';
+@import 'layout/layout.architecture-starting-option';
 @import 'components/components.error-tile';
+@import 'layout/layout.coachmark';
+@import 'layout/layout.catalog';
+@import 'components/components.search-bar';
+@import 'components/components.retry';
+@import 'components/_components.icon-selection';
+
+//================================================
+//  Dashboard
+//================================================
+@import 'layout/dashboard/index';

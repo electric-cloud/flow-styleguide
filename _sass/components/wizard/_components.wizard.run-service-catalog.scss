@@ -1,0 +1,161 @@
+.run-service-catalog-wizard {
+  font-size: 16px;
+
+  .ec-react-wizard__confirmation-attention {
+    left: 0;
+  }
+
+  .ec-react-wizard__loader {
+    display: flex;
+    flex-direction: column;
+    min-height: 1px;
+  }
+
+  .ec-react-wizard__content {
+    flex: 1;
+    min-height: 1px;
+  }
+
+  .react-form__label {
+    font-size: 16px;
+  }
+
+  .ec-react-wizard {
+    position: relative;
+  }
+
+  .header {
+    position: relative;
+    @include modal-header-text();
+    font-weight: 400;
+  }
+
+  .separator {
+    @include separator();
+    margin-bottom: 10px;
+  }
+
+  .content {
+    height: calc(100% - 110px);
+    overflow-y: scroll;
+    position: relative;
+    margin-right: -10px;
+  }
+
+  .entry-category-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .section-expand-collapse {
+    position: absolute;
+    right: 0;
+  }
+
+  .section-index {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .section-item-form-row {
+    position: relative;
+    margin-top: 10px;
+
+    .react-form__label {
+      margin-right: 35px;
+      width: 200px;
+    }
+
+    .ec-react-help__wrapper {
+      margin-left: -14px;
+      line-height: 40px;
+      position: relative;
+      left: -10px;
+      .ec-react-help__icon {
+        position: static;
+      }
+    }
+
+    .react-form__select-holder,
+    .react-form__textarea-holder,
+    .react-form__txt-input-holder,
+    .react-form__file-input-holder {
+      width: 60%;
+      text-align: left;
+    }
+
+    .react-form__txt-input-holder.message {
+      line-height: 24px;
+    }
+
+    .react-form__validation {
+      margin-left: 0;
+    }
+
+    .react-form__textarea,
+    .react-form__txt-input,
+    .react-form__file-input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .react-form__checkbox-container {
+      margin-right: 30px;
+      input {
+        position: absolute;
+        top: 6px;
+        right: 8px;
+      }
+
+      .ec-react-help__wrapper {
+        padding: 0 0 0 10px;
+        left: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  .section-item-content {
+    display: flex;
+  }
+
+  .section-item-form {
+    flex: 1;
+    margin: 0 30px 10px 0;
+
+    .react-form__txt-input-wrapper,
+    .react-form__textarea-wrapper,
+    .react-form__checkbox-container,
+    .react-form__select-wrapper,
+    .react-form__file-input-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .section-item-instructions {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .section-item-instructions-title {
+    margin: 18px 0;
+  }
+
+  .section-item-instructions-text {
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  .section-item-instructions-more {
+    color: $soft-blue;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}

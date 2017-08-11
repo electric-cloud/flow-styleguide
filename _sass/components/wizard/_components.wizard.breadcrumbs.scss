@@ -13,18 +13,19 @@
         width: 30px;
         cursor: pointer;
         text-align: center;
-        padding-top: 9px;
-        color: $white;
+        line-height: 12px;
+        padding-top: 12px;
+        color: $default-white;
 
         .sds-svg-icon {
-          fill: $white;
+          fill: $default-white;
         }
 
         &--first {
           background-color: $wBreadcrumbColorFirst;
         }
         &--second {
-          background-color: $wBreadcrumbColorSecond;
+          background-color: $dark-gray;
         }
         &--third {
           background-color: $wBreadcrumbColorThird;
@@ -73,6 +74,9 @@
               color: $soft-gray;
               cursor: default;
             }
+            &.deployer {
+              color: $ninety-percent-blue;
+            }
           }
         }
         .sds-icon.pipeline {
@@ -84,7 +88,7 @@
           font-size: 8px;
         }
         .sds-icon.toolbox:before {
-          color: $white;
+          color: $default-white;
         }
       }
     }

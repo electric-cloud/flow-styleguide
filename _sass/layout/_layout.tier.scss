@@ -1,0 +1,504 @@
+//================================================
+//  Tier
+//================================================
+
+.resource-phase-map-popover {
+  .resource-phase-map-item {
+    margin: 0;
+  }
+
+  .ec-react-popover__not-link {
+    padding: 0 20px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+.tier {
+  display: inline-block;
+  margin: em(50);
+  vertical-align: top;
+  box-sizing: border-box;
+  border: em(2) solid $default-black;
+  box-shadow: 0 em(5) em(15) em(-2) $default-black;
+  background-color: $default-white;
+  background-image: linear-gradient(to bottom, $default-white, $very-soft-gray);
+  text-align: center;
+
+  * {
+    box-sizing: inherit;
+  }
+}
+
+.tier-violet {
+  background-color: $default-white;
+  background-image: linear-gradient(to bottom, $light-lilac, $light-violet);
+}
+
+.tier-purple {
+  background-color: $bright-purple;
+  background-image: linear-gradient(to bottom, $bright-purple, $light-purple);
+}
+
+.tier-inner {
+  position: relative;
+  margin: em(-2);
+}
+
+.tier-title {
+  position: absolute;
+  top: 0;
+  right: em(25, 15);
+  left: em(25, 15);
+  height: em(25, 15);
+  line-height: em(25, 15);
+  font-size: em(15);
+  max-width: 100%;
+  @include sds-ellipsis;
+}
+
+.tier-title-text {
+  white-space: pre;
+  cursor: pointer;
+}
+
+.tier-menu-btn,
+.tier-add-btn,
+.tier-cell-menu-btn,
+.tier-cell-remove-btn {
+  position: absolute;
+  cursor: pointer;
+  line-height: 1;
+
+  .sds-svg-icon {
+    width: em(13);
+    height: em(25);
+    margin: 0;
+  }
+}
+
+.tier-menu-btn {
+  top: 0;
+  left: em(5);
+
+  &:hover .sds-svg-icon {
+    fill: $default-gray;
+  }
+}
+
+.tier-add-btn {
+  bottom: 0;
+  right: em(5);
+
+  .sds-svg-icon {
+    fill: $dark-sky-blue;
+
+    .tier-violet & {
+      fill: $most-light-gray;
+    }
+  }
+
+  &:hover .sds-svg-icon {
+    fill: $hovered-base-blue;
+
+    .tier-violet & {
+      fill: $default-white;
+    }
+  }
+}
+
+.tier-cells {
+  @include clearfix;
+}
+
+.tier-cell {
+  float: left;
+  margin: em(25);
+  width: em(150);
+  height: em(150);
+  position: relative;
+  border: em(4) dashed $steel-blue;
+  color: $default-black;
+}
+
+.tier-cell-full {
+  border: 0;
+}
+
+.tier-cell-purple {
+  border-color: $light-purple;
+}
+
+.tier-cell-orange {
+  border-color: $gold-orange;
+  color: $default-black;
+}
+
+.tier-cell-violet {
+  border-color: $light-violet;
+}
+
+.tier-cell-solid {
+  border: em(2) solid $default-white;
+}
+
+.tier-cell-white {
+  border-color: $default-white;
+}
+
+.tier-cell-grey {
+  border-color: $forty-percent-gray;
+  background-color: $default-white;
+}
+
+.tier-cell-full-dark {
+  background-color: $light-black;
+  color: $default-white;
+}
+
+.tier-cell-full-blue {
+  background-color: $light-sky-blue;
+  background-image: linear-gradient(to bottom, $light-sky-blue, $dark-sky-blue);
+}
+
+.tier-cell-full-orange {
+  background-color: $light-orange;
+  background-image: linear-gradient(to bottom, $light-orange, $very-light-orange);
+}
+
+.tier-cell-remove-btn {
+  top: em(4);
+  left: em(5);
+
+  .sds-svg-icon {
+    width: em(9);
+    height: em(9);
+    fill: $lochmara-blue;
+
+    .tier-cell-white & {
+      fill: $default-white;
+    }
+  }
+}
+
+.tier-cell-menu-btn {
+  top: 0;
+  left: em(5);
+
+  .sds-svg-icon {
+    fill: $default-white;
+  }
+
+  &:hover .sds-svg-icon {
+    opacity: 0.8;
+  }
+}
+
+.tier-cell-title {
+  height: em(60, 16);
+  padding: em(10, 16) em(25, 16);
+  color: $default-black;
+  font-size: em(16);
+  line-height: em(20, 16);
+
+  .tier-cell-full-dark & {
+    color: $default-white;
+  }
+}
+
+.tier-cell-title-text {
+  position: relative;
+  top: 50%;
+  max-height: 100%;
+  transform: translateY(-50%);
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  cursor: pointer;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tier-cell-label {
+  padding: em(9, 18) 0.5em em(7, 18) 0.5em;
+  font-size: em(18);
+  line-height: 1.3;
+}
+
+.tier-cell-label-text {
+  @include sds-ellipsis;
+  font-size: em(12, 18);
+  letter-spacing: 0.04em;
+}
+
+.tier-cell-icon {
+  display: block;
+  margin: 0 auto;
+  width: em(40);
+  height: em(34);
+  fill: $dark-sky-blue;
+
+  .tier-cell-violet & {
+    fill: $light-violet;
+  }
+
+  .tier-cell-purple & {
+    fill: $light-purple;
+  }
+
+  .tier-cell-full &,
+  .tier-cell-solid &,
+  .tier-cell-white & {
+    fill: $default-white;
+  }
+}
+
+.tier-cell-add-btn {
+  position: absolute;
+  right: em(-4);
+  bottom: em(-4);
+  left: em(-4);
+  height: em(25);
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: $lochmara-blue;
+  background-image: linear-gradient(to bottom, $steel-blue, $dark-sky-blue);
+  text-align: center;
+  line-height: 1;
+
+  .tier-cell-purple &,
+  .tier-cell-purple &:active {
+    background: $light-purple;
+  }
+
+  .tier-cell-orange &,
+  .tier-cell-orange &:active {
+    background: $gold-orange;
+  }
+
+  .tier-cell-violet &,
+  .tier-cell-violet &:active {
+    background: $light-violet;
+  }
+
+  .tier-cell-white &,
+  .tier-cell-white &:active {
+    background: $default-white;
+  }
+
+  .tier-cell-grey &,
+  .tier-cell-grey &:active {
+    background: $light-black;
+  }
+
+  .sds-svg-icon {
+    width: em(13);
+    height: 100%;
+    fill: $default-white;
+
+    .tier-cell-white & {
+      fill: $light-violet;
+    }
+  }
+
+  &:hover {
+    background: $lochmara-blue;
+
+    .tier-cell-purple & {
+      background: $middle-purple;
+    }
+
+    .tier-cell-violet & {
+      background: $soft-violet;
+    }
+
+    .tier-cell-orange & {
+      background: $dark-orange;
+    }
+
+    .tier-cell-white & {
+      background: $french-lilac;
+    }
+
+    .tier-cell-grey & {
+      background: $default-gray;
+    }
+  }
+
+  &:active {
+    background: $regal-blue;
+  }
+}
+
+.tier-cell-process {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: em(32);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: $default-white;
+  line-height: 1;
+
+  .sds-svg-icon {
+    fill: currentColor;
+  }
+}
+
+.tier-cell-process-counter {
+  margin-right: em(2, 22);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: em(22);
+  line-height: em(32, 22);
+
+  &.tier-cell-process-counter-disabled {
+    pointer-events: none;
+    cursor: default;
+
+    .sds-svg-icon {
+      display: none;
+    }
+  }
+
+  .sds-svg-icon {
+    width: em(8, 22);
+    height: em(8, 22);
+    margin-right: em(2, 22);
+    vertical-align: em(1, 22);
+  }
+}
+
+.tier-cell-add-process {
+  opacity: 0.7;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .sds-svg-icon {
+    width: em(26);
+    height: em(32);
+  }
+}
+
+.tier-cell-icon-btn,
+.tier-cell-node-btn,
+.tier-cell-node-ghost-btn {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  line-height: 1;
+
+  .sds-svg-icon {
+    width: em(36);
+    height: em(36);
+
+    .tier-cell-purple & {
+      fill: $light-purple;
+    }
+
+    .tier-cell-hollow & {
+      fill: $default-white;
+    }
+  }
+}
+
+.tier-cell-node-btn {
+  margin-top: em(50);
+  width: 70px;
+  height: 70px;
+}
+
+.tier-cell-node-ghost-btn {
+  margin-top: em(40);
+}
+
+.tier-overlay {
+  @include stretch(1);
+  opacity: 0;
+  cursor: pointer;
+  background-color: $cornflower-blue;
+
+  &:hover {
+    opacity: 0.2;
+  }
+
+  &.tier-overlay-violet {
+    background-color: $soft-violet;
+  }
+
+  &.tier-overlay-orange {
+    background-color: $romneya-orange;
+  }
+
+  &.tier-overlay-purple {
+    background-color: $middle-purple;
+  }
+}
+
+.tier-cell-deploy {
+  position: absolute;
+  bottom: 0;
+  left: em(5);
+  cursor: pointer;
+  line-height: 1;
+
+  .sds-svg-icon {
+    margin: 0;
+    fill: $default-white;
+  }
+
+  .sds-svg-icon--icon-menu-dropdown {
+    width: em(9);
+    height: em(9);
+    margin-right: em(10);
+  }
+
+  .sds-svg-icon--icon-phases,
+  .sds-svg-icon--icon-batch {
+    width: em(18);
+    height: em(25);
+  }
+}
+
+.tier-cell-edit-btn {
+  position: absolute;
+  margin-left: em(5, 18);
+  opacity: 0.7;
+  cursor: pointer;
+  line-height: 1.2;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .sds-svg-icon {
+    margin: 0;
+    width: em(11, 18);
+    height: em(11, 18);
+    fill: $default-white;
+  }
+}
+
+
+.tier-cell-cluster {
+  .tier-cell-node-btn {
+    margin-top: em(40);
+  }
+
+  .sds-svg-icon--icon-cluster-amazon {
+    width: em(80);
+    height: em(60);
+  }
+
+  .sds-svg-icon--icon-cluster-google {
+    width: em(52);
+    height: em(60);
+  }
+}

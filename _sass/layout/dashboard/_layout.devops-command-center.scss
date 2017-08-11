@@ -1,0 +1,273 @@
+&.widgets-layout--devops-command-center {
+  display: block;
+
+  .devops-command-center__summary {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-top: 2px solid $forty-percent-gray;
+
+    @include separator;
+  }
+
+  .devops-command-center__phases {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .devops-command-center__phase-section {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 220px;
+    border-right: 2px solid $forty-percent-gray;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .widget-item--summary {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 400px;
+    min-width: 266px;
+    height: 70px;
+    margin: 0;
+    border: 0;
+  }
+
+  .widget-item--phased {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    height: 120px;
+    border: 0;
+    margin-bottom: 10px;
+    height: auto;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .widget-item--phased-first {
+    margin-bottom: 20px;
+  }
+
+  .widget--summary {
+    position: relative;
+
+    .ec-grid-primary__empty-simple {
+      margin-top: 25px;
+    }
+  }
+
+  .widget--metric {
+    position: relative;
+    background-color: $soft-light-gray;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .widget--metric-no-data {
+    background-color: $default-white;
+    border: 2px solid $soft-gray;
+    box-sizing: border-box;
+  }
+
+  .metric-phased-report__value {
+    @include flex-center;
+
+    .sds-svg-icon--icon-runtime-duration {
+      margin-right: 8px;
+    }
+  }
+
+  .metric-phased-report__reference {
+    line-height: 16px;
+    font-size: 16px;
+    @include flex-center;
+  }
+
+  .metric-phased-report__persent {
+    top: -0.2em;
+  }
+
+  .metric-phased-report__trend {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+  }
+
+  .metric-phased-report__days {
+    display: none;
+  }
+
+  .widget--metric-phase-yes {
+    .metric-phased-report__header {
+      flex: 20;
+    }
+
+    .metric-phased-report__value {
+      font-size: 60px;
+      flex: 30;
+    }
+
+    .metric-phased-report__reference {
+      flex: 25;
+    }
+
+    .metric-phased-report__phase {
+      flex: 25;
+      font-size: 24px;
+      @include flex-center;
+    }
+  }
+
+
+  .widget--metric-phase-no {
+    .metric-phased-report__header {
+      flex: 20;
+    }
+
+    .metric-phased-report__value {
+      flex: 40;
+
+      &.metric-report-time-field {
+        font-size: 36px;
+      }
+
+      &.metric-report-number-field {
+        font-size: 40px;
+      }
+
+      &.metric-report-number-of-total-field {
+        font-size: 36px;
+      }
+    }
+
+
+    .metric-phased-report__reference {
+      flex: 40;
+    }
+
+    .metric-phased-report__phase {
+      display: none;
+    }
+  }
+
+  .widget--metric--duration-days {
+    .metric-phased-report__header {
+      flex: 10;
+    }
+
+    .metric-phased-report__days {
+      display: flex;
+      flex: 30;
+      font-size: 30px;
+      @include flex-center;
+    }
+
+    .metric-phased-report__value {
+      flex: 20;
+
+      &.metric-report-time-field {
+        font-size: 24px;
+      }
+
+      .sds-svg-icon--icon-runtime-duration {
+        margin-right: 5px;
+        width: 12px;
+        height: 14px;
+      }
+    }
+  }
+
+
+
+  .metric-summary-report {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .metric-summary-report__title {
+      position: relative;
+      margin-right: 6px;
+      height: 70px;
+      align-items: center;
+      display: flex;
+    }
+
+    .metric-summary-report__reference {
+      max-height: 40px;
+      font-weight: 600;
+      font-size: 18px;
+      overflow: hidden;
+    }
+
+    .metric-summary-report__value {
+      font-size: 48px;
+      color: $simple-sky-blue;
+      position: relative;
+    }
+
+    .metric-summary-report__trend-container {
+      position: relative;
+      height: 38px;
+      display: flex;
+      align-items: flex-end;
+      min-width: 20px;
+      margin-left: 4px;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .metric-summary-report__trend {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .metric-summary-report__percent {
+      top: -0.8em;
+      font-size: 50%;
+    }
+
+    .metric-summary-report__diff {
+      font-size: 12px;
+      height: 16px;
+    }
+  }
+
+  .metric-summary-report--first {
+    justify-content: flex-start;
+  }
+
+  .metric-summary-report--last {
+    justify-content: flex-end;
+  }
+
+  .metric-phased-report__phase {
+    height: 40%;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sds-ellipsis;
+  }
+
+  .ec-grid-primary__empty-simple {
+    line-height: 20px;
+    width: 80%;
+    height: auto;
+  }
+}

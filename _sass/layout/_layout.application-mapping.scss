@@ -1,0 +1,756 @@
+//================================================
+//  App mappings
+//================================================
+
+// ??
+// Artifact Versioning PopOver Menu
+.sds-popover.artifact-version-popover {
+  &.snapshot-select-popover {
+    li {
+      > a {
+        min-width: 100px;
+        padding: 0 20px;
+      }
+    }
+  }
+  input {
+    background-color: $input-bg;
+    border: 1px solid $very-light-gray;
+    box-shadow: none;
+    padding: 5px;
+  }
+
+  .version-input {
+    box-sizing: border-box;
+    display: block;
+    height: 28px;
+    margin: 10px auto;
+    width: 90px;
+  }
+
+  ul {
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  li {
+    > a {
+      min-width: 80px;
+      padding: 0 5px;
+    }
+  }
+
+}
+
+.modals-box .ec-react-wizard-mapping .ec-react-wizard__content {
+  padding: 0;
+}
+
+.ec-react-wizard-mapping {
+
+  .ec-react-wizard__header-delete-mapping {
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: block;
+
+    .sds-svg-icon--button-delete {
+      fill: $default-red;
+      padding-bottom: 4px;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $soft-gray;
+
+      .sds-svg-icon--button-delete {
+        cursor: default;
+        fill: $soft-gray;
+      }
+    }
+  }
+
+  &__header {
+    font-size: 24px;
+    margin: 0 30px;
+    width: 100%;
+    white-space: nowrap;
+
+    .sds-svg-icon--icon-application {
+      margin: 0 5px 0 0;
+      padding-bottom: 2px;
+    }
+
+    .sds-icon.environment,
+    .sds-icon.template {
+      color: $orange;
+      font-size: 22px;
+      margin: 0 5px;
+    }
+
+  }
+
+  &__header-text {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 500px;
+    @include sds-ellipsis();
+    white-space: pre;
+  }
+
+  &__header-text--static {
+    width: auto;
+    max-width: 50px;
+    margin: 0 10px;
+  }
+
+  &__row {
+    position: relative;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 38px;
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  &__row--go-to-visualization {
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    flex: 0 0 540px;
+    &.disabled {
+      @include disabled();
+      &:hover {
+        background-color: $ten-percent-gray;
+        border-color: $ten-percent-gray;
+      }
+    }
+  }
+
+  &__row--visualization-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 30px;
+    width: 560px;
+    .ec-react-help__wrapper {
+      flex: 0 0 20px;
+      margin: 0;
+    }
+  }
+
+  &__row--alert {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+  }
+
+  &__row--header {
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  &__objects-list {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__mapping-list {
+    height: 354px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__row--map-item {
+    display: flex;
+    border: 2px solid $ten-percent-gray;
+    background-color: $ten-percent-gray;
+
+    &:hover {
+      border: 2px solid $soft-gray;
+      background-color: $soft-gray;
+    }
+
+    &.matched,
+    &.matched:hover {
+      border-color: $very-light-gray;
+      background-color: $default-white;
+    }
+  }
+
+  &__row--map-item-active {
+    display: flex;
+    color: $default-white;
+    border: 2px solid $active-blue;
+    background-color: $active-blue;
+
+    .sds-svg-icon--icon-application-tier,
+    .sds-svg-icon--icon-service,
+    .sds-svg-icon--button-object-menu {
+      fill: $default-white;
+    }
+  }
+
+  &__row--map-item-is-mapped {
+    position: relative;
+    display: flex;
+    border: 2px solid $limegreen;
+  }
+
+  &__col--alert {
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    color: $default-white;
+    text-align: center;
+    border-bottom: 2px solid $default-white;
+    box-sizing: border-box;
+    background: $medium-dark-blue;
+  }
+
+  &__alert-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+    &:before {
+      content: '';
+      height: 19px;
+      width: 24px;
+      background-image: url('../img/attention.png');
+      display: inline-block;
+      margin: 0 5px -3px 0;
+    }
+  }
+
+  &__alert-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+
+  &__col--go-to-visualization {
+    box-sizing: border-box;
+    flex: 1;
+    text-align: center;
+  }
+
+  &__col--map-application-tier,
+  &__col--map-environment-tier {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex: 1 0 50%;
+    overflow: hidden;
+  }
+
+  &__col-text {
+    flex: auto;
+    text-align: left;
+    min-width: 0;
+    line-height: 1;
+    @include sds-ellipsis;
+    white-space: pre;
+    &.left {
+      padding-right: 30px;
+    }
+    &.right {
+      padding-right: 70px;
+    }
+  }
+
+  &__col-icon {
+    margin-left: 8px;
+    line-height: 0;
+    flex: 0 0 30px;
+  }
+
+  &__col-icon--right {
+    margin-left: 30px;
+  }
+
+  &__col--map-application-tier {
+    position: relative;
+    line-height: 36px;
+  }
+
+  &__col--map-environment-tier {
+    position: relative;
+    line-height: 36px;
+
+    .sds-icon {
+      cursor: pointer;
+    }
+  }
+
+  &__col--no-mapped-app {
+    &:after {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: "";
+      width: 1px;
+      height: 26px;
+      background-color: $default-white;
+      position: absolute;
+    }
+    &.matched:after {
+      background-color: $very-light-gray;
+    }
+  }
+
+  &__col--no-mapped-env {
+    justify-content: center;
+    &:before {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: "";
+      width: 1px;
+      height: 26px;
+      background-color: $default-white;
+      position: absolute;
+    }
+    &.matched:before {
+      background-color: $very-light-gray;
+    }
+  }
+
+  &__col--map-icon-mapping-confirmed {
+    width: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .sds-svg-icon--icon-mapping-confirmed {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      fill: $limegreen;
+    }
+  }
+
+  &__col--map-icon-on-right,
+  &__col--map-icon-configuration {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 36px;
+    width: 30px;
+    line-height: 36px;
+
+    .sds-icon {
+      cursor: pointer;
+    }
+  }
+
+  &__configuration-required {
+    position: absolute;
+    right: 6px;
+    width: 100px;
+    margin-top: -38px;
+    text-align: left;
+    color: $default-red;
+    line-height: 1rem;
+  }
+
+  &__col--map-icon-configuration {
+    right: 40px;
+  }
+}
+
+.ec-react-wizard-service-mapping-configuration {
+  font-size: 16px;
+
+  .react-form__label {
+    font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+  }
+
+  .react-form__original {
+    font-size: 16px;
+    line-height: 40px;
+    float: left;
+  }
+
+  .service-form {
+    .ec-react-help__wrapper {
+      margin-right: 6px;
+    }
+  }
+
+  .ec-react-wizard-mapping__header-text {
+    vertical-align: middle;
+  }
+
+  .main-expand {
+    position: absolute;
+    right: 0;
+  }
+
+  .mapping-configuration-tabs {
+    padding: 3px 0;
+    margin-bottom: 20px;
+  }
+
+  .mapping-configuration-form {
+    height: 360px;
+    position: relative;
+    overflow: auto;
+  }
+
+  .separator {
+    @include separator();
+  }
+
+  .map-configuration-container-empty {
+    font-size: 24px;
+  }
+
+  .map-configuration-container-list {
+    padding: 0 20px 0 30px;
+    overflow-y: scroll;
+    height: 360px;
+  }
+
+  .map-configuration-container-item {
+    padding: 0 20px;
+    background: $very-soft-gray;
+    margin-bottom: 20px;
+  }
+
+  .map-configuration-container-item-header {
+    height: 60px;
+    display: flex;
+    line-height: 60px;
+    font-size: 16px;
+  }
+
+  .map-configuration-container-item-index {
+    width: 30px;
+    text-align: right;
+  }
+
+  .map-configuration-container-item-rollover {
+    width: 30px;
+  }
+
+  .map-configuration-container-item-name {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    @include sds-ellipsis;
+    white-space: pre;
+  }
+
+  .map-configuration-container-item-errors {
+    width: 100px;
+  }
+
+  .map-configuration-container-item-error-tile {
+    position: static;
+  }
+
+  .map-configuration-form {
+    padding: 0 30px;
+    font-size: 18px;
+    border-top: 2px solid $forty-percent-gray;
+
+    .map-configuration-form-title {
+      line-height: 40px;
+    }
+
+    .map-configuration-form-head {
+      display: flex;
+      font-size: 14px;
+      height: 40px;
+      align-items: center;
+      border-top: 2px solid $forty-percent-gray;
+      text-align: left;
+      line-height: 16px;
+    }
+
+    .map-configuration-form-item {
+      display: flex;
+      line-height: 60px;
+      border-top: 2px solid $forty-percent-gray;
+      text-align: left;
+    }
+
+    .map-configuration-form-col {
+      text-align: left;
+      @include sds-ellipsis;
+      white-space: pre;
+
+      &.width-10 {
+        flex: 10;
+      }
+
+      &.width-25 {
+        flex: 25;
+      }
+
+      &.width-30 {
+        flex: 30;
+      }
+
+      &.width-35 {
+        flex: 35;
+      }
+
+      &.width-50 {
+        flex: 50;
+      }
+
+      &.center {
+        text-align: center;
+      }
+
+      .subcol-index {
+        width: 25px;
+        display: inline-block;
+        padding-right: 5px;
+        text-align: right;
+      }
+    }
+
+    .service-ports-row {
+      border-top: 2px solid $default-black;
+
+      .react-form__txt-input-holder {
+        .react-form__txt-input {
+          width: 90px;
+        }
+      }
+    }
+
+    .react-form__txt-input-wrapper {
+      margin: 0;
+    }
+
+    .react-form__txt-input-holder {
+      width: auto;
+    }
+
+    .react-form__validation {
+      display: block;
+      padding-bottom: 8px;
+      margin-left: 0;
+    }
+
+    .react-form__textarea-wrapper {
+      margin: 10px 0;
+    }
+
+    .react-form__textarea-holder {
+      width: auto;
+      height: 132px;
+    }
+
+    .react-form__txt-input,
+    .react-form__textarea {
+      vertical-align: baseline;
+    }
+
+    .details-input {
+      .react-form__txt-input,
+      .react-form__textarea {
+        width: 489px;
+      }
+    }
+
+    .map-configuration-browse {
+      width: 60px;
+      margin-left: 20px;
+      display: inline-block;
+    }
+
+    .map-configuration-close-browse {
+      position: absolute;
+      left: -35px;
+      line-height: 40px;
+
+      .sds-svg-icon {
+        fill: $soft-dark-gray;
+      }
+    }
+
+    .details-input-credentialName {
+      position: relative;
+
+      .react-form__txt-input-wrapper {
+        display: inline-block;
+      }
+
+      .react-form__txt-input {
+        width: 408px;
+      }
+
+      .ec-row.ec-row--select {
+        width: 420px;
+        margin-bottom: 10px;
+      }
+    }
+
+
+    .environment-input {
+      .react-form__txt-input,
+      .react-form__textarea {
+        width: 339px;
+      }
+    }
+  }
+
+  .config-block-header {
+    font-size: 18px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+
+    .toggle-row {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .service-form {
+    border-top: 2px solid $forty-percent-gray;
+    padding-bottom: 10px;
+
+    .react-form__txt-input-wrapper,
+    .react-form__textarea-wrapper,
+    .react-form__select-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-left: -50px;
+    }
+
+    .react-form__checkbox-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      width: 600px;
+      margin: 0 auto 20px;
+      text-align: left;
+      position: relative;
+
+      .react-form__checkbox {
+        margin-left: 27px;
+        margin-top: 2px;
+      }
+
+      &__label {
+        width: 174px;
+        text-align: right;
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      .ec-react-help__wrapper {
+        position: absolute;
+        left: 176px;
+        top: 50%;
+        margin-top: -10px;
+      }
+    }
+
+    .has-error {
+      .react-form__txt-input {
+        border-color: $errorRed;
+      }
+
+      //TODO: move to validation scss file
+
+      .react-form__validation {
+        width: 100%;
+        max-width: 330px;
+        margin: 0;
+        text-align: left;
+        font-size: 14px;
+        display: block;
+      }
+    }
+
+    .react-form__select-wrapper .react-form__select-holder {
+      width: 330px;
+    }
+  }
+
+  .service-details-override {
+    .config-block-header {
+      border-top: 2px solid $forty-percent-gray;
+    }
+
+    .service-form-row {
+      margin: 0 30px;
+      padding: 10px 0;
+      border-top: 2px solid $default-black;
+
+      &.header {
+        padding: 0;
+        display: flex;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+
+        .title {
+          flex: 1;
+        }
+      }
+
+      .react-form__textarea-wrapper,
+      .react-form__txt-input-wrapper {
+        margin: 0;
+        display: flex;
+      }
+
+      .react-form__label {
+        width: 180px;
+        text-align: left;
+        justify-content: flex-start;
+      }
+
+      .ec-react-help__wrapper {
+        width: 20px;
+      }
+
+      .react-form__original {
+        flex: 1;
+        margin-left: 10px;
+        margin-right: 20px;
+        text-align: left;
+        white-space: pre;
+        overflow: auto;
+        max-height: 180px;
+      }
+
+      .react-form__textarea-holder,
+      .react-form__txt-input-holder {
+        width: 545px;
+      }
+
+      .react-form__txt-input,
+      .react-form__textarea {
+        width: 533px;
+      }
+    }
+  }
+}

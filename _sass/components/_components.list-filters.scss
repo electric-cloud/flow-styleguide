@@ -1,0 +1,32 @@
+.gh-context-header__center {
+  margin: 0 auto;
+  width: 300px;
+  line-height: 52px;
+  position: relative;
+  text-align: center;
+
+  .list-filters {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    &--disabled {
+      visibility: hidden;
+      .blocker {
+        visibility: visible;
+      }
+    }
+
+    .inactive {
+      fill: $soft-gray;
+    }
+  }
+  .blocker {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+    z-index: 1;
+    visibility: hidden;
+  }
+}

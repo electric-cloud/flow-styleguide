@@ -9,7 +9,7 @@
   }
 
   &.second {
-    background-color: $wBreadcrumbColorSecond;
+    background-color: $dark-gray;
   }
 
   &.third {
@@ -64,11 +64,11 @@
     left: 180px;
     top: 13px;
     font-size: 12px;
-    color: $envResCheckSelectedDefaultColor;
+    color: $forty-percent-gray;
     cursor: pointer;
     display: none;
     &:hover {
-      color: $envResDefaultColor;
+      color: $default-black;
     }
   }
 
@@ -114,11 +114,11 @@
     left: 0;
     top: 0;
     z-index: 9999;
-    color: $default-wizard-notification-content-color;
+    color: $default-white;
 
     .notification-content {
       text-align: left;
-      background-color: $default-wizard-notification-bg;
+      background-color: $denim-blue;
       line-height: 100px;
       height: 100px;
       width: 100%;
@@ -143,7 +143,7 @@
     .white-layout {
       width: 100%;
       height: 100%;
-      background-color: $snapshot-create-notification-layout-background;
+      background-color: $seventh-fill-white;
     }
   }
 }
@@ -175,7 +175,7 @@
 .modals-box {
   .ec-react-wizard {
     margin: 115px auto 0;
-    background: $white;
+    background: $default-white;
     display: flex;
     text-align: left;
     box-shadow: rgba(0, 0, 0, 0.75) 0 0 30px;
@@ -259,7 +259,7 @@
     }
 
     &__body {
-      background: $white;
+      background: $default-white;
       flex: 1;
       height: 100%;
       max-width: 100%;
@@ -341,6 +341,7 @@
       left: 0;
       margin: 0 10%;
       @include  sds-ellipsis();
+      white-space: pre;
     }
 
     &__content {
@@ -367,7 +368,7 @@
         line-height: 60px;
         width: 50%;
         float: left;
-        color: $white;
+        color: $default-white;
         text-align: center;
         cursor: pointer;
         font-size: 18px;
@@ -402,7 +403,8 @@
         }
 
         &--right {
-          width: 210px;
+          box-sizing: border-box;
+          width: 200px;
           float: right;
           &:last-child {
             border-left: 2px solid $default-white;
@@ -474,7 +476,7 @@
   }
 
   .overlay {
-    @include fixed-stretch(102);
+    @include fixed-stretch(103);
     background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow: auto;
@@ -548,7 +550,7 @@
   &--parameters-row {
     margin-top: 4px;
     min-height: 41px;
-    border-top: 2px solid $separatorBG;
+    border-top: 2px solid $forty-percent-gray;
   }
 
   &--align-left {

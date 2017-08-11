@@ -1,0 +1,97 @@
+.widget--successful-deployments {
+  .deployments-count {
+    position: relative;
+    color: $lime-green;
+    font-size: em(36);
+    text-align: center;
+    .count-label {
+      @include stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .sds-svg-icon {
+        width: em(30, 36);
+        height: em(30, 36);
+        margin: em(0.3, 36) 0 0 em(10, 36);
+        fill: $lime-green;
+      }
+    }
+  }
+
+  .duration-label {
+    font-size: em(14);
+    line-height: em(18);
+    flex: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .duration-text {
+      max-width: 75%;
+    }
+    .sds-svg-icon {
+      width: em(24, 14);
+      height: em(24, 14);
+      margin: 0 0 0 em(5, 36);
+    }
+  }
+
+  .time {
+    flex: 80;
+    display: flex;
+    position: relative;
+  }
+
+  .time-digits {
+    @include stretch;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .time-digit-item {
+    display: flex;
+    flex-direction: column;
+    .digits {
+      display: flex;
+      flex: 53;
+      font-size: em(48);
+      align-items: center;
+      justify-content: center;
+    }
+    .time-label {
+      display: flex;
+      flex: 27;
+      font-size: em(10);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .time-digits-with-days .time-digit-item {
+    .digits {
+      font-size: em(44);
+    }
+  }
+
+  .deployments-count {
+    flex: 83;
+  }
+
+  .duration-time {
+    position: relative;
+    flex: 110;
+  }
+
+  .duration-time-inner {
+    @include stretch;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .time-legend-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

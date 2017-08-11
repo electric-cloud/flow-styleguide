@@ -31,6 +31,7 @@
   }
   &.application {
     font-size: 14px;
+    color: $soft-blue;
   }
   &.releases {
     font-size: 6px;
@@ -42,24 +43,23 @@
 
 .breadcrumb-item {
   @include sds-ellipsis;
+  white-space: pre;
   display: inline-block;
   line-height: 33px;
-  white-space: nowrap;
   vertical-align: top;
   position: relative;
   text-decoration: none;
-  color: $controlBarBreadCrumbsText;
+  color: $default-black;
   &.link {
     cursor: pointer;
   }
 
   &:hover,
   &:focus {
-    text-decoration: none;
-    color: $chHoverIconFont;
+    color: $default-black;
   }
   .item-number {
-    color: $black;
+    color: $default-black;
   }
 }
 
@@ -68,6 +68,7 @@
   &:hover {
     cursor: initial;
     color: $medium-dark-gray;
+    text-decoration: none;
   }
 
   .sds-icon {
@@ -87,7 +88,9 @@
     &.application {
       color: $soft-blue;
     }
-    &.environment, &.template, &.row-icon {
+    &.environment,
+    &.template,
+    &.row-icon {
       color: $orange;
     }
     &.pipeline {
@@ -100,8 +103,4 @@
       color: $bright-blue;
     }
   }
-}
-
-.breadcrumb-text {
-  white-space: pre;
 }

@@ -6,6 +6,19 @@
   margin: 0;
   padding: 0 20px;
 
+  &.ec-grid-primary--tours {
+    padding: 0;
+    margin: 0 10px;
+    height: 410px;
+    overflow: auto;
+    .ec-grid-primary__row {
+      font-size: 16px;
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+
   &.ec-grid-primary--application-attach {
     padding: 0;
     margin: 0 30px 0 0;
@@ -49,13 +62,11 @@
 
   .sds-svg-icon {
     &--icon-pipeline {
-      fill: $violet;
       width: 28px;
       height: 16px;
     }
 
     &--icon-release {
-      fill: $bright-blue;
       width: 38px;
       height: 16px;
     }
@@ -135,7 +146,7 @@
     }
 
     &.disabled {
-      color: $simple-light-gray;
+      color: $soft-gray;
     }
 
     .ec-wizard-row {

@@ -19,7 +19,7 @@
   padding: 0 0 $btn-height 0;
 
   .vbar {
-    background-color: $modal-close-bar-color;
+    background-color: $medium-dark-gray;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -32,7 +32,7 @@
       top: 10px;
       left: 8px;
       cursor: pointer;
-      color: $modal-close-bar-icon-color;
+      color: $default-white;
       &:before {
         font-size: 15px;
       }
@@ -72,7 +72,7 @@
     }
 
     .remove {
-      color: red;
+      color: $red;
     }
 
   }
@@ -90,7 +90,10 @@
 
   .sds-modal-footer {
     text-align: right;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     max-height: $btn-height;
   }
 
@@ -122,12 +125,6 @@
     }
   }
 
-  .sds-modal-footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
   .sds-btn.cancel {
     background: $btn-bg-normal;
     color: $default-white;
@@ -177,7 +174,7 @@
   }
 }
 .sds-modal-alert {
-  background: $modal-alert-overlay;
+  background: $eighty-fill-white;
   @include stretch;
   display: none;
 
@@ -187,15 +184,15 @@
     left: 0;
     right: 0;
     padding: 20px;
-    color: $modal-alert-text;
-    background-color: $modal-alert-background;
+    color: $default-white;
+    background-color: $medium-dark-blue;
   }
   .remove {
     position: absolute;
     right: 10px;
     top: 10px;
     cursor: pointer;
-    color: $appCoControlsIconColor;
+    color: $default-white;
     opacity: .7;
     &:hover {
       opacity: 1;
@@ -210,7 +207,7 @@
       content: '';
       height: 19px;
       width: 24px;
-      background-image: url('../../img/attention.png');
+      background-image: url('../img/attention.png');
       display: inline-block;
       margin: 0 5px -3px 0;
     }
@@ -224,7 +221,7 @@
 
 .ec-modal-alert {
   @include stretch(9999);
-  background-color: $modal-alert-overlay;
+  background-color: $eighty-fill-white;
 
   .ec-modal-alert-message {
     position: absolute;
@@ -232,8 +229,8 @@
     left: 0;
     right: 0;
     padding: 20px;
-    color: $modal-alert-text;
-    background-color: $modal-alert-background;
+    color: $default-white;
+    background-color: $medium-dark-blue;
   }
 
   .ec-modal-alert-title {
@@ -245,13 +242,13 @@
       content: '';
       height: 19px;
       width: 24px;
-      background-image: url('../../img/attention.png');
+      background-image: url('../img/attention.png');
       display: inline-block;
       margin: 0 5px -3px 0;
     }
   }
 
-  .ec-modal-alert-text {
+  .ec-default-white {
     font-size: 14px;
     line-height: 17px;
     text-align: center;
@@ -266,7 +263,7 @@
 }
 
 .app-step-wizard-backdrop {
-  @include fixed-stretch(102);
+  @include fixed-stretch(103);
   background-color: rgba(0, 0, 0, 0.2);
 
   .default-modal {
@@ -280,7 +277,8 @@
 .ec-modal-confirmation {
   display: none;
   @include stretch;
-  background-color: $wConfirmationMainBgColor;
+  background-color: $eighty-fill-white;
+  z-index: 99999;
 
   .ec-modal-confirmation-body {
     height: auto;
@@ -290,11 +288,11 @@
     right: 0;
     bottom: 60px;
     left: 0;
-    color: white;
+    color: $default-white;
     text-align: center;
     font-size: 17px;
     line-height: 25px;
-    background-color: $wConfirmationMessageBgColor;
+    background-color: $medium-dark-blue;
 
     .title {
       font-size: 16px;
@@ -305,7 +303,7 @@
         content: '';
         height: 19px;
         width: 24px;
-        background-image: url('../../img/attention.png');
+        background-image: url('../img/attention.png');
         display: inline-block;
         margin: 0 5px -3px 0;
       }
@@ -318,7 +316,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: #B2B2B2;
+    background: $very-light-gray;
 
     .ec-modal-button {
       width: 50%;
@@ -327,7 +325,7 @@
       font-size: 18px;
       line-height: 60px;
       text-align: center;
-      color: white;
+      color: $default-white;
       cursor: pointer;
       user-select: none;
       &.full-size {
@@ -344,9 +342,6 @@
     }
   }
 }
-.ec-modal-confirmation {
-  z-index: 99999;
-}
 .ec-modal-success {
   display: none;
   position: absolute;
@@ -356,11 +351,11 @@
   .ec-modal-success-body {
     height: 40px;
     padding: 20px;
-    color: white;
+    color: $default-white;
     text-align: center;
     font-size: 17px;
     line-height: 35px;
-    background-color: $wConfirmationMessageBgColor;
+    background-color: $medium-dark-blue;
     .sds-icon {
       font-size: 30px;
       display: inline-block;

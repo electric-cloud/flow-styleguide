@@ -79,10 +79,14 @@
     &__list-header {
       height: 40px;
       padding-right: 15px;
-      line-height: 40px;
+      line-height: 38px;
       text-align: left;
       display: flex;
       border-bottom: 2px solid $gray;
+
+      .assigning-phases-header-item-title {
+        vertical-align: middle;
+      }
     }
 
     &__list-filters {
@@ -154,7 +158,7 @@
       border-bottom: 1px solid $very-light-gray;
 
       &:hover {
-        background-color: $simple-light-gray;
+        background-color: $soft-gray;
       }
     }
 
@@ -231,15 +235,15 @@
     }
 
     &__phases {
-        @include flex-column;
-        width: 375px;
-        padding: 0 0 60px 25px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-        background-color: $ten-percent-gray;
+      @include flex-column;
+      width: 375px;
+      padding: 0 0 60px 25px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: $ten-percent-gray;
 
       &__header {
         height: 44px;
@@ -269,7 +273,7 @@
         }
 
         &:hover {
-          background-color: $simple-light-gray;
+          background-color: $soft-gray;
         }
       }
 

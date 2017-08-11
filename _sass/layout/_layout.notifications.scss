@@ -1,0 +1,717 @@
+//================================================
+//  Notifications
+//================================================
+
+.notification-modal {
+  font-size: 18px;
+  height: 600px;
+  width: 900px;
+  background: $default-white;
+
+  .loader.modal-loader {
+    bottom: 0;
+  }
+
+  .ec-wizard-head {
+    text-align: left;
+    .ec-wizard-title {
+      margin-left: 20px;
+    }
+    .sds-icon {
+      position: static;
+      & + .ec-wizard-title {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .ec-wizard-title {
+    vertical-align: baseline;
+    margin-left: 0;
+  }
+
+  .at-notification-count {
+    padding-right: 5px;
+  }
+
+  &.ec-wizard-main .ec-wizard-foot {
+    height: 60px;
+    min-height: 60px;
+    .ec-wizard-button {
+      font-size: 18px;
+      width: 190px;
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+
+  .ec-notifications-list-header-view {
+    height: 30px;
+    margin: 7px 17px 0 0;
+
+    &__inner {
+      float: right;
+    }
+
+    .ec-notifications-toggler-container {
+      width: 40px;
+      height: 20px;
+      padding: 2px;
+      margin-top: 4px;
+      position: relative;
+
+      .ec-notifications-toggler {
+        width: 38px;
+        height: 20px;
+        vertical-align: top;
+      }
+
+      .ec-state-prompt {
+        display: none;
+        background: $appNotificationsTogglePromptBgOff;
+        padding: 13px 22px;
+        line-height: 18px;
+        color: $default-white;
+        font-size: 14px;
+        width: 230px;
+        position: absolute;
+        left: -171px;
+        z-index: 100;
+        top: 36px;
+
+        &:after {
+          bottom: 100%;
+          left: 71%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-bottom-color: $appNotificationsTogglePromptBgOff;
+          border-width: 12px;
+          margin-left: -12px;
+        }
+      }
+    }
+
+    .ec-notifications-search {
+      margin-left: 15px;
+      padding-left: 17px;
+      border-left: 2px solid $appNotificationsBorderColor;
+      line-height: 30px;
+      .sds-input, .sds-icon {
+        display: inline-block;
+      }
+      .sds-icon {
+        vertical-align: middle;
+        cursor: pointer;
+        position: static;
+      }
+      .sds-input {
+        vertical-align: top;
+        width: 120px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .at-notifications-list {
+    height: 514px;
+    margin: 0 0 0 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.scrolled {
+      margin-right: 5px;
+    }
+  }
+
+  .list-item {
+    height: 42px;
+    border-bottom: 2px solid $appNotificationsBorderColor;
+    overflow: hidden;
+    font-size: 14px;
+    display: none;
+    width: 830px;
+
+    &__inner {
+      float: left;
+      height: 100%;
+      line-height: 42px;
+      overflow: hidden;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    &.list-head {
+      display: block;
+      height: 38px;
+      line-height: 38px;
+      margin: 0 20px;
+      border-bottom-color: $default-black;
+      font-size: 18px;
+
+      .ec-wizard-title {
+        font-weight: bold;
+      }
+
+      .sds-icon {
+        cursor: default;
+
+        &.application {
+          padding: 0;
+          margin: 0;
+          float: none;
+        }
+        &.recipients {
+          padding: 0;
+        }
+      }
+    }
+
+    .item-index {
+      width: 20px;
+      padding-left: 5px;
+    }
+
+    &.application {
+      .name {
+        .item-name {
+          padding-left: 34px;
+        }
+      }
+    }
+
+    &.process {
+      .name {
+        width: 335px;
+      }
+    }
+
+    &.processStep {
+      padding-left: 20px;
+      width: 810px;
+      .name {
+        width: 315px;
+      }
+      .action-btns {
+        text-align: left;
+      }
+    }
+
+    .fallback {
+      text-align: center;
+      line-height: 40px;
+      float: none;
+    }
+
+    .name {
+      width: 360px;
+      margin-right: 10px;
+
+      .item-name-container,
+      .sds-icon,
+      .item-name {
+        display: block;
+        float: left;
+      }
+
+      .item-name-container {
+        width: 100%;
+      }
+      .item-name {
+        padding-left: 27px;
+      }
+      .sds-icon {
+        margin-left: -100%;
+      }
+    }
+
+    .status {
+      width: 170px;
+    }
+
+    .indicator {
+      border: 4px solid $errorRed;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 2px 2px 0;
+      &.on {
+        border-color: transparent;
+      }
+    }
+
+    .recipient {
+      width: 220px;
+    }
+
+    .action-btns {
+      width: 66px;
+      text-align: right;
+    }
+
+    .sds-icon {
+      @include sds-icon-size(23px, 34px, 42px, auto, auto, inline-block, default);
+      &.collapse,
+      &.expand {
+        cursor: pointer;
+      }
+      &.edit {
+        @include sds-icon-size(18px, 28px, 42px);
+      }
+      &.application {
+        @include sds-icon-size(23px, 34px, 42px);
+        color: $very-soft-blue;
+        cursor: default;
+      }
+      &.view-processes {
+        color: $light-green;
+        @include sds-icon-size(23px, 22px, 48px, auto, auto, block, default);
+        float: left;
+      }
+      &.steps {
+        @include sds-icon-size(23px, 22px, 48px, auto, auto, block, default);
+      }
+      &.recipients {
+        color: $appNotificationsRecipientsIconColor;
+      }
+    }
+
+  }
+}
+
+.notification-edit {
+  .modal-header {
+    position: relative;
+    .controls-container {
+      margin-top: 40px;
+      height: 50px;
+      width: 100%;
+      padding: 0 30px;
+      line-height: 50px;
+      box-sizing: border-box;
+    }
+    .controls-container-notification-title {
+      display: inline-block;
+      font-size: 20.8px;
+      font-style: normal;
+      color: $default-black;
+      letter-spacing: 0;
+      line-height: 50px;
+      float: left;
+      width: 500px;
+      @include sds-ellipsis;
+    }
+    .controls-container-settings-btn {
+      display: inline-block;
+      float: right;
+      width: 50px;
+      height: 50px;
+      .sds-icon.settings {
+        @include sds-icon-size(32px, 50px, 50px);
+      }
+    }
+    .controls-container-toggler {
+      display: inline-block;
+      float: right;
+      height: 32px;
+      padding: 9px 0;
+      .ec-notifications-toggler {
+        height: 32px;
+        width: 77px;
+        text-align: center;
+      }
+    }
+    .table-header-container {
+      margin: 40px auto 0;
+      height: 32px;
+      width: 840px;
+      line-height: 32px;
+      box-sizing: border-box;
+      border-bottom: 2px solid $notification-item-border-bottom;
+    }
+
+    .table-header-container-col-who,
+    .table-header-container-col-when,
+    .table-header-container-col-where,
+    .table-header-container-col-add {
+      display: inline-block;
+      text-align: left;
+      font-size: 17px;
+      color: $default-black;
+      line-height: 30px;
+      float: left;
+    }
+
+    .table-header-container-col-who {
+      width: 445px;
+    }
+    .table-header-container-col-when,
+    .table-header-container-col-where {
+      margin-left: 10px;
+      width: 170px;
+    }
+    .table-header-container-col-add {
+      margin-left: 15px;
+      .sds-icon.notification-add {
+        @include sds-icon-size(20px, 20px, 30px);
+      }
+    }
+    .tooltip-container {
+      position: absolute;
+      background: $notification-tooltip-background;
+      border: 1px solid $notification-tooltip-border;
+      width: 207px;
+      height: 99px;
+      left: 695px;
+      top: 65px;
+      z-index: 1;
+      display: none;
+      box-sizing: border-box;
+      padding: 22px;
+
+      font-size: 14px;
+      color: $notification-tooltip-text-color;
+      font-style: normal;
+      text-align: left;
+      line-height: 22px;
+      letter-spacing: 0.03em;
+    }
+    .tooltip-container:after, .tooltip-container:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .tooltip-container:after {
+      border-color: transparent;
+      border-bottom-color: $notification-tooltip-background;
+      border-width: 20px;
+      margin-left: -20px;
+    }
+    .tooltip-container:before {
+      border-color: transparent;
+      border-bottom-color: $notification-tooltip-border;
+      border-width: 21px;
+      margin-left: -21px;
+    }
+  }
+  .notification-items {
+    overflow-y: auto;
+    height: 330px;
+    width: 100%;
+    .item-view {
+      position: relative;
+      min-height: 89px;
+      width: 840px;
+      margin: 0 auto;
+      border-bottom: 2px solid $notification-item-border-bottom;
+      box-sizing: border-box;
+    }
+    .item-view-header {
+      display: inline-block;
+      padding-top: 12px;
+      float: left;
+    }
+    .item-view-header-col-users,
+    .item-view-header-col-event,
+    .item-view-header-col-env {
+      display: inline-block;
+      float: left;
+      font-size: 13px;
+      padding-top: 2px;
+      visibility: hidden;
+      &.visible {
+        visibility: visible;
+      }
+    }
+
+    .item-view-header-col-users {
+      width: 444px;
+    }
+    .item-view-header-col-event,
+    .item-view-header-col-env {
+      width: 170px;
+      margin-left: 10px;
+    }
+
+    .item-view-data {
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .item-view-data-col-users,
+    .item-view-data-col-event,
+    .item-view-data-col-env,
+    .item-view-data-remove-btn {
+      float: left;
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    .item-view-data-col-users {
+      width: 413px;
+    }
+
+    .item-view-data-template-btn {
+      color: $default-black;
+      visibility: visible;
+      padding-top: 8px;
+      margin-left: 7px;
+      width: 25px;
+      float: left;
+      .sds-icon.template {
+        @include sds-icon-size(20px, 22px, 24px);
+      }
+      &.changed {
+        color: $light-green;
+      }
+    }
+
+    .item-view-data-col-event,
+    .item-view-data-col-env {
+      width: 170px;
+      margin-left: 10px;
+    }
+    .item-view-data-remove-btn {
+      margin-left: 14px;
+      &.disabled {
+        color: $heather-gray;
+      }
+      .sds-icon.notification-remove {
+        @include sds-icon-size(20px, 20px, 31px);
+      }
+    }
+
+    .item-view-data-col-event {
+      .sds-select.select2-container .select2-choice {
+        width: 170px;
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        height: 40px;
+        line-height: 40px;
+        background-color: $athens-gray;
+        box-sizing: border-box;
+      }
+      .sds-select.select2-container.select2-dropdown-open .select2-choice {
+        color: $chateau-gray;
+      }
+
+      .sds-select.select2-container.select2-dropdown-open b {
+        color: $default-black;
+      }
+
+      .select2-chosen {
+        font-size: 12px;
+        padding-left: 5px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.CodeMirror {
+  border: 1px solid $code-mirror-border;
+  padding: 0 7px;
+  height: 350px;
+}
+
+.notifications-template-modal {
+  width: 928px;
+  margin-left: -472px;
+  border: 16px solid $eclipse-gray;
+  outline: 2px solid $notifications-template-modal-outline;
+
+  .notifications-template-modal-header {
+    background: $eclipse-gray;
+    color: $default-white;
+    text-align: center;
+    height: 105px;
+    position: relative;
+
+    .title {
+      padding-top: 15px;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .close {
+      position: absolute;
+      right: 0;
+      top: 3px;
+      font-size: 20px;
+      color: $default-white;
+      opacity: .4;
+      &:hover,
+      &:active {
+        opacity: .6;
+      }
+    }
+  }
+
+  .notifications-template-modal-body {
+    padding: 20px 50px;
+    height: 460px;
+    position: relative;
+  }
+
+  .edit-template-header {
+    @include clearfix();
+    padding-bottom: 13px;
+    border-bottom: 1px solid $notifications-template-edit-template-header-border;
+
+    .field {
+      float: left;
+    }
+
+    .btn {
+      float: right;
+    }
+
+    .sds-input {
+      margin-right: 10px;
+    }
+
+    .at-template-name-input {
+      width: 264px;
+    }
+
+    .at-template-subject-input {
+      width: 406px;
+    }
+
+    .sds-btn {
+      width: 106px;
+      height: 40px;
+      margin-top: 25px;
+      line-height: 25px;
+      font-size: 14px;
+      background: $notifications-template-edit-template-header-btn;
+    }
+  }
+
+  .sds-modal-footer {
+    background: $notifications-template-modal-footer;
+  }
+
+  .tmpl-preview-btn {
+    display: none;
+  }
+  .edit-template {
+    display: none;
+  }
+  .new-template-name {
+    display: none;
+    position: absolute;
+    right: 50px;
+    bottom: 6px;
+    width: 300px;
+    .sds-input {
+      text-align: left;
+      width: 284px;
+    }
+  }
+
+  .lock-overlay {
+    display: none;
+    position: absolute;
+    background: $eighty-fill-white;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    top: 0;
+    z-index: 10;
+  }
+  &.locked {
+    .notifications-template-modal-header {
+      color: $notifications-template-modal-header-locked;
+    }
+    .lock-overlay {
+      display: block;
+    }
+  }
+}
+
+.sds-small-notification-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-top: 8px;
+}
+
+.sds-small-notification-btn {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  flex: 1 0;
+  box-sizing: border-box;
+  padding: 0 13px;
+  &.apply-changes-btn {
+    background: $notifications-template-popover-apply-btn;
+    margin-left: 5px;
+  }
+  &.edit-tmpl-btn {
+    margin-right: 5px;
+  }
+  &.disabled {
+    cursor: default;
+    color: $btn-color-disabled;
+    background: $btn-primary-bg-disabled;
+  }
+}
+
+.at-dropdown-tmpl-popover {
+  width: 310px;
+  min-height: 132px;
+  padding: 17px 23px;
+  box-sizing: border-box;
+
+  .popover-title {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .select-container {
+    width: 260px;
+    margin-bottom: 8px;
+  }
+
+  .sds-select.select2-container .select2-choice {
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+  }
+  .sds-select.select2-container .select2-choice .select2-arrow b {
+    font-size: 10px;
+  }
+
+  .success-msg {
+    display: none;
+    color: $notification-template-msg;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+}
+
+
+.notification-sds-select-dropdown {
+  background-color: $athens-gray;
+  border-width: 2px 0 0;
+  border-style: solid;
+  border-color: $default-white;
+  border-radius: 0;
+  font-size: 12px;
+}

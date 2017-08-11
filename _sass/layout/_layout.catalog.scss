@@ -1,0 +1,450 @@
+//================================================
+//  Service Catalog
+//================================================
+
+.service-catalog-content {
+  height: calc(100vh - 144px);
+  overflow-y: auto;
+  &--editor-mode {
+    border-top: 2px solid $very-soft-gray;
+    padding-top: 8px;
+    height: calc(100vh - 154px);
+  }
+}
+
+.catalog-header {
+  .catalog-title {
+    max-width: 320px;
+    display: inline-block;
+    font-weight: 700;
+    color: $simple-sky-blue;
+
+    @include sds-ellipsis;
+  }
+}
+
+.catalog {
+  width: 1060px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @media (min-width: 1500px) {
+    width: 1330px;
+  }
+
+  @media (min-width: 1800px) {
+    width: 1600px;
+  }
+
+  .empty-message {
+    line-height: 70px;
+    margin: 0 auto;
+    color: $forty-percent-gray;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+
+  .catalog-item {
+    position: relative;
+    margin: 0 10px 20px;
+    padding: 20px 20px 60px;
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    background-color: $ten-percent-gray;
+  }
+
+  .catalog-item-icon {
+    display: block;
+    height: 60px;
+    margin-bottom: 15px;
+
+    img,
+    .sds-img-icon,
+    .sds-svg-icon {
+      width: 40px;
+      height: 40px;
+
+      &--logo-sql-server {
+        width: 166px;
+        height: 46px;
+      }
+
+      &--logo-mysql {
+        width: 96px;
+        height: 50px;
+      }
+
+      &--logo-oracle {
+        width: 150px;
+        height: 19px;
+      }
+
+      &--logo-spring-boot {
+        width: 56px;
+        height: 50px;
+      }
+
+      &--logo-tomcat {
+        width: 79px;
+        height: 56px;
+      }
+
+      &--logo-aws {
+        width: 104px;
+        height: 40px;
+      }
+
+      &--logo-microsoft-azure {
+        width: 187px;
+        height: 26px;
+      }
+
+      &--logo-oracle-weblogic {
+        width: 135px;
+        height: 42px;
+      }
+
+      &--logo-microsoft-iis {
+        width: 139px;
+        height: 40px;
+      }
+
+      &--logo-jboss {
+        width: 82px;
+        height: 46px;
+      }
+
+      &--logo-ibm-websphere {
+        width: 186px;
+        height: 30px;
+      }
+
+      &--logo-deployment-package {
+        width: 54px;
+        height: 60px;
+      }
+
+      &--logo-google-gke,
+      &--logo-catalog-container {
+        width: 57px;
+        height: 50px;
+      }
+
+      &--logo-aws-ecs,
+      &--logo-aws-ec2 {
+        width: 53px;
+        height: 50px;
+      }
+
+      &--logo-catalog-pipeline,
+      &--logo-catalog-release {
+        width: 74px;
+        height: 40px;
+      }
+
+      &--icon-catalog-item {
+        fill: $soft-blue;
+      }
+
+      &--logo-artifact {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .catalog-item-title {
+    @include sds-ellipsis;
+    margin-bottom: 8px;
+  }
+
+  .catalog-item-desc {
+    position: relative;
+    max-height: 60px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .catalog-item-desc-inner {
+    height: 76px;
+  }
+
+  .catalog-item-more {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    padding-left: 5px;
+    background-color: $ten-percent-gray;
+  }
+
+  .catalog-item-btn {
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+    padding: 4px 10px;
+    border: 1px solid;
+    color: $active-blue;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    @include sds-ellipsis;
+
+    &:hover:not(.disabled),
+    &:active:not(.disabled) {
+      background-color: $active-blue;
+      color: $default-white;
+    }
+  }
+
+  .catalog-list--editor {
+    .catalog-item {
+      padding: 0 0 60px;
+    }
+    .catalog-item.sortable-ghost {
+      .catalog-toolbar {
+        background: $deep-blue;
+      }
+    }
+
+    .default-catalog-item-icon {
+      fill: $soft-gray;
+    }
+    .catalog-item-define {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      color: $active-blue;
+      font-size: 14px;
+      .sds-svg-icon--icon-runtime-status-failed {
+        fill: $color-link-primary;
+        vertical-align: bottom;
+      }
+      .catalog-item-define-link {
+        cursor: pointer;
+      }
+    }
+    .catalog-toolbar {
+      display: flex;
+      background: $silver-chalice;
+      height: 30px;
+      margin-bottom: 10px;
+      .sds-svg-icon {
+        fill: $default-white;
+        margin: 0;
+        cursor: pointer;
+        &.disabled {
+          fill: $soft-gray !important;
+        }
+      }
+    }
+    .toolbar-action {
+      width: 30px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .catalog-item-icon {
+      height: 40px;
+    }
+
+    .catalog-item-content {
+      padding: 0 20px;
+    }
+    .catalog-item-btn,
+    .catalog-item-more {
+      color: $gray;
+      cursor: default;
+      border-color: $soft-gray;
+    }
+    .btn-disabled-label {
+      position: absolute;
+      text-align: center;
+      left: 20px;
+      right: 20px;
+      bottom: 48px;
+      font-size: 12px;
+    }
+  }
+}
+
+.context-header {
+  .catalog-control-bar-controls {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    .toggle-view {
+      margin-right: 60px;
+    }
+
+    .sds-svg-icon.sds-svg-icon--icon-catalog-view-deselected,
+    .sds-svg-icon.sds-svg-icon--icon-catalog-view-selected {
+      margin-right: 12px;
+    }
+
+    .sds-svg-icon.sds-svg-icon--icon-catalog-edit-deselected,
+    .sds-svg-icon.sds-svg-icon--icon-catalog-edit-selected {
+      margin-right: 20px;
+    }
+
+    .sds-svg-icon__wrapper.click-disabled {
+      cursor: default;
+    }
+  }
+}
+
+
+
+.catalog-list--editor .catalog-item.catalog-item--creating {
+  padding: 0;
+  width: 520px;
+
+  .catalog-create {
+    display: flex;
+    height: 100%;
+  }
+
+  .catalog-create-form {
+    width: 380px;
+    padding: 10px 0 10px 10px;
+    height: calc(100% - 20px);
+  }
+
+  .catalog-create-gag {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .sds-svg-icon {
+      fill: $soft-gray;
+    }
+  }
+
+  .react-form__txt-input-holder,
+  .react-form__textarea-holder {
+    width: 100%;
+  }
+
+  .react-form__txt-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .react-form__txt-input-wrapper,
+  .react-form__textarea-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .react-form__textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .catalog-bottom {
+    height: calc(100% - 188px);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .catalog-controls {
+    display: flex;
+    margin-right: 0;
+    padding: 0;
+    position: relative;
+    background-color: $blue;
+    font-weight: 200;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      background-color: $hovered-pale-blue;
+    }
+
+    .save-and-add,
+    .save-and-define,
+    .save-and-done {
+      height: 32px;
+      position: relative;
+      z-index: 1;
+      line-height: 32px;
+      color: $default-white;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-align: center;
+      cursor: pointer;
+      margin: 4px 0 4px 10px;
+
+      .sds-svg-icon {
+        margin: 0 7px 0 0;
+        fill: $default-white;
+        vertical-align: text-bottom;
+      }
+    }
+
+    .save-and-add {
+      width: 150px;
+      background-color: $middle-blue;
+
+      &:hover {
+        background-color: $hovered-base-blue;
+      }
+    }
+
+    .save-and-define {
+      width: 100px;
+      background-color: $middle-blue;
+
+      &:hover {
+        background-color: $hovered-base-blue;
+      }
+    }
+
+    .save-and-done {
+      width: 110px;
+      margin-left: 0;
+
+      .sds-svg-icon {
+        margin: 0 14px 0 15px;
+      }
+
+      &:hover + .overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .catalog-controls.disabled {
+    background-color: $forty-percent-gray;
+
+    .overlay {
+      display: none;
+    }
+
+    .save-and-add,
+    .save-and-define,
+    .save-and-done {
+      cursor: default;
+    }
+
+    .save-and-add,
+    .save-and-define {
+      background-color: $fifty-percent-gray;
+    }
+  }
+}

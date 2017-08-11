@@ -7,26 +7,11 @@
     padding: 0;
   }
   .run-app-name {
-    margin: 0;
     @include modal-header-text();
-
-    .sds-icon.application {
+    margin: 0 20px;
+    .sds-svg-icon {
       margin: 0 8px;
-      color: $very-soft-blue;
-    }
-  }
-
-  .ec-smart-run-container {
-    .wizard-form-row.wizard-step-credential {
-      padding: 0 25px;
-    }
-
-    .react-form__checkbox-container__label--text {
-      font-size: 16px;
-    }
-
-    .react-form__checkbox-container {
-      display: inline-block;
+      vertical-align: text-bottom;
     }
   }
 
@@ -44,6 +29,7 @@
 
   .ec-run__fixed-process {
     @include sds-ellipsis();
+    white-space: pre;
     font-size: 18px;
     line-height: 40px;
     height: 40px;
@@ -69,6 +55,19 @@
 
   .ec-smart-run-container {
     position: relative;
+
+    .wizard-form-row.wizard-step-credential {
+      padding: 0 25px;
+    }
+
+    .react-form__checkbox-container__label--text {
+      font-size: 16px;
+    }
+
+    .react-form__checkbox-container {
+      display: inline-block;
+    }
+
     .loader-bg {
       background-color: transparent;
       z-index: 8;
@@ -141,12 +140,12 @@
     .environment:before,
     .dynamic-env:before {
       margin-left: 2px;
-      color: $sds-select-icon-color-inactive;
+      color: $dark-gray;
     }
 
     &.active .ec-select-header {
       .environment:before, .dynamic-env:before {
-        color: $envIconColor;
+        color: $orange;
       }
 
       .view-processes {
@@ -304,11 +303,30 @@
     }
   }
 
+  .toggler-container {
+    width: auto;
+    display: flex;
+    margin: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+  }
   .ec-toggler-wrapper {
-    float: left;
-    padding-left: 25px;
-    .ec-react-help__icon {
-      font-size: 18px !important;
+    flex: 1;
+    .sds-svg-icon--button-helptip {
+      width: 16px;
+      height: 16px;
+    }
+    .ec-smart-deploy-text {
+      font-size: 14px;
+      margin-right: 5px;
+      white-space: pre-wrap;
+      line-height: 16px;
+      text-align: left;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .ec-react-help__wrapper {
+      vertical-align: middle;
     }
   }
 

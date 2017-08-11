@@ -3,7 +3,9 @@
 //================================================
 
 .ec-grid-primary--task {
+  background: $default-white;
   margin: 0;
+  z-index: inherit;
 
   .ec-grid-primary {
     &__wrapper {
@@ -12,74 +14,108 @@
     }
 
     &__row-wrapper {
-      flex: 1;
+      flex: 2;
       min-width: 1px;
     }
 
     &__row-wrapper-first {
+      flex: 1;
       max-width: 700px;
     }
   }
 
-  .sds-icon {
-    &.static-env-up {
-      font-size: 20px;
-    }
-
-    &.application {
-      font-size: 23px;
-    }
-
-    &.deployer {
-      font-size: 20px;
-    }
-
-    &.workflow {
-      font-size: 20px;
-    }
-
-    &.plugin {
-      font-size: 24px;
-    }
-
-    &.procedure {
-      font-size: 20px;
-    }
-
-    &.radio-btn {
-      margin-right: 5px;
-    }
-  }
-
   .sds-svg-icon {
-    &--icon-task {
-      width: 24px;
-      height: 24px;
+    &--icon-workflow-task,
+    &--icon-plugin-type,
+    &--icon-utilities {
+      fill: $middle-violet;
+    }
+
+    &--icon-runtime-status-failed {
+      fill: $deep-blue;
+      margin-top: -5px;
     }
 
     &--button-close-modal {
       fill: $soft-dark-gray;
     }
+
+    &--icon-assignee-group,
+    &--icon-notifications,
+    &--icon-variable {
+      fill: $gray;
+    }
+
+    &--icon-process,
+    &--icon-procedure,
+    &--icon-gate-automated,
+    &--icon-environments-static {
+      margin-top: -2px;
+    }
+
+    &--icon-gate-rule {
+      margin-top: -4px;
+    }
   }
 
   .ec-grid-primary__row {
     height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
 
     &--creating {
+      font-weight: 400;
+      font-size: 16px;
       margin-bottom: 0;
+
+      .ec-grid-primary__col--fixed-30 {
+        cursor: pointer;
+        text-align: center;
+
+        .sds-svg-icon--button-close-modal {
+          margin-top: -24px;
+        }
+      }
     }
 
     &--edit {
-      .ec-grid-primary__row--separator {
-        border: none;
-      }
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 0;
+
       .ec-grid-primary__col--controls {
-        margin: 5px 10px;
-        height: 40px;
+        margin: 10px;
+        height: 30px;
       }
       .save-and-add,
       .save-and-define {
         display: none;
+      }
+
+      .save-and-done {
+        width: 100px;
+        padding: 0;
+        margin: 0;
+        height: 30px;
+        text-align: center;
+        .sds-svg-icon {
+          margin-left: 0;
+        }
+      }
+
+      .order-cancel {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        color: $default-white;
+        float: right;
+        background: $very-light-gray;
+        &:hover {
+          background: $gray;
+        }
       }
     }
 
@@ -92,6 +128,7 @@
     }
 
     &--details {
+      font-weight: 400;
       padding: 10px 10px 10px 0;
 
       .ec-grid-primary__col {
@@ -125,107 +162,93 @@
       &:hover {
         text-decoration: underline;
       }
-      .sds-icon.attention {
-        color: $deep-blue;
-      }
     }
 
     &--controls {
+      display: flex;
       margin-right: 0;
       padding: 0;
+      position: relative;
       background-color: $blue;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        background-color: $hovered-pale-blue;
+      }
 
       .save-and-add,
       .save-and-define,
       .save-and-done {
         height: 32px;
+        position: relative;
+        z-index: 1;
         line-height: 32px;
-        float: left;
         color: $default-white;
-        padding: 4px 0 4px 10px;
         font-size: 16px;
         letter-spacing: 1px;
-        text-align: left;
+        cursor: pointer;
+        margin: 4px 0 4px 10px;
 
-        .wrap {
-          height: 32px;
-          cursor: pointer;
-        }
-
-        .sds-icon {
+        .sds-svg-icon {
           margin-right: 10px;
-        }
-      }
-
-      .save-and-add,
-      .save-and-define {
-
-        .wrap {
-          background-color: $middle-blue;
-        }
-
-        .wrap:hover {
-          background-color: $hovered-base-blue;
+          fill: $default-white;
+          vertical-align: text-top;
         }
       }
 
       .save-and-add {
-        width: 150px;
+        width: 160px;
+        background-color: $middle-blue;
 
-        .plus-sign {
-          margin-left: 10px;
+        &:hover {
+          background-color: $hovered-base-blue;
         }
       }
 
       .save-and-define {
-        width: 100px;
+        width: 110px;
+        background-color: $middle-blue;
 
-        .edit {
-          margin-left: 10px;
+        &:hover {
+          background-color: $hovered-base-blue;
         }
       }
 
       .save-and-done {
-        width: 85px;
-        float: right;
-      }
-    }
+        width: 90px;
 
-    &--controls.hovered {
-      background-color: $hovered-pale-blue;
+        &:hover + .overlay {
+          opacity: 1;
+        }
+      }
     }
 
     &--controls.disabled {
       background-color: $forty-percent-gray;
 
+      .overlay {
+        display: none;
+      }
+
       .save-and-add,
       .save-and-define,
       .save-and-done {
-
-        .wrap {
-          cursor: default;
-        }
+        cursor: default;
       }
 
       .save-and-add,
       .save-and-define {
-        .wrap {
-          background-color: $fifty-percent-gray;
-        }
+        background-color: $fifty-percent-gray;
       }
     }
 
-    &--template-select {
-      overflow: visible;
-
-      .ec-select {
-        margin: 6px 0;
-      }
-
-      .ec-select .ec-select-header .notification {
-        font-size: 16px;
-        color: $default-black;
-      }
+    &--dropdown {
+      cursor: pointer;
     }
 
     &--radio {
@@ -241,6 +264,26 @@
 
       &__label {
         vertical-align: middle;
+      }
+    }
+
+    &--radio.on-error {
+      .ec-grid-primary__col--radio__btn {
+        color: $default-black;
+        margin: 0 40px 0 0;
+
+        &:not(.checked) {
+          color: $medium-dark-gray;
+          .sds-svg-icon--icon-task-gate-stop,
+          .sds-svg-icon--icon-task-gate-continue {
+            fill: $medium-dark-gray;
+          }
+        }
+
+      }
+
+      .ec-grid-primary__col--radio__btn.checked {
+        color: $default-black;
       }
     }
 
@@ -260,28 +303,157 @@
       cursor: pointer;
     }
 
-    &--input-approvers {
-      overflow: visible;
-      height: 100%;
-      min-width: 160px;
-      line-height: 20px;
-      font-size: 18px;
-      white-space: normal;
-
-      .sds-select-automatch {
-        width: 100%;
-        margin: 5px 0;
-      }
-    }
-
     &--draggable {
       .sds-icon.drag {
         color: $default-black;
       }
     }
   }
+
+  .task-edit-separator {
+    @include separator();
+    border-color: $very-light-gray;
+    margin: 0 20px -2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ec-grid-primary__sub-row {
+    display: flex;
+
+    > span {
+      display: inline-block;
+    }
+  }
+
+  .task-error-handling-select {
+    font-size: 16px;
+  }
+
+  .task-always-run {
+    font-size: 16px;
+    .ec-react-help__icon {
+      vertical-align: baseline;
+    }
+
+    .sds-svg-icon {
+      vertical-align: text-bottom;
+    }
+  }
+
+  .task-always-run-text {
+    display: inline-block;
+  }
+
+  .create-manual-retry-settings,
+  .create-automated-retry-settings {
+    font-size: 16px;
+
+    .manual-retry-settings-inner,
+    .automated-retry-settings-inner {
+      position: relative;
+      display: flex;
+      height: 80px;
+      background: $ten-percent-gray;
+      margin: 0 10px;
+
+      .ec-grid-primary__col--template-select {
+        flex: 0 auto;
+        margin: 20px 10px 0 0;
+        width: 390px;
+        height: 40px;
+        line-height: 40px;
+        .react-form__select-wrapper {
+          width: 100%;
+        }
+      }
+    }
+
+    .manual-retry-settings-text,
+    .automated-retry-settings-text {
+      flex: 40;
+      margin: 0 10px;
+      line-height: 80px;
+      text-align: right;
+    }
+
+    .automated-retry-settings-time {
+      display: flex;
+      flex: 60;
+      margin-right: 10px;
+    }
+
+    .automated-retry-settings-retries {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      .automated-retry-settings-retries-text {
+        margin-right: 3px;
+      }
+      .sds-number-input__input {
+        width: 78px;
+        font-size: 16px;
+      }
+    }
+
+    .automated-retry-settings-intervals {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .automated-retry-settings-retries-text {
+        margin-right: 10px;
+      }
+
+      .react-form__txt-input-wrapper {
+        margin: 0;
+      }
+
+      .react-form__txt-input-holder {
+        width: 90px;
+        .react-form__txt-input {
+          width: 80px;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .automated-retry-settings-after-last-retry {
+      margin-right: 10px;
+      width: 390px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .automated-retry-settings-after-last-retry-text {
+        display: inline-block;
+      }
+      .react-form__radio-block--create-task {
+        .react-form__radio-holder {
+          display: flex;
+        }
+        .react-form__radio-container__label {
+          font-weight: 400;
+          font-size: 16px;
+        }
+        .sds-svg-icon--icon-task-gate-stop {
+          margin-right: 0;
+        }
+        .react-form__radio-container {
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .manual-retry-settings-assignees {
+      margin: 20px 10px 0 0;
+      flex: 60;
+    }
+  }
 }
 
+.ec-grid-primary__group-placeholder,
 .ec-grid-primary__placeholder {
   position: absolute;
   top: 0;
@@ -292,10 +464,13 @@
 }
 
 .ec-grid-primary__tasks-container {
-  margin: 50px 84px 0;
+  margin: 50px 74px 0;
   height: 100%;
   box-sizing: border-box;
   position: relative;
+  .ec-grid-primary__list-wrapper {
+    height: 100%;
+  }
 }
 
 .ec-grid-primary__tasks-header-title {

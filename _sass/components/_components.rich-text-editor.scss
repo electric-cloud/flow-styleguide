@@ -1,0 +1,19 @@
+.rich-text-editor {
+  .trumbowyg-box {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .trumbowyg-button-pane {
+    height: 40px;
+    justify-content: center;
+
+    &::after {
+      top: 40px;
+    }
+  }
+
+  .trumbowyg-editor {
+    text-align: left;
+  }
+}

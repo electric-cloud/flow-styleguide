@@ -1,0 +1,78 @@
+//================================================
+//  Schedule reservations-header
+//================================================
+
+.schedules-reservations-header {
+  font-size: 16px;
+  @include separator();
+  box-sizing: border-box;
+  padding: 10px 0;
+  display: flex;
+
+  .header-select {
+    width: 350px;
+    margin-left: 20px;
+
+    .sds-icon.environment {
+      color: $orange;
+    }
+
+    .sds-icon.application {
+      color: $very-soft-blue;
+    }
+
+    .sds-icon.pipeline {
+      color: $violet;
+      font-size: 10px;
+    }
+
+    .sds-icon.releases {
+      color: $bright-blue;
+      font-size: 10px;
+    }
+  }
+
+  .timezone {
+    margin: 0 15px 0 40px;
+  }
+
+  .actions-buttons {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+
+    .sds-svg-icon--icon-view--as-calendar-selected,
+    .sds-svg-icon--icon-view--as-calendar-unselected,
+    .sds-svg-icon--icon-view--as-list-deselected,
+    .sds-svg-icon--icon-view--as-list-selected
+    {
+      margin: 0 2px;
+    }
+
+    &.delete {
+      fill: $default-red;
+    }
+
+    &.view-as {
+      margin-right: 40px;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: $fifty-percent-gray;
+      .sds-svg-icon {
+        fill: $fifty-percent-gray;
+      }
+    }
+  }
+}
+
